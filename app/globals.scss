@@ -1,0 +1,23 @@
+:root {
+  --main-color: #fe3650;
+  --gap: 12px;
+  --fs-h3: 24px;
+  --font-weight: 700;
+  --color-text: #2d2727;
+  --color-bg: #ffffff;
+  --label-size: 14px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-tt);
+}
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
