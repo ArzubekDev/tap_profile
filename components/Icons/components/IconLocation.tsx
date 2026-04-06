@@ -1,0 +1,26 @@
+import cn from 'classnames';
+import { FC } from 'react';
+
+import { ICON_DEFAULT_CLASSNAME, ICON_DEFAULT_HEIGHT, ICON_DEFAULT_WIDTH } from '../consts';
+
+import { TIcon } from '../types';
+
+const IconLocation: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
+  return (
+    <svg
+      {...rest}
+      width={width || ICON_DEFAULT_WIDTH}
+      height={height || ICON_DEFAULT_HEIGHT}
+      fill={'transparent'}
+      className={cn(ICON_DEFAULT_CLASSNAME, className)}
+      viewBox="0 0 18 18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12 1C16.4074 1 20 4.53506 20 8.91992C20 13.0454 18.4163 15.2919 13.6475 22.1426C12.852 23.2853 11.148 23.2853 10.3525 22.1426C5.58365 15.2919 4 13.0454 4 8.91992C4.00002 4.53506 7.59261 1 12 1ZM12 3C8.67543 3 6.00002 5.66125 6 8.91992C6 12.291 7.11244 13.9877 11.9932 20.999C11.9947 20.9994 11.997 21 12 21C12.0025 21 12.0044 20.9993 12.0059 20.999C16.8869 13.9873 18 12.2911 18 8.91992C18 5.66125 15.3246 3 12 3ZM12 7C13.1046 7 14 7.89543 14 9C14 10.1046 13.1046 11 12 11C10.8954 11 10 10.1046 10 9C10 7.89543 10.8954 7 12 7Z"
+      />
+    </svg>
+  );
+};
+
+export default IconLocation;
