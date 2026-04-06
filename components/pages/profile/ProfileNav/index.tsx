@@ -1,7 +1,7 @@
 "use client"
 import { IconBell, IconClock, IconDeleteAccount, IconFavorite, IconUser } from '@components/Icons';
 
-import { PATH_PROFILE } from '@consts/paths';
+import { PATH_BASKET_HISTORY, PATH_FAVORITE, PATH_PROFILE } from '@consts/paths';
 import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -57,13 +57,13 @@ const profileItems: TProfileItemType[] = [
     id: 2,
     icon: <IconClock />,
     title: 'История заказов',
-    link: '/basket/history',
+    link: PATH_BASKET_HISTORY,
   },
   {
     id: 3,
     icon: <IconFavorite />,
     title: 'Избранные товары',
-    link: '/basket/favorite-list',
+    link: PATH_FAVORITE,
   },
   {
     id: 4,
@@ -75,7 +75,7 @@ const profileItems: TProfileItemType[] = [
     id: 5,
     icon: <IconDeleteAccount />,
     title: 'Удаление аккаунта',
-    link: '/accounts/profile/delete-info',
+    link: '#',
   },
 ];
 

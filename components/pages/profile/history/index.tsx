@@ -1,10 +1,9 @@
 import { Input, Select } from 'antd';
 import style from './style.module.scss';
-import { Option } from 'antd/es/mentions';
 
 const History = () => {
   return (
-    <div>
+    <div className={style.history}>
       <h3>История заказов</h3>
       <form>
         <div className={style.top}>
@@ -27,13 +26,29 @@ const History = () => {
               Статус
             </label>
             <Select
-              id="status"
               className={style.searchInput}
-            >
-              <Option>alkdsjfalsd</Option>
-            </Select>
-          </div>
+              defaultValue="all"
+              options={[
+                { value: 'all', label: 'Все статусы' },
 
+                { value: 'new', label: 'Новый' },
+                { value: 'confirmed', label: 'Подтвержден' },
+                { value: 'pending_payment', label: 'Ожидает оплаты' },
+                { value: 'paid', label: 'Оплачен' },
+
+                { value: 'processing', label: 'В обработке' },
+
+                { value: 'shipped', label: 'Передан в доставку' },
+                { value: 'delivering', label: 'Доставляется' },
+                { value: 'delivered', label: 'Доставлен' },
+
+                { value: 'canceled', label: 'Отменен' },
+                { value: 'refund', label: 'Возврат' },
+
+                { value: 'completed', label: 'Завершён' },
+              ]}
+            />
+          </div>
         </div>
         <div className={style.center}>
           <label htmlFor=""></label>
