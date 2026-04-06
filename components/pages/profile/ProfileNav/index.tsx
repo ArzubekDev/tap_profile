@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import style from './style.module.scss';
 import { TProfileItemType } from './types';
+import IconStorePlus from '@/components/Icons/components/IconStorePlus';
 
 const ProfileNav = () => {
   const pathname = usePathname();
@@ -21,7 +22,7 @@ const ProfileNav = () => {
             <Link
               href={el.link}
               key={el.id}
-              className={cn(style.profilItem, {
+              className={cn(style.profileItem, {
                 [style.active]: isActive,
               })}
             >
@@ -30,6 +31,13 @@ const ProfileNav = () => {
           );
         })}
       </div>
+      <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
+      <div>
+        {storeItems.map((el) => (
+          <Link className={style.profileItem} href={el.link} key={el.id}>{el.icon} {el.title}</Link>
+        ))}
+      </div>
+      <button className={style.logout}>Выход</button>
     </div>
   );
 };
@@ -73,7 +81,7 @@ const profileItems: TProfileItemType[] = [
 const storeItems: TProfileItemType[] = [
   {
     id: 1, 
-    icon: '',
+    icon: <IconStorePlus/>,
     title: 'Создат магазин',
     link: "#"
   }
