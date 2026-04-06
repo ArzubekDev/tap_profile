@@ -1,3 +1,4 @@
+import IconPlus from "@/components/Icons/components/IconPlus";
 import style from "@components/layout/header/style.module.scss"
 
  export  const profileMenuContent = (
@@ -7,7 +8,7 @@ import style from "@components/layout/header/style.module.scss"
       <a href="/basket/favorite-list">Избранные товары</a>
       <div className={style.createStoreDropDown}>
         <p>Мои магазины</p>
-        <a href="/shop/create">+ Создать магазин</a>
+        <a href="/shop/create"><IconPlus className={style.dropdownPlusIcon}/> Создать магазин</a>
       </div>
       <hr className={style.dropdownline}/>
       <button className={style.logoutBtn}>Выйти</button>

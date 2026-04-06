@@ -18,7 +18,7 @@ const IconPlus: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
       height={height || ICON_DEFAULT_HEIGHT}
       fill={color || ICON_DEFAULT_COLOR}
       className={cn(ICON_DEFAULT_CLASSNAME, className)}
-      viewBox="0 0 28 28"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
