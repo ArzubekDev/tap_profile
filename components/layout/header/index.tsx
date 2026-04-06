@@ -6,12 +6,23 @@ import IconSearchTap from '@/components/Icons/components/IconSearchTap';
 import IconStore from '@/components/Icons/components/IconStore';
 import TapLogo from '@/components/Icons/components/TapLogo';
 import { Input } from 'antd';
+import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
 
 const Header = () => {
+  const profileMenuContent = (
+    <div className={style.profileDropdownMenu}>
+      <a href="/accounts/profile">Мой профиль</a>
+      <a href="/basket/history">История заказов</a>
+      <a href="/basket/favorite-list">Избранные товары</a>
+      <hr />
+      <button className={style.logoutBtn}>Выйти</button>
+    </div>
+  );
+
   return (
     <header className={style.header}>
-      <TapLogo width={120} height={50} />
+      <TapLogo className={style.tapLogo} />
       <div className={style.navContainer}>
         <button className={style.buttonCatalog}>
           <IconCatalog />
@@ -34,16 +45,23 @@ const Header = () => {
         <div className={style.locationNav}>
           <IconLocation />
         </div>
-        <div className={style.profileNav}>
-          <IconUser />
-          <span className={style.profileNavText}>Профиль</span>
-        </div>
+        <PopoverLayout
+          content={profileMenuContent}
+          placement="bottomRight"
+          trigger="hover"
+          innerClassName={style.profilePopoverContent}
+        >
+          <div className={style.profileNav}>
+            <IconUser className={style.iconUserHeader} />
+            <span className={style.profileNavText}>Профиль</span>
+          </div>
+        </PopoverLayout>
         <div className={style.favoriteNav}>
-          <IconFavorite />
+          <IconFavorite className={style.iconFavoriteHeader} />
           <span className={style.favoriteNavText}>Избранное</span>
         </div>
         <div className={style.cartNav}>
-          <IconCart />
+          <IconCart className={style.iconCartHeader} />
           <span className={style.cartNavText}>Корзина</span>
         </div>
       </div>

@@ -13,11 +13,11 @@ import { TIcon } from '../types';
 const TapLogo: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
   return (
     <svg
-    //   {...rest}
-      width={200}
+      {...rest}
+      width={width || ICON_DEFAULT_WIDTH}
       height={height || ICON_DEFAULT_HEIGHT}
-    //   fill={color || ICON_DEFAULT_COLOR}
-    //   className={cn(ICON_DEFAULT_CLASSNAME, className)}
+      fill={color || ICON_DEFAULT_COLOR}
+      className={cn(ICON_DEFAULT_CLASSNAME, className)}
       viewBox="0 0 130 130"
       xmlns="http://www.w3.org/2000/svg"
     >
