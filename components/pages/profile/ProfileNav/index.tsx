@@ -9,9 +9,9 @@ import Link from 'next/link';
 
 
 
-const ProfileOptions = () => {
+const ProfileNav = () => {
   return (
-    <div className={style.profileOptions}> 
+    <div className={style.profileNav}> 
       <h4 className={style.title}>Мой профиль</h4>
       <div className={style.container}>
         {profileItems.map((el) => (
@@ -24,7 +24,7 @@ const ProfileOptions = () => {
   );
 };
 
-export default ProfileOptions;
+export default ProfileNav;
 
 const profileItems: TProfileItemType[] = [
   {

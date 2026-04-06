@@ -1,0 +1,37 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 30px;
+
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #ecedf0;
+}
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonCatalog {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  cursor: pointer;
+  height: 48px;
+  width: 160px;
+  border-radius: 12px;
+  border: none;
+  background-color: var(--main-color);
+}
+.buttonCatalogText {
+  font-weight: 600;
+  font-size: 17px;
+  white-space: nowrap;
+  line-height: 24px;
+  color: #fff;
+  width: fit-content;
+  height: fit-content;
+}

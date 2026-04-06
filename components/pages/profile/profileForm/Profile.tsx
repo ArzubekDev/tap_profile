@@ -1,6 +1,6 @@
 import ThemeConfig from '@/shared/theme/themeConfig';
 import { Button, Input } from 'antd';
-import ProfileOptions from '../ProfileOptions';
+import ProfileNav from '../ProfileNav';
 import './Profile.scss';
 
 const Profile = () => {
@@ -51,7 +51,7 @@ const Profile = () => {
             </div>
           </div>
           {/* OPTIONS */}
-          <ProfileOptions />
+          <ProfileNav />
         </div>
       </section>
     </ThemeConfig>
