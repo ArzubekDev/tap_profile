@@ -1,19 +1,16 @@
-import { Button, Popover } from 'antd'
-import React from 'react'
+import style from "@components/layout/header/style.module.scss"
 
-const Dropdown = () => {
-  return (
-    <Popover content={content} title="Title" trigger="hover">
-      <Button>Hover me</Button>
-    </Popover>
-  )
-}
-
-export default Dropdown
-
-const content = (
-  <div>
-    <p>Content</p>
-    <p>Content</p>
-  </div>
-);
+ export  const profileMenuContent = (
+    <div className={style.profileDropdownMenu}>
+      <a href="/accounts/profile">Мой профиль</a>
+      <a href="/basket/history">История заказов</a>
+      <a href="/basket/favorite-list">Избранные товары</a>
+      <div className={style.createStoreDropDown}>
+        <p>Мои магазины</p>
+        <a href="/shop/create">+ Создать магазин</a>
+      </div>
+      <hr className={style.dropdownline}/>
+      <button className={style.logoutBtn}>Выйти</button>
+    </div>
+  );
+ 

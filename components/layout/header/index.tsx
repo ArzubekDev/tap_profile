@@ -8,17 +8,9 @@ import TapLogo from '@/components/Icons/components/TapLogo';
 import { Input } from 'antd';
 import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
+import { profileMenuContent } from '@/shared/ui/Dropdown';
 
 const Header = () => {
-  const profileMenuContent = (
-    <div className={style.profileDropdownMenu}>
-      <a href="/accounts/profile">Мой профиль</a>
-      <a href="/basket/history">История заказов</a>
-      <a href="/basket/favorite-list">Избранные товары</a>
-      <hr />
-      <button className={style.logoutBtn}>Выйти</button>
-    </div>
-  );
 
   return (
     <header className={style.header}>
