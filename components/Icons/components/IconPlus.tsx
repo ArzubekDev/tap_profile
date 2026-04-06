@@ -18,7 +18,7 @@ const IconPlus: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
       height={height || ICON_DEFAULT_HEIGHT}
       fill={color || ICON_DEFAULT_COLOR}
       className={cn(ICON_DEFAULT_CLASSNAME, className)}
-      viewBox="0 0 24 24"
+      viewBox="0 0 16 16"
       xmlns="http://www.w3.org/2000/svg"
     >
       <rect
@@ -28,9 +28,9 @@ const IconPlus: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
         height="16"
         rx="0.5"
         transform="rotate(90 16 7.5)"
-        fill="#181818"
+        fill="currentColor"
       />
-      <rect x="7.5" width="1" height="16" rx="0.5" fill="#181818" />
+      <rect x="7.5" width="1" height="16" rx="0.5" fill="currentColor" />
     </svg>
   );
 };

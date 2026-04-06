@@ -30,6 +30,9 @@
   border-radius: 12px;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
+  font-size: 15px;
+  font-weight: 900;
+  color: #4e5d71;
   cursor: pointer;
 
   svg {
@@ -49,14 +52,17 @@
     }
   }
 
+  &.active {
+    color: #f4f4f5;
+    font-weight: 600;
+    background-color: #505050;
+
+    svg {
+      fill: #f4f4f5;
+    }
+  }
+
   &:active {
     transform: scale(0.98);
   }
-}
-
-.profileTitle {
-  font-size: 15px;
-  font-weight: 900;
-  color: #4e5d71;
-  transition: color 0.2s ease;
 }
