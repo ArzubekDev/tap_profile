@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 import style from './style.module.scss';
 import { TProfileItemType } from './types';
 import IconStorePlus from '@/components/Icons/components/IconStorePlus';
+import IconLogout from '@/components/Icons/components/IconLogout';
 
 const ProfileNav = () => {
   const pathname = usePathname();
@@ -37,7 +38,7 @@ const ProfileNav = () => {
           <Link className={style.profileItem} href={el.link} key={el.id}>{el.icon} {el.title}</Link>
         ))}
       </div>
-      <button className={style.logout}>Выход</button>
+      <button className={style.logout}><IconLogout className={style.logoutIcon}/> Выход</button>
     </div>
   );
 };
