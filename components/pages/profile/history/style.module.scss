@@ -6,3 +6,13 @@
 .searchInput {
     width: 220px;
 }
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

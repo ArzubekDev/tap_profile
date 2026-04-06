@@ -5,7 +5,7 @@ const History = () => {
   return (
     <div className={style.history}>
       <h3>История заказов</h3>
-      <form>
+      <form className={style.form}>
         <div className={style.top}>
           <div className={style.innerTop}>
             <label htmlFor="search">
