@@ -18,7 +18,7 @@ const TapLogo: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
       height={height || ICON_DEFAULT_HEIGHT}
       fill={color || ICON_DEFAULT_COLOR}
       className={cn(ICON_DEFAULT_CLASSNAME, className)}
-      viewBox="0 0 130 130"
+      viewBox="0 0 480 130"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g clipPath="url(#clip0_55346_635)">
