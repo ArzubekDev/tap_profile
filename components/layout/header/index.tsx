@@ -1,11 +1,12 @@
 import { IconFavorite, IconUser } from '@/components/Icons';
+import IconCart from '@/components/Icons/components/IconCart';
 import IconCatalog from '@/components/Icons/components/IconCatalog';
 import IconLocation from '@/components/Icons/components/IconLocation';
 import IconSearchTap from '@/components/Icons/components/IconSearchTap';
+import IconStore from '@/components/Icons/components/IconStore';
 import TapLogo from '@/components/Icons/components/TapLogo';
 import { Input } from 'antd';
 import style from './style.module.scss';
-import IconCart from '@/components/Icons/components/IconCart';
 
 const Header = () => {
   return (
@@ -47,7 +48,7 @@ const Header = () => {
         </div>
       </div>
       <button className={style.createStore}>
-Создать магазин
+        Создать магазин <IconStore />
       </button>
     </header>
   );
