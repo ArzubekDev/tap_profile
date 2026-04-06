@@ -50,7 +50,7 @@ const Profile = () => {
               <Button type="primary">Изменить телефон номер</Button>
             </div>
           </div>
-          {/* OPTIONS */}
+          {/* PROFILENAV */}
           <ProfileNav />
         </div>
       </section>
