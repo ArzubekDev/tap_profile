@@ -1,14 +1,17 @@
+import { IconFavorite, IconUser } from '@/components/Icons';
 import IconCatalog from '@/components/Icons/components/IconCatalog';
+import IconLocation from '@/components/Icons/components/IconLocation';
 import IconSearchTap from '@/components/Icons/components/IconSearchTap';
 import TapLogo from '@/components/Icons/components/TapLogo';
 import { Input } from 'antd';
 import style from './style.module.scss';
+import IconCart from '@/components/Icons/components/IconCart';
 
 const Header = () => {
   return (
     <header className={style.header}>
       <TapLogo width={120} height={50} />
-      <div className={style.searchContainer}>
+      <div className={style.navContainer}>
         <button className={style.buttonCatalog}>
           <IconCatalog />
           <span className={style.buttonCatalogText}>Каталог</span>
@@ -16,9 +19,8 @@ const Header = () => {
         <div className={style.headerSearchInput}>
           <form className={style.searchForm}>
             <IconSearchTap />
-            <label htmlFor="search" style={{width: "100%"}}>
+            <label htmlFor="search" style={{ width: '100%' }}>
               <Input
-              
                 id="search"
                 className={style.headerInput}
                 placeholder="Поиск товаров"
@@ -28,7 +30,25 @@ const Header = () => {
             </label>
           </form>
         </div>
+        <div className={style.locationNav}>
+          <IconLocation />
+        </div>
+        <div className={style.profileNav}>
+          <IconUser />
+          <span className={style.profileNavText}>Профиль</span>
+        </div>
+        <div className={style.favoriteNav}>
+          <IconFavorite />
+          <span className={style.favoriteNavText}>Избранное</span>
+        </div>
+        <div className={style.cartNav}>
+          <IconCart />
+          <span className={style.cartNavText}>Корзина</span>
+        </div>
       </div>
+      <button className={style.createStore}>
+Создать магазин
+      </button>
     </header>
   );
 };

@@ -8,10 +8,11 @@
   height: 80px;
   border-bottom: 1px solid #ecedf0;
 }
-.searchContainer {
+.navContainer {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 26px;
 }
 .buttonCatalog {
   display: flex;
@@ -54,4 +55,56 @@
 .headerInput {
   background-color: transparent;
   width: 100%;
+}
+.locationNav {
+  background-color: var(--main-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 48px;
+  width: 58px;
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+.profileNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 48px;
+  width: 58px;
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+.favoriteNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 48px;
+  width: 58px;
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+.cartNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  height: 48px;
+  width: 58px;
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+.profileNavText, .favoriteNavText, .cartNavText {
+    color: var(--color-text);
 }
