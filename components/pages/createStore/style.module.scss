@@ -1,12 +1,53 @@
+
+.title {
+    font-size: 34px;
+    font-weight: 700;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+.contentName {
+    font-size: 18px;
+    font-weight: 700;
+}
+.contentText {
+    font-size: 12px;
+}
 .logo {
-  background-color: #f0f1f5;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+  
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 200px;
+  height: 300px;
+}
+.iconUpload {
   width: 200px;
   height: 200px;
+  fill: transparent;
   border-radius: 12px;
+  background-color: #f0f1f5;
+}
+.editContainer {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgb(221, 221, 221);
 }
 
-.iconUpload {
-  width: 100%;
-  height: 100%;
-  fill: transparent;
+.editIcon {
+    border-radius: 12px;
 }
