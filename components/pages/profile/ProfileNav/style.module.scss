@@ -3,15 +3,24 @@
   justify-content: space-between;
   flex-shrink: 0;
   padding-bottom: 30px;
-
   width: 100%;
   gap: 50px;
-  @media (min-width: 882px) or (max-width: 662px) {
+}
+
+@media (max-width: 662px) {
+  .profileNav {
     flex-direction: column;
     gap: 10px;
-    width: 260px;
+    width: 100%; 
   }
+}
 
+@media (min-width: 882px) {
+  .profileNav {
+    flex-direction: column;
+    gap: 10px;
+    width: 260px; 
+  }
 }
 
 .title {

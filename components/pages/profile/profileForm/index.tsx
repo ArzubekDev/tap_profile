@@ -13,7 +13,6 @@ const ProfileForm = () => {
             идентификации пользователей
           </p>
         </div>
-
         <div className={style.profileForm__top__input}>
           <div className={style.profileForm__top__input__block}>
             <label className={style.label} htmlFor="name">
