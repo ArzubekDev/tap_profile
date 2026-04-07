@@ -13,5 +13,6 @@ import IconSearchTap from './components/IconSearchTap';
 import IconStore from './components/IconStore';
 import IconStorePlus from './components/IconStorePlus';
 import TapLogo from './components/TapLogo';
+import IconHeartFavorte from './components/IconHeartFavorite';
 
-export {IconCatalog, IconLocation, IconLogout, IconPlus, IconSearchTap, IconStore, IconStorePlus, TapLogo, IconCartOrder, IconCart, IconUser, IconBell, IconClock, IconFavorite, IconDeleteAccount };
+export {IconHeartFavorte,IconCatalog, IconLocation, IconLogout, IconPlus, IconSearchTap, IconStore, IconStorePlus, TapLogo, IconCartOrder, IconCart, IconUser, IconBell, IconClock, IconFavorite, IconDeleteAccount };

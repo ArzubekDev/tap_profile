@@ -10,7 +10,7 @@ import {
 
 import { TIcon } from '../types';
 
-const IconFavorite: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
+const IconHeartFavorte: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
   return (
     <svg
       {...rest}
@@ -22,8 +22,8 @@ const IconFavorite: FC<TIcon> = ({ color, className, width, height, ...rest }) =
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
         stroke="#000"
         strokeWidth="1.5"
@@ -36,10 +36,10 @@ const IconFavorite: FC<TIcon> = ({ color, className, width, height, ...rest }) =
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        stroke-dasharray="2 4"
+        strokeDasharray="2 4"
       ></path>
     </svg>
   );
 };
 
-export default IconFavorite;
+export default IconHeartFavorte;

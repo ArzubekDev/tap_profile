@@ -6,10 +6,12 @@ interface LayoutSiteProps {
 }
 
 const LayoutSite = ({ children }: LayoutSiteProps) => {
-  return <>
-  <Header/>
-  {children}
-  </>;
+  return (
+    <>
+      <Header />
+      {children}
+    </>
+  );
 };
 
-export default LayoutSite
+export default LayoutSite;
