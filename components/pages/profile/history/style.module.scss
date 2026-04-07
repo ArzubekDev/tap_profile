@@ -1,7 +1,8 @@
 .history {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .searchInput {
     width: 220px;
@@ -13,6 +14,15 @@
 }
 .top {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    align-items: start;
+    gap: var(--gap);
+    width: 100%;
+}
+.innerTop {
+    display: flex;
+    flex-direction: column;
+}
+.label {
+  font-size: var(--label-size);
+  font-weight: var(--font-weight);
 }

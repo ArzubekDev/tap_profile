@@ -1,3 +1,4 @@
+import ThemeConfig from '@/shared/theme/themeConfig';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 import '@ant-design/v5-patch-for-react-19';
 import type { Metadata } from 'next';
@@ -22,7 +23,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={ttCommons.variable}>
       <body>
-        <AntdRegistry>{children}</AntdRegistry>
+        <ThemeConfig>
+          <AntdRegistry>{children}</AntdRegistry>
+        </ThemeConfig>
       </body>
     </html>
   );

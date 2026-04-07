@@ -8,21 +8,19 @@ const History = () => {
       <form className={style.form}>
         <div className={style.top}>
           <div className={style.innerTop}>
-            <label htmlFor="search">
-              <input type="text" />
-              Имя
-            </label>
-            <Input
-              id="search"
-              className={style.searchInput}
-              placeholder="Имя, фамилия, телефон..."
-              maxLength={150}
-              variant="borderless"
-            />
+            <label htmlFor="name" className={style.label}>
+              Поиск
+              </label>
+              <Input
+                id="name"
+                className={style.searchInput}
+                placeholder="Имя, фамилия, телефон..."
+                maxLength={150}
+                variant="borderless"
+              />
           </div>
           <div className={style.innerTop}>
-            <label htmlFor="status">
-              <input type="text" />
+            <label htmlFor="status" className={style.label}>
               Статус
             </label>
             <Select
@@ -50,10 +48,10 @@ const History = () => {
             />
           </div>
         </div>
-        <div className={style.center}>
+        {/* <div className={style.center}>
           <label htmlFor=""></label>
         </div>
-        <div className={style.bottom}></div>
+        <div className={style.bottom}></div> */}
       </form>
     </div>
   );

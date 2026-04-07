@@ -1,5 +1,5 @@
-import Profile from '@/components/pages/profile';
+import ProfileForm from '@/components/pages/profile/profileForm';
 
-const page = () => <Profile />;
+const page = () => <ProfileForm/>;
 
 export default page;
