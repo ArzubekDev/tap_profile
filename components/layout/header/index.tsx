@@ -1,4 +1,13 @@
-import { IconCart, IconCatalog, IconFavorite, IconLocation, IconSearchTap, IconStore, IconUser, TapLogo } from '@/components/Icons';
+import {
+  IconCart,
+  IconCatalog,
+  IconFavorite,
+  IconLocation,
+  IconSearchTap,
+  IconStore,
+  IconUser,
+  TapLogo,
+} from '@/components/Icons';
 import { profileMenuContent } from '@/shared/ui/Dropdown';
 import { Input } from 'antd';
 import PopoverLayout from '../popover/PopoverLayout';
