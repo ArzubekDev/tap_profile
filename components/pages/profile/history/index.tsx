@@ -11,7 +11,7 @@ const onChange: DatePickerProps['onChange'] = (date, dateString) => {
 
 const History: React.FC = () => {
   return (
-    <div className={style.history}>
+    <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
       <form className={style.form}>
         <div className={style.top}>
@@ -118,7 +118,7 @@ const History: React.FC = () => {
         </div>
       </form>
       <Orders/>
-    </div>
+    </section>
   );
 };
 

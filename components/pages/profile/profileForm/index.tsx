@@ -4,7 +4,7 @@ import style from './style.module.scss';
 
 const ProfileForm = () => {
   return (
-    <div className={style.profileForm}>
+    <section className={style.profileForm}>
       <div className={style.profileForm__top}>
         <div className={style.formHeader}>
           <h3 className={style.profileForm__top__title}>Персональные данные</h3>
@@ -47,7 +47,7 @@ const ProfileForm = () => {
 
         <Button type="primary">Изменить телефон номер</Button>
       </div>
-    </div>
+    </section>
   );
 };
 

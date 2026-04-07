@@ -4,7 +4,7 @@ import style from './style.module.scss';
 
 const Favorite = () => {
   return (
-    <div className={style.favorite}>
+    <section className={style.favorite}>
       <IconHeartFavorte className={style.iconheartfavorite} />
       <h2 className={style.title}>У вас нет заказов!</h2>
       <p className={style.subtitle}>
@@ -12,7 +12,7 @@ const Favorite = () => {
         заказов.
       </p>
       <Button className={style.button} type="primary">Посмотрет каталогов товаров</Button>
-    </div>
+    </section>
   );
 };
 

@@ -4,7 +4,7 @@ import { Button } from 'antd';
 
 const Orders = () => {
   return (
-    <div className={style.orders}>
+    <section className={style.orders}>
       <IconCartOrder className={style.iconCartOrder} />
       <h2 className={style.title}>У вас нет заказов!</h2>
       <p className={style.subtitle}>
@@ -12,7 +12,7 @@ const Orders = () => {
         заказов.
       </p>
       <Button type='primary' className={style.button}>Посмотрет каталогов товаров</Button>
-    </div>
+    </section>
   );
 };
 

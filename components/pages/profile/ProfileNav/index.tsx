@@ -9,7 +9,7 @@ import {
   IconUser,
 } from '@components/Icons';
 
-import { PATH_BASKET_HISTORY, PATH_FAVORITE, PATH_PROFILE } from '@consts/paths';
+import { PATH_BASKET_HISTORY, PATH_CREATE_SHOP, PATH_FAVORITE, PATH_PROFILE } from '@consts/paths';
 import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -20,7 +20,7 @@ const ProfileNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className={style.profileNav}>
+    <aside className={style.profileNav}>
       <div className={style.myProfile}>
         <h4 className={style.title}>Мой профиль</h4>
         <div className={style.container}>
@@ -56,7 +56,7 @@ const ProfileNav = () => {
           <IconLogout className={style.logoutIcon} /> Выход
         </button>
       </div>
-    </div>
+    </aside>
   );
 };
 
@@ -101,6 +101,6 @@ const storeItems: TProfileItemType[] = [
     id: 1,
     icon: <IconStorePlus />,
     title: 'Создат магазин',
-    link: '#',
+    link: PATH_CREATE_SHOP,
   },
 ];
