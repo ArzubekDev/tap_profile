@@ -1,14 +1,39 @@
+"use client"
 import { IconEdit, IconUploadImg } from '@/components/Icons';
 import Time from '@/shared/ui/Time';
-import { Input } from 'antd';
+import { Input, Form, Button } from 'antd';
 import style from './style.module.scss';
+import dynamic from 'next/dynamic';
+import { useState } from 'react';
+const AddressPicker = dynamic(() => import("@/shared/ui/AddressPicker/AddressPicker"), { ssr: false });
+
+interface IAddress {
+  address: string;
+  coords: number[];
+}
+
 
 const CreateStore = () => {
+  const [form] = Form.useForm();
+  const [location, setLocation] = useState<IAddress>({ 
+  address: "", 
+  coords: []
+});
+
+  const onFinish = (values: any) => {
+    const finalData = {
+      ...values,
+      address: location.address,
+      latitude: location.coords[0],
+      longitude: location.coords[1],
+    };
+    console.log(finalData);
+  };
   return (
     <section className={style.createStore}>
       <h2 className={style.title}>Создать магазин</h2>
       {/* Главный контейнер */}
-      <form className={style.formContainer}>
+      <div className={style.formContainer}>
         {/* (Верхний часть) 4 инпута и время работы */}
         <div className={style.formContent}>
           {/* Логотип */}
@@ -101,15 +126,43 @@ const CreateStore = () => {
             </div>
           </div>
         </div>
-        {/* Адрес и карта */}
+        {/* Адрес и точка на карте */}
         <div className={style.address}>
-         <div className={style.addressContent}>
-           <label htmlFor='address' className={style.contentName}>Адрес и точка на карте *</label>
-          <p className={style.contentText}>Укажите, откуда нам забирать товары — обязательно, даже если у вас своя доставка. Введите адрес в поиске (OpenStreetMap, Кыргызстан) и отметьте точку на карте с номером дома.</p>
-         </div>
-          <Input id='address' placeholder='Например, улица и дом'/>
+          <div className={style.addressContent}>
+            <label htmlFor="address" className={style.contentName}>
+              Адрес и точка на карте *
+            </label>
+            <p className={style.contentText}>
+              Укажите, откуда нам забирать товары — обязательно, даже если у вас своя доставка.
+              Введите адрес в поиске (OpenStreetMap, Кыргызстан) и отметьте точку на карте с номером
+              дома.
+            </p>
+          </div>
+          <Input id="address" placeholder="Например, улица и дом" required/>
         </div>
-      </form>
+        {/* Карта */}
+        <div className={style.map}>
+          {/* <div className={style.mapContent}>
+            <h5 className={style.contentName}>Карта</h5>
+            <p className={style.contentText}>
+              Перетащите маркер или щёлкните по зданию, чтобы уточнить вход. Номера на карте лучше
+              видны при сильном приближении (колёсико или «+»).
+            </p>
+          </div> */}
+          <Form form={form} layout="vertical" onFinish={onFinish}>
+
+        <Form.Item>
+          <AddressPicker onAddressSelect={(data) => setLocation(data)} />
+        </Form.Item>
+
+
+
+        <Button type="primary" htmlType="submit" block size="large">
+          Создать магазин
+        </Button>
+      </Form>
+    </div>
+      </div>
     </section>
   );
 };
