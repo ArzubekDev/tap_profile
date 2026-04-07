@@ -1,5 +1,13 @@
-"use client"
-import { IconBell, IconClock, IconDeleteAccount, IconFavorite, IconLogout, IconStorePlus, IconUser } from '@components/Icons';
+'use client';
+import {
+  IconBell,
+  IconClock,
+  IconDeleteAccount,
+  IconFavorite,
+  IconLogout,
+  IconStorePlus,
+  IconUser,
+} from '@components/Icons';
 
 import { PATH_BASKET_HISTORY, PATH_FAVORITE, PATH_PROFILE } from '@consts/paths';
 import cn from 'classnames';
@@ -13,31 +21,41 @@ const ProfileNav = () => {
 
   return (
     <div className={style.profileNav}>
-      <h4 className={style.title}>Мой профиль</h4>
-      <div className={style.container}>
-        {profileItems.map((el) => {
-          const isActive = el.link === pathname;
-          return (
-            <Link
-              href={el.link}
-              key={el.id}
-              className={cn(style.profileItem, {
-                [style.active]: isActive,
-              })}
-            >
+      <div className={style.myProfile}>
+        <h4 className={style.title}>Мой профиль</h4>
+        <div className={style.container}>
+          {profileItems.map((el) => {
+            const isActive = el.link === pathname;
+            return (
+              <Link
+                href={el.link}
+                key={el.id}
+                className={cn(style.profileItem, {
+                  [style.active]: isActive,
+                })}
+              >
+                {el.icon} {el.title}
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+      <div className={style.myStores}>
+        <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
+        <div>
+          {storeItems.map((el) => (
+            <Link className={style.profileItem} href={el.link} key={el.id}>
               {el.icon} {el.title}
             </Link>
-          );
-        })}
+          ))}
+        </div>
       </div>
-      <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
-      <div>
-        {storeItems.map((el) => (
-          <Link className={style.profileItem} href={el.link} key={el.id}>{el.icon} {el.title}</Link>
-        ))}
+      <div className={style.logoutAccount}>
+        <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
+        <button className={style.logout}>
+          <IconLogout className={style.logoutIcon} /> Выход
+        </button>
       </div>
-      <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
-      <button className={style.logout}><IconLogout className={style.logoutIcon}/> Выход</button>
     </div>
   );
 };
@@ -80,9 +98,9 @@ const profileItems: TProfileItemType[] = [
 
 const storeItems: TProfileItemType[] = [
   {
-    id: 1, 
-    icon: <IconStorePlus/>,
+    id: 1,
+    icon: <IconStorePlus />,
     title: 'Создат магазин',
-    link: "#"
-  }
-]
+    link: '#',
+  },
+];
