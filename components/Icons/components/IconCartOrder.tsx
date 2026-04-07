@@ -10,7 +10,7 @@ import {
 
 import { TIcon } from '../types';
 
-const IconCart: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
+const IconCartOrder: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
   return (
     <svg
       {...rest}
@@ -46,4 +46,4 @@ const IconCart: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
   );
 };
 
-export default IconCart;
+export default IconCartOrder;
