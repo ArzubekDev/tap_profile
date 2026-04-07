@@ -1,25 +1,17 @@
-"use client"
-import type { CalendarProps } from 'antd';
-import { Calendar, Input, Select, theme  } from 'antd';
-import type { Dayjs } from 'dayjs';
+'use client';
+import { Button, DatePicker, Input, Select, Space } from 'antd';
+import type { DatePickerProps } from 'antd';
 import style from './style.module.scss';
 
-const onPanelChange = (value: Dayjs, mode: CalendarProps<Dayjs>['mode']) => {
-  console.log(value.format('YYYY-MM-DD'), mode);
+
+const onChange: DatePickerProps['onChange'] = (date, dateString) => {
+  console.log(date, dateString);
 };
 
-const History = () => {
-  const { token } = theme.useToken();
-
-  const wrapperStyle: React.CSSProperties = {
-    width: 300,
-    border: `1px solid ${token.colorBorderSecondary}`,
-    borderRadius: token.borderRadiusLG,
-  };
-
+const History: React.FC = () => {
   return (
     <div className={style.history}>
-      <h3>История заказов</h3>
+      <h3 className={style.title}>История заказов</h3>
       <form className={style.form}>
         <div className={style.top}>
           <div className={style.innerTop}>
@@ -93,11 +85,35 @@ const History = () => {
         </div>
         <div className={style.bottom}>
           <div className={style.innerBottom}>
-            <label htmlFor="from">Дата с</label>
-            <div style={wrapperStyle}>
-              <Calendar fullscreen={false} onPanelChange={onPanelChange} />
-            </div>
+            <label htmlFor="from" className={style.label}>
+              Дата с
+            </label>
+            <Space vertical>
+              <DatePicker
+                placeholder="дд.мм.гггг"
+                format="DD.MM.YYYY"
+                onChange={onChange}
+                className={style.date}
+              />
+            </Space>
           </div>
+          <div className={style.innerBottom}>
+            <label htmlFor="from" className={style.label}>
+              Дата по
+            </label>
+            <Space vertical>
+              <DatePicker
+                placeholder="дд.мм.гггг"
+                format="DD.MM.YYYY"
+                onChange={onChange}
+                className={style.date}
+              />
+            </Space>
+          </div>
+        </div>
+        <div className={style.buttons}>
+          <Button type='primary' className={style.apply}>Применить</Button>
+          <Button className={style.reset}>Сбросить</Button>
         </div>
       </form>
     </div>

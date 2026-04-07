@@ -5,12 +5,30 @@ const ThemeConfig = ({ children }: { children: ReactNode }) => {
   const primaryColorCode = '#fe3650';
   return (
     <div>
-      <ConfigProvider
-      theme={{
-        token: {colorPrimary: primaryColorCode, controlOutline: "none", controlHeight: 45, borderRadius: 12, fontSize: 17},
-        components: {Input: {hoverBorderColor: '#d9d9d9'}}
-      }}
-      >{children}</ConfigProvider>
+<ConfigProvider
+  theme={{
+    token: {
+      colorPrimary: primaryColorCode,
+      controlOutline: "none",
+      controlHeight: 38,
+      borderRadius: 12,
+      fontSize: 14,
+    },
+    components: {
+          Input: {
+            controlHeight: 42,
+          },
+          Select: {
+            controlHeight: 42,
+          },
+          DatePicker: {
+            controlHeight: 42,
+          },
+        },
+  }}
+>
+  {children}
+</ConfigProvider>
     </div>
   );
 };

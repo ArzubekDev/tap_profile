@@ -38,6 +38,7 @@ const ProfileNav = () => {
           <Link className={style.profileItem} href={el.link} key={el.id}>{el.icon} {el.title}</Link>
         ))}
       </div>
+      <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
       <button className={style.logout}><IconLogout className={style.logoutIcon}/> Выход</button>
     </div>
   );
