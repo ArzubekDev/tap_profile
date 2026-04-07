@@ -8,10 +8,11 @@ import {
   IconUser,
   TapLogo,
 } from '@/components/Icons';
-import { profileMenuContent } from '@/shared/ui/Dropdown';
-import { Input } from 'antd';
+import { Button, Input, Popover } from 'antd';
 import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
+import profileMenuContent from '@/shared/ui/Dropdown';
+
 
 const Header = () => {
   return (
@@ -51,6 +52,7 @@ const Header = () => {
               <span className={style.profileNavText}>Профиль</span>
             </div>
           </PopoverLayout>
+
           <div className={style.favoriteNav}>
             <IconFavorite className={style.iconFavoriteHeader} />
             <span className={style.favoriteNavText}>Избранное</span>
