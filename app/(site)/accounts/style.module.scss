@@ -5,6 +5,9 @@
   width: 100%;
   gap: 200px;
 
+  @media (max-width: 1220px) {
+    gap: 20px;
+  }
   @media (max-width: 882px) {
     flex-direction: column;
     gap: 40px;
