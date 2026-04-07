@@ -2,6 +2,7 @@
 import { Button, DatePicker, Input, Select, Space } from 'antd';
 import type { DatePickerProps } from 'antd';
 import style from './style.module.scss';
+import Orders from '../orders';
 
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
@@ -116,6 +117,7 @@ const History: React.FC = () => {
           <Button className={style.reset}>Сбросить</Button>
         </div>
       </form>
+      <Orders/>
     </div>
   );
 };
