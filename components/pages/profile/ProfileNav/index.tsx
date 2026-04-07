@@ -1,5 +1,5 @@
 "use client"
-import { IconBell, IconClock, IconDeleteAccount, IconFavorite, IconUser } from '@components/Icons';
+import { IconBell, IconClock, IconDeleteAccount, IconFavorite, IconLogout, IconStorePlus, IconUser } from '@components/Icons';
 
 import { PATH_BASKET_HISTORY, PATH_FAVORITE, PATH_PROFILE } from '@consts/paths';
 import cn from 'classnames';
@@ -7,8 +7,6 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import style from './style.module.scss';
 import { TProfileItemType } from './types';
-import IconStorePlus from '@/components/Icons/components/IconStorePlus';
-import IconLogout from '@/components/Icons/components/IconLogout';
 
 const ProfileNav = () => {
   const pathname = usePathname();

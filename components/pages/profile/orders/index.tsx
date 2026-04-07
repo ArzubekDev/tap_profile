@@ -1,4 +1,4 @@
-import IconCartOrder from '@/components/Icons/components/IconCartOrder';
+import { IconCartOrder } from '@/components/Icons';
 import style from './style.module.scss';
 import { Button } from 'antd';
 

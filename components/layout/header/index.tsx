@@ -1,10 +1,4 @@
-import { IconFavorite, IconUser } from '@/components/Icons';
-import IconCart from '@/components/Icons/components/IconCart';
-import IconCatalog from '@/components/Icons/components/IconCatalog';
-import IconLocation from '@/components/Icons/components/IconLocation';
-import IconSearchTap from '@/components/Icons/components/IconSearchTap';
-import IconStore from '@/components/Icons/components/IconStore';
-import TapLogo from '@/components/Icons/components/TapLogo';
+import { IconCart, IconCatalog, IconFavorite, IconLocation, IconSearchTap, IconStore, IconUser, TapLogo } from '@/components/Icons';
 import { profileMenuContent } from '@/shared/ui/Dropdown';
 import { Input } from 'antd';
 import PopoverLayout from '../popover/PopoverLayout';
