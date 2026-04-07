@@ -17,6 +17,7 @@ const ThemeConfig = ({ children }: { children: ReactNode }) => {
           components: {
             Input: {
               controlHeight: 42,
+              hoverBorderColor: "#d6d6d6"
             },
             Select: {
               controlHeight: 42,

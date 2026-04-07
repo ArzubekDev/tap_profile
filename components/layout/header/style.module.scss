@@ -11,11 +11,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-
+  gap: 10px;
 }
 .tapLogo {
   width: 140px;
   height: 36px;
+  flex-shrink: 0;
 }
 .navContainer {
   display: flex;
@@ -28,6 +29,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
+  flex-shrink: 0;
 
   cursor: pointer;
   height: 48px;
@@ -45,17 +47,14 @@
   width: fit-content;
   height: fit-content;
 }
-.headerSearchInput {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .searchForm {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2px;
-  width: 460px;
+  width: 100%;
+  max-width: 460px;
   height: 48px;
   background-color: #ecedf0;
   border-radius: 12px;
@@ -74,6 +73,7 @@
   height: 48px;
   width: 58px;
   border-radius: 12px;
+  flex-shrink: 0;
 
   cursor: pointer;
 }

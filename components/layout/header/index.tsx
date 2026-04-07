@@ -8,11 +8,10 @@ import {
   IconUser,
   TapLogo,
 } from '@/components/Icons';
-import { Button, Input, Popover } from 'antd';
+import profileMenuContent from '@/shared/ui/Dropdown';
+import { Input } from 'antd';
 import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
-import profileMenuContent from '@/shared/ui/Dropdown';
-
 
 const Header = () => {
   return (
@@ -24,20 +23,18 @@ const Header = () => {
             <IconCatalog />
             <span className={style.buttonCatalogText}>Каталог</span>
           </button>
-          <div className={style.headerSearchInput}>
-            <form className={style.searchForm}>
-              <IconSearchTap />
-              <label htmlFor="search" style={{ width: '100%' }}>
-                <Input
-                  id="search"
-                  className={style.headerInput}
-                  placeholder="Поиск товаров"
-                  maxLength={150}
-                  variant="borderless"
-                />
-              </label>
-            </form>
-          </div>
+          <form className={style.searchForm}>
+            <IconSearchTap />
+            <label htmlFor="search" style={{ width: '100%' }}>
+              <Input
+                id="search"
+                className={style.headerInput}
+                placeholder="Поиск товаров"
+                maxLength={150}
+                variant="borderless"
+              />
+            </label>
+          </form>
           <div className={style.locationNav}>
             <IconLocation />
           </div>

@@ -14,8 +14,9 @@
   box-sizing: border-box;
 }
 
-body {
+html, body {
   font-family: var(--font-tt);
+  overflow-x: hidden;
 }
 .container {
   width: 94%;

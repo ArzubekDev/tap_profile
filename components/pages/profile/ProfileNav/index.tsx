@@ -43,11 +43,20 @@ const ProfileNav = () => {
       <div className={style.myStores}>
         <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
         <div>
-          {storeItems.map((el) => (
-            <Link className={style.profileItem} href={el.link} key={el.id}>
-              {el.icon} {el.title}
-            </Link>
-          ))}
+          {storeItems.map((el) => {
+            const isActive = el.link === pathname
+            return (
+               <Link
+                href={el.link}
+                key={el.id}
+                className={cn(style.profileItem, {
+                  [style.active]: isActive,
+                })}
+              >
+                {el.icon} {el.title}
+              </Link>
+            )
+          })}
         </div>
       </div>
       <div className={style.logoutAccount}>

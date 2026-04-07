@@ -75,7 +75,7 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Публичный номер для связи с магазином.</p>
                 </div>
-                <Input id="phone" placeholder="+996" />
+                <Input id="phone" placeholder="+996" required/>
               </div>
               {/* WhatsApp */}
               <div className={style.info}>
@@ -85,7 +85,7 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Номер для чата</p>
                 </div>
-                <Input id="whatsapp" placeholder="+996" />
+                <Input id="whatsapp" placeholder="+996" required/>
               </div>
               {/* Instagram */}
               <div className={style.info}>
@@ -95,7 +95,7 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Ник или полная ссылка на профиль.</p>
                 </div>
-                <Input id="instagram" placeholder="@магазин или URL" />
+                <Input id="instagram" placeholder="@магазин или URL" required/>
               </div>
             </div>
             {/* Время работы, Режим, Круглосуточно */}
@@ -142,13 +142,6 @@ const CreateStore = () => {
         </div>
         {/* Карта */}
         <div className={style.map}>
-          {/* <div className={style.mapContent}>
-            <h5 className={style.contentName}>Карта</h5>
-            <p className={style.contentText}>
-              Перетащите маркер или щёлкните по зданию, чтобы уточнить вход. Номера на карте лучше
-              видны при сильном приближении (колёсико или «+»).
-            </p>
-          </div> */}
           <Form form={form} layout="vertical" onFinish={onFinish}>
 
         <Form.Item>
