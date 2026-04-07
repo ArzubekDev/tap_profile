@@ -11,7 +11,7 @@ const Profile = () => {
       <section className={style.profile}>
         <div className={`container ${style.profileInner}`}>
           <ProfileForm />
-          <ProfileNav />
+          {/* <ProfileNav /> */}
         </div>
       </section>
     </ThemeConfig>
