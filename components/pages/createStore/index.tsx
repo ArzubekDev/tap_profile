@@ -1,6 +1,6 @@
 'use client';
 import { IconEdit, IconUploadImg } from '@/components/Icons';
-import { Button, Form, Input, TimePicker } from 'antd';
+import { Button, Checkbox, Form, Input, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { TAddress, TFormValues } from './type';
@@ -24,13 +24,18 @@ const CreateStore = () => {
   const {
     control,
     handleSubmit,
+    watch,
+    setValue,
     formState: { errors },
   } = useForm<TFormValues>({
     defaultValues: {
       storeName: '',
+      isEveryday: false,
       workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
     },
   });
+  // Для круглосуточного мониторинга состояния флага.
+  const isEverydayChecked = watch('isEveryday');
 
   const [location, setLocation] = useState<TAddress>({
     address: '',
@@ -51,6 +56,13 @@ const CreateStore = () => {
     console.log(finalData);
   };
 
+  useEffect(() => {
+    if (isEverydayChecked) {
+      setValue('workingHours', [dayjs('00:00', 'HH:mm'), dayjs('00:00', 'HH:mm')]);
+    } else {
+      setValue('workingHours', [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')]);
+    }
+  }, [isEverydayChecked, setValue]);
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -126,7 +138,6 @@ const CreateStore = () => {
                       id="phone"
                       placeholder="+996"
                       status={errors.storeName ? 'error' : ''}
-                      required
                     />
                   )}
                 />
@@ -142,7 +153,22 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Номер для чата</p>
                 </div>
-                <Input id="whatsapp" placeholder="+996" required />
+                <Controller
+                  name="whatsapp"
+                  control={control}
+                  rules={{ required: 'Напишите Ватсап номер!' }}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      id="whatsapp"
+                      placeholder="+996"
+                      status={errors.storeName ? 'error' : ''}
+                    />
+                  )}
+                />
+                {errors.storeName && (
+                  <span style={{ color: 'red' }}>{errors.storeName.message}</span>
+                )}
               </div>
               {/* Instagram */}
               <div className={style.info}>
@@ -152,7 +178,22 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Ник или полная ссылка на профиль.</p>
                 </div>
-                <Input id="instagram" placeholder="@магазин или URL" required />
+                <Controller
+                  name="instagram"
+                  control={control}
+                  rules={{ required: 'Вставьте ссылку или название магазина' }}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      id="instagram"
+                      placeholder="@магазин или URL"
+                      status={errors.storeName ? 'error' : ''}
+                    />
+                  )}
+                />
+                {errors.storeName && (
+                  <span style={{ color: 'red' }}>{errors.storeName.message}</span>
+                )}
               </div>
             </div>
             {/* Время работы, Режим, Круглосуточно */}
@@ -169,11 +210,12 @@ const CreateStore = () => {
                 <Controller
                   name="workingHours"
                   control={control}
-                  rules={{ required: 'Укажите время работы!' }}
+                  rules={{ required: !isEverydayChecked ? "Укажите время работы!" : false }}
                   render={({ field }) => (
                     <TimePicker.RangePicker
                       {...field}
                       format="HH:mm"
+                      disabled={isEverydayChecked}
                       status={errors.workingHours ? 'error' : ''}
                     />
                   )}
@@ -188,9 +230,21 @@ const CreateStore = () => {
               </div>
               {/* Круглосуточно */}
               <div className={style.day}>
-                <Input type={'checkbox'} className={style.checkbox} />
-                Круглосуточно
-              </div>
+        <Controller
+          name="isEveryday"
+          control={control}
+          render={({ field: { value, onChange, ...field } }) => (
+            <Checkbox
+              {...field}
+              checked={value}
+              onChange={(e) => onChange(e.target.checked)}
+              className={style.checkbox}
+            >
+              Круглосуточно
+            </Checkbox>
+          )}
+        />
+      </div>
             </div>
           </div>
         </div>
