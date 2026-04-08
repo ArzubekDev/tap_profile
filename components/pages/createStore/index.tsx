@@ -1,5 +1,4 @@
 'use client';
-import { IconEdit, IconUploadImg } from '@/components/Icons';
 import { Button, Checkbox, Form, Input, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
@@ -15,8 +14,6 @@ import LogoUpload from '@/shared/ui/LogoUpload';
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
 });
-
-const format = 'HH:mm:ss';
 
 // Компонент CreateStore
 const CreateStore = () => {
@@ -50,9 +47,6 @@ const CreateStore = () => {
     coords: [],
   });
 
-  // const onSubmit = (data: any) => {
-  //   console.log('CreateStore:', data);
-  // };
 
   // Для карты
   const onFinish = (values: any) => {
@@ -65,7 +59,7 @@ const CreateStore = () => {
     console.log(finalData);
   };
 
-  // Для проверьки круглосуточный (инпут Checked)
+  // Для проверьки круглосуточный (инпут: Checked)
   useEffect(() => {
     if (isEverydayChecked) {
       setValue('workingHours', [dayjs('00:00', 'HH:mm'), dayjs('00:00', 'HH:mm')]);
