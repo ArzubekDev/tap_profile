@@ -210,7 +210,7 @@ const CreateStore = () => {
                 <Controller
                   name="workingHours"
                   control={control}
-                  rules={{ required: !isEverydayChecked ? "Укажите время работы!" : false }}
+                  rules={{ required: !isEverydayChecked ? 'Укажите время работы!' : false }}
                   render={({ field }) => (
                     <TimePicker.RangePicker
                       {...field}
@@ -230,21 +230,21 @@ const CreateStore = () => {
               </div>
               {/* Круглосуточно */}
               <div className={style.day}>
-        <Controller
-          name="isEveryday"
-          control={control}
-          render={({ field: { value, onChange, ...field } }) => (
-            <Checkbox
-              {...field}
-              checked={value}
-              onChange={(e) => onChange(e.target.checked)}
-              className={style.checkbox}
-            >
-              Круглосуточно
-            </Checkbox>
-          )}
-        />
-      </div>
+                <Controller
+                  name="isEveryday"
+                  control={control}
+                  render={({ field: { value, onChange, ...field } }) => (
+                    <Checkbox
+                      {...field}
+                      checked={value}
+                      onChange={(e) => onChange(e.target.checked)}
+                      className={style.checkbox}
+                    >
+                    </Checkbox>
+                  )}
+                  />
+                  Круглосуточно
+              </div>
             </div>
           </div>
         </div>
