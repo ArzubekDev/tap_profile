@@ -18,6 +18,7 @@ const format = 'HH:mm:ss';
 
 // Компонент CreateStore
 const CreateStore = () => {
+  // Хуки
   const [mounted, setMounted] = useState(false);
   const [form] = Form.useForm();
   //useForm
@@ -41,15 +42,17 @@ const CreateStore = () => {
   // Для круглосуточного мониторинга состояния флага.
   const isEverydayChecked = watch('isEveryday');
 
+  // Для карты
   const [location, setLocation] = useState<TAddress>({
     address: '',
     coords: [],
   });
 
-  const onSubmit = (data: any) => {
-    console.log('CreateStore:', data);
-  };
+  // const onSubmit = (data: any) => {
+  //   console.log('CreateStore:', data);
+  // };
 
+  // Для карты
   const onFinish = (values: any) => {
     const finalData = {
       ...values,
@@ -59,7 +62,8 @@ const CreateStore = () => {
     };
     console.log(finalData);
   };
-
+   
+  // Для проверьки круглосуточный (инпут Checked)
   useEffect(() => {
     if (isEverydayChecked) {
       setValue('workingHours', [dayjs('00:00', 'HH:mm'), dayjs('00:00', 'HH:mm')]);
@@ -67,6 +71,8 @@ const CreateStore = () => {
       setValue('workingHours', [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')]);
     }
   }, [isEverydayChecked, setValue]);
+
+  // для TimePicker
   useEffect(() => {
     setMounted(true);
   }, []);

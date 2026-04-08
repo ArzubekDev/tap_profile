@@ -1,8 +1,22 @@
 'use client';
 import { Button, Input } from 'antd';
+import { Controller, useForm } from 'react-hook-form';
 import style from './style.module.scss';
+import { TProfileFormValues } from './type';
 
 const ProfileForm = () => {
+  // useForm
+  const {
+    control,
+    formState: { errors },
+  } = useForm<TProfileFormValues>({
+    defaultValues: {
+      name: '',
+      surname: '',
+      number: '',
+    },
+  });
+
   return (
     <section className={style.profileForm}>
       <div className={style.profileForm__top}>
@@ -18,14 +32,44 @@ const ProfileForm = () => {
             <label className={style.label} htmlFor="name">
               Имя
             </label>
-            <Input id="name" type="text" placeholder="Имя" maxLength={150} required />
+            <Controller
+              name="name"
+              control={control}
+              rules={{ required: 'Напишите Имя!' }}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  id="name"
+                  type="text"
+                  placeholder="Имя"
+                  maxLength={150}
+                  status={errors.name ? 'error' : ''}
+                />
+              )}
+            />
+            {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
           </div>
 
           <div className={style.profileForm__top__input__block}>
             <label className={style.label} htmlFor="surname">
               Фамилия
             </label>
-            <Input id="surname" type="text" placeholder="Фамилия" maxLength={150} required />
+            <Controller
+              name="surname"
+              control={control}
+              rules={{ required: 'Напишите Фамилию!' }}
+              render={({ field }) => (
+                <Input
+                  {...field}
+                  id="surname"
+                  type="text"
+                  placeholder="Фамилия"
+                  maxLength={150}
+                  status={errors.surname ? 'error' : ''}
+                />
+              )}
+            />
+            {errors.surname && <span style={{ color: 'red' }}>{errors.surname.message}</span>}
           </div>
         </div>
 
@@ -33,18 +77,32 @@ const ProfileForm = () => {
       </div>
 
       <div className={style.profileForm__bottom}>
-<div className={style.formFooter}>
+        <div className={style.formFooter}>
           <h3 className={style.profileForm__bottom__title}>Номер телефона</h3>
-        <p>Смена номера выполняется по коду из SMS</p>
-</div>
+          <p>Смена номера выполняется по коду из SMS</p>
+        </div>
 
         <div className={style.profileForm__bottom__block}>
           <label className={style.label} htmlFor="phone">
             Телефон
           </label>
-          <Input id="phone" type="text" placeholder="Телефон номер" maxLength={150} required />
+          <Controller
+            name="number"
+            control={control}
+            rules={{ required: 'Напишите номер!' }}
+            render={({ field }) => (
+              <Input
+                {...field}
+                id="phone"
+                type="text"
+                placeholder="Телефон номер"
+                maxLength={150}
+                status={errors.number ? 'error' : ''}
+              />
+            )}
+          />
+          {errors.number && <span style={{ color: 'red' }}>{errors.number.message}</span>}
         </div>
-
         <Button type="primary">Изменить телефон номер</Button>
       </div>
     </section>
