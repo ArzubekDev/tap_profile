@@ -7,6 +7,7 @@ import { TProfileFormValues } from './type';
 const ProfileForm = () => {
   // useForm
   const {
+    handleSubmit,
     control,
     formState: { errors },
   } = useForm<TProfileFormValues>({
@@ -17,8 +18,12 @@ const ProfileForm = () => {
     },
   });
 
+  const onSubmit = async (data: TProfileFormValues) => {
+      console.log(data);
+  };
+
   return (
-    <section className={style.profileForm}>
+    <form onSubmit={handleSubmit(onSubmit)} className={style.profileForm}>
       <div className={style.profileForm__top}>
         <div className={style.formHeader}>
           <h3 className={style.profileForm__top__title}>Персональные данные</h3>
@@ -89,7 +94,13 @@ const ProfileForm = () => {
           <Controller
             name="number"
             control={control}
-            rules={{ required: 'Напишите номер!' }}
+            rules={{
+              required: 'Напишите номер!',
+              pattern: {
+                value: /^\+?[0-9]{10,15}$/,
+                message: 'Неверный формат',
+              },
+            }}
             render={({ field }) => (
               <Input
                 {...field}
@@ -103,9 +114,9 @@ const ProfileForm = () => {
           />
           {errors.number && <span style={{ color: 'red' }}>{errors.number.message}</span>}
         </div>
-        <Button type="primary">Изменить телефон номер</Button>
+        <Button type="primary" htmlType='submit'>Изменить телефон номер</Button>
       </div>
-    </section>
+    </form>
   );
 };
 

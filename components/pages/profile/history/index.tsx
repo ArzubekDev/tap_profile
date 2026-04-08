@@ -1,15 +1,16 @@
 'use client';
-import { Button, DatePicker, Input, Select, Space } from 'antd';
 import type { DatePickerProps } from 'antd';
-import style from './style.module.scss';
+import { Button, DatePicker, Input, Select, Space } from 'antd';
+import { useForm } from 'react-hook-form';
 import Orders from '../orders';
-
+import style from './style.module.scss';
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
 };
 
 const History: React.FC = () => {
+
   return (
     <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
@@ -113,11 +114,13 @@ const History: React.FC = () => {
           </div>
         </div>
         <div className={style.buttons}>
-          <Button type='primary' className={style.apply}>Применить</Button>
+          <Button type="primary" className={style.apply}>
+            Применить
+          </Button>
           <Button className={style.reset}>Сбросить</Button>
         </div>
       </form>
-      <Orders/>
+      <Orders />
     </section>
   );
 };
