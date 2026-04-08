@@ -1,18 +1,28 @@
-import { IconHeartFavorte } from '@/components/Icons';
+"use client"
+import EmptyData from '@/components/form/emptyData';
+import { IconCartOrder } from '@/components/Icons';
+import { PATH_HOME } from '@/shared/consts/paths';
 import { Button } from 'antd';
-import style from './style.module.scss';
+import { useRouter } from 'next/navigation';
 
 const Favorite = () => {
+  const route = useRouter()
   return (
-    <section className={style.favorite}>
-      <IconHeartFavorte className={style.iconheartfavorite} />
-      <h2 className={style.title}>У вас нет заказов!</h2>
-      <p className={style.subtitle}>
-        После совершения покупки все Ваши заказы попадают сюда. <br /> В данный момент у вас еще нет
-        заказов.
-      </p>
-      <Button className={style.button} type="primary">Посмотрет каталогов товаров</Button>
-    </section>
+    <EmptyData
+      icon={<IconCartOrder />}
+      title="У вас нет заказов!"
+      description={
+        <>
+          После совершения покупки все Ваши заказы попадают сюда. <br />В данный момент у вас еще
+          нет заказов.
+        </>
+      }
+      action={
+        <Button onClick={() => route.push(PATH_HOME)} type="primary" size="large">
+          Посмотреть каталог товаров
+        </Button>
+      }
+    />
   );
 };
 

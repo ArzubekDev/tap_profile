@@ -1,18 +1,27 @@
 import { IconCartOrder } from '@/components/Icons';
-import style from './style.module.scss';
 import { Button } from 'antd';
+import EmptyData from '@/components/form/emptyData';
+import { useRouter } from 'next/navigation';
+import { PATH_HOME } from '@/shared/consts/paths';
 
 const Orders = () => {
+  const route = useRouter()
   return (
-    <section className={style.orders}>
-      <IconCartOrder className={style.iconCartOrder} />
-      <h2 className={style.title}>У вас нет заказов!</h2>
-      <p className={style.subtitle}>
-        После совершения покупки все Ваши заказы попадают сюда. <br /> В данный момент у вас еще нет
-        заказов.
-      </p>
-      <Button type='primary' className={style.button}>Посмотрет каталогов товаров</Button>
-    </section>
+   <EmptyData
+      icon={<IconCartOrder/>}
+      title="У вас нет заказов!"
+      description={
+        <>
+          После совершения покупки все Ваши заказы попадают сюда. <br /> 
+          В данный момент у вас еще нет заказов.
+        </>
+      }
+      action={
+        <Button onClick={() => route.push(PATH_HOME)} type="primary" size="large">
+          Посмотреть каталог товаров
+        </Button>
+      }
+    />
   );
 };
 

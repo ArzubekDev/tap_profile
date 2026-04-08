@@ -16,7 +16,7 @@ const IconCartOrder: FC<TIcon> = ({ color, className, width, height, ...rest }) 
       {...rest}
       width={width || ICON_DEFAULT_WIDTH}
       height={height || ICON_DEFAULT_HEIGHT}
-      fill={color || ICON_DEFAULT_COLOR}
+      fill={"transparent"}
       className={cn(ICON_DEFAULT_CLASSNAME, className)}
       viewBox="0 0 28 28"
       xmlns="http://www.w3.org/2000/svg"
