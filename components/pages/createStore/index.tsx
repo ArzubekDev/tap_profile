@@ -1,24 +1,25 @@
-"use client"
+'use client';
 import { IconEdit, IconUploadImg } from '@/components/Icons';
 import Time from '@/shared/ui/Time';
-import { Input, Form, Button } from 'antd';
-import style from './style.module.scss';
+import { Button, Form, Input } from 'antd';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
-const AddressPicker = dynamic(() => import("@/shared/ui/AddressPicker/AddressPicker"), { ssr: false });
+import style from './style.module.scss';
+const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
+  ssr: false,
+});
 
 interface IAddress {
   address: string;
   coords: number[];
 }
 
-
 const CreateStore = () => {
   const [form] = Form.useForm();
-  const [location, setLocation] = useState<IAddress>({ 
-  address: "", 
-  coords: []
-});
+  const [location, setLocation] = useState<IAddress>({
+    address: '',
+    coords: [],
+  });
 
   const onFinish = (values: any) => {
     const finalData = {
@@ -75,7 +76,7 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Публичный номер для связи с магазином.</p>
                 </div>
-                <Input id="phone" placeholder="+996" required/>
+                <Input id="phone" placeholder="+996" required />
               </div>
               {/* WhatsApp */}
               <div className={style.info}>
@@ -85,7 +86,7 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Номер для чата</p>
                 </div>
-                <Input id="whatsapp" placeholder="+996" required/>
+                <Input id="whatsapp" placeholder="+996" required />
               </div>
               {/* Instagram */}
               <div className={style.info}>
@@ -95,7 +96,7 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Ник или полная ссылка на профиль.</p>
                 </div>
-                <Input id="instagram" placeholder="@магазин или URL" required/>
+                <Input id="instagram" placeholder="@магазин или URL" required />
               </div>
             </div>
             {/* Время работы, Режим, Круглосуточно */}
@@ -138,23 +139,20 @@ const CreateStore = () => {
               дома.
             </p>
           </div>
-          <Input id="address" placeholder="Например, улица и дом" required/>
+          <Input id="address" placeholder="Например, улица и дом" required />
         </div>
         {/* Карта */}
         <div className={style.map}>
           <Form form={form} layout="vertical" onFinish={onFinish}>
+            <Form.Item>
+              <AddressPicker onAddressSelect={(data) => setLocation(data)} />
+            </Form.Item>
 
-        <Form.Item>
-          <AddressPicker onAddressSelect={(data) => setLocation(data)} />
-        </Form.Item>
-
-
-
-        <Button type="primary" htmlType="submit" block size="large">
-          Создать магазин
-        </Button>
-      </Form>
-    </div>
+            <Button type="primary" htmlType="submit" block size="large">
+              Создать магазин
+            </Button>
+          </Form>
+        </div>
       </div>
     </section>
   );

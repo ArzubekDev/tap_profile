@@ -5,21 +5,17 @@
   padding-bottom: 30px;
   width: 100%;
   gap: 50px;
-}
 
-@media (max-width: 662px) {
-  .profileNav {
+  @media (min-width: 882px) {
     flex-direction: column;
     gap: 10px;
-    width: 100%; 
+    width: 260px;
   }
-}
 
-@media (min-width: 882px) {
-  .profileNav {
+  @media (max-width: 662px) {
     flex-direction: column;
     gap: 10px;
-    width: 260px; 
+    width: 100%;
   }
 }
 
@@ -32,7 +28,7 @@
 }
 .secondTitle {
   @media (min-width: 882px) {
-  margin-top: 20px;
+    margin-top: 20px;
   }
 }
 
