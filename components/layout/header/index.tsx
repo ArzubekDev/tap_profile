@@ -1,3 +1,4 @@
+'use client'
 import {
   IconCart,
   IconCatalog,
@@ -8,19 +9,21 @@ import {
   IconUser,
   TapLogo,
 } from '@/components/Icons';
-import { PATH_CREATE_SHOP } from '@/shared/consts/paths';
+import { PATH_CREATE_SHOP, PATH_HOME } from '@/shared/consts/paths';
 import profileMenuContent from '@/shared/ui/Dropdown';
 import { Input } from 'antd';
 import Link from 'next/link';
 import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
+import { useRouter } from 'next/navigation';
 
 const Header = () => {
+  const route = useRouter()
   return (
     <header className={style.header}>
       <div className={`container ${style.headerContainer}`}>
         {/* Логотип */}
-        <TapLogo className={style.tapLogo} />
+        <TapLogo onClick={() => route.push(PATH_HOME)} className={style.tapLogo} />
         <div className={style.navContainer}>
           {/* Каталог */}
           <button className={style.buttonCatalog}>
