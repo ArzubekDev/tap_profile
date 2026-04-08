@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { Controller, useFormContext } from 'react-hook-form';
 import FormRowWrapper from '../formRowWrapper';
-import { TFieldInputMaskController } from './type';
+// import { TFieldInputMaskController } from './type';
 
 // import FormError from "@components/form/components/FormError";
 
@@ -11,7 +11,7 @@ import { TFieldInputMaskController } from './type';
 // } from "@components/form/consts";
 // import { EFormFieldType } from "@components/form/types";
 
-const FieldInputMaskController: FC<TFieldInputMaskController> = (props) => {
+const FieldInputMaskController = (props: any) => {
   const {
     name,
     // label,
