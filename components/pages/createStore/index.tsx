@@ -14,10 +14,9 @@ const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPic
   ssr: false,
 });
 
-
 const format = 'HH:mm:ss';
 
-// Компонент CreateStore 
+// Компонент CreateStore
 const CreateStore = () => {
   const [mounted, setMounted] = useState(false);
   const [form] = Form.useForm();
@@ -28,7 +27,8 @@ const CreateStore = () => {
     formState: { errors },
   } = useForm<TFormValues>({
     defaultValues: {
-     
+      storeName: '',
+      workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
     },
   });
 
@@ -56,9 +56,6 @@ const CreateStore = () => {
   }, []);
 
   if (!mounted) return null;
-
-  const startTime = dayjs('12:08:23', 'HH:mm:ss');
-  const endTime = dayjs('12:08:23', 'HH:mm:ss');
 
   return (
     <section className={style.createStore}>
@@ -153,7 +150,18 @@ const CreateStore = () => {
                     24/7.
                   </p>
                 </div>
-                <TimePicker.RangePicker defaultValue={[startTime, endTime]} format={format} />
+                <Controller
+                  name="workingHours"
+                  control={control}
+                  rules={{ required: 'Укажите время работы!' }}
+                  render={({ field }) => (
+                    <TimePicker.RangePicker
+                      {...field}
+                      format="HH:mm"
+                      status={errors.workingHours ? 'error' : ''}
+                    />
+                  )}
+                />
               </div>
               {/* Режим */}
               <div className={style.workInfo}>
