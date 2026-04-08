@@ -1,5 +1,5 @@
 "use client"
-import EmptyData from '@/components/form/emptyData';
+import EmptyData from '@/components/common/emptyData';
 import { IconCartOrder } from '@/components/Icons';
 import { PATH_HOME } from '@/shared/consts/paths';
 import { Button } from 'antd';

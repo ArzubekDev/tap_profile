@@ -1,8 +1,8 @@
 import { IconCartOrder } from '@/components/Icons';
 import { Button } from 'antd';
-import EmptyData from '@/components/form/emptyData';
 import { useRouter } from 'next/navigation';
 import { PATH_HOME } from '@/shared/consts/paths';
+import EmptyData from '@/components/common/emptyData';
 
 const Orders = () => {
   const route = useRouter()

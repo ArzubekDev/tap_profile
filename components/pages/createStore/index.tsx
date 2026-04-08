@@ -3,6 +3,7 @@ import { IconEdit, IconUploadImg } from '@/components/Icons';
 import { Button, Checkbox, Form, Input, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { PatternFormat } from 'react-number-format';
 import { TAddress, TFormValues } from './type';
 
 import dayjs from 'dayjs';
@@ -31,10 +32,10 @@ const CreateStore = () => {
   } = useForm<TFormValues>({
     defaultValues: {
       storeName: '',
-      phone: "",
-      whatsapp: "",
-      instagram: "",
-      address: "",
+      phone: '',
+      whatsapp: '',
+      instagram: '',
+      address: '',
       isEveryday: false,
       workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
     },
@@ -62,7 +63,7 @@ const CreateStore = () => {
     };
     console.log(finalData);
   };
-   
+
   // Для проверьки круглосуточный (инпут Checked)
   useEffect(() => {
     if (isEverydayChecked) {
@@ -141,19 +142,24 @@ const CreateStore = () => {
                 <Controller
                   name="phone"
                   control={control}
-                  rules={{ required: 'Напишите номер телефона!' }}
-                  render={({ field }) => (
-                    <Input
+                  rules={{ required: 'Номер телефона обязательный!' }}
+                  render={({ field: { onChange, value, ...field } }) => (
+                    <PatternFormat
                       {...field}
-                      id="phone"
-                      placeholder="+996"
+                      format="+996 (###) ## ## ##"
+                      mask="_"
+                      placeholder="+996 (___) __ __ __"
+                      customInput={Input}
                       status={errors.phone ? 'error' : ''}
+                      value={value}
+                      onValueChange={(values) => {
+                        onChange(values.formattedValue);
+                      }}
+                      allowEmptyFormatting={false}
                     />
                   )}
                 />
-                {errors.phone && (
-                  <span style={{ color: 'red' }}>{errors.phone.message}</span>
-                )}
+                {errors.phone && <span style={{ color: 'red' }}>{errors.phone.message}</span>}
               </div>
               {/* WhatsApp */}
               <div className={style.info}>
@@ -167,18 +173,23 @@ const CreateStore = () => {
                   name="whatsapp"
                   control={control}
                   rules={{ required: 'Напишите Ватсап номер!' }}
-                  render={({ field }) => (
-                    <Input
+                  render={({ field: { onChange, value, ...field } }) => (
+                    <PatternFormat
                       {...field}
-                      id="whatsapp"
-                      placeholder="+996"
+                      format="+996 (###) ## ## ##"
+                      mask="_"
+                      placeholder="+996 (___) __ __ __"
+                      customInput={Input}
                       status={errors.whatsapp ? 'error' : ''}
+                      value={value}
+                      onValueChange={(values) => {
+                        onChange(values.formattedValue);
+                      }}
+                      allowEmptyFormatting={false}
                     />
                   )}
                 />
-                {errors.whatsapp && (
-                  <span style={{ color: 'red' }}>{errors.whatsapp.message}</span>
-                )}
+                {errors.whatsapp && <span style={{ color: 'red' }}>{errors.whatsapp.message}</span>}
               </div>
               {/* Instagram */}
               <div className={style.info}>
@@ -249,11 +260,10 @@ const CreateStore = () => {
                       checked={value}
                       onChange={(e) => onChange(e.target.checked)}
                       className={style.checkbox}
-                    >
-                    </Checkbox>
+                    ></Checkbox>
                   )}
-                  />
-                  Круглосуточно
+                />
+                Круглосуточно
               </div>
             </div>
           </div>
@@ -271,16 +281,19 @@ const CreateStore = () => {
             </p>
           </div>
           <Controller
-          name='address'
-          control={control}
-          rules={{required: "Укажите адрес!"}}
-          render={({field}) => (
-            <Input {...field} id="address" placeholder="Например, улица и дом" status={errors.address ? "error" : ""}/>
-          )}
+            name="address"
+            control={control}
+            rules={{ required: 'Укажите адрес!' }}
+            render={({ field }) => (
+              <Input
+                {...field}
+                id="address"
+                placeholder="Например, улица и дом"
+                status={errors.address ? 'error' : ''}
+              />
+            )}
           />
-           {errors.address && (
-                  <span style={{ color: 'red' }}>{errors.address.message}</span>
-                )}
+          {errors.address && <span style={{ color: 'red' }}>{errors.address.message}</span>}
         </div>
         {/* Карта */}
         <div className={style.map}>
