@@ -3,7 +3,7 @@ import { IconEdit, IconUploadImg } from '@/components/Icons';
 import { Button, Form, Input, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { FormValues } from './type';
+import { TAddress, TFormValues } from './type';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
@@ -14,10 +14,6 @@ const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPic
   ssr: false,
 });
 
-interface IAddress {
-  address: string;
-  coords: number[];
-}
 
 const format = 'HH:mm:ss';
 
@@ -30,14 +26,13 @@ const CreateStore = () => {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>({
+  } = useForm<TFormValues>({
     defaultValues: {
-      storeName: '',
-      phone: '',
+     
     },
   });
 
-  const [location, setLocation] = useState<IAddress>({
+  const [location, setLocation] = useState<TAddress>({
     address: '',
     coords: [],
   });
@@ -64,7 +59,7 @@ const CreateStore = () => {
 
   const startTime = dayjs('12:08:23', 'HH:mm:ss');
   const endTime = dayjs('12:08:23', 'HH:mm:ss');
-  
+
   return (
     <section className={style.createStore}>
       <h2 className={style.title}>Создать магазин</h2>

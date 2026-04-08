@@ -1,7 +1,12 @@
-export type FormValues ​​= {   
+
+import dayjs from 'dayjs';
+
+export type TFormValues = {
   storeName: string;
-  phone: string;
-  whatsapp: string;
-  instagram: string;
-  worktime: string;
+  workingHours: [dayjs.Dayjs, dayjs.Dayjs];
+}
+
+export type TAddress = {
+  address: string;
+  coords: number[];
 }
