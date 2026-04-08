@@ -89,20 +89,6 @@ const CreateStore = () => {
         {/* (Верхний часть) 4 инпута и время работы */}
         <div className={style.formContent}>
           {/* Логотип */}
-          {/* <div className={style.logo}>
-            <div className={style.content}>
-              <label className={style.contentName}>Логотип</label>
-              <p className={style.contentText}>
-                Квадратное изображение 1:1. <br /> Показывается в карточке магазина.
-              </p>
-            </div>
-            <div className={style.uploadContainer}>
-              <IconUploadImg className={style.iconUpload} />
-              <span className={style.editContainer}>
-                <IconEdit className={style.editIcon} />
-              </span>
-            </div>
-          </div> */}
           <LogoUpload control={control} />
           {/* Все инпуты */}
           <div className={style.formInfo}>
