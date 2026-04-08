@@ -7,6 +7,7 @@ export type TFormValues = {
   phone: string;
   whatsapp: string;
   instagram: string;
+  address: string;
   workingHours: [dayjs.Dayjs, dayjs.Dayjs];
 }
 

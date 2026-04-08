@@ -30,6 +30,10 @@ const CreateStore = () => {
   } = useForm<TFormValues>({
     defaultValues: {
       storeName: '',
+      phone: "",
+      whatsapp: "",
+      instagram: "",
+      address: "",
       isEveryday: false,
       workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
     },
@@ -137,12 +141,12 @@ const CreateStore = () => {
                       {...field}
                       id="phone"
                       placeholder="+996"
-                      status={errors.storeName ? 'error' : ''}
+                      status={errors.phone ? 'error' : ''}
                     />
                   )}
                 />
-                {errors.storeName && (
-                  <span style={{ color: 'red' }}>{errors.storeName.message}</span>
+                {errors.phone && (
+                  <span style={{ color: 'red' }}>{errors.phone.message}</span>
                 )}
               </div>
               {/* WhatsApp */}
@@ -162,12 +166,12 @@ const CreateStore = () => {
                       {...field}
                       id="whatsapp"
                       placeholder="+996"
-                      status={errors.storeName ? 'error' : ''}
+                      status={errors.whatsapp ? 'error' : ''}
                     />
                   )}
                 />
-                {errors.storeName && (
-                  <span style={{ color: 'red' }}>{errors.storeName.message}</span>
+                {errors.whatsapp && (
+                  <span style={{ color: 'red' }}>{errors.whatsapp.message}</span>
                 )}
               </div>
               {/* Instagram */}
@@ -187,12 +191,12 @@ const CreateStore = () => {
                       {...field}
                       id="instagram"
                       placeholder="@магазин или URL"
-                      status={errors.storeName ? 'error' : ''}
+                      status={errors.instagram ? 'error' : ''}
                     />
                   )}
                 />
-                {errors.storeName && (
-                  <span style={{ color: 'red' }}>{errors.storeName.message}</span>
+                {errors.instagram && (
+                  <span style={{ color: 'red' }}>{errors.instagram.message}</span>
                 )}
               </div>
             </div>
@@ -260,7 +264,17 @@ const CreateStore = () => {
               дома.
             </p>
           </div>
-          <Input id="address" placeholder="Например, улица и дом" required />
+          <Controller
+          name='address'
+          control={control}
+          rules={{required: "Укажите адрес!"}}
+          render={({field}) => (
+            <Input {...field} id="address" placeholder="Например, улица и дом" status={errors.address ? "error" : ""}/>
+          )}
+          />
+           {errors.address && (
+                  <span style={{ color: 'red' }}>{errors.address.message}</span>
+                )}
         </div>
         {/* Карта */}
         <div className={style.map}>
