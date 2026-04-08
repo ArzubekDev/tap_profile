@@ -94,7 +94,7 @@ const CreateStore = () => {
               <Controller
                 name="storeName"
                 control={control}
-                rules={{ required: 'Напишите название магазина' }}
+                rules={{ required: 'Напишите название магазина!' }}
                 render={({ field }) => (
                   <Input
                     {...field}
@@ -116,7 +116,23 @@ const CreateStore = () => {
                   </label>
                   <p className={style.contentText}>Публичный номер для связи с магазином.</p>
                 </div>
-                <Input id="phone" placeholder="+996" required />
+                <Controller
+                  name="phone"
+                  control={control}
+                  rules={{ required: 'Напишите номер телефона!' }}
+                  render={({ field }) => (
+                    <Input
+                      {...field}
+                      id="phone"
+                      placeholder="+996"
+                      status={errors.storeName ? 'error' : ''}
+                      required
+                    />
+                  )}
+                />
+                {errors.storeName && (
+                  <span style={{ color: 'red' }}>{errors.storeName.message}</span>
+                )}
               </div>
               {/* WhatsApp */}
               <div className={style.info}>

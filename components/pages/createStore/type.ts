@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 
 export type TFormValues = {
   storeName: string;
+  phone: string
   workingHours: [dayjs.Dayjs, dayjs.Dayjs];
 }
 
