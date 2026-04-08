@@ -5,6 +5,7 @@ import { Button, Form, Input } from 'antd';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
 import style from './style.module.scss';
+import { useForm } from 'react-hook-form';
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
 });
@@ -16,6 +17,16 @@ interface IAddress {
 
 const CreateStore = () => {
   const [form] = Form.useForm();
+  const {control, handleSubmit, formState: {errors}} = useForm({
+    defaultValues: {
+      storeName: "",
+      phone: ""
+    }
+  })
+  const onSubmit = (data: any) => {
+    console.log("CreateStore:", data);
+    
+  }
   const [location, setLocation] = useState<IAddress>({
     address: '',
     coords: [],
