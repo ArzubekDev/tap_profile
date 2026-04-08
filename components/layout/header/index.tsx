@@ -12,6 +12,8 @@ import profileMenuContent from '@/shared/ui/Dropdown';
 import { Input } from 'antd';
 import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
+import Link from 'next/link';
+import { PATH_CREATE_SHOP } from '@/shared/consts/paths';
 
 const Header = () => {
   return (
@@ -59,9 +61,9 @@ const Header = () => {
             <span className={style.cartNavText}>Корзина</span>
           </div>
         </div>
-        <button className={style.createStore}>
+        <Link href={PATH_CREATE_SHOP} className={style.createStore}>
           Создать магазин <IconStore />
-        </button>
+        </Link>
       </div>
     </header>
   );

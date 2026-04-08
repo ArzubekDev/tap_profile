@@ -21,9 +21,11 @@ const ThemeConfig = ({ children }: { children: ReactNode }) => {
             },
             Select: {
               controlHeight: 42,
+              hoverBorderColor: "#d6d6d6"
             },
             DatePicker: {
               controlHeight: 42,
+              hoverBorderColor: "#d6d6d6"
             },
             Button: {
               fontWeight: 700,
