@@ -1,11 +1,15 @@
 'use client';
 import { IconEdit, IconUploadImg } from '@/components/Icons';
-import Time from '@/shared/ui/Time';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, TimePicker } from 'antd';
+import { useEffect, useState } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { FormValues } from './type';
+
+import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
-import { useState } from 'react';
+
 import style from './style.module.scss';
-import { useForm } from 'react-hook-form';
+
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
 });
@@ -15,22 +19,32 @@ interface IAddress {
   coords: number[];
 }
 
+const format = 'HH:mm:ss';
+
+// Компонент CreateStore 
 const CreateStore = () => {
+  const [mounted, setMounted] = useState(false);
   const [form] = Form.useForm();
-  const {control, handleSubmit, formState: {errors}} = useForm({
+  //useForm
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormValues>({
     defaultValues: {
-      storeName: "",
-      phone: ""
-    }
-  })
-  const onSubmit = (data: any) => {
-    console.log("CreateStore:", data);
-    
-  }
+      storeName: '',
+      phone: '',
+    },
+  });
+
   const [location, setLocation] = useState<IAddress>({
     address: '',
     coords: [],
   });
+
+  const onSubmit = (data: any) => {
+    console.log('CreateStore:', data);
+  };
 
   const onFinish = (values: any) => {
     const finalData = {
@@ -41,6 +55,16 @@ const CreateStore = () => {
     };
     console.log(finalData);
   };
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const startTime = dayjs('12:08:23', 'HH:mm:ss');
+  const endTime = dayjs('12:08:23', 'HH:mm:ss');
+  
   return (
     <section className={style.createStore}>
       <h2 className={style.title}>Создать магазин</h2>
@@ -75,7 +99,20 @@ const CreateStore = () => {
                   Так покупатели увидят магазин на витрине и в поиске.
                 </p>
               </div>
-              <Input id="name-store" placeholder="Название магазина" required />
+              <Controller
+                name="storeName"
+                control={control}
+                rules={{ required: 'Напишите название магазина' }}
+                render={({ field }) => (
+                  <Input
+                    {...field}
+                    id="name-store"
+                    placeholder="Название магазина"
+                    status={errors.storeName ? 'error' : ''}
+                  />
+                )}
+              />
+              {errors.storeName && <span style={{ color: 'red' }}>{errors.storeName.message}</span>}
             </div>
             {/* Телефон, Ватсап, Инстаграмм */}
             <div className={style.contacts}>
@@ -121,7 +158,7 @@ const CreateStore = () => {
                     24/7.
                   </p>
                 </div>
-                <Time />
+                <TimePicker.RangePicker defaultValue={[startTime, endTime]} format={format} />
               </div>
               {/* Режим */}
               <div className={style.workInfo}>
