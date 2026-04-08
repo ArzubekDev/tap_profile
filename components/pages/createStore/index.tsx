@@ -10,6 +10,7 @@ import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
 import style from './style.module.scss';
+import LogoUpload from '@/shared/ui/LogoUpload';
 
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
@@ -88,7 +89,7 @@ const CreateStore = () => {
         {/* (Верхний часть) 4 инпута и время работы */}
         <div className={style.formContent}>
           {/* Логотип */}
-          <div className={style.logo}>
+          {/* <div className={style.logo}>
             <div className={style.content}>
               <label className={style.contentName}>Логотип</label>
               <p className={style.contentText}>
@@ -101,7 +102,8 @@ const CreateStore = () => {
                 <IconEdit className={style.editIcon} />
               </span>
             </div>
-          </div>
+          </div> */}
+          <LogoUpload control={control} />
           {/* Все инпуты */}
           <div className={style.formInfo}>
             {/* Инпут (Называние магазина) */}

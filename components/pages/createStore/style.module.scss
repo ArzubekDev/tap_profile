@@ -29,15 +29,7 @@
     gap: 20px;
   }
 }
-.logo {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  flex-shrink: 0;
 
-  gap: 8px;
-  width: 200px;
-}
 .content {
   display: flex;
   flex-direction: column;
@@ -51,45 +43,6 @@
   color: #858586;
 }
 
-.uploadContainer {
-  position: relative;
-  cursor: pointer;
-}
-.iconUpload {
-  width: 200px;
-  height: 200px;
-  fill: transparent;
-  border-radius: 12px;
-  background-color: #f0f1f5;
-
-  @media (max-width: 1024px) {
-    width: 100px;
-    height: 100px;
-  }
-}
-.editContainer {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgb(221, 221, 221);
-
-  @media (max-width: 1024px) {
-    right: 110px;
-  }
-}
-
-.editIcon {
-  border-radius: 12px;
-  fill: var(--main-color);
-}
 .nameStore {
   display: flex;
   flex-direction: column;
