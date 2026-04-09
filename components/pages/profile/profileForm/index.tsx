@@ -1,14 +1,14 @@
-
 'use client';
-import { Button, Input } from 'antd';
-import { Controller, useForm } from 'react-hook-form';
+import InputController from '@/components/form/formControllers/inputController';
+import PatterFormatController from '@/components/form/formControllers/patternFormatController';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from 'antd';
+import { useForm } from 'react-hook-form';
 import style from './style.module.scss';
 import { ZprofileNameSurName, ZprofileNumber } from './zod';
 
-
 const ProfileForm = () => {
-const nameForm = useForm({
+  const nameForm = useForm({
     resolver: zodResolver(ZprofileNameSurName),
     defaultValues: { name: '', surname: '' },
   });
@@ -22,7 +22,7 @@ const nameForm = useForm({
   const onPhoneSubmit = (data: any) => console.log('onPhoneSubmit:', data);
 
   return (
-    <div  className={style.profileForm}>
+    <div className={style.profileForm}>
       <form onSubmit={nameForm.handleSubmit(onNameSubmit)} className={style.profileForm__top}>
         <div className={style.formHeader}>
           <h3 className={style.profileForm__top__title}>Персональные данные</h3>
@@ -31,42 +31,32 @@ const nameForm = useForm({
             идентификации пользователей
           </p>
         </div>
-        
+
         <div className={style.profileForm__top__input}>
           <div className={style.profileForm__top__input__block}>
-            <label className={style.label} htmlFor="name">Имя</label>
-            <Controller
+            <InputController
+              id="name"
               name="name"
+              placeholder="Имя"
+              label="Имя"
               control={nameForm.control}
-              render={({ field }) => (
-                <Input
-                  {...field}
-                  id="name"
-                  placeholder="Имя"
-                  status={nameForm.formState.errors.name ? 'error' : ''}
-                />
-              )}
             />
           </div>
 
           <div className={style.profileForm__top__input__block}>
-            <label className={style.label} htmlFor="surname">Фамилия</label>
-            <Controller
+            <InputController
+              id="surname"
               name="surname"
+              placeholder="Фамилия"
+              label="Фамилия"
               control={nameForm.control}
-              render={({ field }) => (
-                <Input
-                  {...field}
-                  id="surname"
-                  placeholder="Фамилия"
-                  status={nameForm.formState.errors.surname ? 'error' : ''}
-                />
-              )}
             />
           </div>
         </div>
 
-        <Button type="primary" htmlType="submit">Сохранить изменения</Button>
+        <Button type="primary" htmlType="submit">
+          Сохранить изменения
+        </Button>
       </form>
 
       <form onSubmit={phoneForm.handleSubmit(onPhoneSubmit)} className={style.profileForm__bottom}>
@@ -76,21 +66,16 @@ const nameForm = useForm({
         </div>
 
         <div className={style.profileForm__bottom__block}>
-          <label className={style.label} htmlFor="phone">Телефон</label>
-          <Controller
+          <PatterFormatController
+            id="number"
             name="number"
             control={phoneForm.control}
-            render={({ field }) => (
-              <Input
-                {...field}
-                id="phone"
-                placeholder="Телефон номер"
-                status={phoneForm.formState.errors.number ? 'error' : ''}
-              />
-            )}
+            label="Телефон"
           />
         </div>
-        <Button type="primary" htmlType="submit">Изменить телефон номер</Button>
+        <Button type="primary" htmlType="submit">
+          Изменить телефон номер
+        </Button>
       </form>
     </div>
   );

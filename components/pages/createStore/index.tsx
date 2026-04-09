@@ -1,12 +1,13 @@
 'use client';
-import { Button, Checkbox, Form, Input, TimePicker } from 'antd';
+import { Button, Checkbox, Form, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { PatternFormat } from 'react-number-format';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
+import InputController from '@/components/form/formControllers/inputController';
+import PatterFormatController from '@/components/form/formControllers/patternFormatController';
 import LogoUpload from '@/shared/ui/LogoUpload';
 import { zodResolver } from '@hookform/resolvers/zod';
 import style from './style.module.scss';
@@ -21,7 +22,6 @@ const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPic
 const CreateStore = () => {
   // Хуки
   const [mounted, setMounted] = useState(false);
-  const [form] = Form.useForm();
   //useForm
   const {
     control,
@@ -91,113 +91,45 @@ const CreateStore = () => {
             {/* Инпут (Называние магазина) */}
             <div className={style.nameStore}>
               <div className={style.content}>
-                <label className={style.contentName} htmlFor="name-store">
-                  Название магазина *
-                </label>
-                <p className={style.contentText}>
-                  Так покупатели увидят магазин на витрине и в поиске.
-                </p>
+                <label className={style.contentName} htmlFor="name-store"></label>
+                <p className={style.contentText}></p>
               </div>
-              <Controller
+              <InputController
+                id="name-store"
                 name="storeName"
+                label="Название магазина *"
+                text="Так покупатели увидят магазин на витрине и в поиске."
                 control={control}
-                rules={{ required: 'Напишите название магазина!' }}
-                render={({ field }) => (
-                  <Input
-                    {...field}
-                    id="name-store"
-                    placeholder={`${errors.storeName?.message ? 'Напишите название магазина' : 'Название магазина'}`}
-                    status={errors.storeName ? 'error' : ''}
-                    className={errors.storeName ? style.errorPlaceholder : ''}
-                  />
-                )}
+                placeholder="Введите название"
               />
             </div>
             {/* Телефон, Ватсап, Инстаграмм */}
             <div className={style.contacts}>
               {/* Телефон */}
-              <div className={style.info}>
-                <div className={style.content}>
-                  <label htmlFor="phone" className={style.contentName}>
-                    Телефон
-                  </label>
-                  <p className={style.contentText}>Публичный номер для связи с магазином.</p>
-                </div>
-                <Controller
-                  name="phone"
-                  control={control}
-                  rules={{ required: 'Номер телефона обязательный!' }}
-                  render={({ field: { onChange, value, ...field } }) => (
-                    <PatternFormat
-                      {...field}
-                      format="+996 (###) ## ## ##"
-                      mask="_"
-                      placeholder={`${errors.phone?.message ? errors.phone.message : '+996 (___) __ __ __'}`}
-                      customInput={Input}
-                      status={errors.phone ? 'error' : ''}
-                      value={value}
-                      className={errors.phone ? style.errorPlaceholder : ''}
-                      onValueChange={(values) => {
-                        onChange(values.formattedValue);
-                      }}
-                      allowEmptyFormatting={false}
-                    />
-                  )}
-                />
-              </div>
+              <PatterFormatController
+                id="phone"
+                name="phone"
+                text="Публичный номер для связи с магазином."
+                control={control}
+                label="Телефон"
+              />
               {/* WhatsApp */}
-              <div className={style.info}>
-                <div className={style.content}>
-                  <label htmlFor="whatsapp" className={style.contentName}>
-                    WhatsApp
-                  </label>
-                  <p className={style.contentText}>Номер для чата</p>
-                </div>
-                <Controller
-                  name="whatsapp"
-                  control={control}
-                  rules={{ required: 'Напишите Ватсап номер!' }}
-                  render={({ field: { onChange, value, ...field } }) => (
-                    <PatternFormat
-                      {...field}
-                      format="+996 (###) ## ## ##"
-                      mask="_"
-                      placeholder={`${errors.whatsapp?.message ? errors.whatsapp.message : '+996 (___) __ __ __'}`}
-                      customInput={Input}
-                      className={errors.whatsapp ? style.errorPlaceholder : ''}
-                      status={errors.whatsapp ? 'error' : ''}
-                      value={value}
-                      onValueChange={(values) => {
-                        onChange(values.formattedValue);
-                      }}
-                      allowEmptyFormatting={false}
-                    />
-                  )}
-                />
-              </div>
+              <PatterFormatController
+                id="whatsapp"
+                name="whatsapp"
+                text="Номер для чата"
+                control={control}
+                label="WhatsApp"
+              />
               {/* Instagram */}
-              <div className={style.info}>
-                <div className={style.content}>
-                  <label htmlFor="instagram" className={style.contentName}>
-                    Instagram
-                  </label>
-                  <p className={style.contentText}>Ник или полная ссылка на профиль.</p>
-                </div>
-                <Controller
-                  name="instagram"
-                  control={control}
-                  rules={{ required: 'Вставьте ссылку или название магазина' }}
-                  render={({ field }) => (
-                    <Input
-                      {...field}
-                      id="instagram"
-                      className={errors.instagram ? style.errorPlaceholder : ''}
-                      placeholder={`${errors.instagram?.message ? errors.instagram.message : '@магазин или URL'}`}
-                      status={errors.instagram ? 'error' : ''}
-                    />
-                  )}
-                />
-              </div>
+              <InputController
+                id="instagram"
+                name="instagram"
+                label="Instagram"
+                text="Ник или полная ссылка на профиль."
+                control={control}
+                placeholder="@магазин или URL"
+              />
             </div>
             {/* Время работы, Режим, Круглосуточно */}
             <div className={style.time}>
@@ -252,29 +184,13 @@ const CreateStore = () => {
         </div>
         {/* Адрес и точка на карте */}
         <div className={style.address}>
-          <div className={style.addressContent}>
-            <label htmlFor="address" className={style.contentName}>
-              Адрес и точка на карте *
-            </label>
-            <p className={style.contentText}>
-              Укажите, откуда нам забирать товары — обязательно, даже если у вас своя доставка.
-              Введите адрес в поиске (OpenStreetMap, Кыргызстан) и отметьте точку на карте с номером
-              дома.
-            </p>
-          </div>
-          <Controller
-            name="address"
+          <InputController
+            id="instagram"
+            name="instagram"
+            label="Адрес и точка на карте *"
+            text="Укажите, откуда нам забирать товары — обязательно, даже если у вас своя доставка. Введите адрес в поиске (OpenStreetMap, Кыргызстан) и отметьте точку на карте с номером дома."
             control={control}
-            rules={{ required: 'Укажите адрес!' }}
-            render={({ field }) => (
-              <Input
-                {...field}
-                id="address"
-                className={errors.address ? style.errorPlaceholder : ''}
-                placeholder={`${errors.address?.message ? errors.address.message : 'Например, улица и дом'}`}
-                status={errors.address ? 'error' : ''}
-              />
-            )}
+            placeholder="Например, улица и дом..."
           />
         </div>
         {/* Карта */}
