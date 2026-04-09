@@ -1,15 +1,9 @@
 'use client';
-import { Select, SelectProps } from 'antd';
-import { Control, Controller, FieldValues, Path } from 'react-hook-form';
+import { Select } from 'antd';
+import { Controller, FieldValues } from 'react-hook-form';
 import style from './style.module.scss'; // Стилдериңиз
+import { SelectFormControllerProps } from './type';
 
-interface SelectFormControllerProps<T extends FieldValues> extends Omit<SelectProps, 'name'> {
-  name: Path<T>;
-  text?: string;
-  control: Control<T>;
-  label?: string;
-  error?: string;
-}
 
 const SelectFormController = <T extends FieldValues>({
   name,
@@ -20,10 +14,8 @@ const SelectFormController = <T extends FieldValues>({
 }: SelectFormControllerProps<T>) => {
   return (
     <div className={style.innerTop}>
-<div className={style.content}>
-        <label className={style.contentName}>
-          {label}
-        </label>
+      <div className={style.content}>
+        <label className={style.contentName}>{label}</label>
         <p className={style.contentText}>{text}</p>
       </div>
       <Controller
@@ -37,11 +29,7 @@ const SelectFormController = <T extends FieldValues>({
               status={error ? 'error' : props.status}
               style={{ width: '100%' }}
             />
-            {error && (
-              <span style={{ color: '#ff4d4f', fontSize: '12px' }}>
-                {error.message}
-              </span>
-            )}
+            {error && <span style={{ color: '#ff4d4f', fontSize: '12px' }}>{error.message}</span>}
           </>
         )}
       />
