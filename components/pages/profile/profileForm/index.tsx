@@ -1,167 +1,29 @@
-// 'use client';
-// import { Button, Input } from 'antd';
-// import { Controller, useForm } from 'react-hook-form';
-// import style from './style.module.scss';
-// import { TProfileFormValues } from './type';
-
-// const ProfileForm = () => {
-//   // useForm
-//   const {
-//     handleSubmit,
-//     control,
-//     formState: { errors },
-//   } = useForm<TProfileFormValues>({
-//     defaultValues: {
-//       name: '',
-//       surname: '',
-//       number: '',
-//     },
-//   });
-
-//   const onSubmit = async (data: TProfileFormValues) => {
-//       console.log(data);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)} className={style.profileForm}>
-//       <div className={style.profileForm__top}>
-//         <div className={style.formHeader}>
-//           <h3 className={style.profileForm__top__title}>Персональные данные</h3>
-//           <p className={style.profileForm__top__subtitle}>
-//             Данные профиля не доступны третьим лицам и используется маркетплейсом только для
-//             идентификации пользователей
-//           </p>
-//         </div>
-//         <div className={style.profileForm__top__input}>
-//           <div className={style.profileForm__top__input__block}>
-//             <label className={style.label} htmlFor="name">
-//               Имя
-//             </label>
-//             <Controller
-//               name="name"
-//               control={control}
-//               rules={{ required: 'Напишите Имя!' }}
-//               render={({ field }) => (
-//                 <Input
-//                   {...field}
-//                   id="name"
-//                   type="text"
-//                   placeholder="Имя"
-//                   maxLength={150}
-//                   status={errors.name ? 'error' : ''}
-//                 />
-//               )}
-//             />
-//             {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
-//           </div>
-
-//           <div className={style.profileForm__top__input__block}>
-//             <label className={style.label} htmlFor="surname">
-//               Фамилия
-//             </label>
-//             <Controller
-//               name="surname"
-//               control={control}
-//               rules={{ required: 'Напишите Фамилию!' }}
-//               render={({ field }) => (
-//                 <Input
-//                   {...field}
-//                   id="surname"
-//                   type="text"
-//                   placeholder="Фамилия"
-//                   maxLength={150}
-//                   status={errors.surname ? 'error' : ''}
-//                 />
-//               )}
-//             />
-//             {errors.surname && <span style={{ color: 'red' }}>{errors.surname.message}</span>}
-//           </div>
-//         </div>
-
-//         <Button type="primary">Сохранит изменение</Button>
-//       </div>
-
-//       <div className={style.profileForm__bottom}>
-//         <div className={style.formFooter}>
-//           <h3 className={style.profileForm__bottom__title}>Номер телефона</h3>
-//           <p>Смена номера выполняется по коду из SMS</p>
-//         </div>
-
-//         <div className={style.profileForm__bottom__block}>
-//           <label className={style.label} htmlFor="phone">
-//             Телефон
-//           </label>
-//           <Controller
-//             name="number"
-//             control={control}
-//             rules={{
-//               required: 'Напишите номер!',
-//               pattern: {
-//                 value: /^\+?[0-9]{10,15}$/,
-//                 message: 'Неверный формат',
-//               },
-//             }}
-//             render={({ field }) => (
-//               <Input
-//                 {...field}
-//                 id="phone"
-//                 type="text"
-//                 placeholder="Телефон номер"
-//                 maxLength={150}
-//                 status={errors.number ? 'error' : ''}
-//               />
-//             )}
-//           />
-//           {errors.number && <span style={{ color: 'red' }}>{errors.number.message}</span>}
-//         </div>
-//         <Button type="primary" htmlType='submit'>Изменить телефон номер</Button>
-//       </div>
-//     </form>
-//   );
-// };
-
-// export default ProfileForm;
 
 'use client';
 import { Button, Input } from 'antd';
 import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
 import style from './style.module.scss';
-import { TProfileFormValues } from './type';
+import { ZprofileNameSurName, ZprofileNumber } from './zod';
 
-// 1. Описываем схему валидации
-const profileSchema = z.object({
-  name: z.string().min(1, 'Напишите Имя!').max(150),
-  surname: z.string().min(1, 'Напишите Фамилию!').max(150),
-  number: z
-    .string()
-    .min(1, 'Напишите номер!')
-    .regex(/^\+?[0-9]{10,15}$/, 'Неверный формат'),
-});
 
 const ProfileForm = () => {
-  // 2. Инициализируем useForm с ресолвером Zod
-  const {
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm<TProfileFormValues>({
-    resolver: zodResolver(profileSchema), // Подключаем валидацию
-    defaultValues: {
-      name: '',
-      surname: '',
-      number: '',
-    },
+const nameForm = useForm({
+    resolver: zodResolver(ZprofileNameSurName),
+    defaultValues: { name: '', surname: '' },
   });
 
-  const onSubmit = async (data: TProfileFormValues) => {
-    console.log('Данные формы:', data);
-  };
+  const phoneForm = useForm({
+    resolver: zodResolver(ZprofileNumber),
+    defaultValues: { number: '' },
+  });
+
+  const onNameSubmit = (data: any) => console.log('onNameSubmit', data);
+  const onPhoneSubmit = (data: any) => console.log('onPhoneSubmit:', data);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={style.profileForm}>
-      <div className={style.profileForm__top}>
+    <div  className={style.profileForm}>
+      <form onSubmit={nameForm.handleSubmit(onNameSubmit)} className={style.profileForm__top}>
         <div className={style.formHeader}>
           <h3 className={style.profileForm__top__title}>Персональные данные</h3>
           <p className={style.profileForm__top__subtitle}>
@@ -175,41 +37,39 @@ const ProfileForm = () => {
             <label className={style.label} htmlFor="name">Имя</label>
             <Controller
               name="name"
-              control={control}
+              control={nameForm.control}
               render={({ field }) => (
                 <Input
                   {...field}
                   id="name"
                   placeholder="Имя"
-                  status={errors.name ? 'error' : ''}
+                  status={nameForm.formState.errors.name ? 'error' : ''}
                 />
               )}
             />
-            {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
           </div>
 
           <div className={style.profileForm__top__input__block}>
             <label className={style.label} htmlFor="surname">Фамилия</label>
             <Controller
               name="surname"
-              control={control}
+              control={nameForm.control}
               render={({ field }) => (
                 <Input
                   {...field}
                   id="surname"
                   placeholder="Фамилия"
-                  status={errors.surname ? 'error' : ''}
+                  status={nameForm.formState.errors.surname ? 'error' : ''}
                 />
               )}
             />
-            {errors.surname && <span style={{ color: 'red' }}>{errors.surname.message}</span>}
           </div>
         </div>
 
         <Button type="primary" htmlType="submit">Сохранить изменения</Button>
-      </div>
+      </form>
 
-      <div className={style.profileForm__bottom}>
+      <form onSubmit={phoneForm.handleSubmit(onPhoneSubmit)} className={style.profileForm__bottom}>
         <div className={style.formFooter}>
           <h3 className={style.profileForm__bottom__title}>Номер телефона</h3>
           <p>Смена номера выполняется по коду из SMS</p>
@@ -219,21 +79,20 @@ const ProfileForm = () => {
           <label className={style.label} htmlFor="phone">Телефон</label>
           <Controller
             name="number"
-            control={control}
+            control={phoneForm.control}
             render={({ field }) => (
               <Input
                 {...field}
                 id="phone"
                 placeholder="Телефон номер"
-                status={errors.number ? 'error' : ''}
+                status={phoneForm.formState.errors.number ? 'error' : ''}
               />
             )}
           />
-          {errors.number && <span style={{ color: 'red' }}>{errors.number.message}</span>}
         </div>
         <Button type="primary" htmlType="submit">Изменить телефон номер</Button>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
