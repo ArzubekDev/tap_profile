@@ -22,7 +22,7 @@ const WorkTimeField = ({ control, setValue, errors }: WorkTimeFieldProps) => {
     <div className={style.time}>
       {/* Время работы */}
       <div className={style.work}>
-        <div className={style.tiemTitle}>
+        <div className={style.timeTitle}>
           <h5 className={style.contentName}>Время работы *</h5>
           <p className={style.contentText}>
             Интервал приёма заказов. <br /> Отметьте «Круглосуточно», если без выходных 24/7.

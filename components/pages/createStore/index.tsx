@@ -2,7 +2,7 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Form } from 'antd';
 import { useCallback, useEffect, useState } from 'react';
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
@@ -26,11 +26,11 @@ const CreateStore = () => {
   const {
     control,
     handleSubmit,
-    watch,
     setValue,
     formState: { errors },
   } = useForm<TFormValues>({
     resolver: zodResolver(ZcreateStore),
+    mode: 'onBlur',
     defaultValues: {
       storeName: '',
       phone: '',
@@ -63,10 +63,6 @@ const CreateStore = () => {
     console.log(finalData);
   };
 
-  const currentIsEveryday = useWatch({
-    control,
-    name: 'isEveryday',
-  });
 
   // для TimePicker
   useEffect(() => {
