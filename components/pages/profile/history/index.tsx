@@ -3,7 +3,7 @@ import { DatePickerFormController, SelectFormController } from '@/components/for
 import InputController from '@/components/form/formControllers/inputFormController';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { DatePickerProps } from 'antd';
-import { Button, DatePicker, Space } from 'antd';
+import { Button } from 'antd';
 import { useForm } from 'react-hook-form';
 import Orders from '../orders';
 import style from './style.module.scss';
@@ -39,7 +39,7 @@ const History: React.FC = () => {
       name: '',
       status: 'all',
       store: 'all',
-      dateFrom: null, 
+      dateFrom: null,
       dateTo: null,
     },
   });
@@ -86,19 +86,13 @@ const History: React.FC = () => {
             placeholder="дд.мм.гггг"
             format="DD.MM.YYYY"
           />
-          <div className={style.innerBottom}>
-            <label htmlFor="from" className={style.label}>
-              Дата по
-            </label>
-            <Space vertical>
-              <DatePicker
-                placeholder="дд.мм.гггг"
-                format="DD.MM.YYYY"
-                onChange={onChange}
-                className={style.date}
-              />
-            </Space>
-          </div>
+          <DatePickerFormController
+            name="dateTo"
+            control={control}
+            label="Дата по"
+            placeholder="дд.мм.гггг"
+            format="DD.MM.YYYY"
+          />
         </div>
         <div className={style.buttons}>
           <Button type="primary" className={style.apply}>
