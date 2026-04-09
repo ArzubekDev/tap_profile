@@ -1,10 +1,13 @@
 'use client';
 import { DatePicker, DatePickerProps } from 'antd';
+import dayjs from 'dayjs';
 import { Control, Controller, FieldValues, Path } from 'react-hook-form';
 import style from './style.module.scss';
-import dayjs from 'dayjs';
 
-interface DatePickerFormControllerProps<T extends FieldValues> extends Omit<DatePickerProps, 'name'> {
+interface DatePickerFormControllerProps<T extends FieldValues> extends Omit<
+  DatePickerProps,
+  'name'
+> {
   name: Path<T>;
   control: Control<T>;
   label?: string;
@@ -27,17 +30,21 @@ const DatePickerFormController = <T extends FieldValues>({
             <DatePicker
               {...field}
               {...props}
-              // Эгер маани болсо, аны dayjs объектине айлантабыз (Ant Design үчүн)
               value={value ? dayjs(value) : null}
-              // Тандалганда аны форматталган string катары сактайбыз
               onChange={(date) => {
-                onChange(date ? date.format('YYYY-MM-DD') : null);
+                if (date && !Array.isArray(date)) {
+                  onChange(date.format('YYYY-MM-DD'));
+                } else {
+                  onChange(null);
+                }
               }}
               status={error ? 'error' : props.status}
               style={{ width: '100%' }}
             />
             {error && (
-              <span style={{ color: '#ff4d4f', fontSize: '12px', marginTop: '4px', display: 'block' }}>
+              <span
+                style={{ color: '#ff4d4f', fontSize: '12px', marginTop: '4px', display: 'block' }}
+              >
                 {error.message}
               </span>
             )}

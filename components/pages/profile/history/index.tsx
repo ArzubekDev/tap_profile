@@ -50,7 +50,6 @@ const History: React.FC = () => {
       <h3 className={style.title}>История заказов</h3>
       <form className={style.form}>
         <div className={style.top}>
-          <div className={style.innerTop}>
             <InputController
               id="searchName"
               name="name"
@@ -58,8 +57,6 @@ const History: React.FC = () => {
               label="Имя"
               control={control}
             />
-          </div>
-          <div className={style.innerTop}>
             <SelectFormController
               name="status"
               control={control}
@@ -67,7 +64,6 @@ const History: React.FC = () => {
               options={statusOptions}
               className={style.searchInput}
             />
-          </div>
         </div>
         <div className={style.center}>
           <SelectFormController
