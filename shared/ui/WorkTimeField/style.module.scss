@@ -21,8 +21,6 @@
   gap: var(--gap);
 }
 
-
-
 .timeTitle {
   display: flex;
   flex-direction: column;
@@ -34,5 +32,5 @@
 .contentText {
   font-size: 12px;
   color: #858586;
-line-height: 14px;
+  line-height: 14px;
 }

@@ -1,13 +1,16 @@
 .profileForm {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 
+    @media (max-width: 726px) {
+    grid-template-columns: 1fr;
+  }
   &__top {
     display: flex;
     flex-direction: column;
     align-items: start;
+    grid-column: 1 / -1;
     gap: var(--gap);
     width: 100%;
 
@@ -42,6 +45,7 @@
 
   &__bottom {
     margin-top: 30px;
+    grid-column: 1 / 2;
     display: flex;
     flex-direction: column;
     align-items: start;
