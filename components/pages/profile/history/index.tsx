@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form';
 import Orders from '../orders';
 import style from './style.module.scss';
 import { ZhistoryForm } from './zod/zod';
+import { SelectFormController } from '@/components/form/formControllers';
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
@@ -19,13 +20,12 @@ const statusOptions = [
 ];
 
 const History: React.FC = () => {
-  const historyForm = useForm({
+const { control, handleSubmit, reset } = useForm({
     resolver: zodResolver(ZhistoryForm),
-    defaultValues: {name: ''},
+    defaultValues: { name: '', status: 'all', store: 'all' },
   });
 
   const onSubmit = (data: any) => console.log("history", data);
-  
   return (
     <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
@@ -37,36 +37,18 @@ const History: React.FC = () => {
               name="name"
               placeholder="Имя, фамилия, телефон..."
               label="Имя"
-              control={historyForm.control}
+              control={control}
             />
           </div>
           <div className={style.innerTop}>
-            <label htmlFor="status" className={style.label}>
-              Статус
-            </label>
-            <Select
-              className={style.searchInput}
-              defaultValue="all"
-              options={[
-                { value: 'all', label: 'Все статусы' },
-
-                { value: 'new', label: 'Новый' },
-                { value: 'confirmed', label: 'Подтвержден' },
-                { value: 'pending_payment', label: 'Ожидает оплаты' },
-                { value: 'paid', label: 'Оплачен' },
-
-                { value: 'processing', label: 'В обработке' },
-
-                { value: 'shipped', label: 'Передан в доставку' },
-                { value: 'delivering', label: 'Доставляется' },
-                { value: 'delivered', label: 'Доставлен' },
-
-                { value: 'canceled', label: 'Отменен' },
-                { value: 'refund', label: 'Возврат' },
-
-                { value: 'completed', label: 'Завершён' },
-              ]}
-            />
+           <SelectFormController
+            name="status"
+            control={control}
+            label="Статус"
+            options={statusOptions}
+            className={style.searchInput}
+          />
+            
           </div>
         </div>
         <div className={style.center}>
