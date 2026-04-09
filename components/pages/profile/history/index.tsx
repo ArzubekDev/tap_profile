@@ -15,7 +15,7 @@ const onChange: DatePickerProps['onChange'] = (date, dateString) => {
 const History: React.FC = () => {
   const historyForm = useForm({
     resolver: zodResolver(ZhistoryForm),
-    defaultValues: {},
+    defaultValues: {name: ''},
   });
   return (
     <section className={style.history}>
