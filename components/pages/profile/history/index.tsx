@@ -27,6 +27,10 @@ const statusOptions = [
   { value: 'refund', label: 'Возврат' },
   { value: 'completed', label: 'Завершён' },
 ];
+const storeOptions = [
+  {value: "all", label: "Все магазины" },
+  {value: "store", label: "Магазин" },
+]
 
 const History: React.FC = () => {
   const { control, handleSubmit, reset } = useForm({
@@ -60,19 +64,13 @@ const History: React.FC = () => {
           </div>
         </div>
         <div className={style.center}>
-          <label htmlFor="status" className={style.label}>
-            Магазины
-          </label>
-          <Select
-            className={style.searchInput}
-            defaultValue="all"
-            options={[
-              { value: 'all', label: 'Все магазины' },
-
-              { value: 'new', label: 'Новый' },
-              { value: 'confirmed', label: 'Подтвержден' },
-            ]}
-          />
+           <SelectFormController
+              name="status"
+              control={control}
+              label="Магазин"
+              options={storeOptions}
+              className={style.searchInput}
+            />
         </div>
         <div className={style.bottom}>
           <div className={style.innerBottom}>
