@@ -2,8 +2,8 @@ import z from "zod";
 
 export const ZhistoryForm = z.object({
   name: z.string().min(1, 'Напишите Имя!').max(150),
-  status: z.string().default('all'),
-  store: z.string().default('all'),
+  status: z.string(),
+  store: z.string(),
   dateFrom: z.string().nullable().optional(),
   dateTo: z.string().nullable().optional(),
 });

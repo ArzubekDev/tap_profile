@@ -1,5 +1,5 @@
 'use client';
-import { SelectFormController } from '@/components/form/formControllers';
+import { DatePickerFormController, SelectFormController } from '@/components/form/formControllers';
 import InputController from '@/components/form/formControllers/inputFormController';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { DatePickerProps } from 'antd';
@@ -7,7 +7,7 @@ import { Button, DatePicker, Space } from 'antd';
 import { useForm } from 'react-hook-form';
 import Orders from '../orders';
 import style from './style.module.scss';
-import { ZhistoryForm } from './zod/zod';
+import { THistoryForm, ZhistoryForm } from './zod/zod';
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
@@ -33,7 +33,7 @@ const storeOptions = [
 ];
 
 const History: React.FC = () => {
-  const { control, handleSubmit, reset } = useForm({
+  const { control, handleSubmit, reset } = useForm<THistoryForm>({
     resolver: zodResolver(ZhistoryForm),
     defaultValues: {
       name: '',
@@ -44,7 +44,7 @@ const History: React.FC = () => {
     },
   });
 
-  const onSubmit = (data: any) => console.log('history', data);
+  const onSubmit = (data: THistoryForm) => console.log('history', data);
   return (
     <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
@@ -79,19 +79,13 @@ const History: React.FC = () => {
           />
         </div>
         <div className={style.bottom}>
-          <div className={style.innerBottom}>
-            <label htmlFor="from" className={style.label}>
-              Дата с
-            </label>
-            <Space vertical>
-              <DatePicker
-                placeholder="дд.мм.гггг"
-                format="DD.MM.YYYY"
-                onChange={onChange}
-                className={style.date}
-              />
-            </Space>
-          </div>
+          <DatePickerFormController
+            name="dateFrom"
+            control={control}
+            label="Дата с"
+            placeholder="дд.мм.гггг"
+            format="DD.MM.YYYY"
+          />
           <div className={style.innerBottom}>
             <label htmlFor="from" className={style.label}>
               Дата по
