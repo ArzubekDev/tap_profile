@@ -46,4 +46,3 @@ const InputFormController = <T extends FieldValues>({
 };
 
 export default InputFormController
-// export default memo(InputFormController);
