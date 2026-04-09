@@ -1,18 +1,18 @@
 'use client';
-import { Button, Checkbox, Form, TimePicker } from 'antd';
-import { useEffect, useState } from 'react';
-import { Controller, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { Button, Form } from 'antd';
+import { useCallback, useEffect, useState } from 'react';
+import { useForm, useWatch } from 'react-hook-form';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import LogoUpload from '@/shared/ui/LogoUpload';
-import { TFormValues, ZcreateStore } from './zod/zod';
-import { TAddress } from './type';
-import style from './style.module.scss';
 import { InputFormController, PatterFormatController } from '@/components/form/formControllers';
-
+import LogoUpload from '@/shared/ui/LogoUpload';
+import WorkTimeField from '@/shared/ui/WorkTimeField';
+import style from './style.module.scss';
+import { TAddress } from './type';
+import { TFormValues, ZcreateStore } from './zod/zod';
 
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
@@ -41,14 +41,16 @@ const CreateStore = () => {
       workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
     },
   });
-  // Для круглосуточного мониторинга состояния флага.
-  const isEverydayChecked = watch('isEveryday');
 
   // Для карты
   const [location, setLocation] = useState<TAddress>({
     address: '',
     coords: [],
   });
+
+  const handleAddressSelect = useCallback((data: TAddress) => {
+    setLocation(data);
+  }, []);
 
   // Для отправки Form
   const onFinish = (data: TFormValues) => {
@@ -61,14 +63,10 @@ const CreateStore = () => {
     console.log(finalData);
   };
 
-  // Для проверьки круглосуточный (инпут: Checked)
-  useEffect(() => {
-    if (isEverydayChecked) {
-      setValue('workingHours', [dayjs('00:00', 'HH:mm'), dayjs('00:00', 'HH:mm')]);
-    } else {
-      setValue('workingHours', [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')]);
-    }
-  }, [isEverydayChecked, setValue]);
+  const currentIsEveryday = useWatch({
+    control,
+    name: 'isEveryday',
+  });
 
   // для TimePicker
   useEffect(() => {
@@ -132,54 +130,7 @@ const CreateStore = () => {
               />
             </div>
             {/* Время работы, Режим, Круглосуточно */}
-            <div className={style.time}>
-              {/* Время работы */}
-              <div className={style.work}>
-                <div className={style.tiemTitle}>
-                  <h5 className={style.contentName}>Время работы *</h5>
-                  <p className={style.contentText}>
-                    Интервал приёма заказов. <br /> Отметьте «Круглосуточно», если без выходных
-                    24/7.
-                  </p>
-                </div>
-                <Controller
-                  name="workingHours"
-                  control={control}
-                  rules={{ required: !isEverydayChecked ? 'Укажите время работы!' : false }}
-                  render={({ field }) => (
-                    <TimePicker.RangePicker
-                      {...field}
-                      format="HH:mm"
-                      disabled={isEverydayChecked}
-                      status={errors.workingHours ? 'error' : ''}
-                    />
-                  )}
-                />
-              </div>
-              {/* Режим */}
-              <div className={style.workInfo}>
-                <h5 className={style.contentName}>Режим</h5>
-                <p className={style.contentText}>
-                  При «Круглосуточно» время сбросится на 00:00–00:00.
-                </p>
-              </div>
-              {/* Круглосуточно */}
-              <div className={style.day}>
-                <Controller
-                  name="isEveryday"
-                  control={control}
-                  render={({ field: { value, onChange, ...field } }) => (
-                    <Checkbox
-                      {...field}
-                      checked={value}
-                      onChange={(e) => onChange(e.target.checked)}
-                      className={style.checkbox}
-                    ></Checkbox>
-                  )}
-                />
-                Круглосуточно
-              </div>
-            </div>
+            <WorkTimeField control={control} setValue={setValue} errors={errors} />
           </div>
         </div>
         {/* Адрес и точка на карте */}
@@ -196,7 +147,7 @@ const CreateStore = () => {
         {/* Карта */}
         <div className={style.map}>
           <Form.Item>
-            <AddressPicker onAddressSelect={(data) => setLocation(data)} />
+            <AddressPicker onAddressSelect={handleAddressSelect} />
           </Form.Item>
 
           <Button type="primary" htmlType="submit" block size="large">

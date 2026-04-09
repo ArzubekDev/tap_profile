@@ -1,0 +1,22 @@
+.time {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: var(--gap);
+  @media (max-width: 992px) {
+    flex-wrap: wrap;
+  }
+}
+.workInfo {
+  display: flex;
+  flex-direction: column;
+}
+.checkbox {
+  width: 20px;
+  height: 20px;
+}
+.day {
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
