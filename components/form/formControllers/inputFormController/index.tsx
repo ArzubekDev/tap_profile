@@ -4,7 +4,6 @@ import { Controller, FieldValues, } from 'react-hook-form';
 
 import { InputControllerProps } from './type';
 import style from './style.module.scss';
-import { memo } from 'react';
 
 const InputFormController = <T extends FieldValues>({
   id,

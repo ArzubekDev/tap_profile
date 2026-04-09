@@ -16,8 +16,8 @@ input.errorPlaceholder {
   flex-direction: column;
 }
 .contentName {
-  font-size: 16px;
-  font-weight: 700;
+  font-size: var(--label-size);
+  font-weight: var(--font-weight);
 }
 .contentText {
   font-size: 12px;
