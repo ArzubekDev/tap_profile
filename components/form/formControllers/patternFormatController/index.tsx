@@ -2,9 +2,10 @@
 import { Input } from 'antd';
 import { Controller, FieldValues } from 'react-hook-form';
 import { PatternFormat } from 'react-number-format';
-import style from './style.module.scss';
+
 import { PatterFormatControllerProps } from './type';
 
+import style from './style.module.scss';
 
 const PatterFormatController = <T extends FieldValues>({
   id,
@@ -17,11 +18,9 @@ const PatterFormatController = <T extends FieldValues>({
   return (
     <div className={style.info}>
       <div className={style.content}>
-        {label && (
-          <label className={style.contentName} htmlFor={id}>
-            {label}
-          </label>
-        )}
+        <label className={style.contentName} htmlFor={id}>
+          {label}
+        </label>
         <p className={style.contentText}>{text}</p>
       </div>
       <Controller

@@ -1,13 +1,14 @@
-.info {
-  flex: 1;
-  min-width: 250px;
-}
 
 input.errorPlaceholder {
   &::placeholder {
     color: #ff4d4f;
     opacity: 1;
   }
+}
+
+.info {
+  flex: 1;
+  min-width: 250px;
 }
 
 .content {

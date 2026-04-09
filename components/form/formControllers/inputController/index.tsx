@@ -2,8 +2,8 @@
 import { Input } from 'antd';
 import { Controller, FieldValues, } from 'react-hook-form';
 
-import style from './style.module.scss';
 import { InputControllerProps } from './type';
+import style from './style.module.scss';
 
 const InputController = <T extends FieldValues>({
   id,
