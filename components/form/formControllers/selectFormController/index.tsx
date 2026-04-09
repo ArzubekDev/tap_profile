@@ -5,6 +5,7 @@ import style from './style.module.scss'; // Стилдериңиз
 
 interface SelectFormControllerProps<T extends FieldValues> extends Omit<SelectProps, 'name'> {
   name: Path<T>;
+  text?: string;
   control: Control<T>;
   label?: string;
   error?: string;
@@ -12,13 +13,19 @@ interface SelectFormControllerProps<T extends FieldValues> extends Omit<SelectPr
 
 const SelectFormController = <T extends FieldValues>({
   name,
+  text,
   control,
   label,
   ...props
 }: SelectFormControllerProps<T>) => {
   return (
     <div className={style.innerTop}>
-      {label && <label className={style.label} htmlFor={props.id}>{label}</label>}
+<div className={style.content}>
+        <label className={style.contentName}>
+          {label}
+        </label>
+        <p className={style.contentText}>{text}</p>
+      </div>
       <Controller
         name={name}
         control={control}
