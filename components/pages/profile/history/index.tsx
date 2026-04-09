@@ -3,7 +3,7 @@ import { SelectFormController } from '@/components/form/formControllers';
 import InputController from '@/components/form/formControllers/inputFormController';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { DatePickerProps } from 'antd';
-import { Button, DatePicker, Select, Space } from 'antd';
+import { Button, DatePicker, Space } from 'antd';
 import { useForm } from 'react-hook-form';
 import Orders from '../orders';
 import style from './style.module.scss';
@@ -28,14 +28,20 @@ const statusOptions = [
   { value: 'completed', label: 'Завершён' },
 ];
 const storeOptions = [
-  {value: "all", label: "Все магазины" },
-  {value: "store", label: "Магазин" },
-]
+  { value: 'all', label: 'Все магазины' },
+  { value: 'store', label: 'Магазин' },
+];
 
 const History: React.FC = () => {
   const { control, handleSubmit, reset } = useForm({
     resolver: zodResolver(ZhistoryForm),
-    defaultValues: { name: '', status: 'all', store: 'all' },
+    defaultValues: {
+      name: '',
+      status: 'all',
+      store: 'all',
+      dateFrom: null, 
+      dateTo: null,
+    },
   });
 
   const onSubmit = (data: any) => console.log('history', data);
@@ -64,13 +70,13 @@ const History: React.FC = () => {
           </div>
         </div>
         <div className={style.center}>
-           <SelectFormController
-              name="status"
-              control={control}
-              label="Магазин"
-              options={storeOptions}
-              className={style.searchInput}
-            />
+          <SelectFormController
+            name="status"
+            control={control}
+            label="Магазин"
+            options={storeOptions}
+            className={style.searchInput}
+          />
         </div>
         <div className={style.bottom}>
           <div className={style.innerBottom}>
