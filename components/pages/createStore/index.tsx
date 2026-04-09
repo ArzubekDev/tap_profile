@@ -185,8 +185,8 @@ const CreateStore = () => {
         {/* Адрес и точка на карте */}
         <div className={style.address}>
           <InputFormController
-            id="instagram"
-            name="instagram"
+            id="address"
+            name="address"
             label="Адрес и точка на карте *"
             text="Укажите, откуда нам забирать товары — обязательно, даже если у вас своя доставка. Введите адрес в поиске (OpenStreetMap, Кыргызстан) и отметьте точку на карте с номером дома."
             control={control}
