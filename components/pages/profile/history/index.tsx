@@ -12,11 +12,20 @@ const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
 };
 
+const statusOptions = [
+  { value: 'all', label: 'Все статусы' },
+  { value: 'new', label: 'Новый' },
+  { value: 'confirmed', label: 'Подтвержден' },
+];
+
 const History: React.FC = () => {
   const historyForm = useForm({
     resolver: zodResolver(ZhistoryForm),
     defaultValues: {name: ''},
   });
+
+  const onSubmit = (data: any) => console.log("history", data);
+  
   return (
     <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
