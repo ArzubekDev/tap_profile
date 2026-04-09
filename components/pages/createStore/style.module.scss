@@ -49,11 +49,18 @@
   gap: 8px;
   // width: 100%;
 }
+
+input.errorPlaceholder {
+  &::placeholder {
+    color: #ff4d4f;
+    opacity: 1;
+  }
+}
 .formInfo {
   display: flex;
   flex-direction: column;
   gap: 30px;
-width: 100%;
+  width: 100%;
   @media (max-width: 992px) {
     gap: 10px;
   }

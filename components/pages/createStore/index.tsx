@@ -3,13 +3,15 @@ import { Button, Checkbox, Form, Input, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { PatternFormat } from 'react-number-format';
-import { TAddress, TFormValues } from './type';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import style from './style.module.scss';
 import LogoUpload from '@/shared/ui/LogoUpload';
+import { zodResolver } from '@hookform/resolvers/zod';
+import style from './style.module.scss';
+import { TAddress } from './type';
+import { TFormValues, ZcreateStore } from './zod';
 
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
@@ -28,6 +30,7 @@ const CreateStore = () => {
     setValue,
     formState: { errors },
   } = useForm<TFormValues>({
+    resolver: zodResolver(ZcreateStore),
     defaultValues: {
       storeName: '',
       phone: '',
@@ -47,11 +50,10 @@ const CreateStore = () => {
     coords: [],
   });
 
-
-  // Для карты
-  const onFinish = (values: any) => {
+  // Для отправки Form
+  const onFinish = (data: TFormValues) => {
     const finalData = {
-      ...values,
+      ...data,
       address: location.address,
       latitude: location.coords[0],
       longitude: location.coords[1],
@@ -79,7 +81,7 @@ const CreateStore = () => {
     <section className={style.createStore}>
       <h2 className={style.title}>Создать магазин</h2>
       {/* Главный контейнер */}
-      <div className={style.formContainer}>
+      <Form onFinish={handleSubmit(onFinish)} layout="vertical" className={style.formContainer}>
         {/* (Верхний часть) 4 инпута и время работы */}
         <div className={style.formContent}>
           {/* Логотип */}
@@ -104,12 +106,12 @@ const CreateStore = () => {
                   <Input
                     {...field}
                     id="name-store"
-                    placeholder="Название магазина"
+                    placeholder={`${errors.storeName?.message ? 'Напишите название магазина' : 'Название магазина'}`}
                     status={errors.storeName ? 'error' : ''}
+                    className={errors.storeName ? style.errorPlaceholder : ''}
                   />
                 )}
               />
-              {errors.storeName && <span style={{ color: 'red' }}>{errors.storeName.message}</span>}
             </div>
             {/* Телефон, Ватсап, Инстаграмм */}
             <div className={style.contacts}>
@@ -130,10 +132,11 @@ const CreateStore = () => {
                       {...field}
                       format="+996 (###) ## ## ##"
                       mask="_"
-                      placeholder="+996 (___) __ __ __"
+                      placeholder={`${errors.phone?.message ? errors.phone.message : '+996 (___) __ __ __'}`}
                       customInput={Input}
                       status={errors.phone ? 'error' : ''}
                       value={value}
+                      className={errors.phone ? style.errorPlaceholder : ''}
                       onValueChange={(values) => {
                         onChange(values.formattedValue);
                       }}
@@ -141,7 +144,6 @@ const CreateStore = () => {
                     />
                   )}
                 />
-                {errors.phone && <span style={{ color: 'red' }}>{errors.phone.message}</span>}
               </div>
               {/* WhatsApp */}
               <div className={style.info}>
@@ -160,8 +162,9 @@ const CreateStore = () => {
                       {...field}
                       format="+996 (###) ## ## ##"
                       mask="_"
-                      placeholder="+996 (___) __ __ __"
+                      placeholder={`${errors.whatsapp?.message ? errors.whatsapp.message : '+996 (___) __ __ __'}`}
                       customInput={Input}
+                      className={errors.whatsapp ? style.errorPlaceholder : ''}
                       status={errors.whatsapp ? 'error' : ''}
                       value={value}
                       onValueChange={(values) => {
@@ -171,7 +174,6 @@ const CreateStore = () => {
                     />
                   )}
                 />
-                {errors.whatsapp && <span style={{ color: 'red' }}>{errors.whatsapp.message}</span>}
               </div>
               {/* Instagram */}
               <div className={style.info}>
@@ -189,14 +191,12 @@ const CreateStore = () => {
                     <Input
                       {...field}
                       id="instagram"
-                      placeholder="@магазин или URL"
+                      className={errors.instagram ? style.errorPlaceholder : ''}
+                      placeholder={`${errors.instagram?.message ? errors.instagram.message : '@магазин или URL'}`}
                       status={errors.instagram ? 'error' : ''}
                     />
                   )}
                 />
-                {errors.instagram && (
-                  <span style={{ color: 'red' }}>{errors.instagram.message}</span>
-                )}
               </div>
             </div>
             {/* Время работы, Режим, Круглосуточно */}
@@ -270,26 +270,24 @@ const CreateStore = () => {
               <Input
                 {...field}
                 id="address"
-                placeholder="Например, улица и дом"
+                className={errors.address ? style.errorPlaceholder : ''}
+                placeholder={`${errors.address?.message ? errors.address.message : 'Например, улица и дом'}`}
                 status={errors.address ? 'error' : ''}
               />
             )}
           />
-          {errors.address && <span style={{ color: 'red' }}>{errors.address.message}</span>}
         </div>
         {/* Карта */}
         <div className={style.map}>
-          <Form form={form} layout="vertical" onFinish={onFinish}>
-            <Form.Item>
-              <AddressPicker onAddressSelect={(data) => setLocation(data)} />
-            </Form.Item>
+          <Form.Item>
+            <AddressPicker onAddressSelect={(data) => setLocation(data)} />
+          </Form.Item>
 
-            <Button type="primary" htmlType="submit" block size="large">
-              Создать магазин
-            </Button>
-          </Form>
+          <Button type="primary" htmlType="submit" block size="large">
+            Создать магазин
+          </Button>
         </div>
-      </div>
+      </Form>
     </section>
   );
 };
