@@ -1,7 +1,7 @@
-import InputFormController from "./inputController";
+import InputFormController from "./inputFormController";
 import PatterFormatController from "./patternFormatController";
 
 export {
     InputFormController,
     PatterFormatController
-}
+};
