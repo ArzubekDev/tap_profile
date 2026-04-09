@@ -5,7 +5,7 @@ import { Controller, FieldValues, } from 'react-hook-form';
 import { InputControllerProps } from './type';
 import style from './style.module.scss';
 
-const InputController = <T extends FieldValues>({
+const InputFormController = <T extends FieldValues>({
   id,
   name,
   control,
@@ -44,4 +44,4 @@ const InputController = <T extends FieldValues>({
   );
 };
 
-export default InputController;
+export default InputFormController;

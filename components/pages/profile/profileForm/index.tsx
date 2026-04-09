@@ -1,11 +1,11 @@
 'use client';
-import InputController from '@/components/form/formControllers/inputController';
-import PatterFormatController from '@/components/form/formControllers/patternFormatController';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
 import { useForm } from 'react-hook-form';
 import style from './style.module.scss';
-import { ZprofileNameSurName, ZprofileNumber } from './zod';
+import { ZprofileNameSurName, ZprofileNumber } from './zod/zod';
+import { InputFormController, PatterFormatController } from '@/components/form/formControllers';
 
 const ProfileForm = () => {
   const nameForm = useForm({
@@ -34,7 +34,7 @@ const ProfileForm = () => {
 
         <div className={style.profileForm__top__input}>
           <div className={style.profileForm__top__input__block}>
-            <InputController
+            <InputFormController
               id="name"
               name="name"
               placeholder="Имя"
@@ -44,7 +44,7 @@ const ProfileForm = () => {
           </div>
 
           <div className={style.profileForm__top__input__block}>
-            <InputController
+            <InputFormController
               id="surname"
               name="surname"
               placeholder="Фамилия"

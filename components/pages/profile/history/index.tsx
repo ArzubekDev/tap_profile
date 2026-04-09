@@ -4,28 +4,31 @@ import { Button, DatePicker, Input, Select, Space } from 'antd';
 import { useForm } from 'react-hook-form';
 import Orders from '../orders';
 import style from './style.module.scss';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { ZhistoryForm } from './zod/zod';
+import InputController from '@/components/form/formControllers/inputController';
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
 };
 
 const History: React.FC = () => {
-
+const historyForm = useForm({
+  resolver: zodResolver(ZhistoryForm),
+  defaultValues: {}
+})
   return (
     <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
       <form className={style.form}>
         <div className={style.top}>
           <div className={style.innerTop}>
-            <label htmlFor="name" className={style.label}>
-              Поиск
-            </label>
-            <Input
-              id="name"
-              className={style.searchInput}
-              placeholder="Имя, фамилия, телефон..."
-              maxLength={150}
-              required
+            <InputController
+            id='searchName'
+            name='name'
+            placeholder='Имя, фамилия, телефон...'
+            label='Имя'
+            control={historyForm.control}
             />
           </div>
           <div className={style.innerTop}>

@@ -2,17 +2,17 @@
 import { Button, Checkbox, Form, TimePicker } from 'antd';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import InputController from '@/components/form/formControllers/inputController';
-import PatterFormatController from '@/components/form/formControllers/patternFormatController';
 import LogoUpload from '@/shared/ui/LogoUpload';
-import { zodResolver } from '@hookform/resolvers/zod';
-import style from './style.module.scss';
+import { TFormValues, ZcreateStore } from './zod/zod';
 import { TAddress } from './type';
-import { TFormValues, ZcreateStore } from './zod';
+import style from './style.module.scss';
+import { InputFormController, PatterFormatController } from '@/components/form/formControllers';
+
 
 const AddressPicker = dynamic(() => import('@/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
@@ -94,7 +94,7 @@ const CreateStore = () => {
                 <label className={style.contentName} htmlFor="name-store"></label>
                 <p className={style.contentText}></p>
               </div>
-              <InputController
+              <InputFormController
                 id="name-store"
                 name="storeName"
                 label="Название магазина *"
@@ -122,7 +122,7 @@ const CreateStore = () => {
                 label="WhatsApp"
               />
               {/* Instagram */}
-              <InputController
+              <InputFormController
                 id="instagram"
                 name="instagram"
                 label="Instagram"
@@ -184,7 +184,7 @@ const CreateStore = () => {
         </div>
         {/* Адрес и точка на карте */}
         <div className={style.address}>
-          <InputController
+          <InputFormController
             id="instagram"
             name="instagram"
             label="Адрес и точка на карте *"
