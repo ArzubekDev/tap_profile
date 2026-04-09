@@ -48,7 +48,7 @@ const History: React.FC = () => {
   return (
     <section className={style.history}>
       <h3 className={style.title}>История заказов</h3>
-      <form className={style.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
         <div className={style.top}>
             <InputController
               id="searchName"
@@ -91,10 +91,10 @@ const History: React.FC = () => {
           />
         </div>
         <div className={style.buttons}>
-          <Button type="primary" className={style.apply}>
+          <Button type="primary" htmlType='submit' className={style.apply}>
             Применить
           </Button>
-          <Button className={style.reset}>Сбросить</Button>
+          <Button onClick={() => reset()} className={style.reset}>Сбросить</Button>
         </div>
       </form>
       <Orders />
