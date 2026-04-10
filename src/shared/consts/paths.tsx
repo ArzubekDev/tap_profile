@@ -3,6 +3,7 @@
 export const PATH_PROFILE = '/accounts/profile';
 export const PATH_FAVORITE = '/basket/favorite-list';
 export const PATH_CREATE_SHOP = '/shop/create'
+export const PATH_DELETE_ACCOUNT='/accounts/profile/delete-info'
 export const PATH_HOME = '/'
 
 const PATH_BASKET = '/basket';

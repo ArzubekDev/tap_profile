@@ -12,6 +12,7 @@ import {
 import {
   PATH_BASKET_HISTORY,
   PATH_CREATE_SHOP,
+  PATH_DELETE_ACCOUNT,
   PATH_FAVORITE,
   PATH_PROFILE,
 } from '@/src/shared/consts/paths';
@@ -106,7 +107,7 @@ const profileItems: TProfileItemType[] = [
     id: 5,
     icon: <IconDeleteAccount />,
     title: 'Удаление аккаунта',
-    link: '#',
+    link: PATH_DELETE_ACCOUNT,
   },
 ];
 
