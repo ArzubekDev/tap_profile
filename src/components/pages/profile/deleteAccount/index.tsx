@@ -1,6 +1,7 @@
 import IconCheck from '@/src/components/Icons/components/IconCheck';
 import { Button } from 'antd';
 import style from './style.module.scss';
+import IconMessage from '@/src/components/Icons/components/IconMessage';
 
 const DeleteAccount = () => {
   return (
@@ -41,7 +42,7 @@ const DeleteAccount = () => {
             Если у вас остались вопросы или возникли трудности или хотите удалить аккаунт:
           </p>
         </div>
-        <Button type="primary">Написать нам</Button>
+        <Button type="primary" className={style.button}><IconMessage className={style.iconMessage}/>Написать нам</Button>
       </div>
     </section>
   );
