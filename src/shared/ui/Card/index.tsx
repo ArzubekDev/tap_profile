@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import style from './style.module.scss';
+import { IconStar } from '@/src/components/Icons';
 
 const Card = () => {
   return (
@@ -9,6 +10,16 @@ const Card = () => {
       </div>
       <h3>Laptop</h3>
       <h5>12 000 c</h5>
+      <div>
+        <div className={style.rating}>
+          <IconStar/>
+          5
+        </div>
+        <div className={style.review}>
+          
+12 отзывов
+        </div>
+      </div>
     </div>
   );
 };

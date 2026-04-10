@@ -1,7 +1,6 @@
-import IconCheck from '@/src/components/Icons/components/IconCheck';
 import { Button } from 'antd';
+import { IconCheck, IconMessage } from '@/src/components/Icons';
 import style from './style.module.scss';
-import IconMessage from '@/src/components/Icons/components/IconMessage';
 
 const DeleteAccount = () => {
   return (

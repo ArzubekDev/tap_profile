@@ -1,0 +1,27 @@
+import cn from 'classnames';
+import { FC } from 'react';
+
+import { ICON_DEFAULT_CLASSNAME, ICON_DEFAULT_HEIGHT, ICON_DEFAULT_WIDTH } from '../consts';
+
+import { TIcon } from '../types';
+
+const IconStar: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
+  return (
+    <svg
+      {...rest}
+      width={width || ICON_DEFAULT_WIDTH}
+      height={height || ICON_DEFAULT_HEIGHT}
+      fill={'transparent'}
+      className={cn(ICON_DEFAULT_CLASSNAME, className)}
+      viewBox="0 0 18 18"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M7.81534 0.443986C7.88365 0.279728 8.11635 0.279727 8.18466 0.443986L10.0691 4.97475C10.0979 5.04399 10.163 5.09131 10.2378 5.0973L15.1291 5.48944C15.3065 5.50365 15.3784 5.72496 15.2433 5.84069L11.5166 9.03299C11.4596 9.08178 11.4347 9.15834 11.4521 9.23129L12.5907 14.0044C12.632 14.1774 12.4437 14.3142 12.2919 14.2215L8.10425 11.6637C8.04025 11.6246 7.95975 11.6246 7.89575 11.6637L3.70808 14.2215C3.55626 14.3142 3.36801 14.1774 3.40929 14.0044L4.54785 9.23129C4.56525 9.15834 4.54038 9.08178 4.48342 9.03299L0.756739 5.84069C0.621632 5.72496 0.693537 5.50365 0.870867 5.48944L5.7622 5.0973C5.83696 5.09131 5.90208 5.04399 5.93089 4.97475L7.81534 0.443986Z"
+        fill="#FF9A02"
+      />
+    </svg>
+  );
+};
+
+export default IconStar;

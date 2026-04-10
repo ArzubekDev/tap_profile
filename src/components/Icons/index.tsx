@@ -16,8 +16,14 @@ import IconUser from './components/IconUser';
 import TapLogo from './components/TapLogo';
 import IconUploadImg from './components/IconUpload';
 import IconEdit from './components/IconEdit';
+import IconStar from './components/IconStar';
+import IconCheck from './components/IconCheck';
+import IconMessage from './components/IconMessage';
 
 export {
+  IconMessage,
+  IconCheck,
+  IconStar,
   IconEdit,
   IconBell,
   IconCart,
