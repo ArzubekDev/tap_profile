@@ -1,74 +1,82 @@
 .deleteAccount {
-    box-shadow: 0 6px 12px #aaa;
-    border-radius: 24px;
-    padding: 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    margin-bottom: 60px;
+  box-shadow: 0 6px 12px #aaa;
+  border-radius: 24px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 60px;
 }
 .title {
-    width: fit-content;
-    font-size: 20px;
-    padding: 8px 18px;
-    border-radius: 18px;
-    border: none;
-    background-color: antiquewhite;
-    color: var(--main-color);
+  width: fit-content;
+  font-size: 20px;
+  padding: 8px 18px;
+  border-radius: 18px;
+  border: none;
+  background-color: antiquewhite;
+  color: var(--main-color);
 }
 .info {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 .infoTitle {
-    font-size: 34px;
-    font-weight: 700;
+  font-size: 34px;
+  font-weight: 700;
 }
 .infoSubTitle {
-    font-size: 16px;
-    font-weight: 400;
-    color: rgb(73, 72, 72);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(73, 72, 72);
 }
 .content {
-    background-color: #faf1e6;
-    border: 2px solid #fac483;
-    border-radius: 24px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    padding: 24px;
-    width: 100%;
-    height: 220px;
+  background-color: #faf1e6;
+  border: 2px solid #fac483;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 44px;
+  width: 100%;
+  height: 220px;
 }
 .contentTitle {
-    font-size: 20px;
-    font-weight: 600;
-    color: #594124;
+  font-size: 20px;
+  font-weight: 600;
+  color: #594124;
 }
 .contentInfo {
-    font-size: 16px;
-    color: #594124;
-
+  font-size: 16px;
+  color: #847057;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--gap);
+}
+.iconCheck {
+    fill: #ffffff;
+    background-color: #fac483;
+    border-radius: 50%;
+    padding: 3px;
 }
 .footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
 }
 .footerTextContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .footerTitle {
-    font-size: 22px;
-    color: #656565;
+  font-size: 22px;
+  color: #656565;
 }
-.footerSubTitle{
-    font-size: 14px;
-    color: #838383;
+.footerSubTitle {
+  font-size: 14px;
+  color: #838383;
 }
