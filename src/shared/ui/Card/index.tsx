@@ -2,11 +2,12 @@ import { IconFavorite, IconHeartFavorte, IconStar } from '@/src/components/Icons
 import IconReviewMessage from '@/src/components/Icons/components/IconReviewMessage';
 import Image from 'next/image';
 import style from './style.module.scss';
+import IconCardFavorite from '@/src/components/Icons/components/IconCardFavorite';
 
 const Card = () => {
   return (
     <div className={style.card}>
-      <IconHeartFavorte/>
+      <IconCardFavorite className={style.IconFav}/>
       <div className={style.imageContainer}>
         <Image
           src={'/images/laptop.webp'}
