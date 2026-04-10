@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import style from './style.module.scss';
+import IconArrow from '@/src/components/Icons/components/IconArrow';
 
 const OrderList = () => {
   return (
@@ -26,6 +27,8 @@ const OrderList = () => {
         <h3 className={style.info}> <span>Дата заказа</span> <br /> 10.04.2026 16:37</h3>
         <h3 className={style.info}> <span>Статус заказа</span> <br />Новый</h3>
         <h3 className={style.info}><span>Сумма</span><br />10000 сом</h3>
+
+        <IconArrow className={style.arrow}/>
       </div>
     </section>
   );
