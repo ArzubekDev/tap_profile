@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={ttCommons.variable}>
-      <body>
+      <body className='red123' suppressHydrationWarning={true}>
         <ThemeConfig>
           <AntdRegistry>{children}</AntdRegistry>
         </ThemeConfig>

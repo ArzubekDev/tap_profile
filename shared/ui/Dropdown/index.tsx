@@ -1,14 +1,16 @@
+import Link from "next/link";
 import IconPlus from "@/components/Icons/components/IconPlus";
+import { PATH_BASKET_HISTORY, PATH_CREATE_SHOP, PATH_FAVORITE, PATH_PROFILE } from "@/shared/consts/paths";
 import style from "@components/layout/header/style.module.scss"
 
 const profileMenuContent = (
     <div className={style.profileDropdownMenu}>
-      <a href="/accounts/profile">Мой профиль</a>
-      <a href="/basket/history">История заказов</a>
-      <a href="/basket/favorite-list">Избранные товары</a>
+      <Link href={PATH_PROFILE}>Мой профиль</Link>
+      <Link href={PATH_BASKET_HISTORY}>История заказов</Link>
+      <Link href={PATH_FAVORITE}>Избранные товары</Link>
       <div className={style.createStoreDropDown}>
         <p>Мои магазины</p>
-        <a href="/shop/create"><IconPlus className={style.dropdownPlusIcon}/> Создать магазин</a>
+        <Link href={PATH_CREATE_SHOP}><IconPlus className={style.dropdownPlusIcon}/> Создать магазин</Link>
       </div>
       <hr className={style.dropdownline}/>
       <button className={style.logoutBtn}>Выйти</button>

@@ -7,7 +7,7 @@ import { useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import { InputFormController, PatterFormatController } from '@/components/form/formControllers';
+import { InputFormController, PatterFormatController } from '@/components/form/Controllers';
 import LogoUpload from '@/shared/ui/LogoUpload';
 import WorkTimeField from '@/shared/ui/WorkTimeField';
 import style from './style.module.scss';
@@ -62,7 +62,6 @@ const CreateStore = () => {
     };
     console.log(finalData);
   };
-
 
   // для TimePicker
   useEffect(() => {

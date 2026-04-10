@@ -1,5 +1,11 @@
 import ProfileForm from '@/components/pages/profile/profileForm';
 
-const page = () => <ProfileForm/>;
+const ProfilePage = () => {
+  return (
+    <div>
+      <ProfileForm />
+    </div>
+  );
+};
 
-export default page;
+export default ProfilePage;

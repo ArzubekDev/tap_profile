@@ -1,6 +1,6 @@
 'use client';
-import { DatePickerFormController, SelectFormController } from '@/components/form/formControllers';
-import InputController from '@/components/form/formControllers/inputFormController';
+import { DatePickerFormController, SelectFormController } from '@/components/form/Controllers';
+import InputController from '@/components/form/Controllers/inputFormController';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { DatePickerProps } from 'antd';
 import { Button } from 'antd';
@@ -50,20 +50,20 @@ const History: React.FC = () => {
       <h3 className={style.title}>История заказов</h3>
       <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
         <div className={style.top}>
-            <InputController
-              id="searchName"
-              name="name"
-              placeholder="Имя, фамилия, телефон..."
-              label="Имя"
-              control={control}
-            />
-            <SelectFormController
-              name="status"
-              control={control}
-              label="Статус"
-              options={statusOptions}
-              className={style.searchInput}
-            />
+          <InputController
+            id="searchName"
+            name="name"
+            placeholder="Имя, фамилия, телефон..."
+            label="Имя"
+            control={control}
+          />
+          <SelectFormController
+            name="status"
+            control={control}
+            label="Статус"
+            options={statusOptions}
+            className={style.searchInput}
+          />
         </div>
         <div className={style.center}>
           <SelectFormController
@@ -91,10 +91,12 @@ const History: React.FC = () => {
           />
         </div>
         <div className={style.buttons}>
-          <Button type="primary" htmlType='submit' className={style.apply}>
+          <Button type="primary" htmlType="submit" className={style.apply}>
             Применить
           </Button>
-          <Button onClick={() => reset()} className={style.reset}>Сбросить</Button>
+          <Button onClick={() => reset()} className={style.reset}>
+            Сбросить
+          </Button>
         </div>
       </form>
       <Orders />

@@ -1,4 +1,9 @@
 'use client'
+
+import { Input } from 'antd';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+
 import {
   IconCart,
   IconCatalog,
@@ -9,13 +14,12 @@ import {
   IconUser,
   TapLogo,
 } from '@/components/Icons';
+import PopoverLayout from '../popover/PopoverLayout';
+
 import { PATH_CREATE_SHOP, PATH_HOME } from '@/shared/consts/paths';
 import profileMenuContent from '@/shared/ui/Dropdown';
-import { Input } from 'antd';
-import Link from 'next/link';
-import PopoverLayout from '../popover/PopoverLayout';
 import style from './style.module.scss';
-import { useRouter } from 'next/navigation';
+
 
 const Header = () => {
   const route = useRouter()
@@ -48,6 +52,7 @@ const Header = () => {
           </div>
           {/* Профиль */}
           <PopoverLayout
+          // content={<div><Link href={}></Link></div>}
             content={profileMenuContent}
             placement="bottomRight"
             trigger="hover"

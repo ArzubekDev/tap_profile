@@ -1,17 +1,19 @@
 'use client';
 
+import { InputFormController, PatterFormatController } from '@/components/form/Controllers';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
 import { useForm } from 'react-hook-form';
 import style from './style.module.scss';
 import { ZprofileNameSurName, ZprofileNumber } from './zod/zod';
-import { InputFormController, PatterFormatController } from '@/components/form/formControllers';
 
 const ProfileForm = () => {
   const nameForm = useForm({
     resolver: zodResolver(ZprofileNameSurName),
     defaultValues: { name: '', surname: '' },
   });
+
+  console.log('ProfileForm_____');
 
   const phoneForm = useForm({
     resolver: zodResolver(ZprofileNumber),
