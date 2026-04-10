@@ -1,0 +1,52 @@
+.orderList {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-block: 40px;
+}
+// TotalPriceContainer
+.totalPriceContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #363638;
+    padding: 26px;
+    border-radius: 24px;
+}
+.quantity {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+.text {
+    color: #bbbbbb;
+}
+.totalPrice {
+    padding-top: 20px;
+    border-top: 1.5px solid #bbbbbb9f;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+
+// OrderList
+.order {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1.5px solid #bbbbbb9f;
+    border-radius: 24px;
+    padding: 26px;
+}
+.info {
+    text-align: center;
+    font-weight: 300;
+    span {
+        color: #bbbbbb;
+        font-size: 17px;
+        font-weight: 300;
+    }
+}
+.info:nth-child(3){
+    color: rgb(79, 79, 232);
+}

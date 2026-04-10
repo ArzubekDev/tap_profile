@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 import Orders from '../orders';
 import style from './style.module.scss';
 import { THistoryForm, ZhistoryForm } from './zod/zod';
+import OrderList from '@/src/shared/ui/OrderList';
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
@@ -105,6 +106,7 @@ const History: React.FC = () => {
       </form>
       {/* Orders компонент */}
       <Orders />
+      <OrderList/>
     </section>
   );
 };
