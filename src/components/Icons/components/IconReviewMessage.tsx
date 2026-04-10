@@ -13,7 +13,7 @@ const IconReviewMessage: FC<TIcon> = ({ color, className, width, height, ...rest
       height={height || ICON_DEFAULT_HEIGHT}
       fill={'transparent'}
       className={cn(ICON_DEFAULT_CLASSNAME, className)}
-      viewBox="0 0 20 20"
+      viewBox="0 0 24 24"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
