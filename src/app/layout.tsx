@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 const ttCommons = localFont({
-  src: '../public/fonts/TTCommons-Regular.ttf',
+  src: '../assets/fonts/TTCommons-Regular.ttf',
   variable: '--font-tt',
 });
 
