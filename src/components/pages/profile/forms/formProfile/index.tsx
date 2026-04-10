@@ -1,12 +1,14 @@
 'use client';
 
-import { InputFormController } from '@/src/components/form/Controllers';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
-import { useForm } from 'react-hook-form';
-import style from './style.module.scss';
+
+import { InputFormController } from '@/src/components/form/Controllers';
 import { ZprofileNameSurName } from './zod/zod';
 import FormNumber from '../formNumber';
+
+import style from './style.module.scss';
 
 const ProfileForm = () => {
   const nameForm = useForm({
@@ -14,23 +16,21 @@ const ProfileForm = () => {
     defaultValues: { name: '', surname: '' },
   });
 
-
-
   const onNameSubmit = (data: any) => console.log('onNameSubmit', data);
 
   return (
     <div className={style.profileForm}>
-      <form onSubmit={nameForm.handleSubmit(onNameSubmit)} className={style.profileForm__top}>
-        <div className={style.formHeader}>
-          <h3 className={style.profileForm__top__title}>Персональные данные</h3>
-          <p className={style.profileForm__top__subtitle}>
+      <form onSubmit={nameForm.handleSubmit(onNameSubmit)} className={style.content}>
+        <div className={style.header}>
+          <h3 className={style.title}>Персональные данные</h3>
+          <p className={style.subtitle}>
             Данные профиля не доступны третьим лицам и используется маркетплейсом только для
             идентификации пользователей
           </p>
         </div>
 
-        <div className={style.profileForm__top__input}>
-          <div className={style.profileForm__top__input__block}>
+        <div className={style.inputs}>
+          <div className={style.inputFormController}>
             <InputFormController
               id="name"
               name="name"
@@ -40,7 +40,7 @@ const ProfileForm = () => {
             />
           </div>
 
-          <div className={style.profileForm__top__input__block}>
+          <div className={style.inputFormController}>
             <InputFormController
               id="surname"
               name="surname"
@@ -54,7 +54,7 @@ const ProfileForm = () => {
           Сохранить изменения
         </Button>
       </form>
-     <FormNumber/>
+      <FormNumber />
     </div>
   );
 };

@@ -6,47 +6,38 @@
   @media (max-width: 726px) {
     grid-template-columns: 1fr;
   }
-  &__top {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    grid-column: 1 / -1;
-    gap: var(--gap);
-    width: 100%;
-
-    &__title {
-      font-size: var(--fs-h3);
-      font-weight: var(--font-weight);
-      color: var(--color-text);
-    }
-
-    &__subtitle {
-      color: var(--color-text);
-    }
-
-    &__input {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      gap: 20px;
-
-      @media (max-width: 726px) {
-        flex-direction: column;
-      }
-      &__block {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        width: 100%;
-      }
-    }
-  }
-
-
 }
 
-.label {
-  font-size: var(--label-size);
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  grid-column: 1 / -1;
+  gap: var(--gap);
+  width: 100%;
+}
+.title {
+  font-size: var(--fs-h3);
   font-weight: var(--font-weight);
+  color: var(--color-text);
+}
+.subtitle {
+  color: var(--color-text);
+}
+.inputs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+
+  @media (max-width: 726px) {
+    flex-direction: column;
+  }
+}
+.inputFormController {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
