@@ -7,7 +7,7 @@ const Card = () => {
   return (
     <div className={style.card}>
       <div className={style.imageContainer}>
-        <Image src={'/images/laptop.webp'} alt="Image" width={200} height={230} />
+        <Image src={'/images/laptop.webp'} alt="Image" width={200} height={230} className={style.img} />
       </div>
       <h3>Laptop</h3>
       <h5>12 000 c</h5>

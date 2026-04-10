@@ -1,0 +1,15 @@
+.card {
+    width: 230px;
+    height: 320px;
+    background-color: beige;
+    border-radius: 12px;
+}
+.imageContainer {
+    width: 100%;
+    height: 72%;
+    .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}

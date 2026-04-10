@@ -1,11 +1,11 @@
 import Card from '@/src/shared/ui/Card'
-import React from 'react'
+import style from "./style.module.scss"
 
 const Home = () => {
   return (
-    <div>
+    <section className={style.home}>
       <Card/>
-    </div>
+    </section>
   )
 }
 
