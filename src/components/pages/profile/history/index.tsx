@@ -1,14 +1,20 @@
 'use client';
-import { DatePickerFormController, SelectFormController } from '@/src/components/form/Controllers';
-import InputController from '@/src/components/form/Controllers/inputFormController';
+
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { DatePickerProps } from 'antd';
 import { Button } from 'antd';
+import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
-import Orders from '../orders';
-import style from './style.module.scss';
+import type { DatePickerProps } from 'antd';
+
+import { DatePickerFormController, SelectFormController } from '@/src/components/form/Controllers';
+import { IconCartOrder } from '@/src/components/Icons';
+import { PATH_HOME } from '@/src/shared/consts/paths';
 import { THistoryForm, ZhistoryForm } from './zod/zod';
+import EmptyData from '@/src/components/common/emptyData';
+import InputController from '@/src/components/form/Controllers/inputFormController';
 import OrderList from '@/src/shared/ui/OrderList';
+
+import style from './style.module.scss';
 
 const onChange: DatePickerProps['onChange'] = (date, dateString) => {
   console.log(date, dateString);
@@ -34,6 +40,8 @@ const storeOptions = [
 ];
 
 const History: React.FC = () => {
+  const route = useRouter();
+
   const { control, handleSubmit, reset } = useForm<THistoryForm>({
     resolver: zodResolver(ZhistoryForm),
     defaultValues: {
@@ -104,9 +112,24 @@ const History: React.FC = () => {
           </Button>
         </div>
       </form>
-      {/* Orders компонент */}
-      <Orders />
-      <OrderList/>
+      {/* EmptyData */}
+      <EmptyData
+        icon={<IconCartOrder />}
+        title="У вас нет заказов!"
+        description={
+          <>
+            После совершения покупки все Ваши заказы попадают сюда. <br />В данный момент у вас еще
+            нет заказов.
+          </>
+        }
+        action={
+          <Button onClick={() => route.push(PATH_HOME)} type="primary" size="large">
+            Посмотреть каталог товаров
+          </Button>
+        }
+      />
+      {/* OrderList */}
+      <OrderList />
     </section>
   );
 };
