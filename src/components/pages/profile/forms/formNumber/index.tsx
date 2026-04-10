@@ -16,13 +16,13 @@ const FormNumber = () => {
   const onPhoneSubmit = (data: any) => console.log('onPhoneSubmit:', data);
 
   return (
-     <form onSubmit={phoneForm.handleSubmit(onPhoneSubmit)} className={style.profileForm__bottom}>
-        <div className={style.formFooter}>
-          <h3 className={style.profileForm__bottom__title}>Номер телефона</h3>
+     <form onSubmit={phoneForm.handleSubmit(onPhoneSubmit)} className={style.numberPhone}>
+        <div className={style.content}>
+          <h3 className={style.title}>Номер телефона</h3>
           <p>Смена номера выполняется по коду из SMS</p>
         </div>
 
-        <div className={style.profileForm__bottom__block}>
+        <div className={style.input}>
           <PatterFormatController
             id="number"
             name="number"

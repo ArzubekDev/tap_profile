@@ -50,6 +50,7 @@ const History: React.FC = () => {
       <h3 className={style.title}>История заказов</h3>
       <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
         <div className={style.top}>
+          {/* Имя */}
           <InputController
             id="searchName"
             name="name"
@@ -57,6 +58,7 @@ const History: React.FC = () => {
             label="Имя"
             control={control}
           />
+          {/* Статус */}
           <SelectFormController
             name="status"
             control={control}
@@ -65,15 +67,17 @@ const History: React.FC = () => {
             className={style.searchInput}
           />
         </div>
+        {/* Магазины */}
         <div className={style.center}>
           <SelectFormController
-            name="status"
+            name="store"
             control={control}
             label="Магазин"
             options={storeOptions}
             className={style.searchInput}
           />
         </div>
+        {/* Даты */}
         <div className={style.bottom}>
           <DatePickerFormController
             name="dateFrom"
@@ -99,6 +103,7 @@ const History: React.FC = () => {
           </Button>
         </div>
       </form>
+      {/* Orders компонент */}
       <Orders />
     </section>
   );
