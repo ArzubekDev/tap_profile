@@ -1,5 +1,6 @@
 import { Button } from 'antd';
 import style from './style.module.scss';
+import IconCheck from '@/src/components/Icons/components/IconCheck';
 
 const DeleteAccount = () => {
   return (
@@ -14,7 +15,7 @@ const DeleteAccount = () => {
       </div>
       <div className={style.content}>
         <h3 className={style.contentTitle}>При удалении аккаунта будут безвозвратно стерты:</h3>
-        <h5 className={style.contentInfo}>История ваших покупок</h5>
+        <h5 className={style.contentInfo}><span><IconCheck/></span>История ваших покупок</h5>
         <h5 className={style.contentInfo}>Номер телефона</h5>
         <h5 className={style.contentInfo}>Уведомления и ФИО</h5>
         <h5 className={style.contentInfo}>Пол и адрес проживания</h5>
