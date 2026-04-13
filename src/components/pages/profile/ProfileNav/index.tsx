@@ -27,7 +27,8 @@ const ProfileNav = () => {
 
   return (
     <aside className={style.profileNav}>
-      <div className={style.myProfile}>
+<div className={style.profileNavContainer}>
+        <div className={style.myProfile}>
         <h4 className={style.title}>Мой профиль</h4>
         <div className={style.container}>
           {profileItems.map((el) => {
@@ -71,6 +72,7 @@ const ProfileNav = () => {
           <IconLogout className={style.logoutIcon} /> Выход
         </button>
       </div>
+</div>
     </aside>
   );
 };
