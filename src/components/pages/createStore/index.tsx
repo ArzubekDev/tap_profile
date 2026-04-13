@@ -7,9 +7,10 @@ import { useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import { InputFormController, PatterFormatController } from '@/src/components/form/Controllers';
+import { InputFormController } from '@/src/components/form/Controllers';
 import LogoUpload from '@/src/shared/ui/LogoUpload';
 import WorkTimeField from '@/src/shared/ui/WorkTimeField';
+import Contacts from './contacts';
 import style from './style.module.scss';
 import { TAddress } from './type';
 import { TFormValues, ZcreateStore } from './zod/zod';
@@ -33,9 +34,6 @@ const CreateStore = () => {
     mode: 'onBlur',
     defaultValues: {
       storeName: '',
-      phone: '',
-      whatsapp: '',
-      instagram: '',
       address: '',
       isEveryday: false,
       workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
@@ -97,33 +95,7 @@ const CreateStore = () => {
               />
             </div>
             {/* Телефон, Ватсап, Инстаграмм */}
-            <div className={style.contacts}>
-              {/* Телефон */}
-              <PatterFormatController
-                id="phone"
-                name="phone"
-                text="Публичный номер для связи с магазином."
-                control={control}
-                label="Телефон"
-              />
-              {/* WhatsApp */}
-              <PatterFormatController
-                id="whatsapp"
-                name="whatsapp"
-                text="Номер для чата"
-                control={control}
-                label="WhatsApp"
-              />
-              {/* Instagram */}
-              <InputFormController
-                id="instagram"
-                name="instagram"
-                label="Instagram"
-                text="Ник или полная ссылка на профиль."
-                control={control}
-                placeholder="@магазин или URL"
-              />
-            </div>
+            <Contacts />
             {/* Время работы, Режим, Круглосуточно */}
             <WorkTimeField control={control} setValue={setValue} errors={errors} />
           </div>

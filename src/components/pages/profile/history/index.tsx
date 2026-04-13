@@ -113,7 +113,7 @@ const History: React.FC = () => {
         </div>
       </form>
       {/* EmptyData */}
-      <EmptyData
+      {/* <EmptyData
         icon={<IconCartOrder />}
         title="У вас нет заказов!"
         description={
@@ -127,7 +127,7 @@ const History: React.FC = () => {
             Посмотреть каталог товаров
           </Button>
         }
-      />
+      /> */}
       {/* OrderList */}
       <OrderList />
     </section>
