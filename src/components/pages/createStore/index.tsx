@@ -7,16 +7,16 @@ import { useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import Contacts from './contacts';
 import LogoUpload from '@/src/components/pages/profile/forms/LogoUpload';
 import WorkTimeField from '@/src/shared/ui/WorkTimeField';
+import Contacts from './contacts';
 
 import { InputFormController } from '@/src/components/form/Controllers';
 import { TAddress } from './type';
 import { TFormValues, ZcreateStore } from './zod/zod';
 
-import style from './style.module.scss';
 import { createStoreAction } from './action';
+import style from './style.module.scss';
 const AddressPicker = dynamic(() => import('@/src/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
 });
@@ -24,7 +24,7 @@ const AddressPicker = dynamic(() => import('@/src/shared/ui/AddressPicker/Addres
 // Компонент CreateStore
 const CreateStore = () => {
   // Хуки
-  const formRef = useRef<HTMLFormElement>(null)
+  const formRef = useRef<HTMLFormElement>(null);
   const [mounted, setMounted] = useState(false);
   //useForm
   const {
@@ -38,6 +38,9 @@ const CreateStore = () => {
     defaultValues: {
       storeName: '',
       address: '',
+      phone: '',
+      whatsapp: '',
+      instagram: '',
       isEveryday: false,
       workingHours: [dayjs('09:00', 'HH:mm'), dayjs('18:00', 'HH:mm')],
     },
@@ -54,27 +57,27 @@ const CreateStore = () => {
   }, []);
 
   // Для отправки Form
-const onFinish = async (data: TFormValues) => {
-  const formData = new FormData();
+  const onFinish = async (data: TFormValues) => {
+    const formData = new FormData();
 
-  if (data.logo) {
-    formData.append('logo', data.logo);
-  }
-
-  formData.append('storeName', data.storeName);
-  formData.append('address', location.address);
-  formData.append('latitude', location.coords[0].toString());
-  formData.append('longitude', location.coords[1].toString());
-
-  try {
-    const result = await createStoreAction(formData);
-    if (result.success) {
-      console.log('Success');
+    if (data.logo) {
+      formData.append('logo', data.logo);
     }
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
+
+    formData.append('storeName', data.storeName);
+    formData.append('address', location.address);
+    formData.append('latitude', location.coords[0].toString());
+    formData.append('longitude', location.coords[1].toString());
+
+    try {
+      const result = await createStoreAction(formData);
+      if (result.success) {
+        console.log('Success');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
 
   // для TimePicker
   useEffect(() => {
@@ -110,7 +113,7 @@ const onFinish = async (data: TFormValues) => {
               />
             </div>
             {/* Телефон, Ватсап, Инстаграмм */}
-            <Contacts />
+            <Contacts control={control} errors={errors} />
             {/* Время работы, Режим, Круглосуточно */}
             <WorkTimeField control={control} setValue={setValue} errors={errors} />
           </div>

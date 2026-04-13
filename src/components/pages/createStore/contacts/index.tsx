@@ -1,23 +1,15 @@
 import { InputFormController, PatterFormatController } from '@/src/components/form/Controllers';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
+import { Control, FieldErrors, useForm } from 'react-hook-form';
 import { TFormValues, ZcreateStore } from '../zod/zod';
 import style from './style.module.scss';
 
-const Contacts = () => {
-  //useForm
-  const {
-    control,
-    formState: { errors },
-  } = useForm<TFormValues>({
-    resolver: zodResolver(ZcreateStore),
-    mode: 'onBlur',
-    defaultValues: {
-      phone: '',
-      whatsapp: '',
-      instagram: '',
-    },
-  });
+interface ContactsProps {
+  control: Control<TFormValues>;
+  errors?: FieldErrors<TFormValues>;
+}
+
+const Contacts = ({control, errors}: ContactsProps) => {
   
   return (
     <div className={style.contacts}>
