@@ -27,52 +27,52 @@ const ProfileNav = () => {
 
   return (
     <aside className={style.profileNav}>
-<div className={style.profileNavContainer}>
+      <div className={style.profileNavContainer}>
         <div className={style.myProfile}>
-        <h4 className={style.title}>Мой профиль</h4>
-        <div className={style.container}>
-          {profileItems.map((el) => {
-            const isActive = el.link === pathname;
-            return (
-              <Link
-                href={el.link}
-                key={el.id}
-                className={cn(style.profileItem, {
-                  [style.active]: isActive,
-                })}
-              >
-                {el.icon} {el.title}
-              </Link>
-            );
-          })}
+          <h4 className={style.title}>Мой профиль</h4>
+          <div className={style.container}>
+            {profileItems.map((el) => {
+              const isActive = el.link === pathname;
+              return (
+                <Link
+                  href={el.link}
+                  key={el.id}
+                  className={cn(style.profileItem, {
+                    [style.active]: isActive,
+                  })}
+                >
+                  {el.icon} {el.title}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+        <div className={style.myStores}>
+          <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
+          <div>
+            {storeItems.map((el) => {
+              const isActive = el.link === pathname;
+              return (
+                <Link
+                  href={el.link}
+                  key={el.id}
+                  className={cn(style.profileItem, {
+                    [style.active]: isActive,
+                  })}
+                >
+                  {el.icon} {el.title}
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+        <div className={style.logoutAccount}>
+          <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
+          <button className={style.logout}>
+            <IconLogout className={style.logoutIcon} /> Выход
+          </button>
         </div>
       </div>
-      <div className={style.myStores}>
-        <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
-        <div>
-          {storeItems.map((el) => {
-            const isActive = el.link === pathname;
-            return (
-              <Link
-                href={el.link}
-                key={el.id}
-                className={cn(style.profileItem, {
-                  [style.active]: isActive,
-                })}
-              >
-                {el.icon} {el.title}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
-      <div className={style.logoutAccount}>
-        <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
-        <button className={style.logout}>
-          <IconLogout className={style.logoutIcon} /> Выход
-        </button>
-      </div>
-</div>
     </aside>
   );
 };

@@ -1,3 +1,10 @@
 .home {
-    padding-block: 36px;
+  padding-block: 120px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px; 
+  justify-items: center; 
 }

@@ -11,8 +11,8 @@ const Favorite = () => {
   });
 
   return (
-    <div className={style.favorite}>
-      {data.map((el: any) => (
+    <div className={style.cards}>
+      {data?.map((el: any) => (
         <div key={el.id}>
          <Card el={el}/>
         </div>
