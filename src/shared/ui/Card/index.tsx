@@ -2,34 +2,28 @@ import { IconCardFavorite, IconReviewMessage, IconStar } from '@/src/components/
 import Image from 'next/image';
 import style from './style.module.scss';
 
-const Card = () => {
+const Card = ({ el }: any) => {
   return (
     <div className={style.card}>
-      <IconCardFavorite className={style.IconFav}/>
+      <IconCardFavorite className={style.IconFav} />
       <div className={style.imageContainer}>
-        <Image
-          src={'/images/laptop.webp'}
-          alt="Image"
-          width={200}
-          height={230}
-          className={style.img}
-        />
+        <Image src={el.image} alt={el.title} fill className={style.img} sizes="(max-width: 768px) 100vw, 230px"/>
       </div>
-     <div className={style.content}>
-       <div className={style.info}>
-        <h3 className={style.price}>12 000 cом</h3>
-        <h4 className={style.nameProduct}>Laptop</h4>
-      </div>
-      <div className={style.else}>
-        <div className={style.rating}>
-          <IconStar /> 5
+      <div className={style.content}>
+        <div className={style.info}>
+          <h3 className={style.price}>{el.price}</h3>
+          <h4 className={style.nameProduct}>{el.title.length > 15 ? el.title.slice(0, 15) + "..." : el.title}</h4>
         </div>
-        <div className={style.review}>
-          <IconReviewMessage />
-          12 отзывов
+        <div className={style.else}>
+          <div className={style.rating}>
+            <IconStar /> 5
+          </div>
+          <div className={style.review}>
+            <IconReviewMessage />
+            12 отзывов
+          </div>
         </div>
       </div>
-     </div>
     </div>
   );
 };
