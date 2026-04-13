@@ -1,5 +1,5 @@
 'use client';
-import { getFavoriteProducts } from '@/src/shared/api/instance.api';
+import { getProducts } from '@/src/shared/api/instance.api';
 import Card from '@/src/shared/ui/Card';
 import { useQuery } from '@tanstack/react-query';
 import style from './style.module.scss';
@@ -7,7 +7,7 @@ import style from './style.module.scss';
 const Home = () => {
   const { data } = useQuery<any>({
     queryKey: ['posts'],
-    queryFn: getFavoriteProducts,
+    queryFn: getProducts,
   });
   return (
     <section className={style.home}>
