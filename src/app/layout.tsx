@@ -3,6 +3,7 @@ import { AntdRegistry } from '@ant-design/nextjs-registry';
 import '@ant-design/v5-patch-for-react-19';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import TanstackQueryProvider from '../providers/TanstackQueryProvider';
 import './globals.scss';
 
 export const metadata: Metadata = {
@@ -22,10 +23,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={ttCommons.variable}>
-      <body >
-        <ThemeConfig>
-          <AntdRegistry>{children}</AntdRegistry>
-        </ThemeConfig>
+      <body>
+        <AntdRegistry>
+          <ThemeConfig>
+            <TanstackQueryProvider>{children}</TanstackQueryProvider>
+          </ThemeConfig>
+        </AntdRegistry>
       </body>
     </html>
   );
