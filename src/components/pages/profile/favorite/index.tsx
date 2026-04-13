@@ -6,7 +6,7 @@ import style from "./style.module.scss"
 
 const Favorite = () => {
   const { data } = useQuery<any>({
-    queryKey: ['posts'],
+    queryKey: ['favorites'],
     queryFn: getProducts
   });
 

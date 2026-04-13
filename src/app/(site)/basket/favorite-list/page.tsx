@@ -6,7 +6,7 @@ export default async function FavoritePage() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ['posts'],
+    queryKey: ['favorites'],
     queryFn: getProducts,
   });
 
