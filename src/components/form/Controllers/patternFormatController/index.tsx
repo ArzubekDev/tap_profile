@@ -31,6 +31,7 @@ const PatterFormatController = <T extends FieldValues>({
             <PatternFormat
               id={id}
               {...field}
+              name={name as string}
               value={value}
               format="+996 (###) ## ## ##"
               mask="_"
