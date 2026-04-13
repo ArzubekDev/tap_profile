@@ -1,8 +1,6 @@
-import { IconFavorite, IconHeartFavorte, IconStar } from '@/src/components/Icons';
-import IconReviewMessage from '@/src/components/Icons/components/IconReviewMessage';
+import { IconCardFavorite, IconReviewMessage, IconStar } from '@/src/components/Icons';
 import Image from 'next/image';
 import style from './style.module.scss';
-import IconCardFavorite from '@/src/components/Icons/components/IconCardFavorite';
 
 const Card = () => {
   return (

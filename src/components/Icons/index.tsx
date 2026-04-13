@@ -19,8 +19,14 @@ import IconEdit from './components/IconEdit';
 import IconStar from './components/IconStar';
 import IconCheck from './components/IconCheck';
 import IconMessage from './components/IconMessage';
+import IconArrow from './components/IconArrow';
+import IconCardFavorite from './components/IconCardFavorite';
+import IconReviewMessage from './components/IconReviewMessage';
 
 export {
+  IconCardFavorite,
+  IconReviewMessage,
+  IconArrow,
   IconMessage,
   IconCheck,
   IconStar,

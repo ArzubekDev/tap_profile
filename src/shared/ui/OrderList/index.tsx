@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import style from './style.module.scss';
-import IconArrow from '@/src/components/Icons/components/IconArrow';
+import { IconArrow } from '@/src/components/Icons';
 
 const OrderList = () => {
   return (
