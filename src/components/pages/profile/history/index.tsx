@@ -7,10 +7,7 @@ import { useForm } from 'react-hook-form';
 import type { DatePickerProps } from 'antd';
 
 import { DatePickerFormController, SelectFormController } from '@/src/components/form/Controllers';
-import { IconCartOrder } from '@/src/components/Icons';
-import { PATH_HOME } from '@/src/shared/consts/paths';
 import { THistoryForm, ZhistoryForm } from './zod/zod';
-import EmptyData from '@/src/components/common/emptyData';
 import InputController from '@/src/components/form/Controllers/inputFormController';
 import OrderList from '@/src/shared/ui/OrderList';
 
