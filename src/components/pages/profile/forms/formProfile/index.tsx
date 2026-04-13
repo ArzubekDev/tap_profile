@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
@@ -9,23 +10,32 @@ import { ZprofileNameSurName } from './zod/zod';
 import FormNumber from '../formNumber';
 
 import style from './style.module.scss';
+import { updateProfile } from './action';
 
 const ProfileForm = () => {
-  const nameForm = useForm({
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const { control, handleSubmit } = useForm({
     resolver: zodResolver(ZprofileNameSurName),
     defaultValues: { name: '', surname: '' },
   });
 
-  const onNameSubmit = (data: any) => console.log('onNameSubmit', data);
+  const onValid = () => {
+    formRef.current?.requestSubmit();
+  };
 
   return (
     <div className={style.profileForm}>
-      <form onSubmit={nameForm.handleSubmit(onNameSubmit)} className={style.content}>
+      <form 
+        ref={formRef}
+        action={updateProfile}
+        onSubmit={handleSubmit(onValid)}
+        className={style.content}
+      >
         <div className={style.header}>
           <h3 className={style.title}>Персональные данные</h3>
           <p className={style.subtitle}>
-            Данные профиля не доступны третьим лицам и используется маркетплейсом только для
-            идентификации пользователей
+            Данные профиля не доступны третьим лицам...
           </p>
         </div>
 
@@ -33,10 +43,10 @@ const ProfileForm = () => {
           <div className={style.inputFormController}>
             <InputFormController
               id="name"
-              name="name"
+              name="name" 
               placeholder="Имя"
               label="Имя"
-              control={nameForm.control}
+              control={control}
             />
           </div>
 
@@ -46,10 +56,11 @@ const ProfileForm = () => {
               name="surname"
               placeholder="Фамилия"
               label="Фамилия"
-              control={nameForm.control}
+              control={control}
             />
           </div>
         </div>
+        
         <Button type="primary" htmlType="submit">
           Сохранить изменения
         </Button>

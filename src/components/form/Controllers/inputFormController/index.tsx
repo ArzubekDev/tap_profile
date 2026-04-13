@@ -32,6 +32,7 @@ const InputFormController = <T extends FieldValues>({
               id={id}
               {...field}
               {...props}
+              name={name as string}
               status={fieldError ? 'error' : props.status}
               placeholder={fieldError ? fieldError.message : placeholder}
               className={fieldError ? style.errorPlaceholder : ''}
