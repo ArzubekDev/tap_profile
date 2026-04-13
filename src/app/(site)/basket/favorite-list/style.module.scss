@@ -16,3 +16,18 @@
   flex: 1;
   width: 100%;
 }
+
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+
+  width: 100%;
+  min-height: 100vh;
+}
+.text {
+  font-size: 24px;
+  color: var(--main-color);
+}

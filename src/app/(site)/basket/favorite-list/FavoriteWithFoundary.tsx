@@ -1,13 +1,15 @@
 'use client';
 
-import Favorite from '@/src/components/pages/profile/favorite';
 import { ErrorBoundary } from 'react-error-boundary';
+import Favorite from '@/src/components/pages/profile/favorite';
+import { Button } from 'antd';
+import style from "./style.module.scss"
 
 function ErrorFallback({ error, resetErrorBoundary }: any) {
   return (
-    <div>
-      <p>Ошибка: {error.message}</p>
-      <button onClick={resetErrorBoundary}>Повторить</button>
+    <div className={style.error}>
+      <p className={style.text}>Ошибка: {error.message}</p>
+      <Button type='primary' onClick={resetErrorBoundary}>Повторить</Button>
     </div>
   );
 }
