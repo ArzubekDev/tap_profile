@@ -1,20 +1,22 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Form } from 'antd';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import { InputFormController } from '@/src/components/form/Controllers';
-import LogoUpload from '@/src/shared/ui/LogoUpload';
-import WorkTimeField from '@/src/shared/ui/WorkTimeField';
 import Contacts from './contacts';
-import style from './style.module.scss';
+import LogoUpload from '@/src/components/pages/profile/forms/LogoUpload';
+import WorkTimeField from '@/src/shared/ui/WorkTimeField';
+
+import { InputFormController } from '@/src/components/form/Controllers';
 import { TAddress } from './type';
 import { TFormValues, ZcreateStore } from './zod/zod';
 
+import style from './style.module.scss';
+import { createStoreAction } from './action';
 const AddressPicker = dynamic(() => import('@/src/shared/ui/AddressPicker/AddressPicker'), {
   ssr: false,
 });
@@ -22,6 +24,7 @@ const AddressPicker = dynamic(() => import('@/src/shared/ui/AddressPicker/Addres
 // Компонент CreateStore
 const CreateStore = () => {
   // Хуки
+  const formRef = useRef<HTMLFormElement>(null)
   const [mounted, setMounted] = useState(false);
   //useForm
   const {
@@ -51,15 +54,27 @@ const CreateStore = () => {
   }, []);
 
   // Для отправки Form
-  const onFinish = (data: TFormValues) => {
-    const finalData = {
-      ...data,
-      address: location.address,
-      latitude: location.coords[0],
-      longitude: location.coords[1],
-    };
-    console.log(finalData);
-  };
+const onFinish = async (data: TFormValues) => {
+  const formData = new FormData();
+
+  if (data.logo) {
+    formData.append('logo', data.logo);
+  }
+
+  formData.append('storeName', data.storeName);
+  formData.append('address', location.address);
+  formData.append('latitude', location.coords[0].toString());
+  formData.append('longitude', location.coords[1].toString());
+
+  try {
+    const result = await createStoreAction(formData);
+    if (result.success) {
+      console.log('Success');
+    }
+  } catch (error) {
+    console.error("Error:", error);
+  }
+};
 
   // для TimePicker
   useEffect(() => {

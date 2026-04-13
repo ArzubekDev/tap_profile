@@ -8,6 +8,7 @@ export const ZcreateStore = z.object({
     address: z.string().min(1, "*Укажите адрес*"),
     isEveryday: z.boolean(),
     workingHours: z.tuple([z.any(), z.any()]),
+    logo: z.any().optional(),
 })
 
 export type TFormValues = z.infer<typeof ZcreateStore>;
