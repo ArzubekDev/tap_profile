@@ -1,15 +1,18 @@
 import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
-import style from './style.module.scss';
+
 import Buyers from './buyers';
-import Seller from './seller';
 import Contacts from './contacts';
+import QRCodeComponent from './qrCode';
+import Seller from './seller';
+
+import style from './style.module.scss';
 
 const Footer = () => {
   return (
     <footer className={style.footer}>
       <div className="container">
         <div className={style.content}>
-            {/* TapLogo & Текст */}
+          {/* TapLogo & Текст */}
           <div className={style.left}>
             <TapLogo />
             <p className={style.text}>
@@ -22,19 +25,17 @@ const Footer = () => {
               для покупателей так и для продавцов в Кыргызстане.
             </p>
           </div>
-          {/* 3 Блоки: Информация и контакты */}
+          {/* 3 Блок: Информация и контакты */}
           <div className={style.informations}>
             {/* Покупателям */}
-           <Buyers/>
+            <Buyers />
             {/* Продавцам */}
-           <Seller/>
+            <Seller />
             {/* Контакты */}
-           <Contacts/>
+            <Contacts />
           </div>
           {/* QR Code */}
-          <div className={style.qrCode}>
-            <h6>Наведите камеру и скачайте бесплатное приложение</h6>
-          </div>
+          <QRCodeComponent />
         </div>
       </div>
     </footer>
