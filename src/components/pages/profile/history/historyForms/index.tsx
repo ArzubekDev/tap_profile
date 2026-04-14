@@ -1,13 +1,13 @@
 'use client'
-import { DatePickerFormController, InputFormController, SelectFormController } from "@/src/components/form/Controllers"
-import style from "../style.module.scss"
 import { Button, DatePickerProps } from "antd"
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+
+import { DatePickerFormController, InputFormController, SelectFormController } from "@/src/components/form/Controllers"
 import { THistoryForm, ZhistoryForm } from "../zod/zod";
+import style from "./style.module.scss"
 
 const HistoryForms = () => {
-
   const { control, handleSubmit, reset } = useForm<THistoryForm>({
     resolver: zodResolver(ZhistoryForm),
     defaultValues: {
