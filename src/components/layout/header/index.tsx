@@ -21,6 +21,7 @@ import profileMenuContent from '@/src/shared/ui/Dropdown';
 import style from './style.module.scss';
 import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
 import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
+import FavoriteUI from '@/src/shared/ui/FavoriteUI/FavoriteUI';
 
 const Header = () => {
   const route = useRouter();
@@ -51,10 +52,7 @@ const Header = () => {
           {/* Профиль */}
          <ProfileUI/>
           {/* Избранное */}
-          <div className={style.navItem}>
-            <IconFavorite className={style.navItemIcon} />
-            <span className={style.navItemText}>Избранное</span>
-          </div>
+          <FavoriteUI/>
           {/* Корзина */}
           <div className={style.navItem}>
             <IconCart className={style.navItemIcon} />
