@@ -1,11 +1,11 @@
 'use client'
-import React from 'react';
-import EmptyData from '../../common/emptyData';
-import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { useRouter } from 'next/navigation';
-import style from './style.module.scss'
+
+import EmptyData from '../../common/emptyData';
 import { IconEmptyCart } from '../../Icons';
+
+import style from './style.module.scss'
 
 const Basket = () => {
   const router = useRouter();
