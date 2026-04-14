@@ -1,6 +1,6 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
-import { getProducts } from '@/src/shared/api/instance.api';
 import FavoriteWithBoundary from './FavoriteWithFoundary';
+import { getProducts } from '@/src/shared/api/product.api';
 
 export default async function FavoritePage() {
   const queryClient = new QueryClient();
