@@ -9,6 +9,7 @@ import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 import Card from '@/src/shared/ui/Card';
 import { useQuery } from '@tanstack/react-query';
+
 import style from './style.module.scss';
 
 const Basket = () => {
