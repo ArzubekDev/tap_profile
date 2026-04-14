@@ -1,5 +1,5 @@
 import PopoverLayout from '@/src/components/layout/popover/PopoverLayout'
-import profileMenuContent from '../Dropdown'
+import ProfileDropDown from '../ProfileDropdown/ProfileDropDown'
 import { IconUser } from '@/src/components/Icons'
 
 import style from "./style.module.scss"
@@ -7,7 +7,7 @@ import style from "./style.module.scss"
 const ProfileUI = () => {
   return (
      <PopoverLayout
-            content={profileMenuContent}
+            content={ProfileDropDown}
             placement="bottomRight"
             trigger="hover"
             innerClassName={style.profilePopoverContent}

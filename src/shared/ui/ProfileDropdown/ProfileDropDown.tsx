@@ -10,7 +10,7 @@ import { IconPlus } from '@/src/components/Icons';
 
 import style from '@/src/components/layout/header/style.module.scss';
 
-const profileMenuContent = (
+const ProfileDropDown = (
   <div className={style.profileDropdownMenu}>
     <Link href={PATH_PROFILE}>Мой профиль</Link>
     <Link href={PATH_BASKET_HISTORY}>История заказов</Link>
@@ -26,4 +26,4 @@ const profileMenuContent = (
   </div>
 );
 
-export default profileMenuContent;
+export default ProfileDropDown;
