@@ -1,7 +1,8 @@
-import { IconUser } from '@/src/components/Icons'
 import PopoverLayout from '@/src/components/layout/popover/PopoverLayout'
-import style from "./style.module.scss"
 import profileMenuContent from '../Dropdown'
+import { IconUser } from '@/src/components/Icons'
+
+import style from "./style.module.scss"
 
 const ProfileUI = () => {
   return (

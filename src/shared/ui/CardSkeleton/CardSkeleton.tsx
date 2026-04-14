@@ -1,4 +1,3 @@
-// src/app/(site)/basket/favorite-list/loading.tsx
 import style from './style.module.scss';
 
 export default function CardSkeleton() {

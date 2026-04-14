@@ -1,12 +1,14 @@
-import IconPlus from '@/src/components/Icons/components/IconPlus';
+import Link from 'next/link';
+
 import {
   PATH_BASKET_HISTORY,
   PATH_CREATE_SHOP,
   PATH_FAVORITE,
   PATH_PROFILE,
 } from '@/src/shared/consts/paths';
+import { IconPlus } from '@/src/components/Icons';
+
 import style from '@/src/components/layout/header/style.module.scss';
-import Link from 'next/link';
 
 const profileMenuContent = (
   <div className={style.profileDropdownMenu}>

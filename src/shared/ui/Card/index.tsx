@@ -1,5 +1,7 @@
-import { IconCardFavorite, IconReviewMessage, IconStar } from '@/src/components/Icons';
 import Image from 'next/image';
+
+import { IconCardFavorite, IconReviewMessage, IconStar } from '@/src/components/Icons';
+
 import style from './style.module.scss';
 
 const Card = ({ el }: any) => {

@@ -1,7 +1,10 @@
 import Link from 'next/link'
-import { PATH_CREATE_SHOP } from '../../consts/paths'
+
 import { IconStore } from '@/src/components/Icons'
+import { PATH_CREATE_SHOP } from '../../consts/paths'
+
 import style from "./style.module.scss"
+
 
 const CreateStoreUI = () => {
   return (
