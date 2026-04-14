@@ -24,6 +24,9 @@ const Favorite = () => {
           </div>
         ))}
       </div>
+      <div className={style.footer}>
+      <Pages/>
+      </div>
     </div>
   );
 };
