@@ -3,7 +3,7 @@ import { Checkbox, TimePicker } from 'antd';
 import { Controller, useWatch, Control, UseFormSetValue } from 'react-hook-form';
 import dayjs from 'dayjs';
 import style from './style.module.scss';
-import { TFormValues } from '@/components/pages/createStore/zod/zod';
+import { TFormValues } from '../zod/zod';
 
 interface WorkTimeFieldProps {
   control: Control<TFormValues>;
