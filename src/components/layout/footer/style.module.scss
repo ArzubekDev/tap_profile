@@ -1,0 +1,24 @@
+.footer {
+    width: 100%;
+    padding-block: 30px;
+}
+.content {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.text {
+    width: 400px;
+    font-size: 13px;
+    color: #3c3c3c;
+}
+.informations {
+    display: flex;
+    align-items: start;
+    gap: 120px;
+}

@@ -1,3 +1,4 @@
+import Footer from '@/src/components/layout/footer';
 import Header from '@/src/components/layout/header';
 import { ReactNode } from 'react';
 
@@ -10,6 +11,7 @@ const LayoutSite = ({ children }: LayoutSiteProps) => {
     <>
       <Header />
       {children}
+      <Footer/>
     </>
   );
 };
