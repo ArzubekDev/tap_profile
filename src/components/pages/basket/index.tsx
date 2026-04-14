@@ -30,14 +30,16 @@ const Basket = () => {
           </Button>
         }
       />
-      <div className={style.content}>
-        <h3 className={style.title}>Рекомендуем к покупке</h3>
-        <div className={style.products}>
-          {products?.map((el: any) => (
-            <div key={el.id}>
-              <Card el={el} />
-            </div>
-          ))}
+      <div className="container">
+        <div className={style.content}>
+          <h3 className={style.title}>Рекомендуем к покупке</h3>
+          <div className={style.products}>
+            {products?.map((el: any) => (
+              <div key={el.id}>
+                <Card el={el} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
