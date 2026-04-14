@@ -6,8 +6,8 @@
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: var(--gap);
-  justify-items: center;
+  gap: 30px; 
+  justify-items: center; 
 }
 
 .header {
