@@ -1,4 +1,4 @@
-import OrderList from '@/src/components/pages/profile/history/OrderList';
+import OrderList from '@/src/components/pages/profile/history/orderList';
 
 import HistoryForms from './historyForms';
 import style from './style.module.scss';
