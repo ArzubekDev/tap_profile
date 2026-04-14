@@ -132,30 +132,7 @@
   height: 14px;
   transition: 0.3s ease;
 }
-.navItem {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 
-  height: 48px;
-  width: 58px;
-  border-radius: 12px;
-
-  cursor: pointer;
-}
-
-.navItemIcon {
-  width: 28px;
-  height: 28px;
-}
-
-.navItemText {
-  color: var(--color-text);
-  font-size: 12px;
-  line-height: 1.2;
-  font-weight: 700;
-}
 
 .createStore {
   display: flex;

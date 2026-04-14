@@ -20,6 +20,7 @@ import { PATH_CREATE_SHOP, PATH_HOME } from '@/src/shared/consts/paths';
 import profileMenuContent from '@/src/shared/ui/Dropdown';
 import style from './style.module.scss';
 import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
+import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
 
 const Header = () => {
   const route = useRouter();
@@ -48,18 +49,7 @@ const Header = () => {
             <IconLocation />
           </div>
           {/* Профиль */}
-          <PopoverLayout
-            // content={<div><Link href={}></Link></div>}
-            content={profileMenuContent}
-            placement="bottomRight"
-            trigger="hover"
-            innerClassName={style.profilePopoverContent}
-          >
-            <div className={style.navItem}>
-              <IconUser className={style.navItemIcon} />
-              <span className={style.navItemText}>Профиль</span>
-            </div>
-          </PopoverLayout>
+         <ProfileUI/>
           {/* Избранное */}
           <div className={style.navItem}>
             <IconFavorite className={style.navItemIcon} />
