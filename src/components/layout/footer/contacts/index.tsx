@@ -4,9 +4,9 @@ import style from '../style.module.scss';
 const Contacts = () => {
   return (
     <div className={style.block}>
-      <h5>Контакты</h5>
+      <h5 className={style.title}>Контакты</h5>
       {contacts.map((el, idx) => (
-        <h6 key={idx} className={style.title}>
+        <h6 key={idx} className={style.subtitle}>
           {el.title}
         </h6>
       ))}
