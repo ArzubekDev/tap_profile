@@ -22,8 +22,10 @@ import IconMessage from './components/IconMessage';
 import IconArrow from './components/IconArrow';
 import IconCardFavorite from './components/IconCardFavorite';
 import IconReviewMessage from './components/IconReviewMessage';
+import IconEmptyCart from './components/IconEmptyCart';
 
 export {
+  IconEmptyCart,
   IconCardFavorite,
   IconReviewMessage,
   IconArrow,

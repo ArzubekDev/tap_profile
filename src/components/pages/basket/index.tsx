@@ -5,6 +5,7 @@ import { ShoppingCartOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 import { useRouter } from 'next/navigation';
 import style from './style.module.scss'
+import { IconEmptyCart } from '../../Icons';
 
 const Basket = () => {
   const router = useRouter();
@@ -12,7 +13,7 @@ const Basket = () => {
   return (
     <section className={style.basket}>
       <EmptyData
-        icon={<ShoppingCartOutlined style={{ fontSize: '64px', color: '#bfbfbf' }} />}
+        icon={<IconEmptyCart style={{ fontSize: '64px', color: '#bfbfbf' }} />}
         title="В корзине пусто!"
         description="Воспользуйтесь поиском, чтобы найти всё, что нужно."
         action={
