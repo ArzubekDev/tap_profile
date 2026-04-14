@@ -57,9 +57,7 @@ const Header = () => {
           {/* Корзина */}
          <KorzinaUI/>
         </div>
-        <Link href={PATH_CREATE_SHOP} className={style.createStore}>
-          Создать магазин <IconStore />
-        </Link>
+       
       </div>
     </header>
   );
