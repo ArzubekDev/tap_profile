@@ -47,7 +47,12 @@
   font-weight: 600;
   color: #594124;
 }
-.contentInfo {
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.listItem {
   font-size: 16px;
   color: #847057;
   display: flex;
