@@ -12,7 +12,9 @@ const AccountLayout = ({ children }: AccountLayoutProps) => {
     <div className="container">
       <div className={style.accountLayout}>
         <main className={style.main}>{children}</main>
-        <ProfileNav />
+        <div className={style.sidebar}>
+          <ProfileNav />
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 .accountLayout {
+  position: relative;
   display: flex;
   align-items: start;
   padding-block: 120px;
@@ -17,15 +18,12 @@
   width: 100%;
 }
 
-
 .sidebar {
+  position: sticky;
+  align-self: flex-start;
+  top: 120px;
   width: 260px;
   flex-shrink: 0;
-  position: relative; 
-
-  @media (max-width: 882px) {
-    width: 100%;
-  }
 }
 
 .error {

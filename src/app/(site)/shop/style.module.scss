@@ -1,7 +1,7 @@
 .accountLayout {
   display: flex;
   align-items: start;
-  padding-top: 120px;
+  padding-block: 120px;
   width: 100%;
   gap: 40px;
   @media (max-width: 1220px) {
@@ -17,3 +17,10 @@
   width: 100%;
 }
 
+.sidebar {
+  position: sticky;
+  align-self: flex-start;
+  top: 120px;
+  width: 260px;
+  flex-shrink: 0;
+}
