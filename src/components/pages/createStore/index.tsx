@@ -7,8 +7,8 @@ import { useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import LogoUpload from '@/src/components/pages/profile/forms/LogoUpload';
 import WorkTimeField from '@/src/components/pages/createStore/WorkTimeField';
+import LogoUpload from '@/src/components/pages/profile/personalData/forms/LogoUpload';
 import Contacts from './contacts';
 
 import { InputFormController } from '@/src/components/form/Controllers';
@@ -17,9 +17,12 @@ import { TFormValues, ZcreateStore } from './zod/zod';
 
 import { createStoreAction } from './action';
 import style from './style.module.scss';
-const AddressPicker = dynamic(() => import('@/src/components/pages/createStore/AddressPicker/AddressPicker'), {
-  ssr: false,
-});
+const AddressPicker = dynamic(
+  () => import('@/src/components/pages/createStore/AddressPicker/AddressPicker'),
+  {
+    ssr: false,
+  },
+);
 
 // Компонент CreateStore
 const CreateStore = () => {
