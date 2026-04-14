@@ -22,6 +22,7 @@ import style from './style.module.scss';
 import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
 import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
 import FavoriteUI from '@/src/shared/ui/FavoriteUI/FavoriteUI';
+import KorzinaUI from '@/src/shared/ui/KorzinaUI/KorzinaUI';
 
 const Header = () => {
   const route = useRouter();
@@ -54,10 +55,7 @@ const Header = () => {
           {/* Избранное */}
           <FavoriteUI/>
           {/* Корзина */}
-          <div className={style.navItem}>
-            <IconCart className={style.navItemIcon} />
-            <span className={style.navItemText}>Корзина</span>
-          </div>
+         <KorzinaUI/>
         </div>
         <Link href={PATH_CREATE_SHOP} className={style.createStore}>
           Создать магазин <IconStore />
