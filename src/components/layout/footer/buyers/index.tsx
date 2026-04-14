@@ -3,14 +3,30 @@ import style from '../style.module.scss';
 const Buyers = () => {
   return (
     <div className={style.block}>
-      <h5>Покупателям</h5>
-      <h6>Как сделать заказ</h6>
-      <h6>Как оплатить</h6>
-      <h6>Доставка</h6>
-      <h6>Возврат товаров</h6>
-      <h6>Пользовательское соглашение</h6>
+      <h5 className={style.title}>Покупателям</h5>
+      {buyers.map((el, idx) => (
+        <h6 key={idx}>{el.title}</h6>
+      ))}
     </div>
   );
 };
 
 export default Buyers;
+
+const buyers = [
+  {
+    title: 'Как сделать заказ',
+  },
+  {
+    title: 'Как оплатить',
+  },
+  {
+    title: 'Доставка',
+  },
+  {
+    title: 'Возврат товаров',
+  },
+  {
+    title: 'Пользовательское соглашение',
+  },
+];
