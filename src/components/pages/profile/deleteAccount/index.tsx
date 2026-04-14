@@ -1,6 +1,7 @@
 import { Button } from 'antd';
-import { IconCheck, IconMessage } from '@/src/components/Icons';
+import { IconMessage } from '@/src/components/Icons';
 import style from './style.module.scss';
+import DeleteOptions from './options';
 
 const DeleteAccount = () => {
   return (
@@ -13,27 +14,7 @@ const DeleteAccount = () => {
           восстановления.
         </p>
       </div>
-      <div className={style.content}>
-        <h3 className={style.contentTitle}>
-          При удалении аккаунта будут безвозвратно стерты:
-        </h3>
-        <h5 className={style.contentInfo}>
-          <IconCheck className={style.iconCheck} />
-          История ваших покупок
-        </h5>
-        <h5 className={style.contentInfo}>
-          <IconCheck className={style.iconCheck} />
-          Номер телефона
-        </h5>
-        <h5 className={style.contentInfo}>
-          <IconCheck className={style.iconCheck} />
-          Уведомления и ФИО
-        </h5>
-        <h5 className={style.contentInfo}>
-          <IconCheck className={style.iconCheck} />
-          Пол и адрес проживания
-        </h5>
-      </div>
+      <DeleteOptions/>
       <div className={style.footer}>
         <div className={style.footerTextContainer}>
           <h3 className={style.footerTitle}>Служба поддержки</h3>
