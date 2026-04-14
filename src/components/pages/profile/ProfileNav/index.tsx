@@ -26,8 +26,7 @@ const ProfileNav = () => {
   const pathname = usePathname();
 
   return (
-    <aside className={style.profileNav}>
-      <div className={style.profileNavContainer}>
+      <aside className={style.profileNavContainer}>
         <div className={style.myProfile}>
           <h4 className={style.title}>Мой профиль</h4>
           <div className={style.container}>
@@ -72,8 +71,7 @@ const ProfileNav = () => {
             <IconLogout className={style.logoutIcon} /> Выход
           </button>
         </div>
-      </div>
-    </aside>
+      </aside>
   );
 };
 

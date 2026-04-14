@@ -1,13 +1,4 @@
-.profileNav {
-  position: relative;
-  width: 260px;
-  flex-shrink: 0;
 
-  @media (max-width: 882px) {
-    width: 100%;
-    position: static;
-  }
-}
 .profileNavContainer {
   position: fixed;
   width: 260px;
@@ -15,6 +6,7 @@
   flex-direction: column;
   gap: 10px;
   padding-bottom: 30px;
+
 
   @media (max-width: 882px) {
     position: static;
@@ -34,6 +26,7 @@
     width: 100%;
   }
 }
+
 .title {
   font-size: 18px;
   font-weight: 700;

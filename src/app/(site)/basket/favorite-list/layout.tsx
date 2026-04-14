@@ -11,7 +11,9 @@ const FavListLayout = ({children}: FavListLayoutProps) => {
     <div className="container">
       <div className={style.accountLayout}>
         <main className={style.main}>{children}</main>
+<div className={style.sidebar}>
         <ProfileNav />
+</div>
       </div>
     </div>
     )
