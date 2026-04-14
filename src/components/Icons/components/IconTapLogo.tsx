@@ -10,7 +10,7 @@ import {
 
 import { TIcon } from '../types';
 
-const TapLogo: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
+const IconTapLogo: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
   return (
     <svg
       {...rest}
@@ -68,4 +68,4 @@ const TapLogo: FC<TIcon> = ({ color, className, width, height, ...rest }) => {
   );
 };
 
-export default TapLogo;
+export default IconTapLogo;

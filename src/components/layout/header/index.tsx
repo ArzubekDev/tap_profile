@@ -1,36 +1,27 @@
 'use client';
 
 import { Input } from 'antd';
-import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import {
-  IconCart,
-  IconCatalog,
-  IconFavorite,
   IconLocation,
   IconSearchTap,
-  IconStore,
-  IconUser,
-  TapLogo,
 } from '@/src/components/Icons';
-import PopoverLayout from '../popover/PopoverLayout';
 
-import { PATH_CREATE_SHOP, PATH_HOME } from '@/src/shared/consts/paths';
-import profileMenuContent from '@/src/shared/ui/Dropdown';
 import style from './style.module.scss';
 import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
 import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
 import FavoriteUI from '@/src/shared/ui/FavoriteUI/FavoriteUI';
 import KorzinaUI from '@/src/shared/ui/KorzinaUI/KorzinaUI';
+import CreateStoreUI from '@/src/shared/ui/CreateStoreUI/CreateStoreUI';
+import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
 
 const Header = () => {
-  const route = useRouter();
+
   return (
     <header className={style.header}>
       <div className={`container ${style.headerContainer}`}>
         {/* Логотип */}
-        <TapLogo onClick={() => route.push(PATH_HOME)} className={style.tapLogo} />
+        <TapLogo/>
         <div className={style.navContainer}>
           {/* Каталог */}
          <CatalogButton/>
@@ -57,7 +48,7 @@ const Header = () => {
           {/* Корзина */}
          <KorzinaUI/>
         </div>
-       
+       <CreateStoreUI/>
       </div>
     </header>
   );

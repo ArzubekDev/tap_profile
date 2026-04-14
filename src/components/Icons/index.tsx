@@ -13,7 +13,7 @@ import IconSearchTap from './components/IconSearchTap';
 import IconStore from './components/IconStore';
 import IconStorePlus from './components/IconStorePlus';
 import IconUser from './components/IconUser';
-import TapLogo from './components/TapLogo';
+import TapLogo from './components/IconTapLogo';
 import IconUploadImg from './components/IconUpload';
 import IconEdit from './components/IconEdit';
 import IconStar from './components/IconStar';
