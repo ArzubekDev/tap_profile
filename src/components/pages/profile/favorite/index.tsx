@@ -1,9 +1,11 @@
 'use client';
-import { getProducts } from '@/src/shared/api/instance.api';
-import Card from '@/src/shared/ui/Card';
 import { useQuery } from '@tanstack/react-query';
-import style from './style.module.scss';
+
+import { getProducts } from '@/src/shared/api/instance.api';
+
+import Card from '@/src/shared/ui/Card';
 import Pages from './pages';
+import style from './style.module.scss';
 
 const Favorite = () => {
   const { data } = useQuery<any>({
