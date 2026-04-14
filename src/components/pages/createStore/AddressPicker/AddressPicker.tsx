@@ -44,9 +44,9 @@ const MapComponent = ({
       const firstGeoObject = res.geoObjects.get(0);
       if (!firstGeoObject) return;
 
-      const value = firstGeoObject.properties.get('text');
+      const value = firstGeoObject.properties.get('text', {}) as unknown as string | undefined;
 
-      const newAddress = typeof value === 'string' ? value : 'Адрес не найден';
+      const newAddress = typeof value === 'string' && value ? value : 'Адрес не найден';
 
       onAddressChange(newAddress, coordinates);
     } catch (err) {

@@ -17,7 +17,7 @@ import { TFormValues, ZcreateStore } from './zod/zod';
 
 import { createStoreAction } from './action';
 import style from './style.module.scss';
-const AddressPicker = dynamic(() => import('@/src/shared/ui/AddressPicker/AddressPicker'), {
+const AddressPicker = dynamic(() => import('@/src/components/pages/createStore/AddressPicker/AddressPicker'), {
   ssr: false,
 });
 
