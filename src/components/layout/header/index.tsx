@@ -19,6 +19,7 @@ import PopoverLayout from '../popover/PopoverLayout';
 import { PATH_CREATE_SHOP, PATH_HOME } from '@/src/shared/consts/paths';
 import profileMenuContent from '@/src/shared/ui/Dropdown';
 import style from './style.module.scss';
+import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
 
 const Header = () => {
   const route = useRouter();
@@ -29,10 +30,7 @@ const Header = () => {
         <TapLogo onClick={() => route.push(PATH_HOME)} className={style.tapLogo} />
         <div className={style.navContainer}>
           {/* Каталог */}
-          <button className={style.buttonCatalog}>
-            <IconCatalog />
-            <span className={style.buttonCatalogText}>Каталог</span>
-          </button>
+         <CatalogButton/>
           {/* Search input */}
           <form className={style.searchForm}>
             <IconSearchTap />

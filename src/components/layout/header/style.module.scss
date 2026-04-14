@@ -29,29 +29,7 @@
   width: 100%;
   gap: 26px;
 }
-.buttonCatalog {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-shrink: 0;
 
-  cursor: pointer;
-  height: 48px;
-  width: 160px;
-  border-radius: 12px;
-  border: none;
-  background-color: var(--main-color);
-}
-.buttonCatalogText {
-  font-weight: 600;
-  font-size: 17px;
-  white-space: nowrap;
-  line-height: 24px;
-  color: #fff;
-  width: fit-content;
-  height: fit-content;
-}
 
 .searchForm {
   display: flex;
