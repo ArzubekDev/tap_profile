@@ -1,6 +1,8 @@
 import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
 import style from './style.module.scss';
 import Buyers from './buyers';
+import Seller from './seller';
+import Contacts from './contacts';
 
 const Footer = () => {
   return (
@@ -25,14 +27,9 @@ const Footer = () => {
             {/* Покупателям */}
            <Buyers/>
             {/* Продавцам */}
-           
+           <Seller/>
             {/* Контакты */}
-            <div className={style.block}>
-                <h5>Контакты</h5>
-                <h6>info@tap.kg</h6>
-                <h6>0504 71 71 13</h6>
-                <h6>Instagram</h6>
-            </div>
+           <Contacts/>
           </div>
           {/* QR Code */}
           <div className={style.qrCode}>
