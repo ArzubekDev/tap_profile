@@ -1,0 +1,11 @@
+.personalData {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @media (max-width: 726px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+

@@ -1,3 +1,4 @@
+'use client'
 import { PatterFormatController } from '@/src/components/form/Controllers';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
