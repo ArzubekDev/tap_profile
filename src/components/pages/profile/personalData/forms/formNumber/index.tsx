@@ -1,12 +1,14 @@
 'use client'
-import { PatterFormatController } from '@/src/components/form/Controllers';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
+
+import { PatterFormatController } from '@/src/components/form/Controllers';
 import { updateNumber } from './action';
-import style from './style.module.scss';
 import { ZprofileNumber } from './zod/zod';
+
+import style from './style.module.scss';
 
 const FormNumber = () => {
   const formRef = useRef<HTMLFormElement>(null);

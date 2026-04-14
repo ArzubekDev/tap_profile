@@ -1,4 +1,5 @@
 import CardSkeleton from '@/src/shared/ui/CardSkeleton/CardSkeleton';
+
 import style from './style.module.scss';
 
 const Favoriteloading = () => {

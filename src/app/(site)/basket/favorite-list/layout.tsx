@@ -1,5 +1,7 @@
-import ProfileNav from "@/src/components/pages/profile/ProfileNav";
 import { ReactNode } from "react";
+
+import ProfileNav from "@/src/components/pages/profile/ProfileNav";
+
 import style from './style.module.scss';
 
 interface FavListLayoutProps {

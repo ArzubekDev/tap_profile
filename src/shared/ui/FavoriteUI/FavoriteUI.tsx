@@ -1,8 +1,9 @@
 'use client'
 
-import { IconFavorite } from '@/src/components/Icons';
-import style from './style.module.scss';
 import { useRouter } from 'next/navigation';
+import { IconFavorite } from '@/src/components/Icons';
+
+import style from './style.module.scss';
 
 const FavoriteUI = () => {
   const route = useRouter()

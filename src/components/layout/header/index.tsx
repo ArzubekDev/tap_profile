@@ -2,18 +2,19 @@
 
 import { Input } from 'antd';
 
+import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
+import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
+import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
+import FavoriteUI from '@/src/shared/ui/FavoriteUI/FavoriteUI';
+import KorzinaUI from '@/src/shared/ui/KorzinaUI/KorzinaUI';
+import CreateStoreUI from '@/src/shared/ui/CreateStoreUI/CreateStoreUI';
+
 import {
   IconLocation,
   IconSearchTap,
 } from '@/src/components/Icons';
 
 import style from './style.module.scss';
-import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
-import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
-import FavoriteUI from '@/src/shared/ui/FavoriteUI/FavoriteUI';
-import KorzinaUI from '@/src/shared/ui/KorzinaUI/KorzinaUI';
-import CreateStoreUI from '@/src/shared/ui/CreateStoreUI/CreateStoreUI';
-import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
 
 const Header = () => {
 

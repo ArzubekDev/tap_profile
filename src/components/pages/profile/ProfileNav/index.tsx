@@ -1,4 +1,9 @@
 'use client';
+import cn from 'classnames';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
+import { TProfileItemType } from './types';
 import {
   IconBell,
   IconClock,
@@ -8,7 +13,6 @@ import {
   IconStorePlus,
   IconUser,
 } from '@/src/components/Icons';
-
 import {
   PATH_BASKET_HISTORY,
   PATH_CREATE_SHOP,
@@ -16,11 +20,8 @@ import {
   PATH_FAVORITE,
   PATH_PROFILE,
 } from '@/src/shared/consts/paths';
-import cn from 'classnames';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
 import style from './style.module.scss';
-import { TProfileItemType } from './types';
 
 const ProfileNav = () => {
   const pathname = usePathname();

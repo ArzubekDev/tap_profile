@@ -1,9 +1,9 @@
 'use client';
 import { Select } from 'antd';
 import { Controller, FieldValues } from 'react-hook-form';
-import style from './style.module.scss'; // Стилдериңиз
 import { SelectFormControllerProps } from './type';
 
+import style from './style.module.scss';
 
 const SelectFormController = <T extends FieldValues>({
   name,

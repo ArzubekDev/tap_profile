@@ -1,7 +1,8 @@
 import { Button } from 'antd';
 import { IconMessage } from '@/src/components/Icons';
-import style from './style.module.scss';
 import DeleteOptions from './options';
+
+import style from './style.module.scss';
 
 const DeleteAccount = () => {
   return (

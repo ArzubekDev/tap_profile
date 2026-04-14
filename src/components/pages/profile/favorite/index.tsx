@@ -4,8 +4,9 @@ import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '@/src/shared/api/product.api';
 import Card from '@/src/shared/ui/Card';
 import Pages from './pages';
-import style from './style.module.scss';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
+
+import style from './style.module.scss';
 
 const Favorite = () => {
   const { data } = useQuery<any>({

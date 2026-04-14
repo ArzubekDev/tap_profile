@@ -1,7 +1,8 @@
 'use client';
 import { DatePicker, DatePickerProps } from 'antd';
-import dayjs from 'dayjs';
 import { Control, Controller, FieldValues, Path } from 'react-hook-form';
+import dayjs from 'dayjs';
+
 import style from './style.module.scss';
 
 interface DatePickerFormControllerProps<T extends FieldValues> extends Omit<

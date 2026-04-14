@@ -31,6 +31,8 @@ const Basket = () => {
           </Button>
         }
       />
+      
+      {/* Контент */}
       <div className="container">
         <div className={style.content}>
           <h3 className={style.title}>Рекомендуем к покупке</h3>

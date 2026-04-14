@@ -1,5 +1,4 @@
 import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
-
 import Buyers from './buyers';
 import Contacts from './contacts';
 import QRCodeComponent from './qrCode';

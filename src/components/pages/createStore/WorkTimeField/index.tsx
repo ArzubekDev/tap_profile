@@ -1,9 +1,12 @@
 'use client';
-import { Checkbox, TimePicker } from 'antd';
 import { Controller, useWatch, Control, UseFormSetValue } from 'react-hook-form';
+
+import { Checkbox, TimePicker } from 'antd';
 import dayjs from 'dayjs';
-import style from './style.module.scss';
+
 import { TFormValues } from '../zod/zod';
+
+import style from './style.module.scss';
 
 interface WorkTimeFieldProps {
   control: Control<TFormValues>;

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Controller } from 'react-hook-form';
 import { IconUploadImg, IconEdit } from '@/src/components/Icons';
+
 import style from './style.module.scss';
 
 const LogoUpload = ({ control }: { control: any }) => {

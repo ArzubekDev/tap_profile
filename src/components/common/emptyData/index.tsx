@@ -1,5 +1,6 @@
-import style from './style.module.scss';
 import { EmptyDataProps } from './type';
+
+import style from './style.module.scss';
 
 const EmptyData = ({
   title,
