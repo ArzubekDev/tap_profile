@@ -1,6 +1,20 @@
+.favorite {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
 .content {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 30px;
+  gap: var(--gap);
   justify-items: center;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.header h3 {
+  font-size: 28px;
+}
+
