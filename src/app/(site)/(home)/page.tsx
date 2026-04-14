@@ -9,7 +9,6 @@ export default async function HomePage () {
     await queryClient.prefetchQuery({
         queryKey: PRODUCT_KEYS.all,
         queryFn: getProducts,
-        staleTime: 1000 * 60 * 5,
     })
 
     return (

@@ -1,23 +1,26 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 
-
+import { getProducts } from '@/src/shared/api/product.api';
 import Card from '@/src/shared/ui/Card';
 import Pages from './pages';
 import style from './style.module.scss';
-import { getProducts } from '@/src/shared/api/product.api';
+import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
 const Favorite = () => {
   const { data } = useQuery<any>({
-    queryKey: ['favorites'],
+    queryKey: PRODUCT_KEYS.all,
     queryFn: getProducts,
+    staleTime: 1000 * 60 * 5,
   });
 
   return (
     <div className={style.favorite}>
       <div className={style.header}>
-        <h3>Избранные <span>({data?.length})</span></h3>
-        <Pages/>
+        <h3>
+          Избранные <span>({data?.length})</span>
+        </h3>
+        <Pages />
       </div>
       <div className={style.content}>
         {data?.map((el: any) => (
@@ -27,7 +30,7 @@ const Favorite = () => {
         ))}
       </div>
       <div className={style.footer}>
-      <Pages/>
+        <Pages />
       </div>
     </div>
   );
