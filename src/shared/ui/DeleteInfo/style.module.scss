@@ -1,0 +1,34 @@
+.content {
+  background-color: #faf1e6;
+  border: 2px solid #fac483;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 44px;
+  width: 100%;
+}
+.contentTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #594124;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.listItem {
+  font-size: 16px;
+  color: #847057;
+  display: flex;
+  align-items: center;
+  gap: var(--gap);
+}
+.iconCheck {
+    fill: #ffffff;
+    background-color: #fac483;
+    border-radius: 50%;
+    padding: 3px;
+}

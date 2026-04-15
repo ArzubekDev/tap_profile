@@ -1,12 +1,12 @@
 import { IconCheck } from '@/src/components/Icons';
-import style from '../style.module.scss';
+import style from './style.module.scss';
 
-const DeleteOptions = () => {
+const DeleteInfo = () => {
   return (
     <div className={style.content}>
       <h3 className={style.contentTitle}>При удалении аккаунта будут безвозвратно стерты:</h3>
       <ul className={style.list}>
-        {options.map((el, idx) => (
+        {list.map((el, idx) => (
           <li key={idx} className={style.listItem}>
             <IconCheck className={style.iconCheck} />
             <span className={style.text}>{el.title}</span>
@@ -17,9 +17,9 @@ const DeleteOptions = () => {
   );
 };
 
-export default DeleteOptions;
+export default DeleteInfo;
 
-const options = [
+const list = [
   {
     title: 'История ваших покупок',
   },

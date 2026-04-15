@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 import { IconMessage } from '@/src/components/Icons';
-import DeleteOptions from './options';
+import DeleteOptions from '../../../../shared/ui/DeleteInfo/DeleteInfo';
 
 import style from './style.module.scss';
 
