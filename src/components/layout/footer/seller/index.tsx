@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import { BlockProps } from '../type';
 import style from '../style.module.scss';
 
 const Seller = () => {
@@ -5,7 +7,7 @@ const Seller = () => {
     <div className={style.block}>
       <h5 className={style.title}>Продавцам</h5>
       {seller.map((el, idx) => (
-        <h6 className={style.subtitle} key={idx}>{el.title}</h6>
+        <Link href={el.link} className={style.subtitle} key={idx}>{el.title}</Link>
       ))}
     </div>
   );
@@ -13,20 +15,25 @@ const Seller = () => {
 
 export default Seller;
 
-const seller = [
+const seller: BlockProps[] = [
   {
     title: 'О нас',
+    link: '#'
   },
   {
     title: 'Как открыть магазин',
+    link: '#'
   },
   {
     title: 'Как продавать на маркетплейсе',
+    link: '#'
   },
   {
     title: 'Безопасность',
+    link: '#'
   },
   {
     title: 'Политика конфиденциальности',
+    link: '#'
   },
 ];
