@@ -5,9 +5,12 @@ const QRCodeComponent = () => {
   const downloadUrl = '';
 
   return (
-    <div className={style.block}>
+    <div className={style.qrblock}>
       {/* <QRCode value={downloadUrl} className={style.qrcode}/> */}
-      <h6>Наведите камеру и скачайте бесплатное приложение</h6>
+      <div className={style.qrcode}>
+QR CODE
+      </div>
+      <p className={style.qrtext}>Наведите камеру и скачайте <br /> бесплатное приложение</p>
     </div>
   );
 };
