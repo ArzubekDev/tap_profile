@@ -1,5 +1,5 @@
 'use client';
-import Card from '@/src/shared/ui/Card';
+import Card from '@/src/shared/ui/Card/Card';
 import { useQuery } from '@tanstack/react-query';
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';

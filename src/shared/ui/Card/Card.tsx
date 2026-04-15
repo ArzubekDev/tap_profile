@@ -31,3 +31,5 @@ const Card = ({ el }: any) => {
 };
 
 export default Card;
+
+

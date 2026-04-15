@@ -7,7 +7,6 @@ import { IconEmptyCart } from '../../Icons';
 
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
-import Card from '@/src/shared/ui/Card';
 import { useQuery } from '@tanstack/react-query';
 
 import style from './style.module.scss';
@@ -31,17 +30,13 @@ const Basket = () => {
           </Button>
         }
       />
-      
+
       {/* Контент */}
       <div className="container">
         <div className={style.content}>
           <h3 className={style.title}>Рекомендуем к покупке</h3>
           <div className={style.products}>
-            {products?.map((el: any) => (
-              <div key={el.id}>
-                <Card el={el} />
-              </div>
-            ))}
+            
           </div>
         </div>
       </div>

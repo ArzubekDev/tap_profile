@@ -2,11 +2,11 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 
 import { getProducts } from '@/src/shared/api/product.api';
-import Card from '@/src/shared/ui/Card';
 import Pages from './pages';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
 import style from './style.module.scss';
+import Card from '@/src/shared/ui/Card/Card';
 
 const Favorite = () => {
 const { data } = useSuspenseQuery<any[]>({
