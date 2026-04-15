@@ -6,7 +6,7 @@ const QRCodeComponent = () => {
 
   return (
     <div className={style.block}>
-      <QRCode value={downloadUrl} className={style.qrcode}/>
+      {/* <QRCode value={downloadUrl} className={style.qrcode}/> */}
       <h6>Наведите камеру и скачайте бесплатное приложение</h6>
     </div>
   );
