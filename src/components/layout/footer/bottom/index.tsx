@@ -6,7 +6,17 @@ const FooterBottom = () => {
     <div className="container">
       <div className={style.bottom}>
         <p>Tap.kg © Все права защищены.</p>
-        <p>Разработка сайтов и мобильных приложений - <Link href={"#"}>Sunrisestudio.pro</Link></p>
+        <p>
+          Разработка сайтов и мобильных приложений -
+          <Link
+            href={'https://sunrisestudio.pro'}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={style.text}
+          >
+            Sunrisestudio.pro
+          </Link>
+        </p>
       </div>
     </div>
   );
