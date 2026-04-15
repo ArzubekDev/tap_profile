@@ -1,5 +1,5 @@
 'use client';
-import { useQuery } from '@tanstack/react-query';
+import { useSuspenseQuery } from '@tanstack/react-query';
 
 import { getProducts } from '@/src/shared/api/product.api';
 import Card from '@/src/shared/ui/Card';
@@ -9,7 +9,7 @@ import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 import style from './style.module.scss';
 
 const Favorite = () => {
-  const { data } = useQuery<any>({
+const { data } = useSuspenseQuery<any[]>({
     queryKey: PRODUCT_KEYS.all,
     queryFn: getProducts,
     staleTime: 1000 * 60 * 5,
@@ -24,7 +24,7 @@ const Favorite = () => {
         <Pages />
       </div>
       <div className={style.content}>
-        {data?.map((el: any) => (
+        {data.map((el: any) => (
           <div key={el.id}>
             <Card el={el} />
           </div>
