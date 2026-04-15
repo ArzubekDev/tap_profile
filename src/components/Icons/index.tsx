@@ -24,8 +24,10 @@ import IconCardFavorite from './components/IconCardFavorite';
 import IconReviewMessage from './components/IconReviewMessage';
 import IconEmptyCart from './components/IconEmptyCart';
 import IconPhone from './components/IconPhone';
+import IconInstagram from './components/IconInstagram';
 
 export {
+  IconInstagram,
   IconPhone,
   IconEmptyCart,
   IconCardFavorite,
