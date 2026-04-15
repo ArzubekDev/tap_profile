@@ -1,69 +1,79 @@
 .footer {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
-    width: 100%;
-    padding-block: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  width: 100%;
+  padding-block: 30px;
 
-    background-color: #f6f6f7;
+  background-color: #f6f6f7;
 }
 .content {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    padding-block: 20px;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding-block: 20px;
 }
 .left {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
 }
 .text {
-    width: 400px;
-    font-size: 13px;
-    color: #3c3c3c;
+  width: 400px;
+  font-size: 13px;
+  color: #3c3c3c;
 }
 .informations {
-    display: flex;
-    align-items: start;
-    gap: 80px;
+  display: flex;
+  align-items: start;
+  gap: 80px;
 }
 .block {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+.icon {
+  fill: var(--main-color);
+  width: 14px;
+  height: 14px;
 }
 .title {
-    font-size: 17px;
-    margin-bottom: 10px;
+  font-size: 17px;
+  margin-bottom: 10px;
 }
 .subtitle {
-    font-size: 14px;
-    font-weight: 300;
-    width: fit-content;
-    color: var(--color-text);
-    transition: color .2s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
 
-    cursor: pointer;
+  font-size: 14px;
+  font-weight: 300;
+  width: fit-content;
+  color: var(--color-text);
+  transition: color 0.2s ease-in-out;
 
-    &:hover {
-        color: var(--main-color);
-    }
+  cursor: pointer;
+
+  &:hover {
+    color: var(--main-color);
+  }
 }
 .bottom {
-    border-top: 1.5px solid #7979796e;
-    padding-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    p {
-        font-size: 12px;
-        color: var(--color-text);
+  border-top: 1.5px solid #7979796e;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  p {
+    font-size: 12px;
+    color: var(--color-text);
+  }
+  span {
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+    &:hover {
+      color: var(--main-color);
     }
-    span {
-        cursor: pointer;
-        transition: color .2s ease-in-out;
-        &:hover {
-            color: var(--main-color);
-        }
-    }
+  }
 }

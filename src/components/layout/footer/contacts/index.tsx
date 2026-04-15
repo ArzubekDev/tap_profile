@@ -10,7 +10,8 @@ const Contacts = () => {
     <div className={style.block}>
       <h5 className={style.title}>Контакты</h5>
       {contacts.map((el, idx) => (
-        <Link href={el.link} key={idx} className={style.subtitle}>
+        <Link key={idx} href={el.link} className={style.subtitle}>
+          {el.icon}
           {el.title}
         </Link>
       ))}
@@ -23,17 +24,17 @@ export default Contacts;
 const contacts: BlockProps[] = [
   {
     title: 'info@tap.kg',
-    icon: <IconMessage />,
-    link: '#'
+    icon: <IconMessage className={style.icon} />,
+    link: '#',
   },
   {
     title: '0504 71 71 13',
-    icon: <IconMessage />,
-    link: '#'
+    icon: <IconMessage className={style.icon} />,
+    link: '#',
   },
   {
     title: 'Instagram',
-    icon: <IconMessage />,
-    link: '#'
+    icon: <IconMessage className={style.icon} />,
+    link: '#',
   },
 ];
