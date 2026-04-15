@@ -13,8 +13,8 @@ const Card = ({ el }: any) => {
       </div>
       <div className={style.content}>
         <div className={style.info}>
-          <h3 className={style.price}>{el.price}</h3>
-          <h4 className={style.nameProduct}>{el.title.length > 15 ? el.title.slice(0, 15) + "..." : el.title}</h4>
+          <h3 className={style.price}>{el.price} с</h3>
+          <h4 className={style.nameProduct}>{el.title.length > 22 ? el.title.slice(0, 22) + "..." : el.title}</h4>
         </div>
         <div className={style.else}>
           <div className={style.rating}>

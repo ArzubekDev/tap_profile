@@ -3,12 +3,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 260px;
-  height: 340px;
+  width: 220px;
+  height: 380px;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 2px 4px #939393a7;
 }
 .IconFav {
   position: absolute;
@@ -27,6 +26,7 @@
   height: 72%;
   border-radius: inherit;
   overflow: hidden;
+  border: 1.5px solid #9393936d;
 }
 .img {
   position: absolute;
@@ -45,16 +45,16 @@
 
 .info {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+flex-direction: column;
 }
 .price {
   font-size: 24px;
-  color: var(--main-color);
+  color: var(--color-text);
 }
 .nameProduct {
   font-size: 18px;
-  color: #939393;
+  color: var(--color-text);
+  font-weight: normal;
 }
 .else {
   display: flex;
