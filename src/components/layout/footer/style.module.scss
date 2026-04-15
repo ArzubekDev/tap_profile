@@ -41,8 +41,14 @@
     font-size: 14px;
     font-weight: 300;
     width: fit-content;
+    color: var(--color-text);
+    transition: color .2s ease-in-out;
 
     cursor: pointer;
+
+    &:hover {
+        color: var(--main-color);
+    }
 }
 .bottom {
     border-top: 1.5px solid #7979796e;
