@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import style from '../style.module.scss';
 
 const FooterBottom = () => {
@@ -5,7 +6,7 @@ const FooterBottom = () => {
     <div className="container">
       <div className={style.bottom}>
         <p>Tap.kg © Все права защищены.</p>
-        <p>Разработка сайтов и мобильных приложений - <span>Sunrisestudio.pro</span></p>
+        <p>Разработка сайтов и мобильных приложений - <Link href={"#"}>Sunrisestudio.pro</Link></p>
       </div>
     </div>
   );
