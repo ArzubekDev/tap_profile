@@ -4,8 +4,8 @@ const FooterBottom = () => {
   return (
     <div className="container">
       <div className={style.bottom}>
-        <span>Tap.kg © Все права защищены.</span>
-        <span>Разработка сайтов и мобильных приложений - Sunrisestudio.pro</span>
+        <p>Tap.kg © Все права защищены.</p>
+        <p>Разработка сайтов и мобильных приложений - <span>Sunrisestudio.pro</span></p>
       </div>
     </div>
   );
