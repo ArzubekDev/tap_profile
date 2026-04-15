@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { IconMessage } from '@/src/components/Icons';
+import { IconMessage, IconPhone } from '@/src/components/Icons';
 import { BlockProps } from '../type';
 
 import style from '../style.module.scss';
@@ -29,7 +29,7 @@ const contacts: BlockProps[] = [
   },
   {
     title: '0504 71 71 13',
-    icon: <IconMessage className={style.icon} />,
+    icon: <IconPhone className={style.icon} />,
     link: '#',
   },
   {
