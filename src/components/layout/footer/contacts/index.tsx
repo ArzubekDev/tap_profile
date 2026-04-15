@@ -10,7 +10,13 @@ const Contacts = () => {
     <div className={style.block}>
       <h5 className={style.title}>Контакты</h5>
       {contacts.map((el, idx) => (
-        <Link key={idx} href={el.link} className={style.subtitle}>
+        <Link
+          key={idx}
+          target="_blank"
+          rel="noopener noreferrer"
+          href={el.link}
+          className={style.subtitle}
+        >
           {el.icon}
           {el.title}
         </Link>
@@ -25,16 +31,16 @@ const contacts: BlockProps[] = [
   {
     title: 'info@tap.kg',
     icon: <IconMessage className={style.icon} />,
-    link: '#',
+    link: 'mailto:info@tap.kg',
   },
   {
     title: '0504 71 71 13',
     icon: <IconPhone className={style.icon} />,
-    link: '#',
+    link: 'tel:+996504717113',
   },
   {
     title: 'Instagram',
     icon: <IconInstagram className={style.icon} />,
-    link: '#',
+    link: 'https://www.instagram.com/tap_kg_market/',
   },
 ];
