@@ -36,7 +36,7 @@ const FormProfile = () => {
       <div className={style.inputs}>
         <div className={style.inputFormController}>
           <InputFormController
-            id="name"
+            id="user_name"
             name="name"
             placeholder="Имя"
             label="Имя"

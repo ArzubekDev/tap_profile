@@ -27,6 +27,7 @@
     "react-error-boundary": "^6.1.1",
     "react-hook-form": "^7.72.1",
     "react-number-format": "^5.4.5",
+    "react-quill-new": "^3.8.3",
     "react-sticky-box": "^2.0.5",
     "react-text-mask": "^5.5.0",
     "sass": "^1.98.0",
