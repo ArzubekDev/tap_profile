@@ -2,6 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { PATH_HOW_TO_MAKE_ORDER } from '@/src/shared/consts/paths';
 import style from './style.module.scss';
 
 const InfoSidebar = () => {
@@ -43,7 +44,7 @@ const buyers: TInfoSidebar[] = [
   {
     id: 1,
     title: 'Как сделать заказ',
-    link: '#',
+    link: PATH_HOW_TO_MAKE_ORDER,
   },
   {
     id: 2,
