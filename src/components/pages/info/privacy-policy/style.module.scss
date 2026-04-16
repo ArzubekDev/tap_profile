@@ -1,0 +1,17 @@
+.privacyPolicy {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.mainTitle {
+    font-size: 28px;
+}
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+.title {
+    font-size: 26px;
+    text-transform: uppercase;
+}

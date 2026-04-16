@@ -5,7 +5,7 @@ const PrivacyPolicy = () => {
     <section className={style.privacyPolicy}>
       <h3 className={style.mainTitle}>Политика конфиденциальности</h3>
       <div className={style.block}>
-        <h2 className={style.title}>1. "Общие положения"</h2>
+        <h2 className={style.title}>1. «Общие положения»</h2>
         <p className={style.description}>
           Настоящая политика описывает, какие данные могут собираться и обрабатываться при
           использовании маркетплейса Tap.kg (далее — «Сервис»), в каких целях они используются и
@@ -14,7 +14,7 @@ const PrivacyPolicy = () => {
         </p>
       </div>
       <div className={style.block}>
-        <h2 className={style.title}>2. "Определения условий"</h2>
+        <h2 className={style.title}>2. «Определения условий»</h2>
         <p className={style.description}>
           Настоящая политика описывает, какие данные могут собираться и обрабатываться при
           использовании маркетплейса Tap.kg (далее — «Сервис»), в каких целях они используются и
@@ -23,7 +23,7 @@ const PrivacyPolicy = () => {
         </p>
       </div>
       <div className={style.block}>
-        <h2 className={style.title}>3. "Условия приобретения товара"</h2>
+        <h2 className={style.title}>3. «Условия приобретения товара»</h2>
         <h4 className={style.subTitle}>Правовые основания</h4>
         <p className={style.description}>
           Настоящая политика описывает, какие данные могут собираться и обрабатываться при
