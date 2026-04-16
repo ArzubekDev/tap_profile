@@ -16,7 +16,7 @@ const InfoSidebar = () => {
         [style.active]: pathname === el.link,
       })}
     >
-      {el.title}
+      <span className={style.title}>{el.title}</span>
     </Link>
   );
   return (

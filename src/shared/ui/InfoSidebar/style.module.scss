@@ -28,12 +28,11 @@
   transition: all 0.2s ease-in-out;
   cursor: pointer;
 
-   &:hover {
+  &:not(.active):hover {
     background-color: #eaebed;
-    .profileTitle {
+    .title {
       color: var(--color-text);
     }
-
   }
 
     &.active {
