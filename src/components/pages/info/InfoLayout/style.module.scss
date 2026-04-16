@@ -1,5 +1,4 @@
 .infoLayout {
-  position: relative;
   display: flex;
   align-items: start;
   padding-block: 120px;
@@ -19,7 +18,6 @@
 }
 
 .infoSidebar {
-  position: sticky;
   align-self: flex-start;
   top: 120px;
   width: 260px;

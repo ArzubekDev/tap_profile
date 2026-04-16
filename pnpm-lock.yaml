@@ -59,6 +59,9 @@ importers:
       react-number-format:
         specifier: ^5.4.5
         version: 5.4.5(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      react-sticky-box:
+        specifier: ^2.0.5
+        version: 2.0.5(react@19.2.4)
       react-text-mask:
         specifier: ^5.5.0
         version: 5.5.0(react@19.2.4)
@@ -2109,6 +2112,11 @@ packages:
     peerDependencies:
       react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
       react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+
+  react-sticky-box@2.0.5:
+    resolution: {integrity: sha512-JEIuN7Q3razU1NNS0vddC12GXCUkj7T4aCpC9ZSTjgBddFsBdTcN1RhYXFLjCE/KDOQqX2Ix308BcdrqtSJbkQ==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   react-text-mask@5.5.0:
     resolution: {integrity: sha512-SLJlJQxa0uonMXsnXRpv5abIepGmHz77ylQcra0GNd7Jtk4Wj2Mtp85uGQHv1avba2uI8ZvRpIEQPpJKsqRGYw==}
@@ -4631,6 +4639,10 @@ snapshots:
     dependencies:
       react: 19.2.4
       react-dom: 19.2.4(react@19.2.4)
+
+  react-sticky-box@2.0.5(react@19.2.4):
+    dependencies:
+      react: 19.2.4
 
   react-text-mask@5.5.0(react@19.2.4):
     dependencies:
