@@ -7,9 +7,7 @@ const Returns = () => {
       {steps.map((item, idx) => (
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
-
           {item.subtitle && <p className={style.subTitle}>{item.subtitle}</p>}
-
           {item.points && (
             <ul className={style.list}>
               {item.points.map((point, index) => (

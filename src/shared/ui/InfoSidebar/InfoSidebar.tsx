@@ -64,7 +64,7 @@ const buyers: TInfoSidebar[] = [
   {
     id: 5,
     title: 'Пользователское соглашение',
-    link: PATH_PRIVACY_POLICY,
+    link: "#",
   },
 ];
 const seller: TInfoSidebar[] = [
@@ -91,6 +91,6 @@ const seller: TInfoSidebar[] = [
   {
     id: 10,
     title: 'Политика конфиденциальности',
-    link: '#',
+    link: PATH_PRIVACY_POLICY,
   },
 ];
