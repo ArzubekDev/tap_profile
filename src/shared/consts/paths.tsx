@@ -14,3 +14,4 @@ export const PATH_BASKET_HISTORY = `${PATH_BASKET}/history`;
 export const PATH_HOW_TO_MAKE_ORDER = '/info/how-to-make-order'
 export const PATH_PRIVACY_POLICY = '/info/privacy-policy'
 export const PATH_PAYMENTS = '/info/payments'
+export const PATH_DELIVERY = '/info/delivery'
