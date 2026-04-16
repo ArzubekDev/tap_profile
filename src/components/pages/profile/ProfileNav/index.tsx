@@ -26,44 +26,31 @@ import style from './style.module.scss';
 const ProfileNav = () => {
   const pathname = usePathname();
 
+  // Link
+  const renderLink = (el: TProfileItemType) => (
+    <Link
+      href={el.link}
+      key={el.id}
+      className={cn(style.profileItem, {
+        [style.active]: pathname === el.link,
+      })}
+    >
+      {el.icon} {el.title}
+    </Link>
+  );
+
   return (
       <aside className={style.profileNavContainer}>
         <div className={style.myProfile}>
           <h4 className={style.title}>Мой профиль</h4>
           <div className={style.container}>
-            {profileItems.map((el) => {
-              const isActive = el.link === pathname;
-              return (
-                <Link
-                  href={el.link}
-                  key={el.id}
-                  className={cn(style.profileItem, {
-                    [style.active]: isActive,
-                  })}
-                >
-                  {el.icon} {el.title}
-                </Link>
-              );
-            })}
+            {profileItems.map(renderLink)}
           </div>
         </div>
         <div className={style.myStores}>
           <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
           <div>
-            {storeItems.map((el) => {
-              const isActive = el.link === pathname;
-              return (
-                <Link
-                  href={el.link}
-                  key={el.id}
-                  className={cn(style.profileItem, {
-                    [style.active]: isActive,
-                  })}
-                >
-                  {el.icon} {el.title}
-                </Link>
-              );
-            })}
+           {storeItems.map(renderLink)}
           </div>
         </div>
         <div className={style.logoutAccount}>

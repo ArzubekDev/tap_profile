@@ -7,7 +7,7 @@ const InfoSidebar = () => {
       <div className={style.block}>
         <h3>Покупателям</h3>
         {buyers.map((el, idx) => (
-          <Link key={idx} href={el.link}>
+          <Link key={idx} href={el.link} className={style.title}>
             {el.title}
           </Link>
         ))}
@@ -15,7 +15,7 @@ const InfoSidebar = () => {
       <div className={style.block}>
         <h3>Продавцам</h3>
         {seller.map((el, idx) => (
-          <Link key={idx} href={el.link}>
+          <Link key={idx} href={el.link} className={style.title}>
             {el.title}
           </Link>
         ))}
