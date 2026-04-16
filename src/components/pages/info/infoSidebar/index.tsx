@@ -1,0 +1,67 @@
+import Link from 'next/link';
+import style from './style.module.scss';
+
+const InfoSidebar = () => {
+  return (
+    <aside>
+      <div className={style.buyers}>
+        <h3>Покупателям</h3>
+        {
+            buyers.map((el, idx) => (
+                <Link href={el.link}>{el.title}</Link>
+            ))
+        }
+      </div>
+      <div className={style.seller}>
+        <h3>Продавцам</h3>
+      </div>
+    </aside>
+  );
+};
+
+export default InfoSidebar;
+
+const buyers = [
+  {
+    title: 'Как сделать заказ',
+    link: "#"
+  },
+  {
+    title: 'Как оплатить',
+    link: "#"
+  },
+  {
+    title: 'Доставка',
+    link: "#"
+  },
+  {
+    title: 'Возврат товара',
+    link: "#"
+  },
+  {
+    title: 'Пользователское соглашение',
+    link: "#"
+  },
+];
+const seller = [
+  {
+    title: 'О нас',
+    link: "#"
+  },
+  {
+    title: 'Как открыть магазин',
+    link: "#"
+  },
+  {
+    title: 'Как продавать на маркетплейсе',
+    link: "#"
+  },
+  {
+    title: 'Безопасность',
+    link: "#"
+  },
+  {
+    title: 'Политика конфиденциальности',
+    link: "#"
+  },
+];
