@@ -1,24 +1,32 @@
+import cn from 'classnames';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+
 import style from './style.module.scss';
 
 const InfoSidebar = () => {
+  const pathname = usePathname();
+  // Link
+  const renderLink = (el: TInfoSidebar) => (
+    <Link
+      href={el.link}
+      key={el.id}
+      className={cn(style.item, {
+        [style.active]: pathname === el.link,
+      })}
+    >
+      {el.title}
+    </Link>
+  );
   return (
     <aside className={style.infoSidebar}>
       <div className={style.block}>
         <h3>Покупателям</h3>
-        {buyers.map((el, idx) => (
-          <Link key={idx} href={el.link} className={style.title}>
-            {el.title}
-          </Link>
-        ))}
+        {buyers.map(renderLink)}
       </div>
       <div className={style.block}>
         <h3>Продавцам</h3>
-        {seller.map((el, idx) => (
-          <Link key={idx} href={el.link} className={style.title}>
-            {el.title}
-          </Link>
-        ))}
+        {seller.map(renderLink)}
       </div>
     </aside>
   );
@@ -26,46 +34,61 @@ const InfoSidebar = () => {
 
 export default InfoSidebar;
 
-const buyers = [
+type TInfoSidebar = {
+  id: number;
+  title: string;
+  link: string;
+};
+const buyers: TInfoSidebar[] = [
   {
+    id: 1,
     title: 'Как сделать заказ',
     link: '#',
   },
   {
+    id: 2,
     title: 'Как оплатить',
     link: '#',
   },
   {
+    id: 3,
     title: 'Доставка',
     link: '#',
   },
   {
+    id: 4,
     title: 'Возврат товара',
     link: '#',
   },
   {
+    id: 5,
     title: 'Пользователское соглашение',
     link: '#',
   },
 ];
-const seller = [
+const seller: TInfoSidebar[] = [
   {
+    id: 6,
     title: 'О нас',
     link: '#',
   },
   {
+    id: 7,
     title: 'Как открыть магазин',
     link: '#',
   },
   {
+    id: 8,
     title: 'Как продавать на маркетплейсе',
     link: '#',
   },
   {
+    id: 9,
     title: 'Безопасность',
     link: '#',
   },
   {
+    id: 10,
     title: 'Политика конфиденциальности',
     link: '#',
   },
