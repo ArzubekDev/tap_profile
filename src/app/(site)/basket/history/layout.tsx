@@ -1,7 +1,9 @@
+'use client'
 import ProfileNav from '@/src/components/pages/profile/ProfileNav';
 import { ReactNode } from 'react';
-import style from './style.module.scss';
 import StickyBox from 'react-sticky-box';
+
+import style from './style.module.scss';
 
 interface HistoryLayoutProps {
   children: ReactNode;
