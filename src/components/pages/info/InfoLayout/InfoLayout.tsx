@@ -10,7 +10,7 @@ interface InfoLayoutProps {
 const InfoLayout = ({children}:  InfoLayoutProps) => {
     return (
         <div className={style.infoLayout}>
-        {children}
+        <main className={style.main}>{children}</main>
         <div className={style.infoSidebar}>
             <InfoSidebar/>
         </div>
