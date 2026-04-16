@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BlockProps } from '../type';
-import { PATH_DELIVERY, PATH_HOW_TO_MAKE_ORDER, PATH_PAYMENTS } from '@/src/shared/consts/paths';
+import { PATH_DELIVERY, PATH_HOW_TO_MAKE_ORDER, PATH_PAYMENTS, PATH_RETURNS } from '@/src/shared/consts/paths';
 import style from '../style.module.scss';
 
 const Buyers = () => {
@@ -33,7 +33,7 @@ const buyers: BlockProps[] = [
   },
   {
     title: 'Возврат товаров',
-    link: '#'
+    link: PATH_RETURNS
   },
   {
     title: 'Пользовательское соглашение',
