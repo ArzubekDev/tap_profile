@@ -1,5 +1,7 @@
+'use client'
 import ProfileNav from '@/src/components/pages/profile/ProfileNav';
 import { ReactNode } from 'react';
+import StickyBox from 'react-sticky-box';
 
 import style from './style.module.scss';
 
@@ -12,9 +14,11 @@ const AccountLayout = ({ children }: AccountLayoutProps) => {
     <div className="container">
       <div className={style.accountLayout}>
         <main className={style.main}>{children}</main>
-        <div className={style.sidebar}>
+         <StickyBox offsetTop={120} offsetBottom={20} className={style.infoSidebarWrapper}>
+          <div className={style.sidebar}>
           <ProfileNav />
         </div>
+        </StickyBox>
       </div>
     </div>
   );
