@@ -1,7 +1,7 @@
 'use client'
 import { ReactNode } from "react"
 import StickyBox from "react-sticky-box"
-import InfoSidebar from "../infoSidebar"
+import InfoSidebar from "@/src/shared/ui/InfoSidebar/InfoSidebar"
 import style from "./style.module.scss"
 
 interface InfoLayoutProps {
