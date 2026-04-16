@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BlockProps } from '../type';
-import { PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
+import { PATH_ABOUT, PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
 import style from '../style.module.scss';
 
 const Seller = () => {
@@ -19,7 +19,7 @@ export default Seller;
 const seller: BlockProps[] = [
   {
     title: 'О нас',
-    link: '#'
+    link: PATH_ABOUT
   },
   {
     title: 'Как открыть магазин',
