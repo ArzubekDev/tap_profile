@@ -2,7 +2,6 @@ import style from "./style.module.scss"
 
 const MakeOrder = () => {
   return (
-<div className="container">
         <div className={style.makeOrder}>
       <h2 className={style.mainTitle}>Возврат товара</h2>
 
@@ -24,7 +23,6 @@ const MakeOrder = () => {
         </div>
       ))}
     </div>
-</div>
   );
 };
 

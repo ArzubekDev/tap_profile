@@ -10,7 +10,8 @@ interface InfoLayoutProps {
 
 const InfoLayout = ({ children }: InfoLayoutProps) => {
     return (
-        <div className={style.infoLayout}>
+<div className="container">
+            <div className={style.infoLayout}>
             <main className={style.main}>{children}</main>
             
             <StickyBox offsetTop={120} offsetBottom={20} className={style.infoSidebarWrapper}>
@@ -19,6 +20,7 @@ const InfoLayout = ({ children }: InfoLayoutProps) => {
                 </div>
             </StickyBox>
         </div>
+</div>
     )
 }
 

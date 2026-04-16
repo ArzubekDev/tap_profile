@@ -4,16 +4,21 @@ import style from './style.module.scss';
 const InfoSidebar = () => {
   return (
     <aside className={style.infoSidebar}>
-      <div className={style.buyers}>
+      <div className={style.block}>
         <h3>Покупателям</h3>
-        {
-            buyers.map((el, idx) => (
-                <Link key={idx} href={el.link}>{el.title}</Link>
-            ))
-        }
+        {buyers.map((el, idx) => (
+          <Link key={idx} href={el.link}>
+            {el.title}
+          </Link>
+        ))}
       </div>
-      <div className={style.seller}>
+      <div className={style.block}>
         <h3>Продавцам</h3>
+        {seller.map((el, idx) => (
+          <Link key={idx} href={el.link}>
+            {el.title}
+          </Link>
+        ))}
       </div>
     </aside>
   );
@@ -24,44 +29,44 @@ export default InfoSidebar;
 const buyers = [
   {
     title: 'Как сделать заказ',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Как оплатить',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Доставка',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Возврат товара',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Пользователское соглашение',
-    link: "#"
+    link: '#',
   },
 ];
 const seller = [
   {
     title: 'О нас',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Как открыть магазин',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Как продавать на маркетплейсе',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Безопасность',
-    link: "#"
+    link: '#',
   },
   {
     title: 'Политика конфиденциальности',
-    link: "#"
+    link: '#',
   },
 ];
