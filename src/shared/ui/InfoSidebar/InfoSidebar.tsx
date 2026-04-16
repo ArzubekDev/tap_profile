@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { PATH_HOW_TO_MAKE_ORDER, PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
+import { PATH_HOW_TO_MAKE_ORDER, PATH_PAYMENTS, PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
 import style from './style.module.scss';
 
 const InfoSidebar = () => {
@@ -49,7 +49,7 @@ const buyers: TInfoSidebar[] = [
   {
     id: 2,
     title: 'Как оплатить',
-    link: '#',
+    link: PATH_PAYMENTS,
   },
   {
     id: 3,

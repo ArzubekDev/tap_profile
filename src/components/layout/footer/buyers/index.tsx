@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BlockProps } from '../type';
-import { PATH_HOW_TO_MAKE_ORDER } from '@/src/shared/consts/paths';
+import { PATH_HOW_TO_MAKE_ORDER, PATH_PAYMENTS } from '@/src/shared/consts/paths';
 import style from '../style.module.scss';
 
 const Buyers = () => {
@@ -25,7 +25,7 @@ const buyers: BlockProps[] = [
   },
   {
     title: 'Как оплатить',
-    link: '#'
+    link: PATH_PAYMENTS
   },
   {
     title: 'Доставка',
