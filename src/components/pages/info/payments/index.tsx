@@ -1,11 +1,10 @@
 import style from './style.module.scss';
 
-const MakeOrder = () => {
+const Payments = () => {
   return (
-    <div className={style.makeOrder}>
-      <h2 className={style.mainTitle}>Как сделать заказ</h2>
-
-      {conditions.map((item, idx) => (
+    <section className={style.payments}>
+      <h2 className={style.mainTitle}>Оплата на маркетплейсе Tap.kg</h2>
+      {steps.map((item, idx) => (
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
 
@@ -20,24 +19,22 @@ const MakeOrder = () => {
               ))}
             </ul>
           )}
-
           {item.description && <p className={style.description}>{item.description}</p>}
         </div>
       ))}
-    </div>
+    </section>
   );
 };
 
-export default MakeOrder;
+export default Payments;
 
-
-type TConditions = {
+type TSteps = {
   title: string, 
   subtitle: string,
   points?: string[],
   description?: string
 }
-const conditions: TConditions[] = [
+const steps: TSteps[] = [
   {
     title: 'Как сделать заказ',
     subtitle: 'Вы можете вернут товар в течение 14 дней после получения',
