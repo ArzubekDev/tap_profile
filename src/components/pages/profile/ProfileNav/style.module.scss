@@ -1,11 +1,9 @@
-
 .profileNavContainer {
   width: 260px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding-bottom: 30px;
-
 
   @media (max-width: 882px) {
     position: static;
@@ -67,9 +65,8 @@
     transition: fill 0.2s ease;
   }
 
-  &:hover {
+  &:not(.active):hover {
     background-color: #eaebed;
-
     .profileTitle {
       color: var(--color-text);
     }
