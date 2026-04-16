@@ -5,8 +5,8 @@ import { getProducts } from '@/src/shared/api/product.api';
 import Pages from './pages';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
-import style from './style.module.scss';
 import Card from '@/src/shared/ui/Card/Card';
+import style from './style.module.scss';
 
 const Favorite = () => {
 const { data } = useSuspenseQuery<any[]>({
