@@ -35,7 +35,7 @@ const ProfileNav = () => {
         [style.active]: pathname === el.link,
       })}
     >
-      {el.icon} {el.title}
+      {el.icon} <span className={style.profileTitle}>{el.title}</span>
     </Link>
   );
 
