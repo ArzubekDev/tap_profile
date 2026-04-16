@@ -1,4 +1,5 @@
-// hooks/useSmoothScroll.ts
+
+
 export const useSmoothScroll = () => {
   const scrollToAnchor = (id: string) => {
     const element = document.getElementById(id);
