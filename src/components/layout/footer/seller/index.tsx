@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { BlockProps } from '../type';
+import { PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
 import style from '../style.module.scss';
 
 const Seller = () => {
@@ -34,6 +35,6 @@ const seller: BlockProps[] = [
   },
   {
     title: 'Политика конфиденциальности',
-    link: '#'
+    link: PATH_PRIVACY_POLICY
   },
 ];
