@@ -20,7 +20,7 @@ export default Buyers;
 const buyers: BlockProps[] = [
   {
     title: 'Как сделать заказ',
-    link: '#'
+    link: '/info/how-to-make-order'
   },
   {
     title: 'Как оплатить',

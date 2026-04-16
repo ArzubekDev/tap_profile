@@ -3,12 +3,12 @@ import style from './style.module.scss';
 
 const InfoSidebar = () => {
   return (
-    <aside>
+    <aside className={style.infoSidebar}>
       <div className={style.buyers}>
         <h3>Покупателям</h3>
         {
             buyers.map((el, idx) => (
-                <Link href={el.link}>{el.title}</Link>
+                <Link key={idx} href={el.link}>{el.title}</Link>
             ))
         }
       </div>

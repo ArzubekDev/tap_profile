@@ -1,26 +1,30 @@
+import style from "./style.module.scss"
+
 const MakeOrder = () => {
   return (
-    <div className="p-4">
-      <h2 className="text-2xl font-bold mb-4">Возврат товара</h2>
+<div className="container">
+        <div className={style.makeOrder}>
+      <h2 className={style.mainTitle}>Возврат товара</h2>
 
       {conditions.map((item, idx) => (
-        <section key={idx} className="mb-6">
-          <h3 className="text-xl font-semibold">{item.title}</h3>
+        <div key={idx} className={style.infoBlocks}>
+          <h3 className={style.title}>{item.title}</h3>
 
-          {item.subtitle && <p className="text-gray-600 italic">{item.subtitle}</p>}
+          {item.subtitle && <p className={style.subTitle}>{item.subtitle}</p>}
 
           {item.points && (
-            <ul className="list-disc ml-5 mt-2">
+            <ul className={style.list}>
               {item.points.map((point, index) => (
-                <li key={index}>{point}</li>
+                <li key={index} className={style.item}>{point}</li>
               ))}
             </ul>
           )}
 
-          {item.description && <p className="mt-3 text-sm">{item.description}</p>}
-        </section>
+          {item.description && <p className={style.description}>{item.description}</p>}
+        </div>
       ))}
     </div>
+</div>
   );
 };
 
