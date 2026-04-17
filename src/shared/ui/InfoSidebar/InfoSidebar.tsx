@@ -2,7 +2,7 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { PATH_ABOUT, PATH_DELIVERY, PATH_HOW_TO_MAKE_ORDER, PATH_HOW_TO_OPEN_SHOP, PATH_HOW_TO_SELL, PATH_PAYMENTS, PATH_PRIVACY_POLICY, PATH_RETURNS, PATH_TERM_OF_USE } from '@/src/shared/consts/paths';
+import { PATH_ABOUT, PATH_DELIVERY, PATH_HOW_TO_MAKE_ORDER, PATH_HOW_TO_OPEN_SHOP, PATH_HOW_TO_SELL, PATH_PAYMENTS, PATH_PRIVACY_POLICY, PATH_RETURNS, PATH_SECURITY, PATH_TERM_OF_USE } from '@/src/shared/consts/paths';
 import style from './style.module.scss';
 
 const InfoSidebar = () => {
@@ -86,7 +86,7 @@ const seller: TInfoSidebar[] = [
   {
     id: 9,
     title: 'Безопасность',
-    link: '#',
+    link: PATH_SECURITY,
   },
   {
     id: 10,
