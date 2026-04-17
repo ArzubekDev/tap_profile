@@ -3,13 +3,13 @@ import style from './style.module.scss';
 const MakeOrder = () => {
   return (
     <div className={style.makeOrder}>
-      <h2 className={style.mainTitle}>Как сделать заказ</h2>
+      <h2 className={style.headline}>Как сделать заказ</h2>
 
       {conditions.map((item, idx) => (
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
 
-          {item.subtitle && <p className={style.subTitle}>{item.subtitle}</p>}
+          {item.subtitle && <p className={style.subtitle}>{item.subtitle}</p>}
 
           {item.points && (
             <ul className={style.list}>
