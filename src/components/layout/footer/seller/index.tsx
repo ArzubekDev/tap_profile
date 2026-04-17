@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { BlockProps } from '../type';
-import { PATH_ABOUT, PATH_HOW_TO_OPEN_SHOP, PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
+import { PATH_ABOUT, PATH_HOW_TO_OPEN_SHOP, PATH_HOW_TO_SELL, PATH_PRIVACY_POLICY } from '@/src/shared/consts/paths';
 import style from '../style.module.scss';
 
 const Seller = () => {
@@ -27,7 +27,7 @@ const seller: BlockProps[] = [
   },
   {
     title: 'Как продавать на маркетплейсе',
-    link: '#'
+    link: PATH_HOW_TO_SELL
   },
   {
     title: 'Безопасность',
