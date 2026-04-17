@@ -12,7 +12,7 @@ const FooterBottom = () => {
             href={'https://sunrisestudio.pro'}
             target="_blank"
             rel="noopener noreferrer"
-            className={style.text}
+            className={style.sunrise}
           >
             Sunrisestudio.pro
           </Link>
