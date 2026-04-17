@@ -3,12 +3,12 @@ import style from './style.module.scss';
 const Delivery = () => {
   return (
     <section className={style.delivery}>
-      <h2 className={style.mainTitle}>Доставка</h2>
+      <h2 className={style.headline}>Доставка</h2>
       {steps.map((item, idx) => (
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
 
-          {item.subtitle && <p className={style.subTitle}>{item.subtitle}</p>}
+          {item.subtitle && <p className={style.subtitle}>{item.subtitle}</p>}
 
           {item.points && (
             <ul className={style.list}>
