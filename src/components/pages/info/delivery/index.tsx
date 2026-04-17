@@ -3,7 +3,7 @@ import style from './style.module.scss';
 const Delivery = () => {
   return (
     <section className={style.delivery}>
-      <h2 className={style.mainTitle}>Оплата на маркетплейсе Tap.kg</h2>
+      <h2 className={style.mainTitle}>Доставка</h2>
       {steps.map((item, idx) => (
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
