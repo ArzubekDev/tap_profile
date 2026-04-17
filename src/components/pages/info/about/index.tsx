@@ -3,7 +3,7 @@ import style from './style.module.scss'
 const About = () => {
   return (
     <section className={style.about}>
-      <h2 className={style.mainTitle}>О маркетплейсе Tap.kg</h2>
+      <h2 className={style.headline}>О маркетплейсе Tap.kg</h2>
       <p className={style.text}>
         Наша компания и платформа старается объеденить продавца и покупателя, давая каждому выгоду,
         найти самый лучший товар для покупателя, а продавцу бесплатно открыть интрернет-магазин и
