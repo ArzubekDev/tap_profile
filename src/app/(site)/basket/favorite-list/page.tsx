@@ -1,8 +1,8 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
+import Favorite from '@/src/components/pages/profile/favorite';
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
-import FavoriteWithBoundary from './FavoriteWithFoundary';
 
 export default async function FavoritePage() {
   const queryClient = new QueryClient();
@@ -14,7 +14,7 @@ export default async function FavoritePage() {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <FavoriteWithBoundary />
+      <Favorite/>
     </HydrationBoundary>
   );
 }
