@@ -21,6 +21,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
       open={open}
       onOk={close}
       onCancel={close}
+      bodyStyle={{ maxHeight: 'calc(100vh - 150px)', overflowY: 'auto' }}
       footer={null}
     >
       <div className={style.sizeTable}>
@@ -69,9 +70,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                   </div>
 
                   {chart.info.image && (
-                    <div className={style.imageContainer}>
                       <Image src={chart.info.image} alt="Image" width={240} height={320} className={style.image}/>
-                    </div>
                   )}
                 </div>
               </div>
