@@ -8,9 +8,9 @@ type SizeChartModalProps = {
   charts: any;
 };
 const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
-const [activeRow, setActiveRow] = useState<number | null>(null);
+  const [activeRow, setActiveRow] = useState<number | null>(null);
 
-    return (
+  return (
     <Modal
       // footer={footer}
       className={style.customModal}
@@ -24,15 +24,12 @@ const [activeRow, setActiveRow] = useState<number | null>(null);
     >
       <div className={style.sizeTable}>
         {charts?.map((chart: any, index: any) => (
-            <div key={index} className={style.section}>
-              <h3 className={style.title}>{chart.title}</h3>
+          <div key={index} className={style.section}>
+            <h3 className={style.title}>{chart.title}</h3>
             <div className={style.tableContainer}>
               <div className={style.headerContainer}>
                 {chart.headers.map((header: any, colIndex: any) => (
-                  <div
-                    key={colIndex}
-                    className={style.header}
-                  >
+                  <div key={colIndex} className={style.header}>
                     <span className={style.label}>{header.label}</span>
                     <span className={style.subLabel}>{header.subLabel}</span>
                   </div>
