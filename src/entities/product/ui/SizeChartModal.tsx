@@ -55,6 +55,14 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                 </div>
               ))}
             </div>
+            <h3>{chart.info?.header}</h3>
+            <div className={style.infoContainer}>
+                <div className={style.infoContent}>
+                    {chart.items?.map((el: any) => (
+                        <h4>{el}</h4>
+                    ))}
+                </div>
+            </div>
           </div>
         ))}
       </div>
