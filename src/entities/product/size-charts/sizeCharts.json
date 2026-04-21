@@ -4,10 +4,10 @@
       "title": "Название одежды",
       "headers": [
   { "key": "RU", "label": "RU", "subLabel": "Российский размер" },
-  { "key": "back_length_cm", "label": "Длина, см", "subLabel": "По спинке" },
-  { "key": "sleeve_length_cm", "label": "Длина, см", "subLabel": "Рукава" },
-  { "key": "chest_half_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
-  { "key": "hips_half_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" },
+  { "key": "INT", "label": "Длина, см", "subLabel": "По спинке" },
+  { "key": "bust_cm", "label": "Длина, см", "subLabel": "Рукава" },
+  { "key": "waist_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
+  { "key": "hips_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" },
   { "key": "back_length_cm", "label": "Длина изделия", "subLabel": "по спинке, см" },
   { "key": "sleeve_length_cm", "label": "Длина рукава", "subLabel": null }
 ],
