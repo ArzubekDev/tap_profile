@@ -1,21 +1,18 @@
 'use client';
 
-import { Drawer, Grid } from 'antd';
+import { Drawer } from 'antd';
 
+import { useWindowSize } from '@/src/shared/hooks/useWindowSize';
 import style from './style.module.scss';
-
-const { useBreakpoint } = Grid;
 
 type SizeChartModalProps = {
   open: boolean;
   close: () => void;
 };
 const SizeChartModal = ({ open, close }: SizeChartModalProps) => {
-  const screens = useBreakpoint();
-  // Эгер экран кичинекей (xs) болсо 'bottom', чоң болсо 'right' болот
-  const placement = screens.xs ? 'bottom' : 'right';
-  // Мобилдикте бийиктигин, десктопто кенендигин башкарабыз
-  const drawerSize = screens.xs ? { height: '70%' } : { width: 500 };
+  const isCompact = useWindowSize(1000);
+  const placement = isCompact ? 'bottom' : 'right';
+  const drawerSize = isCompact ? { height: '80%' } : { width: 550 };
 
   return (
     <section className={style.page}>
