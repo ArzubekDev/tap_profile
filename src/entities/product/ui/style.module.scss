@@ -14,29 +14,32 @@
   display: flex;
   flex-direction: column;
 }
-.header {
+.tableHeader {
   display: flex;
   flex-direction: column;
   width: 180px;
   height: 70px;
-  border-bottom: 2px solid #aaaaaa3e;
+  border-bottom: 1.6px solid #aaaaaa3e;
   background-color: aliceblue;
   padding: 10px;
+}
+.tableHeader:last-child {
+  border-bottom: 1.6px solid transparent;
 }
 .label {
   font-weight: 700;
 }
-.row {
+.tableBody {
   display: flex;
   flex-direction: column;
-
   width: 100%;
 
   &:hover {
     background-color: #dddddd3e;
   }
 }
-.row:has(.active):hover {
+
+.tableBody:has(.activeRow):hover {
   background-color: transparent;
 }
 
@@ -46,21 +49,16 @@
   align-items: center;
   justify-content: center;
   height: 70px;
-  border: 2px solid transparent;
-  border-bottom: 2px solid #aaaaaa3e;
   padding: 10px;
+
+  border-bottom: 1.6px solid #e0e0e0;
 }
-.active {
-  border-right: 2px solid var(--main-color);
-  border-left: 2px solid var(--main-color);
+.size:last-child {
+  border-bottom: 1.6px solid transparent;
 }
-.active:last-child {
-  border-bottom: 2px solid var(--main-color);
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-}
-.active:first-child {
-  border-top: 2px solid var(--main-color);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+
+.activeRow {
+  outline: 2px solid var(--main-color);
+  outline-offset: -2px;
+  border-radius: 10px;
 }

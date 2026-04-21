@@ -29,14 +29,18 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
             <div className={style.tableContainer}>
               <div className={style.headerContainer}>
                 {chart.headers.map((header: any, colIndex: any) => (
-                  <div key={colIndex} className={style.header}>
+                  <div key={colIndex} className={style.tableHeader}>
                     <span className={style.label}>{header.label}</span>
                     <span className={style.subLabel}>{header.subLabel}</span>
                   </div>
                 ))}
               </div>
               {chart.data.map((row: any, rowIndex: any) => (
-                <div onClick={() => setActiveRow(rowIndex)} key={rowIndex} className={style.row}>
+                <div
+                  onClick={() => setActiveRow(rowIndex)}
+                  key={rowIndex}
+                  className={`${style.tableBody} ${activeRow === rowIndex ? style.activeRow : ''}`}
+                >
                   {chart.headers.map((header: any, colIndex: any) => {
                     const key = typeof header === 'string' ? header : header.key;
                     return (
