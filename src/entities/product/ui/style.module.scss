@@ -17,8 +17,9 @@
 .tableHeader {
   display: flex;
   flex-direction: column;
+  line-height: 17px;
   width: 180px;
-  height: 70px;
+  height: 50px;
   border-bottom: 1.6px solid #aaaaaa3e;
   background-color: aliceblue;
   padding: 10px;
@@ -48,7 +49,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 70px;
+  height: 50px;
   padding: 10px;
 
   border-bottom: 1.6px solid #e0e0e0;
@@ -61,4 +62,62 @@
   outline: 2px solid var(--main-color);
   outline-offset: -2px;
   border-radius: 10px;
+}
+
+.infoWrapper {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 20px;
+
+  .infoMainTitle {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+.infoContainer {
+  display: flex;
+  gap: 20px;
+  align-items: start;
+
+  .infoContent {
+    .infoItem {
+      margin-bottom: 15px;
+
+      strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      p {
+        font-size: 14px;
+        color: #666;
+        line-height: 1.4;
+        margin: 0;
+      }
+    }
+  }
+}
+.imageContainer {
+  width: 580px;
+  height: 340px;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #333;
+}
+
+@media (max-width: 576px) {
+  .infoContainer {
+    flex-direction: column-reverse;
+
+    .infoImage {
+      flex: none;
+      width: 150px;
+      margin: 0 auto 20px;
+    }
+  }
 }

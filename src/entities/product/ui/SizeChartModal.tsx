@@ -1,31 +1,33 @@
 import { Modal } from 'antd';
 import { useState } from 'react';
 import style from './style.module.scss';
+import Image from 'next/image';
 
 type SizeChartModalProps = {
   close: () => void;
   open: boolean;
   charts: any;
 };
+
 const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
   const [activeRow, setActiveRow] = useState<number | null>(null);
 
   return (
     <Modal
-      // footer={footer}
       className={style.customModal}
-      width={700}
-      height={400}
+      width={750} // Бир аз кененирээк кылдык
       title="Таблица размеров"
       mask={{ enabled: true, blur: true }}
       open={open}
       onOk={close}
       onCancel={close}
+      footer={null}
     >
       <div className={style.sizeTable}>
         {charts?.map((chart: any, index: any) => (
           <div key={index} className={style.section}>
             <h3 className={style.title}>{chart.title}</h3>
+            
             <div className={style.tableContainer}>
               <div className={style.headerContainer}>
                 {chart.headers.map((header: any, colIndex: any) => (
@@ -44,10 +46,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                   {chart.headers.map((header: any, colIndex: any) => {
                     const key = typeof header === 'string' ? header : header.key;
                     return (
-                      <div
-                        key={colIndex}
-                        className={`${style.size} ${activeRow === rowIndex ? style.active : ''}`}
-                      >
+                      <div key={colIndex} className={style.size}>
                         {row[key]}
                       </div>
                     );
@@ -55,14 +54,28 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                 </div>
               ))}
             </div>
-            <h3>{chart.info?.header}</h3>
-            <div className={style.infoContainer}>
-                <div className={style.infoContent}>
-                    {chart.items?.map((el: any) => (
-                        <h4>{el}</h4>
+
+            {chart.info && (
+              <div className={style.infoWrapper}>
+                <h3 className={style.infoMainTitle}>{chart.info.header}</h3>
+                <div className={style.infoContainer}>
+                  <div className={style.infoContent}>
+                    {chart.info.items?.itemsTitle?.map((title: string, i: number) => (
+                      <div key={i} className={style.infoItem}>
+                        <strong>{i + 1}. {title}</strong>
+                        <p>{chart.info.items.itemsText[i]}</p>
+                      </div>
                     ))}
+                  </div>
+
+                  {chart.info.image && (
+                    <div className={style.imageContainer}>
+                      <Image src={chart.info.image} alt="Image" width={240} height={320} className={style.image}/>
+                    </div>
+                  )}
                 </div>
-            </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
