@@ -3,14 +3,14 @@
     "t-shirt": {
       "title": "Название одежды",
       "headers": [
-        "RU",
-        "INT",
-        "bust_cm",
-        "waist_cm",
-        "hips_cm",
-        "back_length_cm",
-        "sleeve_length_cm"
-      ],
+  { "key": "RU", "label": "RU", "subLabel": "Российский размер" },
+  { "key": "back_length_cm", "label": "Длина, см", "subLabel": "По спинке" },
+  { "key": "sleeve_length_cm", "label": "Длина, см", "subLabel": "Рукава" },
+  { "key": "chest_half_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
+  { "key": "hips_half_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" },
+  { "key": "back_length_cm", "label": "Длина изделия", "subLabel": "по спинке, см" },
+  { "key": "sleeve_length_cm", "label": "Длина рукава", "subLabel": null }
+],
       "data": [
         { "RU": 40, "INT": "XS", "bust_cm": 72, "waist_cm": 56, "hips_cm": 76, "back_length_cm": 81.5, "sleeve_length_cm": 60 },
         { "RU": 42, "INT": "S", "bust_cm": 76, "waist_cm": 60, "hips_cm": 80, "back_length_cm": 82, "sleeve_length_cm": 60.5 },
