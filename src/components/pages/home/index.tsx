@@ -6,9 +6,18 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Button } from 'antd';
 import { useState } from 'react';
+import sizeCharts from '@/src/entities/product/size-charts/sizeCharts.json'
 
-import style from './style.module.scss';
 import SizeChartModal from '@/src/entities/product/ui/SizeChartModal';
+import style from './style.module.scss';
+
+const product = {
+    id: 1,
+    name: "Oversize T-shirt",
+    gender: "male",
+    category: "t-shirt",
+    isSet: false
+  };
 
 const Home = () => {
   const { data: products } = useQuery<any>({
@@ -26,6 +35,18 @@ const Home = () => {
     setOpen(false);
   };
 
+  const getChartsForProduct = () => {
+    const genderData = sizeCharts[product.gender as keyof typeof sizeCharts];
+    
+    if (product.isSet) {
+      return [(genderData as any)['t-shirt'], (genderData as any)['trousers']];
+    }
+    
+    return [(genderData as any)[product.category]];
+  };
+
+  const currentCharts = getChartsForProduct();
+
   return (
     <section className={style.home}>
       <div className="container">
@@ -40,7 +61,7 @@ const Home = () => {
           ))}
         </div>
       </div>
-      <SizeChartModal close={onClose} open={open}/>
+      <SizeChartModal close={onClose} open={open} charts={currentCharts}/>
     </section>
   );
 };

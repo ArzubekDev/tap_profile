@@ -8,8 +8,9 @@ import style from './style.module.scss';
 type SizeChartModalProps = {
   open: boolean;
   close: () => void;
+  charts: any;
 };
-const SizeChartModal = ({ open, close }: SizeChartModalProps) => {
+const SizeChartModal = ({ open, close, charts }: SizeChartModalProps) => {
   const isCompact = useWindowSize(1000);
   const placement = isCompact ? 'bottom' : 'right';
   const drawerSize = isCompact ? { height: '80%' } : { width: 550 };
