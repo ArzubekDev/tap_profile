@@ -24,13 +24,13 @@
   "male": {
     "t-shirt": {
       "title": "Толстовка",
-      "headers": [
-        "RU",
-        "back_length_cm",
-        "sleeve_length_cm",
-        "chest_half_cm",
-        "hips_half_cm"
-      ],
+     "headers": [
+  { "key": "RU", "label": "RU", "subLabel": "Российский размер" },
+  { "key": "back_length_cm", "label": "Длина, см", "subLabel": "По спинке" },
+  { "key": "sleeve_length_cm", "label": "Длина, см", "subLabel": "Рукава" },
+  { "key": "chest_half_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
+  { "key": "hips_half_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" }
+],
       "data": [
         { "RU": 44, "back_length_cm": 66, "sleeve_length_cm": 52, "chest_half_cm": 52, "hips_half_cm": 79 },
         { "RU": 46, "back_length_cm": 66, "sleeve_length_cm": 54, "chest_half_cm": 54, "hips_half_cm": 79 },
