@@ -36,6 +36,9 @@
     background-color: #dddddd3e;
   }
 }
+.row:has(.active):hover {
+  background-color: transparent;
+}
 
 .size {
   cursor: default;
