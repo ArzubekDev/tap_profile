@@ -1,29 +1,30 @@
-'use client'
+'use client';
 
-import React, { useState } from 'react';
-import { Button, Drawer } from 'antd';
+import { Drawer, Grid } from 'antd';
 
 import style from './style.module.scss';
 
-const SizeChartModal: React.FC = () => {
-  const [open, setOpen] = useState(false);
-  const showDrawer = () => {
-    setOpen(true);
-  };
+const { useBreakpoint } = Grid;
 
-  const onClose = () => {
-    setOpen(false);
-  };
+type SizeChartModalProps = {
+  open: boolean;
+  close: () => void;
+};
+const SizeChartModal = ({ open, close }: SizeChartModalProps) => {
+  const screens = useBreakpoint();
+  // Эгер экран кичинекей (xs) болсо 'bottom', чоң болсо 'right' болот
+  const placement = screens.xs ? 'bottom' : 'right';
+  // Мобилдикте бийиктигин, десктопто кенендигин башкарабыз
+  const drawerSize = screens.xs ? { height: '70%' } : { width: 500 };
 
   return (
     <section className={style.page}>
-      <Button type="primary" onClick={showDrawer}>
-        Open
-      </Button>
       <Drawer
-        title="Drawer Closable Placement"
+        title="Таблица размеров"
+        placement={placement}
+        {...drawerSize}
         closable={{ placement: 'end' }}
-        onClose={onClose}
+        onClose={close}
         open={open}
       >
         <p>Some contents...</p>
