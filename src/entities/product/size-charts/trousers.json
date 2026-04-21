@@ -1,0 +1,41 @@
+{
+    "male": {
+  "headers": [
+    "RU",
+    "length_cm",
+    "hips_half_cm"
+  ],
+  "data": [
+    {
+      "RU": 44,
+      "length_cm": 104,
+      "hips_half_cm": 57
+    },
+    {
+      "RU": 46,
+      "length_cm": 104,
+      "hips_half_cm": 57
+    },
+    {
+      "RU": 48,
+      "length_cm": 104,
+      "hips_half_cm": 57
+    },
+    {
+      "RU": 50,
+      "length_cm": 104,
+      "hips_half_cm": 57
+    },
+    {
+      "RU": 52,
+      "length_cm": 104,
+      "hips_half_cm": 58
+    },
+    {
+      "RU": 54,
+      "length_cm": 104,
+      "hips_half_cm": 58
+    }
+  ]
+}
+}
