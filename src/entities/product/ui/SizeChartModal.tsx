@@ -1,4 +1,5 @@
 import { Modal } from 'antd';
+import { useState } from 'react';
 import style from './style.module.scss';
 
 type SizeChartModalProps = {
@@ -7,50 +8,55 @@ type SizeChartModalProps = {
   charts: any;
 };
 const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
-  return (
+const [activeRow, setActiveRow] = useState<number | null>(null);
+
+    return (
     <Modal
       // footer={footer}
       className={style.customModal}
-      title="Custom Function Modal"
+      width={700}
+      height={400}
+      title="Таблица размеров"
       mask={{ enabled: true, blur: true }}
       open={open}
       onOk={close}
       onCancel={close}
     >
-     <div className={style.sizeTable}>
-  {charts?.map((chart: any, index: any) => (
-    <div key={index} className={style.section}>
-      <h3 className={style.title}>{chart.title}</h3>
-      
-      {/* 1. БАШКЫ САПТЫ (HEADERS) КОШУУ */}
-      <div className={`${style.row} ${style.headerRow}`}>
-        {chart.headers.map((header: any, colIndex: any) => (
-          <div key={colIndex} className={`${style.cell} ${style.headerCell} ${colIndex === 2 ? style.active : ''}`}>
-            {typeof header === 'string' ? header : header.label}
+      <div className={style.sizeTable}>
+        {charts?.map((chart: any, index: any) => (
+            <div key={index} className={style.section}>
+              <h3 className={style.title}>{chart.title}</h3>
+            <div className={style.tableContainer}>
+              <div className={style.headerContainer}>
+                {chart.headers.map((header: any, colIndex: any) => (
+                  <div
+                    key={colIndex}
+                    className={style.header}
+                  >
+                    <span className={style.label}>{header.label}</span>
+                    <span className={style.subLabel}>{header.subLabel}</span>
+                  </div>
+                ))}
+              </div>
+              {chart.data.map((row: any, rowIndex: any) => (
+                <div onClick={() => setActiveRow(rowIndex)} key={rowIndex} className={style.row}>
+                  {chart.headers.map((header: any, colIndex: any) => {
+                    const key = typeof header === 'string' ? header : header.key;
+                    return (
+                      <div
+                        key={colIndex}
+                        className={`${style.size} ${activeRow === rowIndex ? style.active : ''}`}
+                      >
+                        {row[key]}
+                      </div>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-
-      {/* 2. МААЛЫМАТТАР (DATA) */}
-      {chart.data.map((row: any, rowIndex: any) => (
-        <div key={rowIndex} className={style.row}>
-          {chart.headers.map((header: any, colIndex: any) => {
-            const key = typeof header === 'string' ? header : header.key;
-            const isActive = colIndex === 2;
-            return (
-              <div
-                key={colIndex}
-                className={`${style.cell} ${isActive ? style.active : ''} ${colIndex === 0 ? style.firstCol : ''}`}
-              >
-                {row[key]}
-              </div>
-            );
-          })}
-        </div>
-      ))}
-    </div>
-  ))}
-</div>
     </Modal>
   );
 };

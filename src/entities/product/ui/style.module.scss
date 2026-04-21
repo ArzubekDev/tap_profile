@@ -1,59 +1,63 @@
-.customModal {
-  width: 900px !important; 
-  max-width: 95vw;      
+.section {
+  display: flex;
+  flex-direction: column;
+}
+.tableContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1.5px solid #aaaaaa63;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 70px;
+  border-bottom: 2px solid #aaaaaa3e;
+  background-color: aliceblue;
+  padding: 10px;
+}
+.label {
+  font-weight: 700;
+}
+.row {
+  display: flex;
+  flex-direction: column;
 
-    :global(.ant-modal-content) {
-    border-radius: 12px;
-    padding: 20px;
+  width: 100%;
+
+  &:hover {
+    background-color: #dddddd3e;
   }
 }
 
-.title {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-
-.cell {
-  padding: 12px;
-  text-align: center;
-}
-
-.firstCol {
-  text-align: left;
-  font-weight: 500;
-}
-
-.sizeTable {
+.size {
+  cursor: default;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding-top: 10px; 
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  border: 2px solid transparent;
+  border-bottom: 2px solid #aaaaaa3e;
+  padding: 10px;
 }
-
-.row {
-  display: grid;
-  grid-template-columns: 180px repeat(6, 1fr);
-  border-bottom: 1px solid #eee;
-  position: relative;
-}
-
 .active {
-  background: rgba(167, 110, 255, 0.05);
-  border-left: 2px solid #a76eff;
-  border-right: 2px solid #a76eff;
-  z-index: 2;
+  border-right: 2px solid var(--main-color);
+  border-left: 2px solid var(--main-color);
 }
-
-.headerRow .active {
-  border-top: 2px solid #a76eff !important;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  margin-top: 0; 
+.active:last-child {
+  border-bottom: 2px solid var(--main-color);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-
-.row:last-child .active {
-  border-bottom: 2px solid #a76eff !important;
-  border-bottom-left-radius: 16px;
-  border-bottom-right-radius: 16px;
+.active:first-child {
+  border-top: 2px solid var(--main-color);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
