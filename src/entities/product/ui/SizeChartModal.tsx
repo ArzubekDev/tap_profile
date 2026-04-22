@@ -15,7 +15,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
   return (
     <Modal
       className={style.customModal}
-      width={750}
+      width={600}
       title="Таблица размеров"
       mask={{ enabled: true, blur: true }}
       open={open}
@@ -23,12 +23,15 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
       onCancel={close}
       footer={null}
     >
+      {/* Таблица */}
       <div className={style.sizeTable}>
         {charts?.map((chart: any, index: any) => (
           <div key={index} className={style.section}>
+            {/* Название одежды */}
             <h3 className={style.title}>{chart.title}</h3>
-
+            {/* Контейнер таблицы */}
             <div className={style.tableContainer}>
+                {/* Header Таблицы: RU, INT ..... */}
               <div className={style.headerContainer}>
                 {chart.headers.map((header: any, colIndex: any) => (
                   <div key={colIndex} className={style.tableHeader}>
@@ -37,6 +40,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                   </div>
                 ))}
               </div>
+              {/* Body таблицы: Все размеры */}
               {chart.data.map((row: any, rowIndex: any) => (
                 <div
                   onClick={() => setActiveRow(rowIndex)}
@@ -46,6 +50,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                   {chart.headers.map((header: any, colIndex: any) => {
                     const key = typeof header === 'string' ? header : header.key;
                     return (
+                      // Размер
                       <div key={colIndex} className={style.size}>
                         {row[key]}
                       </div>
@@ -54,17 +59,20 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                 </div>
               ))}
             </div>
-
+            {/* Info: Текст и манекен (Изображение) */}
             {chart.info && (
               <div className={style.infoWrapper}>
+                {/*h3: Как снять мерки */}
                 <h3 className={style.infoMainTitle}>{chart.info.header}</h3>
                 <div className={style.infoContainer}>
                   <div className={style.infoContent}>
                     {chart.info.items?.itemsTitle?.map((title: string, i: number) => (
                       <div key={i} className={style.infoItem}>
+                        {/* Title */}
                         <strong>
                           {i + 1}. {title}
                         </strong>
+                        {/* Текст */}
                         <p>{chart.info.items.itemsText[i]}</p>
                       </div>
                     ))}
