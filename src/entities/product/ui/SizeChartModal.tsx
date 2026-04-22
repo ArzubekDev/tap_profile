@@ -103,15 +103,6 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
 
 export default SizeChartModal;
 
-
-
-
-
-
-
-
-
-
 //   "male": {
 //     "t-shirt": {
 //       "title": "Толстовка",
