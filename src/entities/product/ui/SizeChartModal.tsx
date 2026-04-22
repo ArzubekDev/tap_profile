@@ -9,6 +9,9 @@ type SizeChartModalProps = {
   charts: any;
 };
 
+// РАЗМЕРЫ У ВСЕХ ОДНИКОВЫЙ. 
+// ПОТОМ НАДО МЕНЯТ РАЗМЕРЫ В MALE, MALE_KID, FEMALE_KID. 
+// У FEMALE СВОЙ РАЗМЕР
 const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
   const [activeRow, setActiveRow] = useState<number | null>(null);
 
