@@ -11,10 +11,11 @@ import sizeCharts from '@/src/entities/product/size-charts/sizeCharts.json'
 import SizeChartModal from '@/src/entities/product/ui/SizeChartModal';
 import style from './style.module.scss';
 
+//Временно: Для теста Таблица размеров
 const product = {
     id: 1,
     name: "Oversize T-shirt",
-    gender: "male",
+    gender: "male", // female, female_kid, male_kid
     category: "t-shirt",
     isSet: false
   };
@@ -25,12 +26,12 @@ const Home = () => {
     queryFn: getProducts,
     staleTime: 1000 * 60 * 5,
   });
+   
 
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
     setOpen(true);
   };
-
   const onClose = () => {
     setOpen(false);
   };
@@ -50,6 +51,7 @@ const Home = () => {
   return (
     <section className={style.home}>
       <div className="container">
+        {/* Временно: кнопка для теста Таблица размеров */}
         <Button className={style.sizeButton} type="primary" onClick={showDrawer}>
           Таблица размеров
         </Button>
@@ -61,6 +63,7 @@ const Home = () => {
           ))}
         </div>
       </div>
+      {/* Модалка - таблица размеров */}
       <SizeChartModal close={onClose} open={open} charts={currentCharts}/>
     </section>
   );
