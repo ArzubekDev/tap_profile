@@ -1,4 +1,10 @@
-
+.mainTitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+.title {
+  font-size: 17px;
+}
 .section {
   display: flex;
   flex-direction: column;
@@ -68,7 +74,10 @@
   outline-offset: -2px;
   border-radius: 10px;
 }
-
+.infoText {
+  font-size: 22px;
+  line-height: 16px;
+}
 .infoWrapper {
   border-top: 1px solid #f0f0f0;
   padding-top: 20px;

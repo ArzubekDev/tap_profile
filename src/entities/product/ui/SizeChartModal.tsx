@@ -16,7 +16,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
     <Modal
       className={style.customModal}
       width={600}
-      title="Таблица размеров"
+      title={<span className={style.mainTitle}>Таблица размеров</span>}
       mask={{ enabled: true, blur: true }}
       open={open}
       onOk={close}
@@ -63,7 +63,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
             {chart.info && (
               <div className={style.infoWrapper}>
                 {/*h3: Как снять мерки */}
-                <h3 className={style.infoMainTitle}>{chart.info.header}</h3>
+                <h3 className={style.title}>{chart.info.header}</h3>
                 <div className={style.infoContainer}>
                   <div className={style.infoContent}>
                     {chart.info.items?.itemsTitle?.map((title: string, i: number) => (
@@ -73,7 +73,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                           {i + 1}. {title}
                         </strong>
                         {/* Текст */}
-                        <p>{chart.info.items.itemsText[i]}</p>
+                        <p className={style.infoText}>{chart.info.items.itemsText[i]}</p>
                       </div>
                     ))}
                   </div>
