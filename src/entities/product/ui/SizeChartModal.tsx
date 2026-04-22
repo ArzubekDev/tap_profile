@@ -48,7 +48,8 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                 ))}
               </div>
               {/* Body таблицы: Все размеры */}
-              {chart.data.map((row: any, rowIndex: any) => (
+             <div className={style.tableBodyContainer}>
+               {chart.data.map((row: any, rowIndex: any) => (
                 <div
                   onClick={() => setActiveRow(rowIndex)}
                   key={rowIndex}
@@ -65,6 +66,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                   })}
                 </div>
               ))}
+             </div>
             </div>
             {/* Info: Текст и манекен (Изображение) */}
             {chart.info && (

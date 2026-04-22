@@ -8,7 +8,7 @@
 //     max-width: 100vw;
 //     margin: 0;
 //     padding-bottom: 0;
-    
+
 //     :global(.ant-modal-content) {
 //       border-radius: 0;
 //       min-height: 100vh;
@@ -29,11 +29,10 @@
 }
 .tableContainer {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   border: 1.5px solid #aaaaaa63;
   border-radius: 10px;
-  overflow: hidden;
+  overflow-y: hidden;
 }
 .headerContainer {
   display: flex;
@@ -59,6 +58,12 @@
 .subLabel {
   font-size: 11px;
 }
+.tableBodyContainer {
+  display: flex;
+  overflow-x: auto;
+
+  width: 100%;
+}
 .tableBody {
   display: flex;
   flex-direction: column;
@@ -75,9 +80,13 @@
 
 .size {
   cursor: default;
+  
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 100%;
+  min-width: 50px;
   height: 39px;
   padding: 5px;
 
@@ -96,7 +105,6 @@
 .infoWrapper {
   border-top: 1px solid #f0f0f0;
   padding-top: 20px;
-
 }
 
 .infoContainer {
@@ -116,12 +124,12 @@
     }
   }
 }
-      .infoText {
-        font-size: 13px;
-        color: #666;
-        line-height: 1.1;
-        margin: 0;
-      }
+.infoText {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.1;
+  margin: 0;
+}
 
 .image {
   width: 280px;
@@ -150,7 +158,7 @@
 
   border: none;
   cursor: pointer;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
 
   &:hover {
     background-color: #b4b4b457;
