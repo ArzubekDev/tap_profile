@@ -23,7 +23,7 @@
         "header": "Как снять мерки", 
       "items": {
         "itemsTitle": ["Обхвать груди","Обхвать талии", "Обхвать бедер"],
-"itemsText": ["Сантиметровая лента должна проходить по наиболее вступающим точкам груди, сбоку - под подмышечными впадинами обхватывая лопатки сзади.", "Измеряется горизонтально в самой узкой части талии. При измерении лента должно плотно (без натяжение) прилегать к телу", "Сантиметровая лента проходит строго горизонтально по наиболее вступающим точкам ягодиц."]
+        "itemsText": ["Сантиметровая лента должна проходить по наиболее вступающим точкам груди, сбоку - под подмышечными впадинами обхватывая лопатки сзади.", "Измеряется горизонтально в самой узкой части талии. При измерении лента должно плотно (без натяжение) прилегать к телу", "Сантиметровая лента проходит строго горизонтально по наиболее вступающим точкам ягодиц."]
       },
       "image": "/images/maneken_female.png"
       }
@@ -31,30 +31,36 @@
   },
   "male": {
     "t-shirt": {
-      "title": "Толстовка",
-     "headers": [
+      "title": "Название одежды",
+      "headers": [
   { "key": "RU", "label": "RU", "subLabel": "Российский размер" },
-  { "key": "back_length_cm", "label": "Длина, см", "subLabel": "По спинке" },
-  { "key": "sleeve_length_cm", "label": "Длина, см", "subLabel": "Рукава" },
-  { "key": "chest_half_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
-  { "key": "hips_half_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" }
+  { "key": "INT", "label": "Длина, см", "subLabel": "По спинке" },
+  { "key": "bust_cm", "label": "Длина, см", "subLabel": "Рукава" },
+  { "key": "waist_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
+  { "key": "hips_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" },
+  { "key": "back_length_cm", "label": "Длина изделия", "subLabel": "по спинке, см" },
+  { "key": "sleeve_length_cm", "label": "Длина рукава", "subLabel": null }
 ],
       "data": [
-        { "RU": 44, "back_length_cm": 66, "sleeve_length_cm": 52, "chest_half_cm": 52, "hips_half_cm": 79 },
-        { "RU": 46, "back_length_cm": 66, "sleeve_length_cm": 54, "chest_half_cm": 54, "hips_half_cm": 79 },
-        { "RU": 48, "back_length_cm": 66, "sleeve_length_cm": 56, "chest_half_cm": 56, "hips_half_cm": 79 },
-        { "RU": 50, "back_length_cm": 66, "sleeve_length_cm": 58, "chest_half_cm": 58, "hips_half_cm": 79 },
-        { "RU": 52, "back_length_cm": 60, "sleeve_length_cm": 60, "chest_half_cm": 60, "hips_half_cm": 78 },
-        { "RU": 54, "back_length_cm": 68, "sleeve_length_cm": 62, "chest_half_cm": 62, "hips_half_cm": 78 }
-      ]
-    },
-    "trousers": {
-      "title": "Брюки",
-      "headers": ["RU", "waist_cm", "hips_cm", "inseam_cm"],
-      "data": [
-        { "RU": 44, "waist_cm": 78, "hips_cm": 94, "inseam_cm": 81 },
-        { "RU": 46, "waist_cm": 82, "hips_cm": 98, "inseam_cm": 81 }
-      ]
+        { "RU": 40, "INT": "XS", "bust_cm": 72, "waist_cm": 56, "hips_cm": 76, "back_length_cm": 81.5, "sleeve_length_cm": 60 },
+        { "RU": 42, "INT": "S", "bust_cm": 76, "waist_cm": 60, "hips_cm": 80, "back_length_cm": 82, "sleeve_length_cm": 60.5 },
+        { "RU": 44, "INT": "M", "bust_cm": 80, "waist_cm": 64, "hips_cm": 84, "back_length_cm": 83, "sleeve_length_cm": 61 },
+        { "RU": 46, "INT": "L", "bust_cm": 84, "waist_cm": 68, "hips_cm": 88, "back_length_cm": 83.5, "sleeve_length_cm": 61.5 },
+        { "RU": 48, "INT": "XL", "bust_cm": 88, "waist_cm": 72, "hips_cm": 92, "back_length_cm": 92, "sleeve_length_cm": 62 },
+        { "RU": 50, "INT": "XXL", "bust_cm": 92, "waist_cm": 76, "hips_cm": 96, "back_length_cm": 96, "sleeve_length_cm": 62.5 }
+      ],
+      "info": {
+        "header": "Как снять мерки", 
+      "items": {
+        "itemsTitle": ["Обхвать груди","Обхвать талии", "Обхвать бедер"],
+        "itemsText": ["Сантиметровая лента должна проходить по наиболее вступающим точкам груди, сбоку - под подмышечными впадинами обхватывая лопатки сзади.", "Измеряется горизонтально в самой узкой части талии. При измерении лента должно плотно (без натяжение) прилегать к телу", "Сантиметровая лента проходит строго горизонтально по наиболее вступающим точкам ягодиц."]
+      },
+      "image": "/images/maneken_male.png"
+      }
     }
   }
 }
+
+
+
+

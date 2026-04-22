@@ -102,3 +102,41 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
 };
 
 export default SizeChartModal;
+
+
+
+
+
+
+
+
+
+
+//   "male": {
+//     "t-shirt": {
+//       "title": "Толстовка",
+//      "headers": [
+//   { "key": "RU", "label": "RU", "subLabel": "Российский размер" },
+//   { "key": "back_length_cm", "label": "Длина, см", "subLabel": "По спинке" },
+//   { "key": "sleeve_length_cm", "label": "Длина, см", "subLabel": "Рукава" },
+//   { "key": "chest_half_cm", "label": "ПОГ, см", "subLabel": "Полуобхват груди" },
+//   { "key": "hips_half_cm", "label": "ПОБ, см", "subLabel": "Полуобхват бедер" }
+// ],
+//       "data": [
+//         { "RU": 44, "back_length_cm": 66, "sleeve_length_cm": 52, "chest_half_cm": 52, "hips_half_cm": 79 },
+//         { "RU": 46, "back_length_cm": 66, "sleeve_length_cm": 54, "chest_half_cm": 54, "hips_half_cm": 79 },
+//         { "RU": 48, "back_length_cm": 66, "sleeve_length_cm": 56, "chest_half_cm": 56, "hips_half_cm": 79 },
+//         { "RU": 50, "back_length_cm": 66, "sleeve_length_cm": 58, "chest_half_cm": 58, "hips_half_cm": 79 },
+//         { "RU": 52, "back_length_cm": 60, "sleeve_length_cm": 60, "chest_half_cm": 60, "hips_half_cm": 78 },
+//         { "RU": 54, "back_length_cm": 68, "sleeve_length_cm": 62, "chest_half_cm": 62, "hips_half_cm": 78 }
+//       ]
+//     },
+//     "trousers": {
+//       "title": "Брюки",
+//       "headers": ["RU", "waist_cm", "hips_cm", "inseam_cm"],
+//       "data": [
+//         { "RU": 44, "waist_cm": 78, "hips_cm": 94, "inseam_cm": 81 },
+//         { "RU": 46, "waist_cm": 82, "hips_cm": 98, "inseam_cm": 81 }
+//       ]
+//     }
+//   }

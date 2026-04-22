@@ -14,7 +14,7 @@ import style from './style.module.scss';
 const product = {
     id: 1,
     name: "Oversize T-shirt",
-    gender: "female",
+    gender: "male",
     category: "t-shirt",
     isSet: false
   };
