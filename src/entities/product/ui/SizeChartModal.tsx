@@ -21,7 +21,11 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
       open={open}
       onOk={close}
       onCancel={close}
-      footer={null}
+      footer={
+    <button className={style.closeBtn} onClick={close}>
+      Закрыть
+    </button>
+  }
     >
       {/* Таблица */}
       <div className={style.sizeTable}>
