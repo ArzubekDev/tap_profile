@@ -1,7 +1,7 @@
 import { Modal } from 'antd';
+import Image from 'next/image';
 import { useState } from 'react';
 import style from './style.module.scss';
-import Image from 'next/image';
 
 type SizeChartModalProps = {
   close: () => void;
@@ -15,20 +15,19 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
   return (
     <Modal
       className={style.customModal}
-      width={750} // Бир аз кененирээк кылдык
+      width={750}
       title="Таблица размеров"
       mask={{ enabled: true, blur: true }}
       open={open}
       onOk={close}
       onCancel={close}
-      bodyStyle={{ maxHeight: 'calc(100vh - 150px)', overflowY: 'auto' }}
       footer={null}
     >
       <div className={style.sizeTable}>
         {charts?.map((chart: any, index: any) => (
           <div key={index} className={style.section}>
             <h3 className={style.title}>{chart.title}</h3>
-            
+
             <div className={style.tableContainer}>
               <div className={style.headerContainer}>
                 {chart.headers.map((header: any, colIndex: any) => (
@@ -63,14 +62,22 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
                   <div className={style.infoContent}>
                     {chart.info.items?.itemsTitle?.map((title: string, i: number) => (
                       <div key={i} className={style.infoItem}>
-                        <strong>{i + 1}. {title}</strong>
+                        <strong>
+                          {i + 1}. {title}
+                        </strong>
                         <p>{chart.info.items.itemsText[i]}</p>
                       </div>
                     ))}
                   </div>
 
                   {chart.info.image && (
-                      <Image src={chart.info.image} alt="Image" width={240} height={320} className={style.image}/>
+                    <Image
+                      src={chart.info.image}
+                      alt="Image"
+                      width={240}
+                      height={320}
+                      className={style.image}
+                    />
                   )}
                 </div>
               </div>
