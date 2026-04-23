@@ -1,0 +1,67 @@
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+  user-select: none;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-color: #000;
+    background-color: #f5f5f5;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  span, svg {
+    margin: 0 -1px; 
+  }
+}
+
+.activeNumber {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #000;
+}
+
+.arrowBack {
+  transform: rotate(90deg); 
+  fill: transparent;
+}
+
+.dubleArrowBack {
+  transform: rotate(90deg);
+  width: 14px; 
+  fill: transparent;
+}
+
+.arrowNext {
+  transform: rotate(-90deg);
+  fill: transparent;
+}
+
+.dubleArrowNext {
+  transform: rotate(-90deg);
+  width: 14px;
+  fill: transparent;
+}

@@ -5,11 +5,27 @@ import { IconArrow } from '@/src/components/Icons';
 const Pagination = () => {
   return (
     <div className={style.page}>
-      <div>{[1,2].map(el => <IconArrow key={el}/>)}</div>
-      <div><IconArrow/></div>
-      <div>1</div>
-      <div><IconArrow/></div>
-      <div>{[1,2].map(el => <IconArrow key={el}/>)}</div>
+      <div className={style.button}>
+        {[1, 2].map((el) => (
+          <IconArrow key={el} className={style.dubleArrowBack} />
+        ))}
+      </div>
+
+      <div className={style.button}>
+        <IconArrow className={style.arrowBack} />
+      </div>
+
+      <div className={style.activeNumber}>1</div>
+
+      <div className={style.button}>
+        <IconArrow className={style.arrowNext} />
+      </div>
+
+      <div className={style.button}>
+        {[1, 2].map((el) => (
+          <IconArrow key={el} className={style.dubleArrowNext} />
+        ))}
+      </div>
     </div>
   );
 };
