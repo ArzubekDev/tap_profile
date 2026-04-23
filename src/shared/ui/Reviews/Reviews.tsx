@@ -1,7 +1,7 @@
 import { IconStar } from '@/src/components/Icons';
 import Image from 'next/image';
-import style from './style.module.scss';
 import ReviewStatistics from '../ReviewStatistics/ReviewStatistics';
+import style from './style.module.scss';
 
 const Reviews = () => {
   return (
@@ -26,33 +26,33 @@ const Reviews = () => {
           {/* отзывы */}
           <div className={style.reviews}>
             {review.map((el, i) => (
-<div className={style.contentContainer}>
+              <div key={i} className={style.contentContainer}>
                 <div className={style.content}>
-                <div key={i} className={style.contentTop}>
-                  <div className={style.profileContainer}>
-                    <Image
-                      className={style.image}
-                      src={el.image}
-                      alt={el.name}
-                      width={46}
-                      height={46}
-                    />
-                    <h5 className={style.name}>
-                      {el.name} <br /> <span>{el.date}</span>
-                    </h5>
+                  <div  className={style.contentTop}>
+                    <div className={style.profileContainer}>
+                      <Image
+                        className={style.image}
+                        src={el.image}
+                        alt={el.name}
+                        width={46}
+                        height={46}
+                      />
+                      <h5 className={style.name}>
+                        {el.name} <br /> <span>{el.date}</span>
+                      </h5>
+                    </div>
+                    <div>
+                      {[1, 2, 3, 4, 5].map((el) => (
+                        <IconStar key={el} />
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    {[1, 2, 3, 4, 5].map((el) => (
-                      <IconStar key={el} />
-                    ))}
-                  </div>
+                  <p className={style.text}>{el.text}</p>
                 </div>
-                <p className={style.text}>{el.text}</p>
               </div>
-</div>
-            ))} 
+            ))}
             {/* Правый часть: статистика  */}
-           <ReviewStatistics/>
+            <ReviewStatistics />
           </div>
         </div>
       </div>
@@ -70,4 +70,3 @@ const review = [
     text: 'Я в восторге от этого телефона! Он не только стильный и удобный в использовании, но и имеет потрясающую камеру, которая делает фотографии настоящим произведением искусства. Батарея держит заряд долго, что особенно удобно во время активного образа жизни. Я очень доволен своим выбором и рекомендую его всем!',
   },
 ];
-
