@@ -1,26 +1,29 @@
 import { IconStar } from '@/src/components/Icons';
 import Image from 'next/image';
 import style from './style.module.scss';
+import ReviewStatistics from '../ReviewStatistics/ReviewStatistics';
 
 const Reviews = () => {
   return (
     <section className={style.page}>
       <div className="container">
-        <div className={style.pageContainer}>
+        {/*Все отзывы и header часть*/}
+        <div className={style.reviewContainer}>
           <div className={style.header}>
             <h3>
               Отзывы <span>23</span>
             </h3>
             <div className={style.rating}>
-              <span className={style.span1}>4.3</span>{' '}
-              <span>
+              <span className={style.span1}>4.3</span>
+              <div className={style.stars}>
                 {[1, 2, 3, 4, 5].map((el) => (
-                  <IconStar key={el} />
+                  <IconStar key={el} fill={el <= 4 ? '#FFB800' : '#C4C4C4'} />
                 ))}
-              </span>{' '}
+              </div>
               <span className={style.span2}>24 оценок</span>
             </div>
           </div>
+          {/* отзывы */}
           <div className={style.reviews}>
             {review.map((el, i) => (
               <div className={style.content}>
@@ -46,6 +49,8 @@ const Reviews = () => {
                 <p className={style.text}>{el.text}</p>
               </div>
             ))}
+            {/* Правый часть: статистика  */}
+           <ReviewStatistics/>
           </div>
         </div>
       </div>
@@ -63,3 +68,4 @@ const review = [
     text: 'Я в восторге от этого телефона! Он не только стильный и удобный в использовании, но и имеет потрясающую камеру, которая делает фотографии настоящим произведением искусства. Батарея держит заряд долго, что особенно удобно во время активного образа жизни. Я очень доволен своим выбором и рекомендую его всем!',
   },
 ];
+
