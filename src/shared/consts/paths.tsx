@@ -8,7 +8,7 @@ export const PATH_DELETE_ACCOUNT='/accounts/profile/delete-info'
 export const PATH_HOME = '/'
 
 const PATH_BASKET = '/basket';
-export const PATH_BASKET_HISTORY = `${PATH_BASKET}/history`;
+export const PATH_BASKET_HISTORY = `${PATH_BASKET}/orders`;
 
 // PATHS INFOSIDEBAR
 export const PATH_HOW_TO_MAKE_ORDER = '/info/how-to-make-order'
