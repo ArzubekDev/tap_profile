@@ -27,6 +27,7 @@
       "@types": ["src/shared/types/index"]
     }
   },
+  "baseUrl": "./",
   "include": [
     "next-env.d.ts",
     "**/*.ts",
