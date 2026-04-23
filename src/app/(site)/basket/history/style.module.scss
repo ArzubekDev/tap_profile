@@ -1,7 +1,11 @@
+.title {
+  padding-top: 120px;
+  font-size: 30px;
+}
 .accountLayout {
   display: flex;
   align-items: start;
-  padding-block: 120px;
+  padding-bottom: 120px;
   width: 100%;
   gap: 40px;
   @media (max-width: 1220px) {

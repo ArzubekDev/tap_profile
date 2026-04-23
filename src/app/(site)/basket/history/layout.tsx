@@ -12,7 +12,9 @@ interface HistoryLayoutProps {
 const HistoryLayout = ({ children }: HistoryLayoutProps) => {
   return (
     <div className="container">
+      <h3 className={style.title}>История заказов</h3>
       <div className={style.accountLayout}>
+
         <main className={style.main}>{children}</main>
         <StickyBox offsetTop={120} offsetBottom={20} className={style.infoSidebarWrapper}>
           <div className={style.sidebar}>
