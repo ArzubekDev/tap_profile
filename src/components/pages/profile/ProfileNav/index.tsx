@@ -3,7 +3,6 @@ import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { TProfileItemType } from './types';
 import {
   IconBell,
   IconClock,
@@ -20,24 +19,29 @@ import {
   PATH_FAVORITE,
   PATH_PROFILE,
 } from '@/src/shared/consts/paths';
+import { TProfileItemType } from './types';
 
 import style from './style.module.scss';
 
 const ProfileNav = () => {
   const pathname = usePathname();
+  
+const renderLink = (el: TProfileItemType) => {
+  const isActive =
+    pathname === el.link || pathname.startsWith(el.link + '/');
 
-  // Link
-  const renderLink = (el: TProfileItemType) => (
+  return (
     <Link
       href={el.link}
       key={el.id}
       className={cn(style.profileItem, {
-        [style.active]: pathname === el.link,
+        [style.active]: isActive,
       })}
     >
       {el.icon} <span className={style.profileTitle}>{el.title}</span>
     </Link>
   );
+};
 
   return (
       <aside className={style.profileNavContainer}>
