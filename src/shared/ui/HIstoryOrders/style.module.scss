@@ -1,3 +1,8 @@
+.historyOrders {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
 .page {
   cursor: pointer;
 
@@ -9,9 +14,10 @@
   border-radius: 12px;
   padding: 16px;
 
-  transition: border-color .3s ease;
+  transition: all .3s ease;
   &:hover {
     border-color: var(--main-color);
+    background-color: #eaeaea52;
   }
 }
 .imagesContainer {

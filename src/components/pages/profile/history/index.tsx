@@ -1,5 +1,5 @@
 
-import HistoryOrders from '@/src/shared/ui/HIstoryOrders/HistoryOrders';
+import HistoryOrders from '@/src/shared/ui/HistoryOrders/HistoryOrders';
 import HistoryForms from './historyForms';
 import style from './style.module.scss';
 import Pagination from '@/src/shared/ui/Pagination/Pagination';
