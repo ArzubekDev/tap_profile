@@ -1,11 +1,8 @@
-// src/app/(site)/basket/orders/[slug]/page.tsx
-import React from 'react';
-import { notFound } from 'next/navigation';
 import { MOCK_ORDERS } from '@/src/shared/ui/HistoryOrders/HistoryOrders';
+import { notFound } from 'next/navigation';
 
+import OrderInfo from '@/src/shared/ui/OrderInfo/OrderInfo';
 import style from './style.module.scss';
-import { IconArrow } from '@/src/components/Icons';
-import { PrinterOutlined } from '@ant-design/icons';
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -22,15 +19,7 @@ const OrderDetailPage = async ({ params }: Props) => {
 
   return (
     <section className={style.detailPage}>
-      <div className={style.orderInfo}>
-<div className={style.left}>
-  <IconArrow className={style.arrow}/>
-          <p><strong>Дата:</strong> <br />{order.date}</p>
-        <p><strong>Статус:</strong><br /> <span style={{ color: order.statusColor }}>{order.status}</span></p>
-        <p><strong>Сумма:</strong> <br /> {order.total}</p>
-</div>
-<PrinterOutlined/>
-      </div>
+      <OrderInfo order={order}/>
       <div className={style.imageList}>
         {order.images.map((img, index) => (
           <img key={index} src={img} alt="product" width={100} />
