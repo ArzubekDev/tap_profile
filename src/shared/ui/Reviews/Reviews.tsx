@@ -26,7 +26,8 @@ const Reviews = () => {
           {/* отзывы */}
           <div className={style.reviews}>
             {review.map((el, i) => (
-              <div className={style.content}>
+<div className={style.contentContainer}>
+                <div className={style.content}>
                 <div key={i} className={style.contentTop}>
                   <div className={style.profileContainer}>
                     <Image
@@ -48,7 +49,8 @@ const Reviews = () => {
                 </div>
                 <p className={style.text}>{el.text}</p>
               </div>
-            ))}
+</div>
+            ))} 
             {/* Правый часть: статистика  */}
            <ReviewStatistics/>
           </div>
