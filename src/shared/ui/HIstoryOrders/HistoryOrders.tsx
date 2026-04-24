@@ -31,7 +31,7 @@ const HistoryOrders = () => {
             </div>
 
             <div className={style.content}>
-              <div className={style.info}>
+              <div className={style.info}>  
                 <div className={style.item}>
                   <span>Дата заказа</span>
                   <p><strong>{order.date}</strong></p>
