@@ -24,6 +24,28 @@
     display: flex;
     gap: var(--gap);
 }
+.imageWrapper {
+  position: relative;
+}
+.moreCount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  padding-top: 4px;
+  top: 40%;
+  left: 40%;
+
+  width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+  
+  background-color: var(--main-color);
+  color: #fff;
+}
 .image {
   object-fit: cover;
   border-radius: 8px;

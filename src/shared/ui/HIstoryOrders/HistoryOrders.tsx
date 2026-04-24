@@ -10,36 +10,45 @@ const HistoryOrders = () => {
       {MOCK_ORDERS.map((order, idx) => {
         const totalAmount = order.items.reduce((sum, item) => sum + item.price, 0);
         return (
-          (
-        <Link key={idx} href={`${PATH_BASKET_HISTORY}/${order.id}`} className={style.page}>
-          <div className={style.imagesContainer}>
-            {order.items.map((item) => (
-              <div key={item.id} className={style.imageWrapper}>
-                <Image src={item.image} alt={item.name} width={70} height={92} className={style.image} />
-              </div>
-            ))}
-          </div>
-
-          <div className={style.content}>
-            <div className={style.info}>
-              <div className={style.item}>
-                <span>Дата заказа</span>
-                <p>{order.date}</p>
-              </div>
-              <div className={style.item}>
-                <span>Статус заказа</span>
-                <p style={{ color: order.statusColor }}>{order.status}</p>
-              </div>
-              <div className={style.item}>
-                <span>Сумма</span>
-                <p>{totalAmount}</p>
+          <Link key={idx} href={`${PATH_BASKET_HISTORY}/${order.id}`} className={style.page}>
+            <div className={style.imagesContainer}>
+              <div className={style.imagesContainer}>
+                {order.items.slice(0, 3).map((item, index) => (
+                  <div key={item.id} className={style.imageWrapper}>
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={70}
+                      height={92}
+                      className={style.image}
+                    />
+                    {order.items.length > 3 && index === 2 && (
+                      <div className={style.moreCount}>+{order.items.length - 3}</div>
+                    )}
+                  </div>
+                ))}
               </div>
             </div>
-            <IconArrow className={style.arrow} />
-          </div>
-        </Link>
-      )
-        )
+
+            <div className={style.content}>
+              <div className={style.info}>
+                <div className={style.item}>
+                  <span>Дата заказа</span>
+                  <p>{order.date}</p>
+                </div>
+                <div className={style.item}>
+                  <span>Статус заказа</span>
+                  <p style={{ color: order.statusColor }}>{order.status}</p>
+                </div>
+                <div className={style.item}>
+                  <span>Сумма</span>
+                  <p>{totalAmount}</p>
+                </div>
+              </div>
+              <IconArrow className={style.arrow} />
+            </div>
+          </Link>
+        );
       })}
     </div>
   );
@@ -60,22 +69,29 @@ export const MOCK_ORDERS = [
         price: 1600,
         oldPrice: '3200',
         shop: 'Elle Collection',
-        image: '/images/laptop.webp'
+        image: '/images/laptop.webp',
       },
       {
         id: 'p2',
         name: 'Свитер в полоску под Zara',
         price: 1400,
         shop: 'Elle Collection',
-        image: '/images/laptop.webp'
+        image: '/images/laptop.webp',
       },
       {
         id: 'p3',
         name: 'Свитер в полоску под Zara',
         price: 1400,
         shop: 'Elle Collection',
-        image: '/images/laptop.webp'
-      }
+        image: '/images/laptop.webp',
+      },
+      {
+        id: 'p4',
+        name: 'Свитер в полоску под Zara',
+        price: 1400,
+        shop: 'Elle Collection',
+        image: '/images/laptop.webp',
+      },
     ],
   },
 ];
