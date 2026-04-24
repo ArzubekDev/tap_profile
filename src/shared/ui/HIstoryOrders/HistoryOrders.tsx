@@ -7,10 +7,12 @@ import style from './style.module.scss';
 const HistoryOrders = () => {
   return (
     <div className={style.historyOrders}>
-      {MOCK_ORDERS.map((order, idx) => (
+      {MOCK_ORDERS.map((order, idx) => {
+        const totalAmount = order.items.reduce((sum, item) => sum + item.price, 0);
+        return (
+          (
         <Link key={idx} href={`${PATH_BASKET_HISTORY}/${order.id}`} className={style.page}>
           <div className={style.imagesContainer}>
-            {/* Товарлардын баарынын сүрөтүн чыгаруу */}
             {order.items.map((item) => (
               <div key={item.id} className={style.imageWrapper}>
                 <Image src={item.image} alt={item.name} width={70} height={92} className={style.image} />
@@ -30,13 +32,15 @@ const HistoryOrders = () => {
               </div>
               <div className={style.item}>
                 <span>Сумма</span>
-                <p>{order.total}</p>
+                <p>{totalAmount}</p>
               </div>
             </div>
             <IconArrow className={style.arrow} />
           </div>
         </Link>
-      ))}
+      )
+        )
+      })}
     </div>
   );
 };
@@ -49,12 +53,11 @@ export const MOCK_ORDERS = [
     date: '04.05.2024 14:00',
     status: 'Оформлен',
     statusColor: '#FFB800',
-    total: '12 000 KGS',
     items: [
       {
         id: 'p1',
         name: 'Свитер из шерсти горного барана',
-        price: '1600',
+        price: 1600,
         oldPrice: '3200',
         shop: 'Elle Collection',
         image: '/images/laptop.webp'
@@ -62,7 +65,7 @@ export const MOCK_ORDERS = [
       {
         id: 'p2',
         name: 'Свитер в полоску под Zara',
-        price: '1400',
+        price: 1400,
         shop: 'Elle Collection',
         image: '/images/laptop.webp'
       }

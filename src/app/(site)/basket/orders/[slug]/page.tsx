@@ -14,9 +14,11 @@ const OrderDetailPage = async ({ params }: Props) => {
 
   if (!order) notFound();
 
+  const totalAmount = order.items.reduce((sum, item) => sum + item.price, 0);
+
   return (
     <section className={style.detailPage}>
-      <OrderInfo order={order}/>
+      <OrderInfo order={order} totalAmount={totalAmount} />
       
       <div className={style.itemsList}>
         {order.items.map((product) => (
