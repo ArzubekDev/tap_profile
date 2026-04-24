@@ -50,7 +50,7 @@ const OrderDetailPage = async ({ params }: Props) => {
             </div>
 
             <div className={style.reviewSection}>
-              <h4>Ваш отзыв</h4>
+              <h3>Ваш отзыв</h3>
               <p>Вы сможете оставить свой отзыв только после получения заказа.</p>
             </div>
           </div>
