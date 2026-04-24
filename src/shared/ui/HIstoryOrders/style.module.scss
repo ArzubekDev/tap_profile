@@ -42,7 +42,7 @@
   height: 20px;
 
   border-radius: 50%;
-  
+
   background-color: var(--main-color);
   color: #fff;
 }
@@ -59,6 +59,14 @@
   display: flex;
   align-items: center;
   gap: 80px;
+}
+.item {
+  span {
+    color: var(--color-text);
+  }
+  p {
+    color: var(--color-text);
+  }
 }
 .title {
   color: var(--color-text);

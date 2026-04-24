@@ -34,15 +34,15 @@ const HistoryOrders = () => {
               <div className={style.info}>
                 <div className={style.item}>
                   <span>Дата заказа</span>
-                  <p>{order.date}</p>
+                  <p><strong>{order.date}</strong></p>
                 </div>
                 <div className={style.item}>
                   <span>Статус заказа</span>
-                  <p style={{ color: order.statusColor }}>{order.status}</p>
+                  <p style={{ color: order.statusColor }}><strong>{order.status}</strong></p>
                 </div>
                 <div className={style.item}>
                   <span>Сумма</span>
-                  <p>{totalAmount}</p>
+                  <p><strong>{totalAmount} KGS</strong></p>
                 </div>
               </div>
               <IconArrow className={style.arrow} />
