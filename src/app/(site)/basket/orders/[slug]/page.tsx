@@ -25,7 +25,7 @@ const OrderDetailPage = async ({ params }: Props) => {
         {order.items.map((product) => (
           <div key={product.id} className={style.productCard}>
             <div className={style.productImage}>
-              <Image src={product.image} alt={product.name} width={120} height={160} />
+              <Image className={style.image} src={product.image} alt={product.name} width={120} height={160} />
             </div>
 
             <div className={style.productDetails}>

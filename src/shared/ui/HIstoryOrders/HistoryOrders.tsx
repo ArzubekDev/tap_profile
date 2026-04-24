@@ -68,8 +68,14 @@ export const MOCK_ORDERS = [
         price: 1400,
         shop: 'Elle Collection',
         image: '/images/laptop.webp'
+      },
+      {
+        id: 'p3',
+        name: 'Свитер в полоску под Zara',
+        price: 1400,
+        shop: 'Elle Collection',
+        image: '/images/laptop.webp'
       }
     ],
   },
-  // башка заказдар...
 ];
