@@ -12,15 +12,18 @@ const OrderInfo = ({ order, totalAmount }: any) => {
       <div className={style.left}>
         <IconArrow onClick={() => route.back()} className={style.arrow} />
         <p>
-          <strong>Дата:</strong> <br />
-          {order.date}
+          Дата: <br />
+          <strong>{order.date}</strong>
         </p>
         <p>
-          <strong>Статус:</strong>
-          <br /> <span style={{ color: order.statusColor }}>{order.status}</span>
+          Статус:
+          <br />
+          <span style={{ color: order.statusColor }}>
+            <strong>{order.status}</strong>
+          </span>
         </p>
         <p>
-          <strong>Сумма:</strong> <br /> {totalAmount}
+          Сумма: <br /> <strong> {totalAmount} KGS</strong>
         </p>
       </div>
       <PrinterOutlined />
