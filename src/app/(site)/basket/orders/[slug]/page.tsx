@@ -10,19 +10,26 @@ interface Props {
 
 const OrderDetailPage = async ({ params }: Props) => {
   const { slug } = await params;
-
   const order = MOCK_ORDERS.find((item) => item.id === slug);
 
-  if (!order) {
-    notFound();
-  }
+  if (!order) notFound();
 
   return (
     <section className={style.detailPage}>
       <OrderInfo order={order}/>
-      <div className={style.imageList}>
-        {order.images.map((img, index) => (
-          <img key={index} src={img} alt="product" width={100} />
+      
+      <div className={style.itemsList}>
+        {order.items.map((product) => (
+          <div key={product.id} className={style.productCard}>
+            <div className={style.productImage}>
+               <img src={product.image} alt={product.name} width={100} />
+            </div>
+            <div className={style.productDetails}>
+               <h3>{product.name}</h3>
+               <p className={style.price}>{product.price} KGS</p>
+               <p className={style.shop}>Магазин: {product.shop}</p>
+            </div>
+          </div>
         ))}
       </div>
     </section>

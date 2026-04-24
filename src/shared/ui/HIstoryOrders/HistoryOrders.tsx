@@ -8,11 +8,12 @@ const HistoryOrders = () => {
   return (
     <div className={style.historyOrders}>
       {MOCK_ORDERS.map((order, idx) => (
-        <Link key={idx} href={`/basket/orders/${order.id}`} className={style.page}>
+        <Link key={idx} href={`${PATH_BASKET_HISTORY}/${order.id}`} className={style.page}>
           <div className={style.imagesContainer}>
-            {order.images.map((img: any, index: any) => (
-              <div key={index} className={style.imageWrapper}>
-                <Image src={img} alt="product" width={70} height={92} className={style.image} />
+            {/* Товарлардын баарынын сүрөтүн чыгаруу */}
+            {order.items.map((item) => (
+              <div key={item.id} className={style.imageWrapper}>
+                <Image src={item.image} alt={item.name} width={70} height={92} className={style.image} />
               </div>
             ))}
           </div>
@@ -45,18 +46,27 @@ export default HistoryOrders;
 export const MOCK_ORDERS = [
   {
     id: '1',
-    date: '22.04.2026 15:19',
+    date: '04.05.2024 14:00',
     status: 'Оформлен',
     statusColor: '#FFB800',
     total: '12 000 KGS',
-    images: ['/images/laptop.webp', '/images/laptop.webp', '/images/laptop.webp'],
+    items: [
+      {
+        id: 'p1',
+        name: 'Свитер из шерсти горного барана',
+        price: '1600',
+        oldPrice: '3200',
+        shop: 'Elle Collection',
+        image: '/images/laptop.webp'
+      },
+      {
+        id: 'p2',
+        name: 'Свитер в полоску под Zara',
+        price: '1400',
+        shop: 'Elle Collection',
+        image: '/images/laptop.webp'
+      }
+    ],
   },
-  {
-    id: '2',
-    date: '21.04.2026 10:00',
-    status: 'Доставлен',
-    statusColor: '#27AE60',
-    total: '4 100 KGS',
-    images: ['/images/laptop.webp'],
-  },
+  // башка заказдар...
 ];
