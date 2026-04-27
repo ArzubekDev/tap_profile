@@ -1,23 +1,23 @@
-'use client'
-import ProfileNav from '@/src/components/pages/profile/ProfileNav';
+'use client';
+import ProfileNav from '@/src/components/pages/profile/profile-nav';
 import { ReactNode } from 'react';
 import StickyBox from 'react-sticky-box';
 
 import style from './style.module.scss';
 
-interface AccountLayoutProps {
+interface IAccountLayoutProps {
   children: ReactNode;
 }
 
-const AccountLayout = ({ children }: AccountLayoutProps) => {
+const AccountLayout = ({ children }: IAccountLayoutProps) => {
   return (
     <div className="container">
       <div className={style.accountLayout}>
         <main className={style.main}>{children}</main>
-         <StickyBox offsetTop={120} offsetBottom={20} className={style.infoSidebarWrapper}>
+        <StickyBox offsetTop={120} offsetBottom={20} className={style.infoSidebarWrapper}>
           <div className={style.sidebar}>
-          <ProfileNav />
-        </div>
+            <ProfileNav />
+          </div>
         </StickyBox>
       </div>
     </div>

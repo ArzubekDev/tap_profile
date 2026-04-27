@@ -1,5 +1,5 @@
-import History from '@/src/components/pages/profile/history'
+import HistoryOrdersView from "@/src/components/pages/profile/history-orders"
 
-const page = () => <History/>
+const HistoryPage = () => <HistoryOrdersView/>
 
-export default page
+export default HistoryPage

@@ -1,10 +1,10 @@
 import { IconArrow } from '@/src/components/Icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { PATH_BASKET_HISTORY } from '../../consts/paths';
+import { PATH_BASKET_HISTORY } from '../../../shared/consts/paths';
 import style from './style.module.scss';
 
-const HistoryOrders = () => {
+const HistoryOrdersContainer = () => {
   return (
     <div className={style.historyOrders}>
       {MOCK_ORDERS.map((order, idx) => {
@@ -31,18 +31,24 @@ const HistoryOrders = () => {
             </div>
 
             <div className={style.content}>
-              <div className={style.info}>  
+              <div className={style.info}>
                 <div className={style.item}>
                   <span>Дата заказа</span>
-                  <p><strong>{order.date}</strong></p>
+                  <p>
+                    <strong>{order.date}</strong>
+                  </p>
                 </div>
                 <div className={style.item}>
                   <span>Статус заказа</span>
-                  <p style={{ color: order.statusColor }}><strong>{order.status}</strong></p>
+                  <p style={{ color: order.statusColor }}>
+                    <strong>{order.status}</strong>
+                  </p>
                 </div>
                 <div className={style.item}>
                   <span>Сумма</span>
-                  <p><strong>{totalAmount} KGS</strong></p>
+                  <p>
+                    <strong>{totalAmount} KGS</strong>
+                  </p>
                 </div>
               </div>
               <IconArrow className={style.arrow} />
@@ -54,7 +60,7 @@ const HistoryOrders = () => {
   );
 };
 
-export default HistoryOrders;
+export default HistoryOrdersContainer;
 
 export const MOCK_ORDERS = [
   {

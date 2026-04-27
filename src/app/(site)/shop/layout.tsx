@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-import ProfileNav from "@/src/components/pages/profile/ProfileNav";
+import ProfileNav from '@/src/components/pages/profile/profile-nav';
 
 import style from './style.module.scss';
 
 interface CreateLayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
-const CreateLayout = ({children}: CreateLayoutProps) => {
-    return (
+const CreateLayout = ({ children }: CreateLayoutProps) => {
+  return (
     <div className="container">
       <div className={style.accountLayout}>
         <main className={style.main}>{children}</main>
@@ -18,6 +18,6 @@ const CreateLayout = ({children}: CreateLayoutProps) => {
         </div>
       </div>
     </div>
-    )
-}
-export default CreateLayout
+  );
+};
+export default CreateLayout;

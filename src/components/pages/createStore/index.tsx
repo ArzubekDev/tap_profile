@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
 import WorkTimeField from '@/src/components/pages/createStore/WorkTimeField';
-import LogoUpload from '@/src/components/pages/profile/personalData/forms/LogoUpload';
+import LogoUpload from '@/src/components/pages/profile/personal-data/forms/LogoUpload';
 import Contacts from './contacts';
 
 import { InputFormController } from '@/src/components/form/Controllers';

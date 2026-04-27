@@ -23,7 +23,7 @@ import { TProfileItemType } from './types';
 
 import style from './style.module.scss';
 
-const ProfileNav = () => {
+const ProfileNavbar = () => {
   const pathname = usePathname();
   
 const renderLink = (el: TProfileItemType) => {
@@ -67,7 +67,7 @@ const renderLink = (el: TProfileItemType) => {
   );
 };
 
-export default ProfileNav;
+export default ProfileNavbar;
 
 const profileItems: TProfileItemType[] = [
   {
