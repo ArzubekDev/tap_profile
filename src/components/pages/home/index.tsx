@@ -55,7 +55,7 @@ const HomeView = () => {
         <Button className={style.sizeButton} type="primary" onClick={showDrawer}>
           Таблица размеров
         </Button>
-        <div className={style.cards}>
+        <div className={style.cardsContainer}>
           {products?.map((el: any) => (
             <div key={el.id}>
               <ProductCard el={el} />

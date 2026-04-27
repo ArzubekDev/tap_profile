@@ -3,11 +3,11 @@ import style from './style.module.scss';
 const ReturnsView = () => {
   return (
     <section className={style.returns}>
-      <h2 className={style.mainTitle}>Возврат товара</h2>
+      <h2 className={style.maintitle}>Возврат товара</h2>
       {steps.map((item, idx) => (
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
-          {item.subtitle && <p className={style.subTitle}>{item.subtitle}</p>}
+          {item.subtitle && <p className={style.subtitle}>{item.subtitle}</p>}
           {item.points && (
             <ul className={style.list}>
               {item.points.map((point, index) => (
