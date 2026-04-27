@@ -1,9 +1,8 @@
-import MakeOrder from '@/src/components/pages/info/how-to-make-order'
-import React from 'react'
+import MakeOrderView from "@/src/components/pages/info/how-to-make-order"
 
 const MakeOrderPage = () => {
   return (
-    <MakeOrder/>
+    <MakeOrderView/>
   )
 }
 

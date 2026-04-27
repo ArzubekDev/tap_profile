@@ -1,8 +1,9 @@
 import { Fragment } from 'react';
-import style from './style.module.scss';
 import Image from 'next/image';
 
-const HowToOpenShop = () => {
+import style from './style.module.scss';
+
+const HowToOpenShopView = () => {
   return (
     <section className={style.openshop}>
       <h2 className={style.headline}>Как открыть магазин в маркетплейсе Tap.kg</h2>
@@ -17,4 +18,4 @@ const HowToOpenShop = () => {
   );
 };
 
-export default HowToOpenShop;
+export default HowToOpenShopView;

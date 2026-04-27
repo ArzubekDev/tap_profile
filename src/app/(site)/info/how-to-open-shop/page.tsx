@@ -1,9 +1,9 @@
-import HowToOpenShop from '@/src/components/pages/info/how-to-open-shop'
-import React from 'react'
+import HowToOpenShopView from "@/src/components/pages/info/how-to-open-shop"
+
 
 const HowToOpenShopPage = () => {
   return (
-    <div><HowToOpenShop/></div>
+    <HowToOpenShopView/>
   )
 }
 

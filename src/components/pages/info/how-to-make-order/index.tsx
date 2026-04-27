@@ -1,6 +1,6 @@
 import style from './style.module.scss';
 
-const MakeOrder = () => {
+const MakeOrderView = () => {
   return (
     <div className={style.makeOrder}>
       <h2 className={style.headline}>Как сделать заказ</h2>
@@ -28,7 +28,7 @@ const MakeOrder = () => {
   );
 };
 
-export default MakeOrder;
+export default MakeOrderView;
 
 
 type TConditions = {
