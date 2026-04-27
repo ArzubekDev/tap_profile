@@ -1,11 +1,11 @@
-import DeleteAccount from '@/src/components/pages/profile/deleteAccount'
+import DeleteAccountView from "@/src/components/pages/profile/deleteAccount"
 
-const page = () => {
+const DeleteInfoPage = () => {
   return (
     <div>
-        <DeleteAccount/>
+        <DeleteAccountView/>
     </div>
   )
 }
 
-export default page
+export default DeleteInfoPage

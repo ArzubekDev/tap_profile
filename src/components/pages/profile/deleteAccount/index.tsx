@@ -4,7 +4,7 @@ import DeleteOptions from '../../../../shared/ui/DeleteInfo/DeleteInfo';
 
 import style from './style.module.scss';
 
-const DeleteAccount = () => {
+const DeleteAccountView = () => {
   return (
     <section className={style.deleteAccount}>
       <h4 className={style.title}>Удаление аккаунта</h4>
@@ -29,4 +29,4 @@ const DeleteAccount = () => {
   );
 };
 
-export default DeleteAccount;
+export default DeleteAccountView;
