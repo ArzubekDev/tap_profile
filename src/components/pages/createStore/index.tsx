@@ -26,12 +26,10 @@ const AddressPicker = dynamic(
   },
 );
 
-// Компонент CreateStore
 const CreateStoreView = () => {
   // Хуки
   const formRef = useRef<HTMLFormElement>(null);
   const [mounted, setMounted] = useState(false);
-  //useForm
   const {
     control,
     handleSubmit,
