@@ -4,7 +4,7 @@ import { IconCardFavorite, IconReviewMessage, IconStar } from '@/src/components/
 
 import style from './style.module.scss';
 
-const Card = ({ el }: any) => {
+const ProductCard = ({ el }: any) => {
   return (
     <div className={style.card}>
       <IconCardFavorite className={style.IconFav} />
@@ -38,4 +38,4 @@ const Card = ({ el }: any) => {
   );
 };
 
-export default Card;
+export default ProductCard;

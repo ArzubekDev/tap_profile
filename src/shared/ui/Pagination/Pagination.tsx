@@ -6,7 +6,7 @@ import style from './style.module.scss';
 
 const Pagination = () => {
   const handleChange = (value: { value: string; label: React.ReactNode }) => {
-    console.log(value); // { value: "lucy", key: "lucy", label: "Lucy (101)" }
+    console.log(value);
   };
   return (
     <div className={style.pagination}>

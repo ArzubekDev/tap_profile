@@ -1,24 +1,25 @@
 'use client';
+import { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { Button } from 'antd';
+
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
-import Card from '@/src/shared/ui/Card/Card';
-import { useQuery } from '@tanstack/react-query';
 
-import { Button } from 'antd';
-import { useState } from 'react';
-import sizeCharts from '@/src/entities/product/size-charts/sizeCharts.json'
-
+import ProductCard from '@/src/entities/product/ProductCard/ProductCard';
+import sizeCharts from '@/src/entities/product/size-charts/sizeCharts.json';
 import SizeChartModal from '@/src/entities/product/ui/SizeChartModal';
+
 import style from './style.module.scss';
 
 //Временно: Для теста Таблица размеров
 const product = {
-    id: 1,
-    name: "Oversize T-shirt",
-    gender: "male", // female, female_kid, male_kid
-    category: "t-shirt",
-    isSet: false
-  };
+  id: 1,
+  name: 'Oversize T-shirt',
+  gender: 'male', // female, female_kid, male_kid
+  category: 't-shirt',
+  isSet: false,
+};
 
 const HomeView = () => {
   const { data: products } = useQuery<any>({
@@ -26,7 +27,6 @@ const HomeView = () => {
     queryFn: getProducts,
     staleTime: 1000 * 60 * 5,
   });
-   
 
   const [open, setOpen] = useState(false);
   const showDrawer = () => {
@@ -38,11 +38,11 @@ const HomeView = () => {
 
   const getChartsForProduct = () => {
     const genderData = sizeCharts[product.gender as keyof typeof sizeCharts];
-    
+
     if (product.isSet) {
       return [(genderData as any)['t-shirt'], (genderData as any)['trousers']];
     }
-    
+
     return [(genderData as any)[product.category]];
   };
 
@@ -58,13 +58,13 @@ const HomeView = () => {
         <div className={style.cards}>
           {products?.map((el: any) => (
             <div key={el.id}>
-              <Card el={el} />
+              <ProductCard el={el} />
             </div>
           ))}
         </div>
       </div>
       {/* Модалка - таблица размеров */}
-      <SizeChartModal close={onClose} open={open} charts={currentCharts}/>
+      <SizeChartModal close={onClose} open={open} charts={currentCharts} />
     </section>
   );
 };

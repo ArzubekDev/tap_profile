@@ -4,13 +4,13 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
-import Card from '@/src/shared/ui/Card/Card';
+import Card from '@/src/entities/product/ProductCard/ProductCard';
 import PaginationInfo from './pagination-info';
 
 import style from './style.module.scss';
 
 const FavoriteView: React.FC = () => {
-const { data } = useSuspenseQuery<any[]>({
+  const { data } = useSuspenseQuery<any[]>({
     queryKey: PRODUCT_KEYS.all,
     queryFn: getProducts,
     staleTime: 1000 * 60 * 5,
