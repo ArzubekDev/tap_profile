@@ -1,4 +1,4 @@
-const HowToSell = () => {
+const HowToSellView = () => {
   return (
     <section>
       <h2>Как продавать на маркетплейсе Tap.kg</h2>
@@ -12,4 +12,4 @@ const HowToSell = () => {
   );
 };
 
-export default HowToSell;
+export default HowToSellView;

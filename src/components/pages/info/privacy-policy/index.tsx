@@ -1,6 +1,6 @@
 import style from './style.module.scss';
 
-const PrivacyPolicy = () => {
+const PrivacyPolicyView = () => {
   return (
     <section className={style.privacyPolicy}>
       <h3 className={style.mainTitle}>Политика конфиденциальности</h3>
@@ -63,4 +63,4 @@ const PrivacyPolicy = () => {
   );
 };
 
-export default PrivacyPolicy;
+export default PrivacyPolicyView;

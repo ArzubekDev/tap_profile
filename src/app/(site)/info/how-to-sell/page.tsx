@@ -1,9 +1,9 @@
-import HowToSell from '@/src/components/pages/info/how-to-sell'
-import React from 'react'
+import HowToSellView from "@/src/components/pages/info/how-to-sell"
+
 
 const HowToSellPage = () => {
   return (
-    <div><HowToSell/></div>
+    <HowToSellView/>
   )
 }
 

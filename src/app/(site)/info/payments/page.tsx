@@ -1,9 +1,8 @@
-import Payments from '@/src/components/pages/info/payments'
-import React from 'react'
+import PaymentsView from '@/src/components/pages/info/payments'
 
 const PaymentsPage = () => {
   return (
-    <div><Payments/></div>
+    <PaymentsView/>
   )
 }
 

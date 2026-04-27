@@ -1,6 +1,6 @@
 import style from './style.module.scss';
 
-const Payments = () => {
+const PaymentsView = () => {
   return (
     <section className={style.payments}>
       <h2 className={style.mainTitle}>Оплата на маркетплейсе Tap.kg</h2>
@@ -26,7 +26,7 @@ const Payments = () => {
   );
 };
 
-export default Payments;
+export default PaymentsView;
 
 type TSteps = {
   title: string, 
