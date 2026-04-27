@@ -1,7 +1,8 @@
-import React from 'react';
-import { Button } from 'antd';
 import { IconMessage } from '@/src/components/Icons';
-import DeleteOptions from '../../../../shared/ui/DeleteInfo/DeleteInfo';
+import { Button } from 'antd';
+import React from 'react';
+
+import { DeleteInfoList } from '@/src/shared/ui';
 
 import style from './style.module.scss';
 
@@ -16,7 +17,7 @@ const DeleteAccountView: React.FC = () => {
           восстановления.
         </p>
       </div>
-      <DeleteOptions/>
+      <DeleteInfoList />
       <div className={style.footer}>
         <div className={style.footerTextContainer}>
           <h3 className={style.footerTitle}>Служба поддержки</h3>
@@ -24,7 +25,10 @@ const DeleteAccountView: React.FC = () => {
             Если у вас остались вопросы или возникли трудности или хотите удалить аккаунт:
           </p>
         </div>
-        <Button type="primary" className={style.button}><IconMessage className={style.iconMessage}/>Написать нам</Button>
+        <Button type="primary" className={style.button}>
+          <IconMessage className={style.iconMessage} />
+          Написать нам
+        </Button>
       </div>
     </section>
   );
