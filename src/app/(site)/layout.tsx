@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
-import Footer from '@/src/components/layout/footer';
-import Header from '@/src/components/layout/header';
+import HeaderView from '@/src/components/layout/header';
+import FooterView from '@/src/components/layout/footer';
 
 import style from "./style.module.scss"
 
@@ -12,9 +12,9 @@ interface ILayoutSiteProps {
 const LayoutSite = ({ children }: ILayoutSiteProps) => {
   return (
     <div className={style.layoutSite}>
-      <Header />
+      <HeaderView />
       {children}
-      <Footer/>
+      <FooterView/>
     </div>
   );
 };

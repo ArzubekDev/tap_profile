@@ -1,8 +1,9 @@
-import OrderInfo from '@/src/shared/ui/OrderInfo/OrderInfo';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
+
+import OrderInfo from '@/src/shared/ui/OrderInfo/OrderInfo';
 import { MOCK_ORDERS } from '../HistoryOrders/HistoryOrdersContainer';
 
-import Image from 'next/image';
 
 import style from './style.module.scss';
 
@@ -12,9 +13,6 @@ interface IOrdersDetailsProps {
 
 const OrdersDetails = ({ slug }: IOrdersDetailsProps) => {
   const order = MOCK_ORDERS.find((item) => item.id === slug);
-
-  console.log('slug:', slug);
-  console.log('orders:', MOCK_ORDERS);
 
   if (!order) notFound();
 

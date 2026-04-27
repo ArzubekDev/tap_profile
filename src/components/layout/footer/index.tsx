@@ -7,7 +7,7 @@ import FooterCopyRight from './copyright';
 
 import style from './style.module.scss';
 
-const Footer = () => {
+const FooterView = () => {
   return (
     <footer className={style.footer}>
       <div className="container">
@@ -43,4 +43,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterView;

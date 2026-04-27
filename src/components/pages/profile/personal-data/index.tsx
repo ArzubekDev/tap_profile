@@ -3,7 +3,7 @@ import FormProfile from './forms/formProfile';
 
 import style from './style.module.scss';
 
-const PersonalDataView = () => {
+const PersonalDataView: React.FC = () => {
 
   return (
     <section className={style.personalData}>

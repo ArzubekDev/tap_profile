@@ -7,6 +7,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { InputFormController, SelectFormController } from "@/src/components/form/Controllers";
 import { THistoryForm, ZhistoryForm } from "../zod/zod";
+import { THistoryForms } from "./type";
+
 import style from "./style.module.scss";
 
 const HistoryForms = () => {
@@ -80,7 +82,7 @@ const HistoryForms = () => {
 
 export default HistoryForms;
 
-const statusOptions = [
+const statusOptions: THistoryForms[] = [
   { value: 'all', label: 'Все статусы' },
   { value: 'new', label: 'Новый' },
   { value: 'confirmed', label: 'Подтвержден' },
@@ -94,7 +96,7 @@ const statusOptions = [
   { value: 'refund', label: 'Возврат' },
   { value: 'completed', label: 'Завершён' },
 ];
-const storeOptions = [
+const storeOptions: THistoryForms[] = [
   { value: 'all', label: 'Все магазины' },
   { value: 'store', label: 'Магазин' },
 ];

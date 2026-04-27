@@ -9,7 +9,7 @@ interface ContactsProps {
   errors?: FieldErrors<TFormValues>;
 }
 
-const Contacts = ({control, errors}: ContactsProps) => {
+const ContactsView = ({control, errors}: ContactsProps) => {
   
   return (
     <div className={style.contacts}>
@@ -42,4 +42,4 @@ const Contacts = ({control, errors}: ContactsProps) => {
   );
 };
 
-export default Contacts;
+export default ContactsView;

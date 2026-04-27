@@ -16,7 +16,7 @@ import {
 
 import style from './style.module.scss';
 
-const Header = () => {
+const HeaderView = () => {
 
   return (
     <header className={style.header}>
@@ -55,4 +55,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderView;

@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -23,7 +24,7 @@ import { TProfileItemType } from './types';
 
 import style from './style.module.scss';
 
-const ProfileNavbar = () => {
+const ProfileNavbar: React.FC = () => {
   const pathname = usePathname();
   
 const renderLink = (el: TProfileItemType) => {

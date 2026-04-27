@@ -2,13 +2,14 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 
 import { getProducts } from '@/src/shared/api/product.api';
-import Pages from './pages';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
 import Card from '@/src/shared/ui/Card/Card';
+import PaginationInfo from './pagination-info';
+
 import style from './style.module.scss';
 
-const FavoriteView = () => {
+const FavoriteView: React.FC = () => {
 const { data } = useSuspenseQuery<any[]>({
     queryKey: PRODUCT_KEYS.all,
     queryFn: getProducts,
@@ -21,7 +22,7 @@ const { data } = useSuspenseQuery<any[]>({
         <h3>
           Избранные <span>({data?.length})</span>
         </h3>
-        <Pages />
+        <PaginationInfo />
       </div>
       <div className={style.content}>
         {data.map((el: any) => (
@@ -31,7 +32,7 @@ const { data } = useSuspenseQuery<any[]>({
         ))}
       </div>
       <div className={style.footer}>
-        <Pages />
+        <PaginationInfo />
       </div>
     </div>
   );

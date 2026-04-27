@@ -8,14 +8,14 @@ import { TFormValues } from '../zod/zod';
 
 import style from './style.module.scss';
 
-interface WorkTimeFieldProps {
+interface IWorkTimeFieldProps {
   control: Control<TFormValues>;
   setValue: UseFormSetValue<TFormValues>;
   errors: any;
 }
 
-const WorkTimeField = ({ control, setValue, errors }: WorkTimeFieldProps) => {
-  // useWatch бул жерде бир гана ушул компонентти ререндер кылат
+const WorkTimeField = ({ control, setValue, errors }: IWorkTimeFieldProps) => {
+
   const isEverydayChecked = useWatch({
     control,
     name: 'isEveryday',
@@ -23,7 +23,6 @@ const WorkTimeField = ({ control, setValue, errors }: WorkTimeFieldProps) => {
 
   return (
     <div className={style.time}>
-      {/* Время работы */}
       <div className={style.work}>
         <div className={style.timeTitle}>
           <h5 className={style.contentName}>Время работы *</h5>

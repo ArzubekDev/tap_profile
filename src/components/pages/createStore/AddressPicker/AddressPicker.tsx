@@ -92,7 +92,7 @@ const AddressPicker = ({ onAddressSelect }: { onAddressSelect: (data: IAddress) 
 
       <YMaps
         query={{
-          apikey: 'YOUR_API_KEY', //API KEY надо добавить
+          apikey: 'YOUR_API_KEY', //API KEY надо добавить потом
           lang: 'ru_RU',
           load: 'package.full',
         }}

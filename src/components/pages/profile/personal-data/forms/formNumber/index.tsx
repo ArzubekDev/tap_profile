@@ -10,7 +10,7 @@ import { ZprofileNumber } from './zod/zod';
 
 import style from './style.module.scss';
 
-const FormNumber = () => {
+const FormNumber: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const phoneForm = useForm({

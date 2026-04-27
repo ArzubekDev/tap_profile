@@ -1,10 +1,11 @@
+import React from 'react';
 import { Button } from 'antd';
 import { IconMessage } from '@/src/components/Icons';
 import DeleteOptions from '../../../../shared/ui/DeleteInfo/DeleteInfo';
 
 import style from './style.module.scss';
 
-const DeleteAccountView = () => {
+const DeleteAccountView: React.FC = () => {
   return (
     <section className={style.deleteAccount}>
       <h4 className={style.title}>Удаление аккаунта</h4>

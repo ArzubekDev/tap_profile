@@ -10,7 +10,7 @@ import { ZprofileNameSurName } from './zod/zod';
 
 import style from './style.module.scss';
 
-const FormProfile = () => {
+const FormProfile: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const { control, handleSubmit } = useForm({

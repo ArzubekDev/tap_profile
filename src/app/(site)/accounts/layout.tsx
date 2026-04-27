@@ -1,5 +1,5 @@
 'use client';
-import ProfileNav from '@/src/components/pages/profile/profile-nav';
+import ProfileNav from '@/src/components/pages/profile/profile-navbar';
 import { ReactNode } from 'react';
 import StickyBox from 'react-sticky-box';
 

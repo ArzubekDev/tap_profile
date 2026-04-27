@@ -1,10 +1,12 @@
-import { IconArrow } from '@/src/components/Icons';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { IconArrow } from '@/src/components/Icons';
 import { PATH_BASKET_HISTORY } from '../../../shared/consts/paths';
+
 import style from './style.module.scss';
 
-const HistoryOrdersContainer = () => {
+const HistoryOrdersContainer: React.FC = () => {
   return (
     <div className={style.historyOrders}>
       {MOCK_ORDERS.map((order, idx) => {
