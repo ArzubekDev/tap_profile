@@ -10,7 +10,7 @@ const OrderInfo = ({ order, totalAmount }: any) => {
 
   return (
     <div className={style.orderInfo}>
-      <div className={style.left}>
+      <div className={style.content}>
         <IconArrow onClick={() => route.back()} className={style.arrow} />
         <p>
           Дата: <br />

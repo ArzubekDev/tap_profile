@@ -34,7 +34,7 @@ const SizeChartModal = ({ close, open, charts }: SizeChartModalProps) => {
       {/* Таблица */}
       <div className={style.sizeTable}>
         {charts?.map((chart: any, index: any) => (
-          <div key={index} className={style.section}>
+          <div key={index} className={style.container}>
             {/* Название одежды */}
             <h3 className={style.title}>{chart.title}</h3>
             {/* Контейнер таблицы */}

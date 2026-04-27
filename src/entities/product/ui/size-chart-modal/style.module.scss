@@ -1,21 +1,3 @@
-// .customModal {
-//   width: 600px;
-//   max-width: 90vw;
-//   transition: all 0.3s ease;
-
-//   @media (max-width: 724px) {
-//     width: 100%;
-//     max-width: 100vw;
-//     margin: 0;
-//     padding-bottom: 0;
-
-//     :global(.ant-modal-content) {
-//       border-radius: 0;
-//       min-height: 100vh;
-//     }
-//   }
-// }
-
 .mainTitle {
   font-size: 20px;
   font-weight: 700;
@@ -23,7 +5,7 @@
 .title {
   font-size: 17px;
 }
-.section {
+.container {
   display: flex;
   flex-direction: column;
 }
@@ -80,7 +62,7 @@
 
 .size {
   cursor: default;
-  
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -111,17 +93,14 @@
   display: flex;
   gap: 20px;
   align-items: start;
+}
+.infoItem {
+  margin-bottom: 15px;
 
-  .infoContent {
-    .infoItem {
-      margin-bottom: 15px;
-
-      strong {
-        display: block;
-        margin-bottom: 5px;
-        color: #333;
-      }
-    }
+  strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
   }
 }
 .infoText {
