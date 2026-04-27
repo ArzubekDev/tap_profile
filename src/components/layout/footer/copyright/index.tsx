@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import style from '../style.module.scss';
 
-const FooterBottom = () => {
+const FooterCopyRight = () => {
   return (
     <div className="container">
       <div className={style.bottom}>
@@ -22,4 +22,4 @@ const FooterBottom = () => {
   );
 };
 
-export default FooterBottom;
+export default FooterCopyRight;

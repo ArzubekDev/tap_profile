@@ -5,7 +5,7 @@ import dayjs from 'dayjs';
 
 import style from './style.module.scss';
 
-interface DatePickerFormControllerProps<T extends FieldValues> extends Omit<
+interface IDatePickerFormControllerProps<T extends FieldValues> extends Omit<
   DatePickerProps,
   'name'
 > {
@@ -19,7 +19,7 @@ const DatePickerFormController = <T extends FieldValues>({
   control,
   label,
   ...props
-}: DatePickerFormControllerProps<T>) => {
+}: IDatePickerFormControllerProps<T>) => {
   return (
     <div className={style.innerBottom}>
       {label && <label className={style.label}>{label}</label>}

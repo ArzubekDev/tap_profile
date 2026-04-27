@@ -3,6 +3,7 @@ import { Input } from 'antd';
 import { Controller, FieldValues, } from 'react-hook-form';
 
 import { InputControllerProps } from './type';
+
 import style from './style.module.scss';
 
 const InputFormController = <T extends FieldValues>({

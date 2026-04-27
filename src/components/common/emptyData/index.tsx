@@ -2,7 +2,7 @@ import { EmptyDataProps } from './type';
 
 import style from './style.module.scss';
 
-const EmptyData = ({
+const EmptyDataView = ({
   title,
   subTitle,
   description,
@@ -25,4 +25,4 @@ const EmptyData = ({
   );
 };
 
-export default EmptyData;
+export default EmptyDataView;

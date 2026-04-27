@@ -3,9 +3,9 @@ import Buyers from './buyers';
 import Contacts from './contacts';
 import QRCodeComponent from './qrCode';
 import Seller from './seller';
+import FooterCopyRight from './copyright';
 
 import style from './style.module.scss';
-import FooterBottom from './bottom';
 
 const Footer = () => {
   return (
@@ -38,7 +38,7 @@ const Footer = () => {
           <QRCodeComponent />
         </div>
       </div>
-      <FooterBottom/>
+      <FooterCopyRight/>
     </footer>
   );
 };
