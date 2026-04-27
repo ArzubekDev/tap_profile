@@ -51,7 +51,7 @@ const HomeView = () => {
   return (
     <section className={style.home}>
       <div className="container">
-        {/* Временно: кнопка для теста Таблица размеров */}
+        {/* Временно: кнопка для теста Таблицы размеров */}
         <Button className={style.sizeButton} type="primary" onClick={showDrawer}>
           Таблица размеров
         </Button>
