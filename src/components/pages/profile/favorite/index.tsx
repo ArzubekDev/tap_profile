@@ -8,7 +8,7 @@ import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 import Card from '@/src/shared/ui/Card/Card';
 import style from './style.module.scss';
 
-const Favorite = () => {
+const FavoriteView = () => {
 const { data } = useSuspenseQuery<any[]>({
     queryKey: PRODUCT_KEYS.all,
     queryFn: getProducts,
@@ -37,4 +37,4 @@ const { data } = useSuspenseQuery<any[]>({
   );
 };
 
-export default Favorite;
+export default FavoriteView;

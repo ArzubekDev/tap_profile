@@ -2,7 +2,7 @@
 import { Button } from "antd";
 import style from "./style.module.scss"
 
-export default function Error({ error, reset }: any) {
+export default function FavoriteError({ error, reset }: any) {
   return (
     <div className={style.globalError}>
       <p className={style.text}>Глобальная ошибка: {error.message}</p>

@@ -6,11 +6,11 @@ import ProfileNav from '@/src/components/pages/profile/ProfileNav';
 import StickyBox from 'react-sticky-box';
 import style from './style.module.scss';
 
-interface FavListLayoutProps {
+interface IFavListLayoutProps {
   children: ReactNode;
 }
 
-const FavListLayout = ({ children }: FavListLayoutProps) => {
+const FavoriteListLayout = ({ children }: IFavListLayoutProps) => {
   return (
     <div className="container">
       <div className={style.accountLayout}>
@@ -24,4 +24,4 @@ const FavListLayout = ({ children }: FavListLayoutProps) => {
     </div>
   );
 };
-export default FavListLayout;
+export default FavoriteListLayout;
