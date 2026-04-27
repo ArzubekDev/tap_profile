@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { IconInstagram, IconMessage, IconPhone } from '@/src/components/Icons';
-import { BlockProps } from '../type';
+import { TBlockProps } from '../type';
 
 import style from '../style.module.scss';
 
@@ -27,7 +27,7 @@ const Contacts = () => {
 
 export default Contacts;
 
-const contacts: BlockProps[] = [
+const contacts: TBlockProps[] = [
   {
     title: 'info@tap.kg',
     icon: <IconMessage className={style.icon} />,

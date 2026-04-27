@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BlockProps } from '../type';
+import { TBlockProps } from '../type';
 import { PATH_DELIVERY, PATH_HOW_TO_MAKE_ORDER, PATH_PAYMENTS, PATH_RETURNS, PATH_TERM_OF_USE } from '@/src/shared/consts/paths';
 import style from '../style.module.scss';
 
@@ -18,7 +18,7 @@ export default Buyers;
 
 
 
-const buyers: BlockProps[] = [
+const buyers: TBlockProps[] = [
   {
     title: 'Как сделать заказ',
     link: PATH_HOW_TO_MAKE_ORDER

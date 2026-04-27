@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-export type BlockProps = {
+export type TBlockProps = {
     title: string,
     link: string,
     icon?: ReactNode
