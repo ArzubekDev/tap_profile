@@ -22,13 +22,13 @@ const OrdersDetails = ({ slug }: IOrdersDetailsProps) => {
       <OrderInfo order={order} totalAmount={totalAmount} />
 
       <div className={style.itemsList}>
-        {order?.items?.map((product) => (
-          <div key={product.id} className={style.productCard}>
+        {order?.items?.map((item) => (
+          <div key={item.id} className={style.productCard}>
             <div className={style.productImage}>
               <Image
                 className={style.image}
-                src={product.image}
-                alt={product.name}
+                src={item.image}
+                alt={item.name}
                 width={120}
                 height={160}
               />
@@ -36,18 +36,18 @@ const OrdersDetails = ({ slug }: IOrdersDetailsProps) => {
 
             <div className={style.productDetails}>
               <div className={style.titles}>
-                <h3>{product.name}</h3>
+                <h3>{item.name}</h3>
                 <p className={style.category}>Верхняя одежда</p>
               </div>
 
               <div className={style.priceContainer}>
-                <span className={style.currentPrice}>{product.price} KGS</span>
-                {product.oldPrice && <span className={style.oldPrice}>{product.oldPrice} KGS</span>}
+                <span className={style.currentPrice}>{item.price} KGS</span>
+                {item.oldPrice && <span className={style.oldPrice}>{item.oldPrice} KGS</span>}
               </div>
 
               <div className={style.shopInfo}>
                 <p>
-                  <span>Магазин:</span> <span className={style.shopName}>{product.shop}</span>
+                  <span>Магазин:</span> <span className={style.shopName}>{item.shop}</span>
                 </p>
                 <p>
                   <span>Доставка:</span> <span className={style.deliveryStatus}>Нет</span>

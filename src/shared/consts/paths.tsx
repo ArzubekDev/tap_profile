@@ -1,5 +1,3 @@
-// export const toEditProductPage = (slug: string) => /edit-product/${slug};
-
 // PATHS PROFILENAV
 export const PATH_PROFILE = '/accounts/profile';
 export const PATH_FAVORITE = '/basket/favorite-list';

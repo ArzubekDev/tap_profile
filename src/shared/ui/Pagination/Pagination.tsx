@@ -28,8 +28,8 @@ const Pagination = () => {
         </div>
 
         <div className={style.button}>
-          {[1, 2].map((el) => (
-            <IconArrow key={el} className={style.dubleArrowNext} />
+          {[1, 2].map((item) => (
+            <IconArrow key={item} className={style.dubleArrowNext} />
           ))}
         </div>
       </div>

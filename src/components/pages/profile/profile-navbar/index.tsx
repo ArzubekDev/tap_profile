@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import React from 'react';
 
 import {
   IconBell,
@@ -26,46 +26,43 @@ import style from './style.module.scss';
 
 const ProfileNavbar: React.FC = () => {
   const pathname = usePathname();
-  
-const renderLink = (el: TProfileItemType) => {
-  const isActive = el.link === PATH_PROFILE 
-    ? pathname === el.link 
-    : pathname === el.link || pathname.startsWith(el.link + '/');
+
+  const renderLink = (item: TProfileItemType) => {
+    const isActive =
+      item.link === PATH_PROFILE
+        ? pathname === item.link
+        : pathname === item.link || pathname.startsWith(item.link + '/');
+
+    return (
+      <Link
+        href={item.link}
+        key={item.id}
+        className={cn(style.profileItem, {
+          [style.active]: isActive,
+        })}
+      >
+        {item.icon} <span className={style.profileTitle}>{item.title}</span>
+      </Link>
+    );
+  };
 
   return (
-    <Link
-      href={el.link}
-      key={el.id}
-      className={cn(style.profileItem, {
-        [style.active]: isActive,
-      })}
-    >
-      {el.icon} <span className={style.profileTitle}>{el.title}</span>
-    </Link>
-  );
-};
-
-  return (
-      <aside className={style.profileNavContainer}>
-        <div className={style.myProfile}>
-          <h4 className={style.title}>Мой профиль</h4>
-          <div className={style.container}>
-            {profileItems.map(renderLink)}
-          </div>
-        </div>
-        <div className={style.myStores}>
-          <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
-          <div>
-           {storeItems.map(renderLink)}
-          </div>
-        </div>
-        <div className={style.logoutAccount}>
-          <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
-          <button className={style.logout}>
-            <IconLogout className={style.logoutIcon} /> Выход
-          </button>
-        </div>
-      </aside>
+    <aside className={style.profileNavContainer}>
+      <div className={style.myProfile}>
+        <h4 className={style.title}>Мой профиль</h4>
+        <div className={style.container}>{profileItems.map(renderLink)}</div>
+      </div>
+      <div className={style.myStores}>
+        <h4 className={cn(style.title, style.secondTitle)}>Мои магазины</h4>
+        <div>{storeItems.map(renderLink)}</div>
+      </div>
+      <div className={style.logoutAccount}>
+        <h4 className={cn(style.title, style.secondTitle)}>Выйти из аккаунта</h4>
+        <button className={style.logout}>
+          <IconLogout className={style.logoutIcon} /> Выход
+        </button>
+      </div>
+    </aside>
   );
 };
 
