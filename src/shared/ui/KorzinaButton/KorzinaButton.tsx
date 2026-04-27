@@ -4,7 +4,7 @@ import KorzinaDropDown from '../KorzinaDropDown/KorzinaDropDown';
 
 import style from './style.module.scss';
 
-const KorzinaUI = () => {
+const KorzinaButton = () => {
   return (
     <PopoverLayout
       content={KorzinaDropDown}
@@ -20,4 +20,4 @@ const KorzinaUI = () => {
   );
 };
 
-export default KorzinaUI;
+export default KorzinaButton;

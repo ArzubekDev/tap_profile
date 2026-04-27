@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 
-import OrderInfo from '@/src/shared/ui/OrderInfo/OrderInfo';
+import OrderInfo from '@/src/entities/orders/OrderInfo/OrderInfo';
 import { MOCK_ORDERS } from '../HistoryOrders/HistoryOrdersContainer';
 
 

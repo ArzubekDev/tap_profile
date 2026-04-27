@@ -4,10 +4,10 @@ import { Input } from 'antd';
 
 import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
 import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
-import ProfileUI from '@/src/shared/ui/ProfileUI/ProfileUI';
-import FavoriteUI from '@/src/shared/ui/FavoriteUI/FavoriteUI';
-import KorzinaUI from '@/src/shared/ui/KorzinaUI/KorzinaUI';
-import CreateStoreUI from '@/src/shared/ui/CreateStoreUI/CreateStoreUI';
+import ProfileUI from '@/src/shared/ui/ProfileButton/ProfileButton';
+import FavoriteUI from '@/src/shared/ui/FavoriteButton/FavoriteButton';
+import KorzinaUI from '@/src/shared/ui/KorzinaButton/KorzinaButton';
+import CreateStoreUI from '@/src/shared/ui/CreateStoreButton/CreateStoreButton';
 
 import {
   IconLocation,

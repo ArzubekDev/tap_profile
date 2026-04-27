@@ -5,8 +5,9 @@ import { IconFavorite } from '@/src/components/Icons';
 
 import style from './style.module.scss';
 
-const FavoriteUI = () => {
+const FavoriteButton = () => {
   const route = useRouter()
+  
   return (
     <div onClick={() => route.push("/basket/favorite-list")} className={style.navItem}>
       <IconFavorite className={style.navItemIcon} />
@@ -15,4 +16,4 @@ const FavoriteUI = () => {
   );
 };
 
-export default FavoriteUI;
+export default FavoriteButton;

@@ -1,5 +1,5 @@
 'use client';
-import InfoSidebar from '@/src/shared/ui/InfoSidebar/InfoSidebar';
+import InfoSidebar from '@/src/components/pages/info/InfoSidebar/InfoSidebar';
 import { ReactNode } from 'react';
 import StickyBox from 'react-sticky-box';
 import style from './style.module.scss';

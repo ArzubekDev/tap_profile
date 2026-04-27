@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ReviewStatistics from '../ReviewStatistics/ReviewStatistics';
 import style from './style.module.scss';
 
-const ReviewsView = () => {
+const Reviews = () => {
   return (
     <section className={style.page}>
       <div className="container">
@@ -60,7 +60,7 @@ const ReviewsView = () => {
   );
 };
 
-export default ReviewsView;
+export default Reviews;
 
 const review = [
   {

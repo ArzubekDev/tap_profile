@@ -4,7 +4,7 @@ import ProfileDropDown from '../ProfileDropdown/ProfileDropDown';
 
 import style from './style.module.scss';
 
-const ProfileUI = () => {
+const ProfileButton = () => {
   return (
     <PopoverLayout
       content={ProfileDropDown}
@@ -20,4 +20,4 @@ const ProfileUI = () => {
   );
 };
 
-export default ProfileUI;
+export default ProfileButton;

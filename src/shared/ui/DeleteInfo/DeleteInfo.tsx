@@ -1,7 +1,7 @@
 import { IconCheck } from '@/src/components/Icons';
 import style from './style.module.scss';
 
-const DeleteInfo = () => {
+const DeleteInfoList = () => {
   return (
     <div className={style.content}>
       <h3 className={style.contentTitle}>При удалении аккаунта будут безвозвратно стерты:</h3>
@@ -17,7 +17,7 @@ const DeleteInfo = () => {
   );
 };
 
-export default DeleteInfo;
+export default DeleteInfoList;
 
 const list = [
   {
