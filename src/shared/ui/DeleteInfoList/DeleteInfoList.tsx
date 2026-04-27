@@ -5,14 +5,16 @@ const DeleteInfoList = () => {
   return (
     <div className={style.content}>
       <h3 className={style.contentTitle}>При удалении аккаунта будут безвозвратно стерты:</h3>
-      <ul className={style.list}>
-        {list.map((el, idx) => (
-          <li key={idx} className={style.listItem}>
-            <IconCheck className={style.iconCheck} />
-            <span className={style.text}>{el.title}</span>
-          </li>
-        ))}
-      </ul>
+      {list?.length && (
+        <ul className={style.list}>
+          {list.map((el, idx) => (
+            <li key={idx} className={style.listItem}>
+              <IconCheck className={style.iconCheck} />
+              <span className={style.text}>{el.title}</span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
