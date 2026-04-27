@@ -2,30 +2,28 @@
 
 import { Input } from 'antd';
 
-import TapLogo from '@/src/shared/ui/TapLogo/TapLogo';
-import CatalogButton from '@/src/shared/ui/CatalogButton/CatalogButton';
-import ProfileUI from '@/src/shared/ui/ProfileButton/ProfileButton';
-import FavoriteUI from '@/src/shared/ui/FavoriteButton/FavoriteButton';
-import KorzinaUI from '@/src/shared/ui/KorzinaButton/KorzinaButton';
-import CreateStoreUI from '@/src/shared/ui/CreateStoreButton/CreateStoreButton';
-
 import {
-  IconLocation,
-  IconSearchTap,
-} from '@/src/components/Icons';
+  CatalogButton,
+  CreateStoreButton,
+  FavoriteButton,
+  KorzinaButton,
+  ProfileButton,
+  TapLogo,
+} from '@/src/shared/ui';
+
+import { IconLocation, IconSearchTap } from '@/src/components/Icons';
 
 import style from './style.module.scss';
 
 const HeaderView = () => {
-
   return (
     <header className={style.header}>
       <div className={`container ${style.headerContainer}`}>
         {/* Логотип */}
-        <TapLogo/>
+        <TapLogo />
         <div className={style.navContainer}>
           {/* Каталог */}
-         <CatalogButton/>
+          <CatalogButton />
           {/* Search input */}
           <form className={style.searchForm}>
             <IconSearchTap />
@@ -43,13 +41,13 @@ const HeaderView = () => {
             <IconLocation />
           </div>
           {/* Профиль */}
-         <ProfileUI/>
+          <ProfileButton />
           {/* Избранное */}
-          <FavoriteUI/>
+          <FavoriteButton />
           {/* Корзина */}
-         <KorzinaUI/>
+          <KorzinaButton />
         </div>
-       <CreateStoreUI/>
+        <CreateStoreButton />
       </div>
     </header>
   );

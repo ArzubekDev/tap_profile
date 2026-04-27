@@ -5,7 +5,7 @@ import { PATH_CREATE_SHOP } from '../../consts/paths';
 
 import style from './style.module.scss';
 
-const CreateStoreUI = () => {
+const CreateStoreButton = () => {
   return (
     <Link href={PATH_CREATE_SHOP} className={style.createStore}>
       Создать магазин <IconStore />
@@ -13,4 +13,4 @@ const CreateStoreUI = () => {
   );
 };
 
-export default CreateStoreUI;
+export default CreateStoreButton;
