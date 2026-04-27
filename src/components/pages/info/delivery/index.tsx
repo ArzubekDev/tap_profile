@@ -1,6 +1,6 @@
 import style from './style.module.scss';
 
-const Delivery = () => {
+const DeliveryView = () => {
   return (
     <section className={style.delivery}>
       <h2 className={style.headline}>Доставка</h2>
@@ -26,7 +26,7 @@ const Delivery = () => {
   );
 };
 
-export default Delivery;
+export default DeliveryView;
 
 type TSteps = {
   title: string, 

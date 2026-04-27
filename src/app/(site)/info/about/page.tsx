@@ -1,9 +1,8 @@
-import About from '@/src/components/pages/info/about'
-import React from 'react'
+import AboutView from "@/src/components/pages/info/about"
 
 const AboutPage = () => {
   return (
-    <div><About/></div>
+    <AboutView/>
   )
 }
 

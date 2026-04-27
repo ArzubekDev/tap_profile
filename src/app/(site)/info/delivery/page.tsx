@@ -1,8 +1,8 @@
-import Delivery from '@/src/components/pages/info/delivery'
+import DeliveryView from "@/src/components/pages/info/delivery"
 
 const DeliveryPage = () => {
   return (
-    <div><Delivery/></div>
+    <div><DeliveryView/></div>
   )
 }
 

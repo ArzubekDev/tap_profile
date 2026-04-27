@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-const About = () => {
+const AboutView = () => {
   return (
     <section className={style.about}>
       <h2 className={style.headline}>О маркетплейсе Tap.kg</h2>
@@ -23,7 +23,7 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutView;
 
 const steps = [
   'Сделать мобильное приложение на iOS и на Android',
