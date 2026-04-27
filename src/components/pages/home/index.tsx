@@ -20,7 +20,7 @@ const product = {
     isSet: false
   };
 
-const Home = () => {
+const HomeView = () => {
   const { data: products } = useQuery<any>({
     queryKey: PRODUCT_KEYS.all,
     queryFn: getProducts,
@@ -69,4 +69,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomeView;

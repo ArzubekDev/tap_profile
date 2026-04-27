@@ -3,14 +3,14 @@ import FormProfile from './forms/formProfile';
 
 import style from './style.module.scss';
 
-const PersonalData = () => {
+const PersonalDataView = () => {
 
   return (
-    <div className={style.personalData}>
+    <section className={style.personalData}>
      <FormProfile/>
       <FormNumber />
-    </div>
+    </section>
   );
 };
 
-export default PersonalData;
+export default PersonalDataView;

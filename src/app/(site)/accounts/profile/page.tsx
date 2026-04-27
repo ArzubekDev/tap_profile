@@ -1,10 +1,10 @@
-import ProfileForm from '@/src/components/pages/profile/personalData';
+import PersonalDataView from "@/src/components/pages/profile/personalData";
 
 const ProfilePage = () => {
   return (
-    <div>
-      <ProfileForm />
-    </div>
+    <>
+    <PersonalDataView/>
+    </>
   );
 };
 
