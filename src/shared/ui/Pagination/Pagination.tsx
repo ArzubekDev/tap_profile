@@ -1,7 +1,8 @@
 'use client';
+import React from 'react';
 import { IconArrow } from '@/src/components/Icons';
 import { Select } from 'antd';
-import React from 'react';
+
 import style from './style.module.scss';
 
 const Pagination = () => {
