@@ -2,6 +2,7 @@
 import { IconArrow } from '@/src/components/Icons';
 import { PrinterOutlined } from '@ant-design/icons';
 import { useRouter } from 'next/navigation';
+
 import style from './style.module.scss';
 
 const OrderInfo = ({ order, totalAmount }: any) => {

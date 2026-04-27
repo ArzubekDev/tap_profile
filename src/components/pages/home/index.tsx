@@ -1,18 +1,18 @@
 'use client';
-import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Button } from 'antd';
+import { useState } from 'react';
 
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
 import ProductCard from '@/src/entities/product/ProductCard/ProductCard';
 import sizeCharts from '@/src/entities/product/size-charts/sizeCharts.json';
-import SizeChartModal from '@/src/entities/product/ui/SizeChartModal';
+import SizeChartModal from '@/src/entities/product/ui/size-chart-modal/SizeChartModal';
 
 import style from './style.module.scss';
 
-//Временно: Для теста Таблица размеров
+//Временно: Для теста Таблицы размеров
 const product = {
   id: 1,
   name: 'Oversize T-shirt',

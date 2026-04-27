@@ -19,7 +19,6 @@ const SizeTable = ({ chart }: { chart: any }) => {
           <div
             key={rowIndex}
             onClick={() => setActiveRow(rowIndex)}
-            // Эгер hover керек болсо: onMouseEnter={() => setActiveRow(rowIndex)}
             className={`${style.tableBody} ${activeRow === rowIndex ? style.activeRow : ''}`}
           >
             {chart.headers.map((header: any, colIndex: any) => {

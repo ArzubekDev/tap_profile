@@ -4,7 +4,6 @@ import Image from 'next/image';
 import OrderInfo from '@/src/entities/orders/OrderInfo/OrderInfo';
 import { MOCK_ORDERS } from '../HistoryOrders/HistoryOrdersContainer';
 
-
 import style from './style.module.scss';
 
 interface IOrdersDetailsProps {
