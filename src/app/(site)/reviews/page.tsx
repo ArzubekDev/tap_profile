@@ -1,8 +1,8 @@
-import ReviewsView from '@/src/shared/ui/Reviews/Reviews'
+import Reviews from '@/src/shared/ui/Reviews/Reviews'
 
 const ReviewsPage = () => {
   return (
-    <ReviewsView/>
+    <Reviews/>
   )
 }
 
