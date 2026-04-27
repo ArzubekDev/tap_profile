@@ -100,4 +100,19 @@ export const MOCK_ORDERS = [
       },
     ],
   },
+   {
+    id: '2',
+    date: '05.05.2024 15:00',
+    status: 'Доставлен',
+    statusColor: '#00FF00',
+    items: [
+      {
+        id: 'p5',
+        name: 'Тестовый товар',
+        price: 1000,
+        shop: 'Test Shop',
+        image: '/images/laptop.webp',
+      },
+    ],
+  },
 ];

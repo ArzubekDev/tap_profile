@@ -1,17 +1,20 @@
-import { MOCK_ORDERS } from '@/src/entities/orders/HistoryOrders/HistoryOrdersContainer';
-import { notFound } from 'next/navigation';
-
 import OrderInfo from '@/src/shared/ui/OrderInfo/OrderInfo';
+import { notFound } from 'next/navigation';
+import { MOCK_ORDERS } from '../HistoryOrders/HistoryOrdersContainer';
+
 import Image from 'next/image';
 
 import style from './style.module.scss';
 
-interface Props {
+interface IOrdersDetailsProps {
   slug: string;
 }
 
-const OrdersDetails = async ({ slug }: Props) => {
+const OrdersDetails = ({ slug }: IOrdersDetailsProps) => {
   const order = MOCK_ORDERS.find((item) => item.id === slug);
+
+  console.log('slug:', slug);
+  console.log('orders:', MOCK_ORDERS);
 
   if (!order) notFound();
 
@@ -22,7 +25,7 @@ const OrdersDetails = async ({ slug }: Props) => {
       <OrderInfo order={order} totalAmount={totalAmount} />
 
       <div className={style.itemsList}>
-        {order.items.map((product) => (
+        {order?.items?.map((product) => (
           <div key={product.id} className={style.productCard}>
             <div className={style.productImage}>
               <Image
