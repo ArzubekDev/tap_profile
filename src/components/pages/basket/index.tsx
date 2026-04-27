@@ -11,7 +11,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import style from './style.module.scss';
 
-const Basket = () => {
+const BasketView = () => {
   const router = useRouter();
   const { data: products } = useQuery({
     queryKey: PRODUCT_KEYS.all,
@@ -44,4 +44,4 @@ const Basket = () => {
   );
 };
 
-export default Basket;
+export default BasketView;

@@ -1,6 +1,6 @@
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
+import BasketView from '@/src/components/pages/basket'
 
-import Basket from '@/src/components/pages/basket'
 import { getProducts } from '@/src/shared/api/product.api'
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys'
 
@@ -14,7 +14,7 @@ const BasketPage = async () => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <Basket/>
+      <BasketView/>
     </HydrationBoundary>
   )
 }
