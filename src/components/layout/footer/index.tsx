@@ -13,7 +13,7 @@ const FooterView = () => {
       <div className="container">
         <div className={style.content}>
           {/* TapLogo & Текст */}
-          <div className={style.left}>
+          <div className={style.brandInfo}>
             <TapLogo />
             <p className={style.text}>
               Tap.kg - маркетплейс, который предоставляет возможность каждому пользователю открыть

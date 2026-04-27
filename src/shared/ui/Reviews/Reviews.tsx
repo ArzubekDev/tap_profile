@@ -14,13 +14,13 @@ const Reviews = () => {
               Отзывы <span>23</span>
             </h3>
             <div className={style.rating}>
-              <span className={style.span1}>4.3</span>
+              <span className={style.ratingValue}>4.3</span>
               <div className={style.stars}>
                 {[1, 2, 3, 4, 5].map((el) => (
                   <IconStar key={el} fill={el <= 4 ? '#FFB800' : '#C4C4C4'} />
                 ))}
               </div>
-              <span className={style.span2}>24 оценок</span>
+              <span className={style.ratingCaption}>24 оценок</span>
             </div>
           </div>
           {/* отзывы */}
@@ -28,7 +28,7 @@ const Reviews = () => {
             {review.map((el, i) => (
               <div key={i} className={style.contentContainer}>
                 <div className={style.content}>
-                  <div  className={style.contentTop}>
+                  <div className={style.contentTop}>
                     <div className={style.profileContainer}>
                       <Image
                         className={style.image}

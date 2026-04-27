@@ -6,13 +6,13 @@ const ReviewStatistics = () => {
     <div className={style.info}>
       {/* Общий рейтинг */}
       <div className={style.rating}>
-        <span className={style.span1}>4.3</span>
+        <span className={style.ratingValue}>4.3</span>
         <div className={style.stars}>
           {[1, 2, 3, 4, 5].map((el) => (
             <IconStar key={el} fill={el <= 4 ? '#FFB800' : '#C4C4C4'} />
           ))}
         </div>
-        <span className={style.span2}>24 оценок</span>
+        <span className={style.ratingCaption}>24 оценок</span>
       </div>
       {/* Title */}
       <h5 className={style.title}>Рейтинг формируется на основе актуальных отзывов</h5>
