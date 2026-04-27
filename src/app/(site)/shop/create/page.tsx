@@ -1,5 +1,5 @@
-import CreateStore from '@/src/components/pages/createStore'
+import CreateStoreView from '@/src/components/pages/createStore'
 
-const CraeteStorePage = () => <CreateStore/>
+const CraeteStorePage = () => <CreateStoreView/>
 
 export default CraeteStorePage

@@ -27,7 +27,7 @@ const AddressPicker = dynamic(
 );
 
 // Компонент CreateStore
-const CreateStore = () => {
+const CreateStoreView = () => {
   // Хуки
   const formRef = useRef<HTMLFormElement>(null);
   const [mounted, setMounted] = useState(false);
@@ -149,4 +149,4 @@ const CreateStore = () => {
   );
 };
 
-export default CreateStore;
+export default CreateStoreView;

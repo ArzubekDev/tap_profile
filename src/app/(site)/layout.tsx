@@ -5,11 +5,11 @@ import Header from '@/src/components/layout/header';
 
 import style from "./style.module.scss"
 
-interface LayoutSiteProps {
+interface ILayoutSiteProps {
   children: ReactNode;
 }
 
-const LayoutSite = ({ children }: LayoutSiteProps) => {
+const LayoutSite = ({ children }: ILayoutSiteProps) => {
   return (
     <div className={style.layoutSite}>
       <Header />

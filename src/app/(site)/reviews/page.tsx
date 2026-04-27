@@ -1,9 +1,8 @@
-import Reviews from '@/src/shared/ui/Reviews/Reviews'
-import React from 'react'
+import ReviewsView from '@/src/shared/ui/Reviews/Reviews'
 
 const ReviewsPage = () => {
   return (
-    <div><Reviews/></div>
+    <ReviewsView/>
   )
 }
 

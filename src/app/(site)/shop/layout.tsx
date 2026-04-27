@@ -4,11 +4,11 @@ import ProfileNav from '@/src/components/pages/profile/profile-nav';
 
 import style from './style.module.scss';
 
-interface CreateLayoutProps {
+interface ICreateLayoutProps {
   children: ReactNode;
 }
 
-const CreateLayout = ({ children }: CreateLayoutProps) => {
+const CreateLayout = ({ children }: ICreateLayoutProps) => {
   return (
     <div className="container">
       <div className={style.accountLayout}>
