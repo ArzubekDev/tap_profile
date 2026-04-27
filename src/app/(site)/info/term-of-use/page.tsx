@@ -1,9 +1,8 @@
-import UserAgreement from '@/src/components/pages/info/term-of-use'
-import React from 'react'
+import UserAgreementView from '@/src/components/pages/info/term-of-use'
 
 const UserAgreementPage = () => {
   return (
-    <div><UserAgreement/></div>
+    <UserAgreementView/>
   )
 }
 

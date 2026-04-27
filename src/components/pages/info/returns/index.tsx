@@ -1,6 +1,6 @@
 import style from './style.module.scss';
 
-const Returns = () => {
+const ReturnsView = () => {
   return (
     <section className={style.returns}>
       <h2 className={style.mainTitle}>Возврат товара</h2>
@@ -24,7 +24,7 @@ const Returns = () => {
   );
 };
 
-export default Returns;
+export default ReturnsView;
 
 type TSteps = {
   title: string, 

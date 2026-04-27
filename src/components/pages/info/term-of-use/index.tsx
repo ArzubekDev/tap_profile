@@ -1,6 +1,6 @@
 import style from './style.module.scss';
 
-const UserAgreement = () => {
+const UserAgreementView = () => {
   return (
     <section className={style.userAgreement}>
       <h2>Пользовательское соглашение</h2>
@@ -16,7 +16,7 @@ const UserAgreement = () => {
   );
 };
 
-export default UserAgreement;
+export default UserAgreementView;
 
 const steps = [
   {

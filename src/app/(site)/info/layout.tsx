@@ -1,16 +1,15 @@
 import InfoLayout from "@/src/components/pages/info/InfoLayout/InfoLayout"
 import { ReactNode } from "react"
 
-
 interface InfoMainLayoutProps {
     children: ReactNode
 }
 
 const InfoMainLayout = ({children}: InfoMainLayoutProps) => {
     return (
-        <InfoLayout>
+     <InfoLayout>
         {children}
-        </InfoLayout>
+     </InfoLayout>
     )
 }
 

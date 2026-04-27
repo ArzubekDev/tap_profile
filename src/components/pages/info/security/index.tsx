@@ -1,4 +1,4 @@
-const Security = () => {
+const SecurityView = () => {
   return (
     <section>
       <h2>Безопасность</h2>
@@ -17,4 +17,4 @@ const Security = () => {
   );
 };
 
-export default Security;
+export default SecurityView;

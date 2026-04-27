@@ -1,9 +1,8 @@
-import Returns from '@/src/components/pages/info/returns'
-import React from 'react'
+import ReturnsView from '@/src/components/pages/info/returns'
 
 const ReturnsPage = () => {
   return (
-    <div><Returns/></div>
+    <ReturnsView/>
   )
 }
 
