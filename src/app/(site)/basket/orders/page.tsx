@@ -1,5 +1,9 @@
-import HistoryOrdersView from "@/src/components/pages/profile/history-orders"
+import HistoryOrdersView from '@/src/components/pages/profile/history-orders';
 
-const HistoryPage = () => <HistoryOrdersView/>
+const HistoryOrdersPage = () => {
+  return (
+      <HistoryOrdersView />
+  );
+};
 
-export default HistoryPage
+export default HistoryOrdersPage;
