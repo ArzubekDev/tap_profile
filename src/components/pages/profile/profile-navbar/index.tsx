@@ -28,8 +28,9 @@ const ProfileNavbar: React.FC = () => {
   const pathname = usePathname();
   
 const renderLink = (el: TProfileItemType) => {
-  const isActive =
-    pathname === el.link || pathname.startsWith(el.link + '/');
+  const isActive = el.link === PATH_PROFILE 
+    ? pathname === el.link 
+    : pathname === el.link || pathname.startsWith(el.link + '/');
 
   return (
     <Link
