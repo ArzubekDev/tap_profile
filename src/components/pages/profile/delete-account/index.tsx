@@ -18,7 +18,7 @@ const DeleteAccountView: React.FC = () => {
         </p>
       </div>
       <DeleteInfoList />
-      <div className={style.footer}>
+      <div className={style.supportSection}>
         <div className={style.footerTextContainer}>
           <h3 className={style.footerTitle}>Служба поддержки</h3>
           <p className={style.footerSubTitle}>

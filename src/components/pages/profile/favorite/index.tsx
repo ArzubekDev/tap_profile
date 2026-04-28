@@ -18,7 +18,7 @@ const FavoriteView: React.FC = () => {
 
   return (
     <div className={style.favorite}>
-      <div className={style.header}>
+      <div className={style.favoritesHeader}>
         <h3>
           Избранные <span>({data?.length})</span>
         </h3>
@@ -31,7 +31,7 @@ const FavoriteView: React.FC = () => {
           </div>
         ))}
       </div>
-      <div className={style.footer}>
+      <div className={style.favoritesFooter}>
         <PaginationInfo />
       </div>
     </div>

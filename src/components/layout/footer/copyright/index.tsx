@@ -4,7 +4,7 @@ import style from '../style.module.scss';
 const FooterCopyRight = () => {
   return (
     <div className="container">
-      <div className={style.bottom}>
+      <div className={style.copyrightSection}>
         <p>Tap.kg © Все права защищены.</p>
         <p>
           Разработка сайтов и мобильных приложений -
