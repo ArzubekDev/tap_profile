@@ -7,7 +7,7 @@ import style from './style.module.scss';
 
 const InfoSidebar = () => {
   const pathname = usePathname();
-  // Link
+  
   const renderLink = (el: TInfoSidebar) => (
     <Link
       href={el.link}

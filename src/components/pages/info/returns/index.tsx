@@ -8,7 +8,7 @@ const ReturnsView = () => {
         <div key={idx} className={style.infoBlocks}>
           <h3 className={style.title}>{item.title}</h3>
           {item.subtitle && <p className={style.subtitle}>{item.subtitle}</p>}
-          {item.points && (
+          {item.points && item.points.length > 0 && (
             <ul className={style.list}>
               {item.points.map((point, index) => (
                 <li key={index} className={style.item}>
