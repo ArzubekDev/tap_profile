@@ -1,9 +1,13 @@
-import { MOCKUP_PROFILE_FAVORITES_PRODUCTS } from "./instance.api";
+import { PRODUCTS_API_URL } from "./instance.api";
 
 export const getProducts = async () => {
-  const res = await fetch(MOCKUP_PROFILE_FAVORITES_PRODUCTS, {
-    next: { revalidate: 300 }
+  const res = await fetch(PRODUCTS_API_URL, {
+    next: { revalidate: 300 },
   });
-  if (!res.ok) throw new Error('Failed to fetch');
+
+  if (!res.ok) {
+    throw new Error(`Failed to fetch products: ${res.status}`);
+  }
+
   return res.json();
 };

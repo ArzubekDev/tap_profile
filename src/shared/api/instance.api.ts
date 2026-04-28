@@ -1,2 +1,5 @@
+export const PRODUCTS_API_URL = process.env.NEXT_PUBLIC_PRODUCTS_API_URL!;
 
-export const MOCKUP_PROFILE_FAVORITES_PRODUCTS = 'https://fakestoreapi.com/products'
+if (!PRODUCTS_API_URL) {
+  throw new Error('Missing PRODUCTS_API_URL');
+}
