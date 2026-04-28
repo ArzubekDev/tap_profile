@@ -39,7 +39,6 @@
   color: var(--main-color);
 }
 
-//skeleton styles
 .skeleton {
   position: relative;
   overflow: hidden;
@@ -88,4 +87,11 @@
   @extend .skeleton;
   width: 120px;
   height: 32px;
+}
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100vh;
 }
