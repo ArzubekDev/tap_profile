@@ -1,4 +1,4 @@
-import HowToSellView from '@/src/widgets/info/how-to-sell';
+import HowToSellView from '@/src/screens/info/how-to-sell';
 
 const HowToSellPage = () => {
   return <HowToSellView />;

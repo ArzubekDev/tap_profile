@@ -1,4 +1,4 @@
-import AboutView from '@/src/widgets/info/about';
+import AboutView from '@/src/screens/info/about';
 
 const AboutPage = () => {
   return <AboutView />;

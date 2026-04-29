@@ -1,4 +1,4 @@
-import SecurityView from '@/src/widgets/info/security';
+import SecurityView from '@/src/screens/info/security';
 
 const SecurityPage = () => {
   return <SecurityView />;

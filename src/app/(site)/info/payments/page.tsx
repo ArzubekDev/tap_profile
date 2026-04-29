@@ -1,4 +1,4 @@
-import PaymentsView from '@/src/widgets/info/payments';
+import PaymentsView from '@/src/screens/info/payments';
 
 const PaymentsPage = () => {
   return <PaymentsView />;

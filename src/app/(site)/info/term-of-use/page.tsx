@@ -1,4 +1,4 @@
-import UserAgreementView from '@/src/widgets/info/term-of-use';
+import UserAgreementView from '@/src/screens/info/term-of-use';
 
 const UserAgreementPage = () => {
   return <UserAgreementView />;

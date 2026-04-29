@@ -1,4 +1,4 @@
-import HowToOpenShopView from '@/src/widgets/info/how-to-open-shop';
+import HowToOpenShopView from '@/src/screens/info/how-to-open-shop';
 
 const HowToOpenShopPage = () => {
   return <HowToOpenShopView />;

@@ -1,5 +1,5 @@
 'use client';
-import InfoSidebar from '@/src/widgets/info/InfoSidebar/InfoSidebar';
+import InfoSidebar from '@/src/screens/info/InfoSidebar/InfoSidebar';
 import { ReactNode } from 'react';
 import StickyBox from 'react-sticky-box';
 import style from './style.module.scss';

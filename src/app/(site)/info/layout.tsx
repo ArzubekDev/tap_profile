@@ -1,4 +1,4 @@
-import InfoLayout from '@/src/widgets/info/InfoLayout/InfoLayout';
+import InfoLayout from '@/src/screens/info/InfoLayout/InfoLayout';
 import { ReactNode } from 'react';
 
 interface InfoMainLayoutProps {

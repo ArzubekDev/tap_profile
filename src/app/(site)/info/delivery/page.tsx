@@ -1,4 +1,4 @@
-import DeliveryView from '@/src/widgets/info/delivery';
+import DeliveryView from '@/src/screens/info/delivery';
 
 const DeliveryPage = () => {
   return (

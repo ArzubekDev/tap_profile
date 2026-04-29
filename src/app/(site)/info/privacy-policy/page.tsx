@@ -1,4 +1,4 @@
-import PrivacyPolicyView from '@/src/widgets/info/privacy-policy';
+import PrivacyPolicyView from '@/src/screens/info/privacy-policy';
 
 const PrivacyPolicyPage = () => {
   return <PrivacyPolicyView />;
