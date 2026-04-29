@@ -1,4 +1,4 @@
-import CreateStoreView from "@/src/widgets/createStore";
+import CreateStoreView from '@/src/screens/createStore';
 
 const CraeteStorePage = () => <CreateStoreView />;
 
