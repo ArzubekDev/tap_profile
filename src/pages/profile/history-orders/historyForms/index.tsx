@@ -1,0 +1,101 @@
+'use client';
+import { ControlOutlined, SearchOutlined } from '@ant-design/icons';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button, Modal } from 'antd';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+
+import { InputFormController, SelectFormController } from '@/src/shared/ui/form/Controllers';
+import { THistoryForm, ZhistoryForm } from '../zod/zod';
+import { THistoryForms } from './type';
+
+import style from './style.module.scss';
+
+const HistoryForms = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const { control, handleSubmit, reset, watch } = useForm<THistoryForm>({
+    resolver: zodResolver(ZhistoryForm),
+    defaultValues: {
+      name: '',
+      status: 'all',
+      store: 'all',
+    },
+  });
+
+  const onSubmit = (data: THistoryForm) => {
+    console.log(data);
+    setIsModalOpen(false);
+  };
+
+  return (
+    <div className={style.headerContainer}>
+      <form onSubmit={handleSubmit(onSubmit)} className={style.formWrapper}>
+        <div className={style.searchBar}>
+          <InputFormController
+            id="searchName"
+            name="name"
+            placeholder="Поиск товаров"
+            prefix={<SearchOutlined style={{ color: '#8c8c8c' }} />}
+            control={control}
+            className={style.customInput}
+          />
+        </div>
+
+        <Button
+          icon={<ControlOutlined />}
+          onClick={() => setIsModalOpen(true)}
+          className={style.filterButton}
+        >
+          Все фильтры
+        </Button>
+
+        <Modal
+          title="Фильтры"
+          open={isModalOpen}
+          onOk={handleSubmit(onSubmit)}
+          onCancel={() => setIsModalOpen(false)}
+          okText="Применить"
+          cancelText="Сбросить"
+          okButtonProps={{ style: { backgroundColor: '#1890ff' } }}
+        >
+          <div className={style.modalFilters}>
+            <SelectFormController
+              name="status"
+              control={control}
+              label="Статус"
+              options={statusOptions}
+            />
+            <SelectFormController
+              name="store"
+              control={control}
+              label="Магазин"
+              options={storeOptions}
+            />
+          </div>
+        </Modal>
+      </form>
+    </div>
+  );
+};
+
+export default HistoryForms;
+
+const statusOptions: THistoryForms[] = [
+  { value: 'all', label: 'Все статусы' },
+  { value: 'new', label: 'Новый' },
+  { value: 'confirmed', label: 'Подтвержден' },
+  { value: 'pending_payment', label: 'Ожидает оплаты' },
+  { value: 'paid', label: 'Оплачен' },
+  { value: 'processing', label: 'В обработке' },
+  { value: 'shipped', label: 'Передан в доставку' },
+  { value: 'delivering', label: 'Доставляется' },
+  { value: 'delivered', label: 'Доставлен' },
+  { value: 'canceled', label: 'Отменен' },
+  { value: 'refund', label: 'Возврат' },
+  { value: 'completed', label: 'Завершён' },
+];
+const storeOptions: THistoryForms[] = [
+  { value: 'all', label: 'Все магазины' },
+  { value: 'store', label: 'Магазин' },
+];

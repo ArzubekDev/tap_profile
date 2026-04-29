@@ -1,5 +1,5 @@
-import { IconCart } from '@/src/components/Icons';
-import PopoverLayout from '@/src/components/layout/popover/PopoverLayout';
+import { IconCart } from '@/src/shared/ui/Icons';
+import PopoverLayout from '@/src/shared/ui/popover/PopoverLayout';
 import KorzinaDropDown from '../KorzinaDropDown/KorzinaDropDown';
 
 import style from './style.module.scss';

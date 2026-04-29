@@ -1,9 +1,7 @@
-import DeleteAccountView from "@/src/components/pages/profile/delete-account"
+import DeleteAccountView from '@/src/pages/profile/delete-account';
 
 const DeleteInfoPage = () => {
-  return (
-        <DeleteAccountView/>
-  )
-}
+  return <DeleteAccountView />;
+};
 
-export default DeleteInfoPage
+export default DeleteInfoPage;

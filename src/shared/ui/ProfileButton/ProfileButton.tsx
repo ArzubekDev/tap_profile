@@ -1,5 +1,5 @@
-import { IconUser } from '@/src/components/Icons';
-import PopoverLayout from '@/src/components/layout/popover/PopoverLayout';
+import { IconUser } from '@/src/shared/ui/Icons';
+import PopoverLayout from '@/src/shared/ui/popover/PopoverLayout';
 import ProfileDropDown from '../ProfileDropdown/ProfileDropDown';
 
 import style from './style.module.scss';

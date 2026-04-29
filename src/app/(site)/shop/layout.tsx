@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import ProfileNav from '@/src/components/pages/profile/profile-navbar';
+import ProfileNav from '@/src/pages/profile/profile-navbar';
 
 import style from './style.module.scss';
 

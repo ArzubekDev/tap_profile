@@ -1,9 +1,7 @@
-import HistoryOrdersView from '@/src/components/pages/profile/history-orders';
+import HistoryOrdersView from '@/src/pages/profile/history-orders';
 
 const HistoryOrdersPage = () => {
-  return (
-      <HistoryOrdersView />
-  );
+  return <HistoryOrdersView />;
 };
 
 export default HistoryOrdersPage;

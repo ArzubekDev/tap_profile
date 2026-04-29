@@ -1,9 +1,7 @@
-import PaymentsView from '@/src/components/pages/info/payments'
+import PaymentsView from '@/src/pages/info/payments';
 
 const PaymentsPage = () => {
-  return (
-    <PaymentsView/>
-  )
-}
+  return <PaymentsView />;
+};
 
-export default PaymentsPage
+export default PaymentsPage;

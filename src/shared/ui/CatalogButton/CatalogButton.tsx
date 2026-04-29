@@ -1,4 +1,4 @@
-import { IconCatalog } from '@/src/components/Icons';
+import { IconCatalog } from '@/src/shared/ui/Icons';
 import style from './style.module.scss';
 
 const CatalogButton = () => {

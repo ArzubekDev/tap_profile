@@ -1,9 +1,7 @@
-import PersonalDataView from '@/src/components/pages/profile/personal-data';
+import PersonalDataView from '@/src/pages/profile/personal-data';
 
 const ProfilePage = () => {
-  return (
-      <PersonalDataView />
-  );
+  return <PersonalDataView />;
 };
 
 export default ProfilePage;

@@ -1,22 +1,22 @@
-import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
-import BasketView from '@/src/components/pages/basket'
+import BasketView from '@/src/pages/basket';
+import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
-import { getProducts } from '@/src/shared/api/product.api'
-import { PRODUCT_KEYS } from '@/src/shared/api/query-keys'
+import { getProducts } from '@/src/shared/api/product.api';
+import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
 const BasketPage = async () => {
-  const queryClient = new QueryClient()
+  const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
     queryKey: PRODUCT_KEYS.all,
-    queryFn: getProducts
-  })
+    queryFn: getProducts,
+  });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <BasketView/>
+      <BasketView />
     </HydrationBoundary>
-  )
-}
+  );
+};
 
-export default BasketPage
+export default BasketPage;

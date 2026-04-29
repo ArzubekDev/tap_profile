@@ -1,10 +1,7 @@
-import HowToOpenShopView from "@/src/components/pages/info/how-to-open-shop"
-
+import HowToOpenShopView from '@/src/pages/info/how-to-open-shop';
 
 const HowToOpenShopPage = () => {
-  return (
-    <HowToOpenShopView/>
-  )
-}
+  return <HowToOpenShopView />;
+};
 
-export default HowToOpenShopPage
+export default HowToOpenShopPage;

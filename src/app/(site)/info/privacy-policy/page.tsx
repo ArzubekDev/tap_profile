@@ -1,9 +1,7 @@
-import PrivacyPolicyView from '@/src/components/pages/info/privacy-policy'
+import PrivacyPolicyView from '@/src/pages/info/privacy-policy';
 
 const PrivacyPolicyPage = () => {
-  return (
-    <PrivacyPolicyView/>
-  )
-}
+  return <PrivacyPolicyView />;
+};
 
-export default PrivacyPolicyPage
+export default PrivacyPolicyPage;

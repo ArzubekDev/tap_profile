@@ -1,9 +1,11 @@
-import DeliveryView from "@/src/components/pages/info/delivery"
+import DeliveryView from '@/src/pages/info/delivery';
 
 const DeliveryPage = () => {
   return (
-    <div><DeliveryView/></div>
-  )
-}
+    <div>
+      <DeliveryView />
+    </div>
+  );
+};
 
-export default DeliveryPage
+export default DeliveryPage;

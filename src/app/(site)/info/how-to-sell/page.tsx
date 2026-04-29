@@ -1,10 +1,7 @@
-import HowToSellView from "@/src/components/pages/info/how-to-sell"
-
+import HowToSellView from '@/src/pages/info/how-to-sell';
 
 const HowToSellPage = () => {
-  return (
-    <HowToSellView/>
-  )
-}
+  return <HowToSellView />;
+};
 
-export default HowToSellPage
+export default HowToSellPage;

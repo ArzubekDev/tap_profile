@@ -4,4 +4,11 @@ align-items: center;
 justify-content: center;
 
 min-height: 100vh;
+
+h1 {
+    color: var(--main-color);
+    font-size: 70px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
 }

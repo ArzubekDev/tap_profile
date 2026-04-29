@@ -1,16 +1,12 @@
-import InfoLayout from "@/src/components/pages/info/InfoLayout/InfoLayout"
-import { ReactNode } from "react"
+import InfoLayout from '@/src/pages/info/InfoLayout/InfoLayout';
+import { ReactNode } from 'react';
 
 interface InfoMainLayoutProps {
-    children: ReactNode
+  children: ReactNode;
 }
 
-const InfoMainLayout = ({children}: InfoMainLayoutProps) => {
-    return (
-     <InfoLayout>
-        {children}
-     </InfoLayout>
-    )
-}
+const InfoMainLayout = ({ children }: InfoMainLayoutProps) => {
+  return <InfoLayout>{children}</InfoLayout>;
+};
 
-export default InfoMainLayout
+export default InfoMainLayout;

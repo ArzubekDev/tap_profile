@@ -1,4 +1,4 @@
-import { IconStar } from '@/src/components/Icons';
+import { IconStar } from '@/src/shared/ui/Icons';
 import Image from 'next/image';
 import ReviewStatistics from '../ReviewStatistics/ReviewStatistics';
 import style from './style.module.scss';

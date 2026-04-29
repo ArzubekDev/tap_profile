@@ -1,9 +1,9 @@
-'use client'
+'use client';
 
 import { useRouter } from 'next/navigation';
 import { PATH_HOME } from '../../consts/paths';
 
-import IconTapLogo from '@/src/components/Icons/components/IconTapLogo';
+import IconTapLogo from '@/src/shared/ui/Icons/components/IconTapLogo';
 import style from './style.module.scss';
 
 const TapLogo = () => {

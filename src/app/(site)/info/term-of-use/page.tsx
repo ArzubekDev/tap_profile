@@ -1,9 +1,7 @@
-import UserAgreementView from '@/src/components/pages/info/term-of-use'
+import UserAgreementView from '@/src/pages/info/term-of-use';
 
 const UserAgreementPage = () => {
-  return (
-    <UserAgreementView/>
-  )
-}
+  return <UserAgreementView />;
+};
 
-export default UserAgreementPage
+export default UserAgreementPage;

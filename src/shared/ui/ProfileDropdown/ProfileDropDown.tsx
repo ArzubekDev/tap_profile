@@ -6,7 +6,7 @@ import {
   PATH_FAVORITE,
   PATH_PROFILE,
 } from '@/src/shared/consts/paths';
-import { IconPlus } from '@/src/components/Icons';
+import { IconPlus } from '@/src/shared/ui/Icons';
 
 import style from '@/src/components/layout/header/style.module.scss';
 

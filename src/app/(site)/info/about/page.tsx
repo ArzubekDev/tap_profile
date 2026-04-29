@@ -1,9 +1,7 @@
-import AboutView from "@/src/components/pages/info/about"
+import AboutView from '@/src/pages/info/about';
 
 const AboutPage = () => {
-  return (
-    <AboutView/>
-  )
-}
+  return <AboutView />;
+};
 
-export default AboutPage
+export default AboutPage;

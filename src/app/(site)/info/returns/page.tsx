@@ -1,9 +1,7 @@
-import ReturnsView from '@/src/components/pages/info/returns'
+import ReturnsView from '@/src/pages/info/returns';
 
 const ReturnsPage = () => {
-  return (
-    <ReturnsView/>
-  )
-}
+  return <ReturnsView />;
+};
 
-export default ReturnsPage
+export default ReturnsPage;

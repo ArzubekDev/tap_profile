@@ -1,9 +1,7 @@
-import SecurityView from '@/src/components/pages/info/security'
+import SecurityView from '@/src/pages/info/security';
 
 const SecurityPage = () => {
-  return (
-    <SecurityView/>
-  )
-}
+  return <SecurityView />;
+};
 
-export default SecurityPage
+export default SecurityPage;

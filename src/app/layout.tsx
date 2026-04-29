@@ -4,7 +4,7 @@ import localFont from 'next/font/local';
 import { AntdRegistry } from '@ant-design/nextjs-registry';
 
 import ThemeConfig from '@/src/shared/theme/themeConfig';
-import TanstackQueryProvider from '../providers/TanstackQueryProvider';
+import TanstackQueryProvider from './providers/TanstackQueryProvider';
 import './globals.scss';
 
 export const metadata: Metadata = {

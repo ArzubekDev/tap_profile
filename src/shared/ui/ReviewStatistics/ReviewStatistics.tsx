@@ -1,4 +1,4 @@
-import { IconStar } from '@/src/components/Icons';
+import { IconStar } from '@/src/shared/ui/Icons';
 import style from './style.module.scss';
 
 const ReviewStatistics = () => {

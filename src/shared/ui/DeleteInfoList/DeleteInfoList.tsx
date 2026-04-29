@@ -1,4 +1,4 @@
-import { IconCheck } from '@/src/components/Icons';
+import { IconCheck } from '@/src/shared/ui/Icons';
 import style from './style.module.scss';
 
 const DeleteInfoList = () => {
