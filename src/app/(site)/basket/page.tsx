@@ -1,4 +1,4 @@
-import BasketView from '@/src/widgets/basket';
+import BasketView from '@/src/screens/basket';
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
 import { getProducts } from '@/src/shared/api/product.api';
