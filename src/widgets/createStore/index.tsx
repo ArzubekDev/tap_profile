@@ -7,8 +7,8 @@ import { useForm } from 'react-hook-form';
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import WorkTimeField from '@/src/pages/createStore/WorkTimeField/WorkTimeField';
-import LogoUpload from '@/src/pages/profile/personal-data/forms/LogoUpload';
+import LogoUpload from '../profile/personal-data/forms/LogoUpload';
+import WorkTimeField from '@/src/widgets/createStore/WorkTimeField/WorkTimeField';
 import Contacts from './Contacts/Contacts';
 
 import { InputFormController } from '@/src/shared/ui/form/Controllers';
@@ -19,9 +19,12 @@ import { createStoreAction } from './action';
 
 import style from './style.module.scss';
 
-const AddressPicker = dynamic(() => import('@/src/pages/createStore/AddressPicker/AddressPicker'), {
-  ssr: false,
-});
+const AddressPicker = dynamic(
+  () => import('@/src/widgets/createStore/AddressPicker/AddressPicker'),
+  {
+    ssr: false,
+  },
+);
 
 const CreateStoreView = () => {
   // Хуки

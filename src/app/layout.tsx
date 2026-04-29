@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const ttCommons = localFont({
-  src: '../assets/fonts/TTCommons-Regular.ttf',
+  src: '../shared/assets/fonts/TTCommons-Regular.ttf',
   variable: '--font-tt',
 });
 

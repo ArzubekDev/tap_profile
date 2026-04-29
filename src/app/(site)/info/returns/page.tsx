@@ -1,4 +1,4 @@
-import ReturnsView from '@/src/pages/info/returns';
+import ReturnsView from '@/src/widgets/info/returns';
 
 const ReturnsPage = () => {
   return <ReturnsView />;

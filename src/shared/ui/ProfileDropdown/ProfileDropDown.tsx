@@ -8,7 +8,7 @@ import {
 } from '@/src/shared/consts/paths';
 import { IconPlus } from '@/src/shared/ui/Icons';
 
-import style from '@/src/components/layout/header/style.module.scss';
+import style from './style.module.scss';
 
 const ProfileDropDown = (
   <div className={style.profileDropdownMenu}>

@@ -1,4 +1,4 @@
-import HistoryOrdersView from '@/src/pages/profile/history-orders';
+import HistoryOrdersView from '@/src/widgets/profile/history-orders';
 
 const HistoryOrdersPage = () => {
   return <HistoryOrdersView />;
