@@ -1,4 +1,5 @@
 'use client';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from 'antd';
 import { useRef } from 'react';
@@ -21,10 +22,13 @@ const FormProfile: React.FC = () => {
   const onValid = () => {
     formRef.current?.requestSubmit();
   };
+
   return (
     <form
       ref={formRef}
-      action={updateProfile}
+      action={async (formData) => {
+        await updateProfile(formData);
+      }}
       onSubmit={handleSubmit(onValid)}
       className={style.formProfile}
     >
