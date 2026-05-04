@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
 import WorkTimeField from '@/src/screens/createStore/WorkTimeField/WorkTimeField';
-import LogoUpload from '../profile/personal-data/forms/LogoUpload';
+import { UploadLogo } from '@/src/features/create-store-upload-logo';
 import Contacts from './Contacts/Contacts';
 
 import { InputFormController } from '@/src/shared/ui/form/Controllers';
@@ -97,7 +97,7 @@ const CreateStoreView = () => {
         {/* (Верхний часть) 4 инпута и время работы */}
         <div className={style.formContent}>
           {/* Логотип */}
-          <LogoUpload control={control} />
+          <UploadLogo control={control} />
           {/* Все инпуты */}
           <div className={style.formInfo}>
             {/* Инпут (Называние магазина) */}

@@ -1,1 +1,1 @@
-export {FormNameSurName} from "./ui/FormNameSurName"
+export { FormNameSurName } from './ui/FormNameSurName';

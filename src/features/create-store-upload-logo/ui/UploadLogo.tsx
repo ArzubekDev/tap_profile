@@ -4,7 +4,7 @@ import { Controller } from 'react-hook-form';
 
 import style from './style.module.scss';
 
-const LogoUpload = ({ control }: { control: any }) => {
+export const UploadLogo = ({ control }: { control: any }) => {
   const [preview, setPreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -59,4 +59,3 @@ const LogoUpload = ({ control }: { control: any }) => {
   );
 };
 
-export default LogoUpload;
