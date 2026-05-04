@@ -1,4 +1,4 @@
-import MakeOrderView from '@/src/screens/info/how-to-make-order';
+import MakeOrderView from '@/src/screens/tap-info/how-to-make-order';
 
 const MakeOrderPage = () => {
   return <MakeOrderView />;

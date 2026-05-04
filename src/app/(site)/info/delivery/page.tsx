@@ -1,4 +1,4 @@
-import DeliveryView from '@/src/screens/info/delivery';
+import DeliveryView from '@/src/screens/tap-info/delivery';
 
 const DeliveryPage = () => {
   return (

@@ -1,4 +1,4 @@
-import PaymentsView from '@/src/screens/info/payments';
+import PaymentsView from '@/src/screens/tap-info/payments';
 
 const PaymentsPage = () => {
   return <PaymentsView />;

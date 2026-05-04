@@ -1,4 +1,4 @@
-import ReturnsView from '@/src/screens/info/returns';
+import ReturnsView from '@/src/screens/tap-info/returns';
 
 const ReturnsPage = () => {
   return <ReturnsView />;

@@ -1,4 +1,4 @@
-import SecurityView from '@/src/screens/info/security';
+import SecurityView from '@/src/screens/tap-info/security';
 
 const SecurityPage = () => {
   return <SecurityView />;
