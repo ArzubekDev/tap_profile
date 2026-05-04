@@ -1,14 +1,14 @@
 'use client';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Form } from 'antd';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 import dayjs from 'dayjs';
 import dynamic from 'next/dynamic';
 
-import WorkTimeField from '@/src/screens/createStore/WorkTimeField/WorkTimeField';
 import { UploadLogo } from '@/src/features/create-store-upload-logo';
+import WorkTimeField from '@/src/features/createStore/WorkTimeField/WorkTimeField';
 import Contacts from './Contacts/Contacts';
 
 import { InputFormController } from '@/src/shared/ui/form/Controllers';
@@ -20,7 +20,7 @@ import { createStoreAction } from './action';
 import style from './style.module.scss';
 
 const AddressPicker = dynamic(
-  () => import('@/src/screens/createStore/AddressPicker/AddressPicker'),
+  () => import('@/src/features/createStore/AddressPicker/AddressPicker'),
   {
     ssr: false,
   },
