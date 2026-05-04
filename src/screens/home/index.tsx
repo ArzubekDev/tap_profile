@@ -6,9 +6,9 @@ import { useState } from 'react';
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
-import sizeCharts from '@/src/entities/product/size-charts/sizeCharts.json';
+import sizeCharts from '@/src/entities/product/size-charts-json/sizeCharts.json';
 import ProductCard from '@/src/entities/ProductCard/ProductCard';
-import SizeChartModal from '@/src/entities/size-chart-modal/SizeChartModal';
+import SizeChartModal from '@/src/entities/product/size-chart-modal/SizeChartModal';
 
 import style from './style.module.scss';
 
