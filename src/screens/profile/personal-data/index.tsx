@@ -1,4 +1,4 @@
-import FormNumber from './forms/formNumber';
+import { FormNumber } from '@/src/features/update-profile-number';
 import FormProfile from './forms/formProfile';
 
 import style from './style.module.scss';
