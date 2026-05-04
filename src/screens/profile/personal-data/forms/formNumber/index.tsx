@@ -25,7 +25,9 @@ const FormNumber: React.FC = () => {
   return (
     <form
       ref={formRef}
-      action={updateNumber}
+      action={async (formData) => {
+        await updateNumber(formData);
+      }}
       onSubmit={phoneForm.handleSubmit(onValid)}
       className={style.numberPhone}
     >
