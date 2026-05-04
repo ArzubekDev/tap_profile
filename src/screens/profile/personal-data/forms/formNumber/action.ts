@@ -9,14 +9,14 @@ export async function updateNumber(formData: FormData) {
   const session = await auth();
 
   if (!session?.user) {
-    return { error: 'Авторизациядан өтүңүз' };
+    return { error: 'Не авторизован!' };
   }
 
   const number = formData.get('number') as string;
 
   const validation = ZprofileNumber.safeParse({ number });
   if (!validation.success) {
-    return { error: 'Номер ката жазылды' };
+    return { error: 'Неправильный номер!' };
   }
 
   try {
@@ -28,6 +28,6 @@ export async function updateNumber(formData: FormData) {
     revalidatePath('/accounts/profile');
     return { success: true };
   } catch (e) {
-    return { error: 'Серверде ката кетти' };
+    return { error: 'Ощибка на сервере!' };
   }
 }
