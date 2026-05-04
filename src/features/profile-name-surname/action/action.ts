@@ -1,10 +1,9 @@
 'use server';
 
-
-import { revalidatePath } from 'next/cache';
-import { ZprofileNameSurName } from './zod/zod';
-import { auth } from '@/src/shared/lib/db';
 import { db } from '@/src/shared/lib/auth';
+import { auth } from '@/src/shared/lib/db';
+import { revalidatePath } from 'next/cache';
+import { ZprofileNameSurName } from '../zod/zod';
 
 export async function updateProfile(formData: FormData) {
   const session = await auth();
@@ -24,9 +23,9 @@ export async function updateProfile(formData: FormData) {
   try {
     await db.user.update({
       where: { id: session.user.id },
-      data: { 
-        name: validation.data.name, 
-        surname: validation.data.surname 
+      data: {
+        name: validation.data.name,
+        surname: validation.data.surname,
       },
     });
 

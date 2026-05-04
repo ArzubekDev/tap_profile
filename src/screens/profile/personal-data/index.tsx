@@ -1,13 +1,12 @@
-import { FormNumber } from '@/src/features/update-profile-number';
-import FormProfile from './forms/formProfile';
+import { FormNumber } from '@/src/features/profile-number';
+import { FormNameSurName } from '@/src/features/profile-name-surname';
 
 import style from './style.module.scss';
 
 const PersonalDataView: React.FC = () => {
-
   return (
     <section className={style.personalData}>
-     <FormProfile/>
+      <FormNameSurName />
       <FormNumber />
     </section>
   );

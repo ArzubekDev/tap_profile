@@ -6,12 +6,12 @@ import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { InputFormController } from '@/src/shared/ui/form/Controllers';
-import { updateProfile } from './action';
-import { ZprofileNameSurName } from './zod/zod';
+import { updateProfile } from '../action/action';
+import { ZprofileNameSurName } from '../zod/zod';
 
 import style from './style.module.scss';
 
-const FormProfile: React.FC = () => {
+export const FormNameSurName: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null);
 
   const { control, handleSubmit } = useForm({
@@ -66,4 +66,3 @@ const FormProfile: React.FC = () => {
   );
 };
 
-export default FormProfile;
