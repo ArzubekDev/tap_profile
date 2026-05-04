@@ -1,4 +1,4 @@
-import DeleteAccountView from '@/src/screens/profile/delete-account';
+import DeleteAccountView from '@/src/features/delete-account';
 
 const DeleteInfoPage = () => {
   return <DeleteAccountView />;

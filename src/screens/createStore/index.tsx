@@ -28,7 +28,6 @@ const AddressPicker = dynamic(
 
 const CreateStoreView = () => {
   // Хуки
-  const formRef = useRef<HTMLFormElement>(null);
   const [mounted, setMounted] = useState(false);
   const {
     control,
