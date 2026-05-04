@@ -4,7 +4,7 @@ import { useSuspenseQuery } from '@tanstack/react-query';
 import { getProducts } from '@/src/shared/api/product.api';
 import { PRODUCT_KEYS } from '@/src/shared/api/query-keys';
 
-import ProductCard from '@/src/shared/ui/ProductCard/ProductCard';
+import ProductCard from '@/src/entities/ProductCard/ProductCard';
 import PaginationInfo from './pagination-info';
 
 import style from './style.module.scss';
