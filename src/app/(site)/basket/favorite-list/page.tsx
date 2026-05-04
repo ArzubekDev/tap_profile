@@ -1,4 +1,4 @@
-import FavoriteView from '@/src/screens/profile/favorite';
+import FavoriteView from '@/src/screens/favorite';
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query';
 
 import { getProducts } from '@/src/shared/api/product.api';

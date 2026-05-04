@@ -1,4 +1,4 @@
-import PersonalDataView from '@/src/screens/profile/personal-data';
+import PersonalDataView from '@/src/screens/personal-data';
 
 const ProfilePage = () => {
   return <PersonalDataView />;
